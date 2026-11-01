@@ -4,413 +4,759 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MagiCianoS | Bağımsız Geliştirici</title>
-<meta name="description" content="MagiCianoS: web, sistem araçları ve uygulama geliştiren bağımsız geliştirici. Projeler, yetenekler ve iletişim.">
+<meta name="description" content="MagiCianoS: web, sistem araçları ve uygulama geliştiren bağımsız geliştirici.">
+<meta name="theme-color" content="#07070a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --paper: #e8ecf1;
-    --panel: #f6f8fa;
-    --ink: #14213d;
-    --steel: #536179;
-    --line: #c5ceda;
-    --ember: #c2331f;
-    --ember-soft: #f3d9d4;
-    color-scheme: light;
+    --bg: #07070a;
+    --bg2: #0d0e14;
+    --card: #12141c;
+    --line: #232736;
+    --text: #e9ebf2;
+    --mute: #8c93a8;
+    --ember: #ff5a36;
+    --ember2: #ff9a3c;
+    --ok: #3ddc97;
+    color-scheme: dark;
   }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --paper: #0f1626;
-      --panel: #172036;
-      --ink: #e8ecf4;
-      --steel: #9aa8c1;
-      --line: #2a3752;
-      --ember: #ff6a4d;
-      --ember-soft: #3a2220;
-      color-scheme: dark;
-    }
-  }
-  :root[data-theme="dark"] {
-    --paper: #0f1626; --panel: #172036; --ink: #e8ecf4; --steel: #9aa8c1;
-    --line: #2a3752; --ember: #ff6a4d; --ember-soft: #3a2220; color-scheme: dark;
-  }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
   body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: "IBM Plex Sans", system-ui, sans-serif;
-    font-size: 17px;
-    line-height: 1.65;
+    background: var(--bg); color: var(--text);
+    font-family: "IBM Plex Sans", system-ui, sans-serif; font-size: 17px; line-height: 1.65;
+    overflow-x: hidden;
   }
   a { color: inherit; }
   :focus-visible { outline: 3px solid var(--ember); outline-offset: 3px; border-radius: 4px; }
+  h1, h2, h3, h4 { font-family: "Bricolage Grotesque", sans-serif; letter-spacing: -0.02em; line-height: 1.15; }
+  .wrap { width: min(1120px, 100% - 48px); margin-inline: auto; }
 
-  .shell {
-    display: grid;
-    grid-template-columns: 280px minmax(0, 1fr);
-    min-height: 100vh;
+  /* Üst menü */
+  header {
+    position: fixed; inset: 0 0 auto 0; z-index: 50;
+    background: rgba(7,7,10,.82); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
   }
+  .bar { height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 22px; text-decoration: none; }
+  .logo b { color: var(--ember); font-weight: 800; }
+  nav ul { list-style: none; display: flex; gap: 4px; }
+  nav a { display: block; padding: 8px 14px; border-radius: 8px; text-decoration: none; color: var(--mute); transition: color .15s, background .15s; }
+  nav a:hover, nav a.active { color: var(--text); background: var(--card); }
+  .burger { display: none; background: none; border: 1px solid var(--line); color: var(--text); padding: 8px 12px; border-radius: 8px; font: inherit; cursor: pointer; }
 
-  /* Sol kenar çubuğu */
-  aside {
-    position: sticky; top: 0; height: 100vh;
-    padding: 48px 32px;
-    border-right: 1px solid var(--line);
-    display: flex; flex-direction: column; justify-content: space-between;
-  }
-  .brand {
-    font-family: "Bricolage Grotesque", sans-serif;
-    font-weight: 800; font-size: 26px; letter-spacing: -0.02em;
-    text-decoration: none;
-  }
-  .brand span { color: var(--ember); }
-  nav ul { list-style: none; margin-top: 40px; display: grid; gap: 6px; }
-  nav a {
-    display: block; padding: 6px 0 6px 14px;
-    border-left: 3px solid transparent;
-    text-decoration: none; color: var(--steel);
-    transition: color .15s, border-color .15s;
-  }
-  nav a:hover, nav a.active { color: var(--ink); border-left-color: var(--ember); }
-  .side-foot { font-size: 14px; color: var(--steel); }
-  .side-foot button {
-    margin-top: 12px; background: none; border: 1px solid var(--line);
-    color: var(--ink); padding: 6px 12px; border-radius: 6px; font: inherit; font-size: 14px; cursor: pointer;
-  }
-  .side-foot button:hover { border-color: var(--ember); }
+  section { padding: 110px 0 30px; }
+  .sec-head { margin-bottom: 44px; }
+  .sec-head h2 { font-size: clamp(32px, 4.4vw, 46px); }
+  .sec-head p { color: var(--mute); margin-top: 8px; }
+  .sec-head::after { content: ""; display: block; width: 56px; height: 4px; border-radius: 2px; background: linear-gradient(90deg, var(--ember), var(--ember2)); margin-top: 18px; }
 
-  /* İçerik */
-  main { padding: 0 clamp(24px, 6vw, 96px); max-width: 960px; }
-  section { padding: 96px 0 40px; }
-  section + section { border-top: 1px solid var(--line); }
-  h2 {
-    font-family: "Bricolage Grotesque", sans-serif;
-    font-weight: 700; font-size: clamp(30px, 4vw, 40px);
-    letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 28px;
-  }
-
-  /* Hero */
-  #home { padding-top: 120px; min-height: 88vh; display: flex; flex-direction: column; justify-content: center; }
-  .hero-name {
-    font-family: "Bricolage Grotesque", sans-serif;
-    font-weight: 800;
-    font-size: clamp(56px, 11vw, 132px);
-    line-height: .95; letter-spacing: -0.045em;
-  }
-  .hero-name .c { color: var(--ember); }
-  .hero-role {
-    margin-top: 28px; max-width: 34ch;
-    font-size: clamp(20px, 2.4vw, 26px); line-height: 1.4; color: var(--steel);
-  }
-  .actions { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 14px; }
   .btn {
-    display: inline-block; padding: 12px 22px; border-radius: 8px;
-    text-decoration: none; font-weight: 500; border: 1.5px solid var(--ink);
-    transition: background .15s, color .15s, border-color .15s;
+    display: inline-block; padding: 13px 24px; border-radius: 10px; font-weight: 500;
+    text-decoration: none; border: 1.5px solid var(--line); background: transparent; color: var(--text);
+    font-family: inherit; font-size: 16px; cursor: pointer;
+    transition: transform .15s, border-color .15s, background .15s;
   }
-  .btn.primary { background: var(--ember); border-color: var(--ember); color: #fff; }
-  .btn.primary:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
-  .btn.ghost:hover { background: var(--ink); color: var(--paper); }
+  .btn:hover { border-color: var(--ember); transform: translateY(-2px); }
+  .btn.primary { background: linear-gradient(135deg, var(--ember), var(--ember2)); border-color: transparent; color: #1a0a05; font-weight: 700; }
+  .btn.primary:hover { filter: brightness(1.08); }
+
+  /* Ana sayfa */
+  #home {
+    min-height: 100vh; padding-top: 120px; display: flex; align-items: center;
+    background:
+      radial-gradient(900px 520px at 85% 30%, rgba(255,90,54,.16), transparent 60%),
+      radial-gradient(700px 400px at 5% 90%, rgba(255,154,60,.08), transparent 60%);
+  }
+  #home { position: relative; overflow: hidden; }
+  #neural { position: absolute; inset: 0; width: 100%; height: 100%; display: block; z-index: 0; pointer-events: none; }
+  .hero { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; padding-bottom: 60px; }
+  .hi { color: var(--ember); font-weight: 500; font-size: 20px; margin-bottom: 8px; }
+  .hero h1 { font-size: clamp(44px, 7vw, 84px); font-weight: 800; letter-spacing: -0.04em; line-height: .98; }
+  .hero h1 em { font-style: normal; background: linear-gradient(90deg, var(--ember), var(--ember2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .role { margin-top: 18px; font-size: clamp(20px, 2.4vw, 26px); color: var(--mute); }
+  .role .typed { color: var(--text); border-right: 2px solid var(--ember); padding-right: 4px; }
+  .cta { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 14px; }
+  .social { margin-top: 30px; display: flex; gap: 12px; }
+  .social a { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--mute); transition: color .15s, border-color .15s, transform .15s; }
+  .social a:hover { color: var(--ember); border-color: var(--ember); transform: translateY(-2px); }
+  .social svg { width: 20px; height: 20px; fill: currentColor; }
+
+  /* Canlı panel (WizMeter tarzı) */
+  .meter {
+    background: rgba(13,14,20,.92); border: 1px solid var(--line); border-radius: 14px;
+    box-shadow: 0 30px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(255,90,54,.08), 0 0 60px rgba(255,90,54,.12);
+    overflow: hidden; width: 100%; max-width: 440px; justify-self: end;
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float { 50% { transform: translateY(-10px); } }
+  .m-top { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+  .m-badge { width: 34px; height: 34px; border-radius: 8px; background: linear-gradient(135deg, var(--ember), var(--ember2)); display: grid; place-items: center; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; color: #1a0a05; }
+  .m-name { font-weight: 500; line-height: 1.2; }
+  .m-sub { color: var(--mute); font-size: 13px; }
+  .m-gear { margin-left: auto; color: var(--mute); }
+  .m-boss { padding: 14px 16px 6px; }
+  .m-boss-row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .m-boss-name { font-weight: 500; }
+  .m-state { font-size: 13px; color: var(--ember2); margin-left: 8px; }
+  .m-state.done { color: var(--ok); }
+  .m-time { font-variant-numeric: tabular-nums; font-weight: 500; }
+  .hp { margin-top: 8px; height: 14px; background: #1b1e2a; border-radius: 7px; overflow: hidden; position: relative; }
+  .hp > i { position: absolute; inset: 0 auto 0 0; width: 100%; background: linear-gradient(90deg, #b8230a, var(--ember)); border-radius: 7px; transition: width .35s linear; }
+  .hp-meta { display: flex; justify-content: space-between; font-size: 13px; color: var(--mute); margin-top: 6px; font-variant-numeric: tabular-nums; }
+  .m-rows { position: relative; margin: 12px 16px 16px; }
+  .row { position: absolute; left: 0; right: 0; height: 40px; transition: transform .5s cubic-bezier(.3,.7,.2,1); }
+  .row .fill { position: absolute; inset: 0 auto 0 0; background: linear-gradient(90deg, rgba(255,90,54,.55), rgba(255,154,60,.22)); border-radius: 8px; transition: width .45s ease; width: 0; }
+  .row .txt { position: relative; display: flex; justify-content: space-between; align-items: center; height: 100%; padding: 0 12px; font-size: 14.5px; }
+  .row .rk { color: var(--mute); margin-right: 8px; font-variant-numeric: tabular-nums; }
+  .row .v { font-variant-numeric: tabular-nums; color: var(--text); }
+  .m-foot { padding: 10px 16px; border-top: 1px solid var(--line); color: var(--mute); font-size: 12.5px; }
 
   /* Hakkımda */
-  .about p { max-width: 62ch; margin-bottom: 18px; }
-  .facts { margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--panel); }
-  .facts div { padding: 18px 20px; border-right: 1px solid var(--line); }
-  .facts div:last-child { border-right: 0; }
-  .facts b { display: block; font-family: "Bricolage Grotesque", sans-serif; font-size: 18px; }
-  .facts span { color: var(--steel); font-size: 15px; }
-
-  /* Yetenekler */
-  .skill-groups { display: grid; gap: 28px; }
-  .skill-group h3 { font-family: "Bricolage Grotesque", sans-serif; font-size: 20px; margin-bottom: 4px; }
-  .skill-group p { color: var(--steel); font-size: 15px; margin-bottom: 12px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
-  .chips li { background: var(--panel); border: 1px solid var(--line); padding: 4px 12px; border-radius: 999px; font-size: 15px; }
-
-  /* Projeler */
-  .projects { border-top: 1px solid var(--ink); }
-  details { border-bottom: 1px solid var(--line); }
-  summary {
-    list-style: none; cursor: pointer;
-    display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: baseline;
-    padding: 24px 4px;
+  .about { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; align-items: start; }
+  .portrait {
+    aspect-ratio: 1; border-radius: 20px; border: 1px solid var(--line);
+    background: radial-gradient(circle at 30% 25%, rgba(255,154,60,.35), transparent 55%), linear-gradient(160deg, #1a1d2a, #0d0e14);
+    display: grid; place-items: center; position: relative; overflow: hidden;
   }
-  summary::-webkit-details-marker { display: none; }
-  .p-title { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: clamp(24px, 3.2vw, 34px); letter-spacing: -0.02em; line-height: 1.15; transition: color .15s; }
-  summary:hover .p-title { color: var(--ember); }
-  .p-kind { color: var(--steel); font-size: 15px; text-align: right; }
-  .p-body { padding: 0 4px 28px; max-width: 62ch; }
-  .p-body p { margin-bottom: 14px; }
-  .p-body a { color: var(--ember); font-weight: 500; }
-  details[open] summary .p-title { color: var(--ember); }
+  .portrait span { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: clamp(80px, 12vw, 150px); letter-spacing: -.05em; background: linear-gradient(135deg, var(--ember), var(--ember2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .about h3 { font-size: 28px; margin-bottom: 14px; }
+  .about p { color: #c4c9d8; max-width: 62ch; margin-bottom: 14px; }
+  .details { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 28px; margin: 22px 0 28px; }
+  .details li b { color: var(--ember2); font-weight: 500; margin-right: 6px; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 56px; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
+  .stat b { display: block; font-family: "Bricolage Grotesque", sans-serif; font-size: 40px; font-weight: 800; line-height: 1; }
+  .stat span { color: var(--mute); font-size: 15px; }
 
-  /* GitHub'dan otomatik gelen depolar */
-  .more-title { font-family: "Bricolage Grotesque", sans-serif; font-size: 22px; font-weight: 700; margin: 56px 0 6px; }
-  .more-note { color: var(--steel); font-size: 15px; margin-bottom: 18px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 64px; }
+  .two h3 { font-size: 26px; margin-bottom: 22px; }
+  .skill { margin-bottom: 18px; }
+  .skill .lbl { display: flex; justify-content: space-between; font-size: 15px; margin-bottom: 6px; }
+  .skill .lbl span:last-child { color: var(--mute); }
+  .track { height: 8px; background: #1b1e2a; border-radius: 4px; overflow: hidden; }
+  .track i { display: block; height: 100%; width: 0; border-radius: 4px; background: linear-gradient(90deg, var(--ember), var(--ember2)); transition: width 1.2s cubic-bezier(.2,.7,.2,1); }
+  .interests { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .interest { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px; font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 18px; line-height: 1.25; }
+
+  /* Özgeçmiş */
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+  .cols h3 { font-size: 26px; margin-bottom: 26px; }
+  .tl { position: relative; padding-left: 26px; border-left: 2px solid var(--line); display: grid; gap: 28px; }
+  .tl article { position: relative; }
+  .tl article::before { content: ""; position: absolute; left: -34px; top: 8px; width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 3px solid var(--ember); }
+  .tl h4 { font-size: 20px; }
+  .tl .who { color: var(--ember2); font-size: 15px; margin: 2px 0 6px; }
+  .tl p { color: #c4c9d8; font-size: 16px; }
+
+  /* Hizmetler */
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .svc { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 28px; transition: border-color .2s, transform .2s; }
+  .svc:hover { border-color: var(--ember); transform: translateY(-4px); }
+  .svc .ico { width: 48px; height: 48px; border-radius: 12px; background: rgba(255,90,54,.12); color: var(--ember); display: grid; place-items: center; margin-bottom: 18px; }
+  .svc .ico svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .svc h4 { font-size: 20px; margin-bottom: 8px; }
+  .svc p { color: var(--mute); font-size: 15.5px; }
+
+  /* Portfolyo */
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+  .filters button { background: transparent; color: var(--mute); border: 1px solid var(--line); border-radius: 999px; padding: 8px 20px; font: inherit; font-size: 15px; cursor: pointer; transition: all .15s; }
+  .filters button:hover { color: var(--text); border-color: var(--ember); }
+  .filters button[aria-pressed="true"] { background: var(--ember); border-color: var(--ember); color: #1a0a05; font-weight: 700; }
+  .work { background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .2s, transform .2s; }
+  .work:hover { border-color: var(--ember); transform: translateY(-4px); }
+  .work.hide { display: none; }
+  .thumb { aspect-ratio: 16/9; position: relative; display: grid; place-items: center; overflow: hidden; }
+  .thumb::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 28px 28px; }
+  .thumb span { position: relative; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 34px; letter-spacing: -.03em; text-align: center; padding: 0 12px; }
+  .t1 { background: linear-gradient(135deg, #3a1208, #12141c); }
+  .t2 { background: linear-gradient(135deg, #3a2608, #12141c); }
+  .t3 { background: linear-gradient(135deg, #2a0f2e, #12141c); }
+  .t4 { background: linear-gradient(135deg, #0e2a2e, #12141c); }
+  .work .info { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .work h4 { font-size: 21px; }
+  .work .kind { color: var(--ember2); font-size: 14px; }
+  .work p { color: var(--mute); font-size: 15.5px; flex: 1; }
+  .work a { color: var(--ember); font-weight: 500; text-decoration: none; }
+  .work a:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .more-title { font-size: 24px; margin: 56px 0 6px; }
+  .more-note { color: var(--mute); font-size: 15px; margin-bottom: 16px; }
   .repo-list { list-style: none; border-top: 1px solid var(--line); }
   .repo-list li { border-bottom: 1px solid var(--line); }
-  .repo-list a {
-    display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; padding: 16px 4px;
-    text-decoration: none;
-  }
+  .repo-list a { display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; padding: 14px 4px; text-decoration: none; }
   .repo-list a:hover .r-name { color: var(--ember); }
   .r-name { font-weight: 500; font-size: 18px; transition: color .15s; }
-  .r-meta { color: var(--steel); font-size: 14px; text-align: right; align-self: center; }
-  .r-desc { grid-column: 1 / -1; color: var(--steel); font-size: 15px; max-width: 62ch; }
-  .repo-status { color: var(--steel); font-size: 15px; padding: 16px 0; }
+  .r-meta { color: var(--mute); font-size: 14px; align-self: center; }
+  .r-desc { grid-column: 1 / -1; color: var(--mute); font-size: 15px; max-width: 70ch; }
+  .repo-status { color: var(--mute); font-size: 15px; padding: 14px 0; }
 
   /* İletişim */
-  .contact-list { list-style: none; display: grid; gap: 14px; }
-  .contact-list li { display: grid; grid-template-columns: 110px 1fr; gap: 12px; }
-  .contact-list .k { color: var(--steel); }
-  .contact-list a { font-weight: 500; text-underline-offset: 4px; }
-  .contact-list a:hover { color: var(--ember); }
+  .contact { display: grid; grid-template-columns: .85fr 1.15fr; gap: 48px; }
+  .c-item { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 24px; }
+  .c-item .ico { flex: none; width: 48px; height: 48px; border-radius: 12px; background: rgba(255,90,54,.12); color: var(--ember); display: grid; place-items: center; }
+  .c-item .ico svg { width: 22px; height: 22px; fill: currentColor; }
+  .c-item h4 { font-size: 18px; }
+  .c-item p, .c-item a { color: var(--mute); }
+  .c-item a:hover { color: var(--ember); }
+  form { display: grid; gap: 14px; }
+  form .two-in { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  label { display: grid; gap: 6px; font-size: 15px; color: var(--mute); }
+  input, textarea { background: var(--card); border: 1px solid var(--line); color: var(--text); border-radius: 10px; padding: 12px 14px; font: inherit; font-size: 16px; }
+  input:focus, textarea:focus { outline: none; border-color: var(--ember); }
+  textarea { min-height: 140px; resize: vertical; }
+  .form-msg { font-size: 15px; color: var(--ember2); min-height: 22px; }
 
-  footer { padding: 56px 0 64px; color: var(--steel); font-size: 14px; }
+  footer { margin-top: 90px; border-top: 1px solid var(--line); padding: 28px 0 36px; color: var(--mute); font-size: 14px; }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
 
-  /* Hero açılışı: tek bir sahne */
+  /* Tek seferlik açılış: ana sayfa yazıları */
   @media (prefers-reduced-motion: no-preference) {
-    .hero-name, .hero-role, .actions { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
-    .hero-role { animation-delay: .12s; }
-    .actions { animation-delay: .22s; }
-    @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+    .hero-copy > * { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
+    .hero-copy > :nth-child(2) { animation-delay: .08s; }
+    .hero-copy > :nth-child(3) { animation-delay: .16s; }
+    .hero-copy > :nth-child(4) { animation-delay: .24s; }
+    .hero-copy > :nth-child(5) { animation-delay: .32s; }
+    @keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
   }
+  @media (prefers-reduced-motion: reduce) { .meter { animation: none; } html { scroll-behavior: auto; } }
 
-  @media (max-width: 860px) {
-    .shell { grid-template-columns: 1fr; }
-    aside {
-      position: sticky; top: 0; z-index: 10; height: auto;
-      flex-direction: row; align-items: center; gap: 16px;
-      padding: 12px 20px; border-right: 0; border-bottom: 1px solid var(--line);
-      background: var(--paper);
-    }
-    nav ul { margin-top: 0; display: flex; gap: 2px; overflow-x: auto; }
-    nav a { padding: 6px 10px; border-left: 0; border-bottom: 3px solid transparent; white-space: nowrap; }
-    nav a:hover, nav a.active { border-bottom-color: var(--ember); }
-    .side-foot { display: none; }
-    section { padding-top: 72px; }
-    #home { padding-top: 64px; min-height: 80vh; }
-    .p-kind { text-align: left; grid-column: 1; }
-    summary { grid-template-columns: 1fr; gap: 4px; }
-    .facts div { border-right: 0; border-bottom: 1px solid var(--line); }
-    .facts div:last-child { border-bottom: 0; }
-    .contact-list li { grid-template-columns: 1fr; gap: 0; }
+  @media (max-width: 900px) {
+    .hero, .about, .two, .cols, .contact { grid-template-columns: 1fr; gap: 40px; }
+    .meter { justify-self: center; }
+    .grid3 { grid-template-columns: 1fr 1fr; }
+    .portrait { max-width: 320px; }
+    .burger { display: block; }
+    nav { position: absolute; top: 64px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--line); display: none; }
+    nav.open { display: block; }
+    nav ul { flex-direction: column; padding: 12px 24px 18px; }
+  }
+  @media (max-width: 600px) {
+    .grid3, .stats, .details, .interests, form .two-in { grid-template-columns: 1fr; }
+    #home { padding-top: 100px; }
   }
 </style>
 </head>
 <body>
-<div class="shell">
 
-  <aside>
-    <div>
-      <a class="brand" href="#home">Magi<span>Ciano</span>S</a>
-      <nav aria-label="Ana menü">
-        <ul>
-          <li><a href="#home" class="active">Ana sayfa</a></li>
-          <li><a href="#about">Hakkımda</a></li>
-          <li><a href="#skills">Yetenekler</a></li>
-          <li><a href="#projects">Projeler</a></li>
-          <li><a href="#contact">İletişim</a></li>
-        </ul>
-      </nav>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#home">Magi<b>Ciano</b>S</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menü</button>
+    <nav id="menu" aria-label="Ana menü">
+      <ul>
+        <li><a href="#home" class="active">Ana sayfa</a></li>
+        <li><a href="#about">Hakkımda</a></li>
+        <li><a href="#resume">Özgeçmiş</a></li>
+        <li><a href="#services">Hizmetler</a></li>
+        <li><a href="#portfolio">Portfolyo</a></li>
+        <li><a href="#contact">İletişim</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ANA SAYFA -->
+  <section id="home">
+    <canvas id="neural" aria-hidden="true"></canvas>
+    <div class="wrap hero">
+      <div class="hero-copy">
+        <p class="hi">Merhaba!</p>
+        <h1>Ben <em>MagiCianoS</em></h1>
+        <p class="role"><span class="typed" id="typed"></span></p>
+        <div class="cta">
+          <a class="btn primary" href="#portfolio">Projeleri gör</a>
+          <a class="btn" href="#contact">İletişime geç</a>
+        </div>
+        <div class="social">
+          <a href="https://github.com/CehennemGibiyim" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Canlı panel -->
+      <div class="meter" id="meter" aria-label="Canlı panel örneği">
+        <div class="m-top">
+          <div class="m-badge">M</div>
+          <div>
+            <div class="m-name">MagiCianoS</div>
+            <div class="m-sub">Bağımsız geliştirici</div>
+          </div>
+          <div class="m-gear" aria-hidden="true">⚙</div>
+        </div>
+        <div class="m-boss">
+          <div class="m-boss-row">
+            <div><span class="m-boss-name" id="bossName">Race Condition</span><span class="m-state" id="state">Savaşta</span></div>
+            <div class="m-time" id="time">00:00</div>
+          </div>
+          <div class="hp"><i id="hp"></i></div>
+          <div class="hp-meta"><span id="hpText">31.000.000 / 50.000.000</span><span id="hpPct">62,0%</span></div>
+        </div>
+        <div class="m-rows" id="rows"></div>
+        <div class="m-foot">Örnek gösterim: projelerim savaşta sıralanır.</div>
+      </div>
     </div>
-    <div class="side-foot">
-      <a href="https://github.com/CehennemGibiyim" rel="noopener">github.com/CehennemGibiyim</a><br>
-      <button type="button" id="theme" aria-label="Temayı değiştir">Tema: otomatik</button>
+  </section>
+
+  <!-- HAKKIMDA -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head"><h2>Hakkımda</h2><p>Beni biraz daha yakından tanı</p></div>
+      <div class="about">
+        <div class="portrait" aria-hidden="true"><span>M</span></div>
+        <div>
+          <h3>Bağımsız Geliştirici</h3>
+          <p>Kendi başlattığım teknik projeler üzerinde çalışıyorum. Bir fikri, kullanılabilir bir araca ya da yayında bir siteye dönüştürmeyi seviyorum.</p>
+          <p>İşlerim web geliştirme, sistem araçları ve uygulama geliştirme arasında dağılıyor: bir gün paket yakalayan bir istemci, ertesi gün bir kurulum paketi ya da zamanlama hatasının peşinde bir hata ayıklama oturumu.</p>
+          <ul class="details">
+            <li><b>GitHub:</b><a href="https://github.com/CehennemGibiyim" rel="noopener">CehennemGibiyim</a></li>
+            <li><b>Çalışma:</b>Bağımsız</li>
+            <li><b>Alanlar:</b>Web, sistem, uygulama</li>
+            <li><b>Dil:</b>Türkçe</li>
+          </ul>
+          <a class="btn primary" href="#contact">Bana ulaş</a>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><b id="statRepos">–</b><span>Herkese açık depo</span></div>
+        <div class="stat"><b>4</b><span>Öne çıkan proje</span></div>
+        <div class="stat"><b>3</b><span>Çalışma alanı</span></div>
+      </div>
+
+      <div class="two">
+        <div>
+          <h3>Yetenekler</h3>
+          <!-- Yüzdeleri kendi seviyene göre data-v değerlerinden değiştir -->
+          <div class="skill"><div class="lbl"><span>HTML ve CSS</span><span>85%</span></div><div class="track"><i data-v="85"></i></div></div>
+          <div class="skill"><div class="lbl"><span>JavaScript</span><span>80%</span></div><div class="track"><i data-v="80"></i></div></div>
+          <div class="skill"><div class="lbl"><span>TypeScript</span><span>55%</span></div><div class="track"><i data-v="55"></i></div></div>
+          <div class="skill"><div class="lbl"><span>PostgreSQL</span><span>60%</span></div><div class="track"><i data-v="60"></i></div></div>
+          <div class="skill"><div class="lbl"><span>REST API</span><span>65%</span></div><div class="track"><i data-v="65"></i></div></div>
+          <div class="skill"><div class="lbl"><span>Git ve GitHub</span><span>80%</span></div><div class="track"><i data-v="80"></i></div></div>
+          <div class="skill"><div class="lbl"><span>Hata ayıklama</span><span>75%</span></div><div class="track"><i data-v="75"></i></div></div>
+        </div>
+        <div>
+          <h3>İlgi alanları</h3>
+          <div class="interests">
+            <div class="interest">Yazılım geliştirme</div>
+            <div class="interest">Oyun araçları</div>
+            <div class="interest">Sistem ve ağ</div>
+            <div class="interest">Problem çözme</div>
+          </div>
+        </div>
+      </div>
     </div>
-  </aside>
+  </section>
 
-  <main>
-    <section id="home">
-      <h1 class="hero-name">Magi<span class="c">Ciano</span>S</h1>
-      <p class="hero-role">Web, sistem araçları ve uygulamalar geliştiren bağımsız geliştirici.</p>
-      <div class="actions">
-        <a class="btn primary" href="#projects">Projelere bak</a>
-        <a class="btn ghost" href="#contact">İletişime geç</a>
-      </div>
-    </section>
-
-    <section id="about" class="about">
-      <h2>Hakkımda</h2>
-      <p>Kendi başlattığım teknik projeler üzerinde çalışan bağımsız bir geliştiriciyim. Bir fikri, kullanılabilir bir araca ya da yayında bir siteye dönüştürmeyi seviyorum.</p>
-      <p>İşlerim web geliştirme, sistem araçları ve uygulama geliştirme arasında dağılıyor: bir gün paket yakalayan bir istemci, ertesi gün bir kurulum paketi ya da zamanlama hatasının peşinde bir hata ayıklama oturumu.</p>
-      <div class="facts">
-        <div><b>Bağımsız</b><span>Kendi projelerim, kendi ritmim</span></div>
-        <div><b>Web, sistem, uygulama</b><span>Üç alanda çalışıyorum</span></div>
-        <div><b>GitHub'da açık</b><span>Projelerin kodu herkese açık</span></div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <h2>Yetenekler</h2>
-      <div class="skill-groups">
-        <div class="skill-group">
-          <h3>Web</h3>
-          <p>Arayüzler, GitHub Pages siteleri ve yönetim panelleri.</p>
-          <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>TypeScript</li><li>i18n</li><li>GitHub Pages</li></ul>
+  <!-- ÖZGEÇMİŞ -->
+  <section id="resume">
+    <div class="wrap">
+      <div class="sec-head"><h2>Özgeçmiş</h2><p>Çalışmalarım ve yaklaşımım</p></div>
+      <div class="cols">
+        <div>
+          <h3>Deneyim</h3>
+          <div class="tl">
+            <article><h4>Bağımsız Geliştirici</h4><div class="who">Kendi projeleri</div><p>Fikirden yayına kadar tüm süreci tek başıma yürütüyorum: tasarım, geliştirme, test ve GitHub üzerinden yayın.</p></article>
+            <article><h4>Albion Market Client</h4><div class="who">Geliştirici</div><p>Paket yakalama istemcisi, ingest API'si ve PostgreSQL ile topluluk kaynaklı pazar verisi.</p></article>
+            <article><h4>Personel26</h4><div class="who">Geliştirici</div><p>Puantaj ve nöbet sistemi; Windows kurulum paketi ve GitHub Pages paneli.</p></article>
+          </div>
         </div>
-        <div class="skill-group">
-          <h3>Sistem araçları ve veri</h3>
-          <p>İstemciler, API'ler ve veri depolama.</p>
-          <ul class="chips"><li>Paket yakalama</li><li>REST API</li><li>PostgreSQL</li><li>Windows kurulum paketleri</li></ul>
-        </div>
-        <div class="skill-group">
-          <h3>Uygulama geliştirme</h3>
-          <p>Masaüstünde çalışan, günlük işi kolaylaştıran uygulamalar.</p>
-          <ul class="chips"><li>Masaüstü uygulamaları</li><li>Hata ayıklama</li><li>Git ve GitHub</li></ul>
+        <div>
+          <h3>Çalışma biçimi</h3>
+          <div class="tl">
+            <article><h4>Önce çalışan hâli</h4><div class="who">Yaklaşım</div><p>Küçük ve çalışan bir sürümü önce yayına alır, sonra geliştiririm.</p></article>
+            <article><h4>Ücretsiz altyapı</h4><div class="who">Yaklaşım</div><p>Barındırmayı mümkün olduğunca ücretsiz kaynaklarla, GitHub üzerinde çözerim.</p></article>
+            <article><h4>Hata avcılığı</h4><div class="who">Yaklaşım</div><p>08Analiz'de çeviri dosyalarının asenkron yüklenmesinden doğan bir yarış durumunu bulup düzelttim.</p></article>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="projects">
-      <h2>Projeler</h2>
-      <div class="projects">
+  <!-- HİZMETLER -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head"><h2>Hizmetler</h2><p>Yapabildiklerim</p></div>
+      <div class="grid3">
+        <div class="svc"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div><h4>Web geliştirme</h4><p>HTML, CSS ve JavaScript ile hızlı, duyarlı siteler ve yönetim panelleri. GitHub Pages'te yayına alırım.</p></div>
+        <div class="svc"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 17l6-6-6-6M12 19h8"/></svg></div><h4>Sistem araçları</h4><p>Paket yakalama gibi düşük seviyeli işleri yapan istemciler ve yardımcı araçlar.</p></div>
+        <div class="svc"><div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/></svg></div><h4>Masaüstü uygulamaları</h4><p>Windows kurulum paketiyle dağıtılan, günlük işi kolaylaştıran uygulamalar.</p></div>
+        <div class="svc"><div class="ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div><h4>API ve veritabanı</h4><p>Veri alan API'ler ve PostgreSQL ile güvenilir depolama.</p></div>
+        <div class="svc"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><h4>Hata ayıklama</h4><p>Zamanlama, asenkron yükleme ve yarış durumu gibi inatçı hataları kök nedenine kadar izlerim.</p></div>
+        <div class="svc"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 7l8-4 8 4-8 4-8-4zM4 12l8 4 8-4M4 17l8 4 8-4"/></svg></div><h4>JavaScript'ten TypeScript'e</h4><p>Mevcut JavaScript projelerini adım adım TypeScript'e taşırım.</p></div>
+      </div>
+    </div>
+  </section>
 
-        <details>
-          <summary>
-            <span class="p-title">Albion Market Client</span>
-            <span class="p-kind">İstemci, API, veritabanı</span>
-          </summary>
-          <div class="p-body">
-            <p>Albion Online için topluluk kaynaklı pazar verisi toplayan proje. Oyun trafiğinden paket yakalayan bir istemci, verileri alan bir ingest API'si ve PostgreSQL ile depolama içeriyor. Barındırma tamamen ücretsiz kaynaklarla çözülüyor.</p>
-            <a href="https://github.com/CehennemGibiyim" rel="noopener">GitHub profilinde ara</a>
-          </div>
-        </details>
-
-        <details>
-          <summary>
-            <span class="p-title">AoT-PNASF</span>
-            <span class="p-kind">Albion Online aracı, web</span>
-          </summary>
-          <div class="p-body">
-            <p>Albion Online için hazırladığım bir araç. GitHub Pages üzerinde yayında ve kod tabanı JavaScript'ten TypeScript'e taşınıyor.</p>
-            <a href="https://github.com/CehennemGibiyim/AoT-PNASF" rel="noopener">Depoyu aç</a>
-          </div>
-        </details>
-
-        <details>
-          <summary>
-            <span class="p-title">Personel26</span>
-            <span class="p-kind">Masaüstü ve web paneli</span>
-          </summary>
-          <div class="p-body">
-            <p>Puantaj ve nöbet sistemi. Windows kurulum paketiyle masaüstüne kuruluyor, yönetim paneli GitHub Pages üzerinden açılıyor.</p>
-            <a href="https://github.com/CehennemGibiyim/Personel26" rel="noopener">Depoyu aç</a>
-          </div>
-        </details>
-
-        <details>
-          <summary>
-            <span class="p-title">08Analiz</span>
-            <span class="p-kind">Web, hata ayıklama</span>
-          </summary>
-          <div class="p-body">
-            <p>Çok dilli (i18n) arayüzde, asenkron çeviri dosyalarının yüklenme sırasından doğan bir yarış durumunu (race condition) bulup düzelttiğim proje.</p>
-            <a href="https://github.com/CehennemGibiyim/08Analiz" rel="noopener">Depoyu aç</a>
-          </div>
-        </details>
-
+  <!-- PORTFOLYO -->
+  <section id="portfolio">
+    <div class="wrap">
+      <div class="sec-head"><h2>Portfolyo</h2><p>Çalışmalarım</p></div>
+      <div class="filters" role="group" aria-label="Proje filtresi">
+        <button type="button" data-f="all" aria-pressed="true">Tümü</button>
+        <button type="button" data-f="app" aria-pressed="false">Uygulama</button>
+        <button type="button" data-f="web" aria-pressed="false">Web</button>
+      </div>
+      <div class="grid3" id="works">
+        <article class="work" data-t="app">
+          <div class="thumb t1"><span>Albion Market Client</span></div>
+          <div class="info"><h4>Albion Market Client</h4><div class="kind">İstemci, API, veritabanı</div><p>Albion Online için topluluk kaynaklı pazar verisi: paket yakalama istemcisi, ingest API'si ve PostgreSQL. Barındırma ücretsiz kaynaklarla.</p><a href="https://github.com/CehennemGibiyim" rel="noopener">GitHub profilinde ara</a></div>
+        </article>
+        <article class="work" data-t="web">
+          <div class="thumb t2"><span>AoT-PNASF</span></div>
+          <div class="info"><h4>AoT-PNASF</h4><div class="kind">Albion Online aracı, web</div><p>GitHub Pages üzerinde yayında; kod tabanı JavaScript'ten TypeScript'e taşınıyor.</p><a href="https://github.com/CehennemGibiyim/AoT-PNASF" rel="noopener">Depoyu aç</a></div>
+        </article>
+        <article class="work" data-t="app">
+          <div class="thumb t3"><span>Personel26</span></div>
+          <div class="info"><h4>Personel26</h4><div class="kind">Masaüstü ve web paneli</div><p>Puantaj ve nöbet sistemi. Windows kurulum paketiyle kurulur, panel GitHub Pages'ten açılır.</p><a href="https://github.com/CehennemGibiyim/Personel26" rel="noopener">Depoyu aç</a></div>
+        </article>
+        <article class="work" data-t="web">
+          <div class="thumb t4"><span>08Analiz</span></div>
+          <div class="info"><h4>08Analiz</h4><div class="kind">Web, hata ayıklama</div><p>Çok dilli arayüzde asenkron çeviri yüklemesinden doğan yarış durumunun bulunup düzeltildiği proje.</p><a href="https://github.com/CehennemGibiyim/08Analiz" rel="noopener">Depoyu aç</a></div>
+        </article>
       </div>
 
       <h3 class="more-title">GitHub'daki diğer depolar</h3>
       <p class="more-note">Bu liste GitHub'dan otomatik gelir; yeni açtığın herkese açık depolar kendiliğinden eklenir.</p>
       <ul class="repo-list" id="repo-list"></ul>
       <p class="repo-status" id="repo-status">Depolar yükleniyor…</p>
-    </section>
+    </div>
+  </section>
 
-    <section id="contact">
-      <h2>İletişim</h2>
-      <ul class="contact-list">
-        <li><span class="k">GitHub</span><a href="https://github.com/CehennemGibiyim" rel="noopener">github.com/CehennemGibiyim</a></li>
-        <!-- E-posta eklemek için aşağıdaki satırı açın ve adresi değiştirin:
-        <li><span class="k">E-posta</span><a href="mailto:adres@ornek.com">adres@ornek.com</a></li> -->
-      </ul>
-    </section>
+  <!-- İLETİŞİM -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head"><h2>İletişim</h2><p>Bana ulaşın</p></div>
+      <div class="contact">
+        <div>
+          <div class="c-item"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></div><div><h4>GitHub</h4><a href="https://github.com/CehennemGibiyim" rel="noopener">github.com/CehennemGibiyim</a></div></div>
+          <div class="c-item"><div class="ico"><svg viewBox="0 0 24 24"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13zm2.2.5L12 11.6 19.8 6H4.2z"/></svg></div><div><h4>E-posta</h4><p id="mailShow">Henüz eklenmedi</p></div></div>
+        </div>
+        <form id="form" novalidate>
+          <div class="two-in">
+            <label>Adınız<input name="n" autocomplete="name" required></label>
+            <label>E-posta<input name="e" type="email" autocomplete="email" required></label>
+          </div>
+          <label>Konu<input name="s"></label>
+          <label>Mesajınız<textarea name="m" required></textarea></label>
+          <div><button class="btn primary" type="submit">Mesaj gönder</button></div>
+          <p class="form-msg" id="formMsg" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
 
-    <footer>© <span id="year"></span> MagiCianoS</footer>
-  </main>
-</div>
+<footer>
+  <div class="wrap"><span>© <span id="year"></span> MagiCianoS</span><a href="#home">Başa dön</a></div>
+</footer>
 
 <script>
+(function () {
+  var USER = 'CehennemGibiyim';
+  var EMAIL = ''; // E-posta adresini buraya yaz: 'adres@ornek.com'
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Menüde görünen bölümü işaretle
-  var links = document.querySelectorAll('nav a');
-  var map = {};
+  /* Mobil menü */
+  var burger = document.getElementById('burger'), menu = document.getElementById('menu');
+  burger.addEventListener('click', function () {
+    var o = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', o);
+  });
+  menu.addEventListener('click', function (e) { if (e.target.tagName === 'A') { menu.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); } });
+
+  /* Menüde aktif bölüm */
+  var links = document.querySelectorAll('nav a'), map = {};
   links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
   if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          links.forEach(function (a) { a.classList.remove('active'); });
-          if (map[e.target.id]) map[e.target.id].classList.add('active');
-        }
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { links.forEach(function (a) { a.classList.remove('active'); }); if (map[e.target.id]) map[e.target.id].classList.add('active'); }
       });
-    }, { rootMargin: '-40% 0px -55% 0px' });
+    }, { rootMargin: '-45% 0px -50% 0px' });
     document.querySelectorAll('main section').forEach(function (s) { io.observe(s); });
+
+    /* Yetenek çubukları görününce dolsun */
+    var so = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.style.width = e.target.dataset.v + '%'; so.unobserve(e.target); } });
+    }, { threshold: .4 });
+    document.querySelectorAll('.track i').forEach(function (i) { so.observe(i); });
+  } else {
+    document.querySelectorAll('.track i').forEach(function (i) { i.style.width = i.dataset.v + '%'; });
   }
 
-  // GitHub'daki herkese açık depoları otomatik listele
-  (function () {
-    var USER = 'CehennemGibiyim';
-    // Yukarıda elle yazdığım projeler tekrar listelenmesin
-    var skip = ['aot-pnasf', 'personel26', '08analiz', USER.toLowerCase() + '.github.io'];
-    var list = document.getElementById('repo-list');
-    var status = document.getElementById('repo-status');
+  /* Yazan başlık */
+  var typed = document.getElementById('typed');
+  var words = ['Bağımsız Geliştirici', 'Web Geliştirici', 'Sistem Araçları', 'Uygulama Geliştirici'];
+  if (reduce) { typed.textContent = words[0]; }
+  else {
+    var wi = 0, ci = 0, del = false;
+    (function tick() {
+      var w = words[wi];
+      typed.textContent = w.slice(0, ci);
+      var delay = del ? 40 : 85;
+      if (!del && ci === w.length) { del = true; delay = 1500; }
+      else if (del && ci === 0) { del = false; wi = (wi + 1) % words.length; delay = 350; }
+      else { ci += del ? -1 : 1; }
+      setTimeout(tick, delay);
+    })();
+  }
 
-    function el(tag, cls, text) {
-      var n = document.createElement(tag);
-      if (cls) n.className = cls;
-      if (text) n.textContent = text;
-      return n;
+  /* Canlı panel */
+  var fmt = function (n) { return Math.round(n).toLocaleString('tr-TR'); };
+  var projects = [
+    { n: 'Albion Market Client', b: 9.2 },
+    { n: 'AoT-PNASF', b: 7.4 },
+    { n: 'Personel26', b: 6.1 },
+    { n: '08Analiz', b: 4.8 }
+  ];
+  var ROW_H = 44, BOSS = 50000000;
+  var rowsEl = document.getElementById('rows');
+  rowsEl.style.height = (projects.length * ROW_H) + 'px';
+  projects.forEach(function (p, i) {
+    var r = document.createElement('div');
+    r.className = 'row';
+    r.innerHTML = '<div class="fill"></div><div class="txt"><span><span class="rk"></span>' + p.n + '</span><span class="v"></span></div>';
+    r.style.transform = 'translateY(' + (i * ROW_H) + 'px)';
+    rowsEl.appendChild(r);
+    p.el = r; p.cur = p.b * 100000; p.tot = 0;
+  });
+  var hp = document.getElementById('hp'), hpText = document.getElementById('hpText'), hpPct = document.getElementById('hpPct'),
+      timeEl = document.getElementById('time'), state = document.getElementById('state');
+  var t = 0, boss = 31000000, startBoss = 31000000, phase = 'fight', wait = 0;
+
+  function render() {
+    var sorted = projects.slice().sort(function (a, b) { return b.cur - a.cur; });
+    var top = sorted[0].cur || 1;
+    sorted.forEach(function (p, i) {
+      p.el.style.transform = 'translateY(' + (i * ROW_H) + 'px)';
+      p.el.querySelector('.fill').style.width = Math.max(6, p.cur / top * 100) + '%';
+      p.el.querySelector('.rk').textContent = (i + 1) + '.';
+      p.el.querySelector('.v').textContent = fmt(p.cur / 10) + ' / sn';
+    });
+    var pct = Math.max(0, boss / BOSS * 100);
+    hp.style.width = pct + '%';
+    hpText.textContent = fmt(Math.max(0, boss)) + ' / ' + fmt(BOSS);
+    hpPct.textContent = pct.toFixed(1).replace('.', ',') + '%';
+    var s = Math.floor(t), mm = ('0' + Math.floor(s / 60)).slice(-2), ss = ('0' + (s % 60)).slice(-2);
+    timeEl.textContent = mm + ':' + ss;
+  }
+
+  function step() {
+    if (phase === 'fight') {
+      t += 0.5;
+      var total = 0;
+      projects.forEach(function (p) {
+        var wobble = 0.75 + 0.5 * Math.sin(t * 0.7 + p.b * 3) + (Math.random() - 0.5) * 0.25;
+        p.cur += (p.b * 100000 * wobble - p.cur) * 0.35;
+        total += p.cur / 10 * 0.5;
+      });
+      boss -= total;
+      if (boss <= 0) { boss = 0; phase = 'done'; wait = 5; state.textContent = 'Çözüldü'; state.classList.add('done'); }
+    } else {
+      wait -= 1;
+      if (wait <= 0) { phase = 'fight'; t = 0; boss = startBoss = 31000000 + Math.floor(Math.random() * 12000000); state.textContent = 'Savaşta'; state.classList.remove('done'); }
+    }
+    render();
+  }
+  render();
+  if (!reduce) setInterval(step, 500);
+
+  /* Sinir ağı: fareye tepki verir */
+  (function () {
+    var c = document.getElementById('neural'), home = document.getElementById('home');
+    var ctx = c.getContext('2d');
+    var W = 0, H = 0, nodes = [], pulses = [], frame = 0, running = true, conf = '0,94';
+    var mouse = { x: -9999, y: -9999, on: false };
+    var LINK = 130, MR = 180;
+
+    function size() {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = home.clientWidth; H = home.clientHeight;
+      c.width = W * dpr; c.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var n = Math.min(120, Math.max(30, Math.round(W * H / 15000)));
+      nodes = [];
+      for (var i = 0; i < n; i++) {
+        nodes.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35, r: 1.4 + Math.random() * 1.6 });
+      }
+      pulses = [];
+      if (reduce) draw();
     }
 
-    fetch('https://api.github.com/users/' + USER + '/repos?per_page=100&sort=updated')
-      .then(function (r) {
-        if (!r.ok) throw new Error(r.status);
-        return r.json();
-      })
-      .then(function (repos) {
-        var shown = repos.filter(function (r) {
-          return !r.fork && !r.archived && skip.indexOf(r.name.toLowerCase()) === -1;
-        });
-        if (!shown.length) { status.textContent = 'Listelenecek başka herkese açık depo yok.'; return; }
-        shown.forEach(function (r) {
-          var li = el('li');
-          var a = el('a');
-          a.href = r.html_url;
-          a.rel = 'noopener';
-          a.appendChild(el('span', 'r-name', r.name));
-          a.appendChild(el('span', 'r-meta', r.language || ''));
-          if (r.description) a.appendChild(el('span', 'r-desc', r.description));
-          li.appendChild(a);
-          list.appendChild(li);
-        });
-        status.remove();
-      })
-      .catch(function () {
-        status.textContent = 'Depolar şu an yüklenemedi. Tüm projeler için github.com/' + USER + ' adresine bakabilirsin.';
+    function neighbors(i) {
+      var a = nodes[i], out = [];
+      for (var j = 0; j < nodes.length; j++) {
+        if (j === i) continue;
+        var dx = a.x - nodes[j].x, dy = a.y - nodes[j].y;
+        if (dx * dx + dy * dy < LINK * LINK) out.push(j);
+      }
+      return out;
+    }
+
+    function spawnPulse() {
+      var start;
+      if (mouse.on) {
+        var best = -1, bd = 1e9;
+        nodes.forEach(function (nd, i) { var d = Math.hypot(nd.x - mouse.x, nd.y - mouse.y); if (d < bd) { bd = d; best = i; } });
+        start = best;
+      } else start = Math.floor(Math.random() * nodes.length);
+      var nb = neighbors(start);
+      if (!nb.length) return;
+      pulses.push({ a: start, b: nb[Math.floor(Math.random() * nb.length)], t: 0, hops: 0 });
+    }
+
+    function step() {
+      nodes.forEach(function (n) {
+        if (mouse.on) {
+          var dx = mouse.x - n.x, dy = mouse.y - n.y, d = Math.hypot(dx, dy);
+          if (d < MR && d > 30) { var f = (1 - d / MR) * 0.035; n.vx += dx / d * f; n.vy += dy / d * f; }
+        }
+        n.vx *= 0.985; n.vy *= 0.985;
+        var sp = Math.hypot(n.vx, n.vy);
+        if (sp < 0.12) { n.vx += (Math.random() - .5) * .04; n.vy += (Math.random() - .5) * .04; }
+        if (sp > 1.4) { n.vx *= 1.4 / sp; n.vy *= 1.4 / sp; }
+        n.x += n.vx; n.y += n.vy;
+        if (n.x < 0 || n.x > W) { n.vx *= -1; n.x = Math.max(0, Math.min(W, n.x)); }
+        if (n.y < 0 || n.y > H) { n.vy *= -1; n.y = Math.max(0, Math.min(H, n.y)); }
       });
+      pulses.forEach(function (p) { p.t += 0.045; });
+      pulses = pulses.filter(function (p) {
+        if (p.t < 1) return true;
+        if (p.hops >= 5) return false;
+        var nb = neighbors(p.b).filter(function (j) { return j !== p.a; });
+        if (!nb.length) return false;
+        p.a = p.b; p.b = nb[Math.floor(Math.random() * nb.length)]; p.t = 0; p.hops++;
+        return true;
+      });
+      if (frame % 22 === 0 && pulses.length < 14) spawnPulse();
+      if (frame % 12 === 0) conf = (0.86 + Math.random() * 0.13).toFixed(2).replace('.', ',');
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      var i, j, a, b, d, al;
+      ctx.lineWidth = 1;
+      for (i = 0; i < nodes.length; i++) {
+        a = nodes[i];
+        for (j = i + 1; j < nodes.length; j++) {
+          b = nodes[j]; d = Math.hypot(a.x - b.x, a.y - b.y);
+          if (d < LINK) {
+            al = (1 - d / LINK) * 0.28;
+            ctx.strokeStyle = 'rgba(255,130,80,' + al + ')';
+            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+          }
+        }
+      }
+      if (mouse.on) {
+        for (i = 0; i < nodes.length; i++) {
+          a = nodes[i]; d = Math.hypot(a.x - mouse.x, a.y - mouse.y);
+          if (d < MR) {
+            al = (1 - d / MR) * 0.75;
+            ctx.strokeStyle = 'rgba(255,170,70,' + al + ')';
+            ctx.lineWidth = 1.2;
+            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
+          }
+        }
+        ctx.lineWidth = 1;
+      }
+      for (i = 0; i < nodes.length; i++) {
+        a = nodes[i];
+        var near = mouse.on ? Math.max(0, 1 - Math.hypot(a.x - mouse.x, a.y - mouse.y) / MR) : 0;
+        ctx.fillStyle = near > 0 ? 'rgba(255,' + Math.round(130 + 90 * near) + ',70,' + (0.55 + near * 0.45) + ')' : 'rgba(255,140,90,.55)';
+        ctx.beginPath(); ctx.arc(a.x, a.y, a.r + near * 2, 0, 6.2832); ctx.fill();
+      }
+      pulses.forEach(function (p) {
+        var A = nodes[p.a], B = nodes[p.b]; if (!A || !B) return;
+        var x = A.x + (B.x - A.x) * p.t, y = A.y + (B.y - A.y) * p.t;
+        var g = ctx.createRadialGradient(x, y, 0, x, y, 12);
+        g.addColorStop(0, 'rgba(255,230,160,.95)'); g.addColorStop(1, 'rgba(255,120,60,0)');
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, 12, 0, 6.2832); ctx.fill();
+      });
+      if (mouse.on) {
+        ctx.beginPath(); ctx.arc(mouse.x, mouse.y, 5, 0, 6.2832);
+        ctx.fillStyle = 'rgba(255,200,120,.95)'; ctx.fill();
+        ctx.beginPath(); ctx.arc(mouse.x, mouse.y, 14 + Math.sin(frame / 8) * 2, 0, 6.2832);
+        ctx.strokeStyle = 'rgba(255,170,70,.5)'; ctx.stroke();
+        ctx.font = '13px "IBM Plex Sans", sans-serif';
+        ctx.fillStyle = 'rgba(255,214,160,.9)';
+        ctx.fillText('çıkarım ' + conf, mouse.x + 20, mouse.y - 14);
+      }
+    }
+
+    function loop() {
+      if (running) { frame++; step(); draw(); }
+      requestAnimationFrame(loop);
+    }
+
+    home.addEventListener('pointermove', function (e) {
+      var r = c.getBoundingClientRect();
+      mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; mouse.on = true;
+    });
+    home.addEventListener('pointerleave', function () { mouse.on = false; mouse.x = mouse.y = -9999; });
+    var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(size, 200); });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) { running = es[0].isIntersecting; }).observe(home);
+    }
+    size();
+    if (!reduce) loop();
   })();
 
-  // Tema: otomatik → koyu → açık
-  var btn = document.getElementById('theme');
-  var states = ['auto', 'dark', 'light'];
-  var labels = { auto: 'Tema: otomatik', dark: 'Tema: koyu', light: 'Tema: açık' };
-  var i = 0;
-  try { var saved = localStorage.getItem('theme'); if (saved && states.indexOf(saved) > -1) i = states.indexOf(saved); } catch (e) {}
-  function apply() {
-    var s = states[i];
-    if (s === 'auto') document.documentElement.removeAttribute('data-theme');
-    else document.documentElement.setAttribute('data-theme', s);
-    btn.textContent = labels[s];
-    try { localStorage.setItem('theme', s); } catch (e) {}
-  }
-  btn.addEventListener('click', function () { i = (i + 1) % states.length; apply(); });
-  apply();
+  /* Portfolyo filtresi */
+  var btns = document.querySelectorAll('.filters button'), works = document.querySelectorAll('.work');
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      btns.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+      b.setAttribute('aria-pressed', 'true');
+      works.forEach(function (w) { w.classList.toggle('hide', b.dataset.f !== 'all' && w.dataset.t !== b.dataset.f); });
+    });
+  });
+
+  /* GitHub'daki herkese açık depolar */
+  var skip = ['aot-pnasf', 'personel26', '08analiz', USER.toLowerCase() + '.github.io'];
+  var list = document.getElementById('repo-list'), status = document.getElementById('repo-status'), stat = document.getElementById('statRepos');
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; }
+  fetch('https://api.github.com/users/' + USER + '/repos?per_page=100&sort=updated')
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (repos) {
+      stat.textContent = repos.length;
+      var shown = repos.filter(function (r) { return !r.fork && !r.archived && skip.indexOf(r.name.toLowerCase()) === -1; });
+      if (!shown.length) { status.textContent = 'Listelenecek başka herkese açık depo yok.'; return; }
+      shown.forEach(function (r) {
+        var li = el('li'), a = el('a');
+        a.href = r.html_url; a.rel = 'noopener';
+        a.appendChild(el('span', 'r-name', r.name));
+        a.appendChild(el('span', 'r-meta', r.language || ''));
+        if (r.description) a.appendChild(el('span', 'r-desc', r.description));
+        li.appendChild(a); list.appendChild(li);
+      });
+      status.remove();
+    })
+    .catch(function () {
+      stat.textContent = '4+';
+      status.textContent = 'Depolar şu an yüklenemedi. Tüm projeler için github.com/' + USER + ' adresine bakabilirsin.';
+    });
+
+  /* İletişim formu: e-posta uygulamanı açar */
+  var mailShow = document.getElementById('mailShow');
+  if (EMAIL) { mailShow.innerHTML = ''; var ma = document.createElement('a'); ma.href = 'mailto:' + EMAIL; ma.textContent = EMAIL; mailShow.appendChild(ma); }
+  var form = document.getElementById('form'), msg = document.getElementById('formMsg');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = form.elements;
+    if (!f.n.value.trim() || !f.e.value.trim() || !f.m.value.trim()) { msg.textContent = 'Ad, e-posta ve mesaj alanlarını doldur.'; return; }
+    if (!EMAIL) { msg.textContent = 'E-posta adresi henüz eklenmedi. Şimdilik GitHub üzerinden ulaşabilirsin.'; return; }
+    var body = f.m.value + '\n\n— ' + f.n.value + ' (' + f.e.value + ')';
+    location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(f.s.value || 'Site mesajı') + '&body=' + encodeURIComponent(body);
+    msg.textContent = 'E-posta uygulaman açılıyor.';
+  });
+})();
 </script>
 </body>
 </html>
