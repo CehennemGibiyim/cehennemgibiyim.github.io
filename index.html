@@ -71,13 +71,13 @@
       radial-gradient(900px 520px at 85% 30%, rgba(255,90,54,.16), transparent 60%),
       radial-gradient(700px 400px at 5% 90%, rgba(255,154,60,.08), transparent 60%);
   }
-  #home { position: relative; overflow: hidden; }
-  #neural { position: absolute; inset: 0; width: 100%; height: 100%; display: block; z-index: 0; pointer-events: none; }
+  #neural { position: fixed; inset: 0; width: 100%; height: 100%; display: block; z-index: 0; pointer-events: none; }
+  main, footer { position: relative; z-index: 1; }
   .hero { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; padding-bottom: 60px; }
   .hi { color: var(--ember); font-weight: 500; font-size: 20px; margin-bottom: 8px; }
   .hero h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 800; letter-spacing: -0.04em; line-height: .98; }
   .hero h1 em { font-style: normal; display: inline-block; }
-  .glow-text { background: radial-gradient(circle 190px at var(--gx, 50%) var(--gy, 50%), #fff0c4 0%, var(--ember2) 32%, var(--ember) 66%, #c2331f 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .glow-text { background: radial-gradient(circle 190px at var(--gx, 50%) var(--gy, 50%), #fff0c4 0%, var(--ember2) 32%, var(--ember) 66%, #e2472b 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .btn.wa:hover { border-color: #25d366; color: #25d366; }
   .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
   .role { margin-top: 18px; font-size: clamp(20px, 2.4vw, 26px); color: var(--mute); }
@@ -244,6 +244,7 @@
 </style>
 </head>
 <body>
+<canvas id="neural" aria-hidden="true"></canvas>
 
 <header>
   <div class="wrap bar">
@@ -265,7 +266,6 @@
 <main>
   <!-- ANA SAYFA -->
   <section id="home">
-    <canvas id="neural" aria-hidden="true"></canvas>
     <div class="wrap hero">
       <div class="hero-copy">
         <p class="hi">Merhaba!</p>
@@ -337,14 +337,8 @@
       <div class="two">
         <div>
           <h3>Yetenekler</h3>
-          <!-- Yüzdeleri kendi seviyene göre data-v değerlerinden değiştir -->
-          <div class="skill"><div class="lbl"><span>HTML ve CSS</span><span>85%</span></div><div class="track"><i data-v="85"></i></div></div>
-          <div class="skill"><div class="lbl"><span>JavaScript</span><span>80%</span></div><div class="track"><i data-v="80"></i></div></div>
-          <div class="skill"><div class="lbl"><span>TypeScript</span><span>55%</span></div><div class="track"><i data-v="55"></i></div></div>
-          <div class="skill"><div class="lbl"><span>PostgreSQL</span><span>60%</span></div><div class="track"><i data-v="60"></i></div></div>
-          <div class="skill"><div class="lbl"><span>REST API</span><span>65%</span></div><div class="track"><i data-v="65"></i></div></div>
-          <div class="skill"><div class="lbl"><span>Git ve GitHub</span><span>80%</span></div><div class="track"><i data-v="80"></i></div></div>
-          <div class="skill"><div class="lbl"><span>Hata ayıklama</span><span>75%</span></div><div class="track"><i data-v="75"></i></div></div>
+          <p class="more-note">Oranlar, GitHub'daki tüm projelerimde yazdığım kod miktarına göre otomatik hesaplanır. Yeni bir dilde proje açtığımda kendiliğinden eklenir.</p>
+          <div id="skill-list"><p class="repo-status" id="skill-status">Yetenekler yükleniyor…</p></div>
         </div>
         <div>
           <h3>İlgi alanları</h3>
@@ -596,7 +590,7 @@
 
   /* Sinir ağı: fareye tepki verir */
   (function () {
-    var c = document.getElementById('neural'), home = document.getElementById('home');
+    var c = document.getElementById('neural');
     var ctx = c.getContext('2d');
     var W = 0, H = 0, nodes = [], pulses = [], frame = 0, running = true, conf = '0,94';
     var mouse = { x: -9999, y: -9999, on: false };
@@ -623,7 +617,7 @@
 
     function size() {
       var dpr = Math.min(window.devicePixelRatio || 1, 2);
-      W = home.clientWidth; H = home.clientHeight;
+      W = window.innerWidth; H = window.innerHeight;
       c.width = W * dpr; c.height = H * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       var n = Math.min(120, Math.max(30, Math.round(W * H / 15000)));
@@ -740,15 +734,23 @@
       requestAnimationFrame(loop);
     }
 
-    home.addEventListener('pointermove', function (e) {
-      var r = c.getBoundingClientRect();
-      mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; mouse.on = true;
+    window.addEventListener('pointermove', function (e) {
+      mouse.x = e.clientX; mouse.y = e.clientY; mouse.on = true;
     });
-    home.addEventListener('pointerleave', function () { mouse.on = false; mouse.x = mouse.y = -9999; });
-    var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(size, 200); });
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (es) { running = es[0].isIntersecting; }).observe(home);
-    }
+    function leave() { mouse.on = false; mouse.x = mouse.y = -9999; }
+    document.documentElement.addEventListener('pointerleave', leave);
+    window.addEventListener('blur', leave);
+    var rt; window.addEventListener('resize', function () {
+      clearTimeout(rt);
+      rt = setTimeout(function () {
+        if (window.innerWidth !== W) { size(); return; }
+        // Yalnızca yükseklik değiştiyse (mobil adres çubuğu) ağı bozmadan tuvali uzat
+        var d = Math.min(window.devicePixelRatio || 1, 2);
+        H = window.innerHeight; c.width = W * d; c.height = H * d; ctx.setTransform(d, 0, 0, d, 0, 0);
+        if (reduce) draw();
+      }, 200);
+    });
+    document.addEventListener('visibilitychange', function () { running = !document.hidden; });
     size();
     if (!reduce) loop();
   })();
@@ -769,10 +771,71 @@
   var CACHE_KEY = 'repos:' + USER, hasData = false, lastLoad = 0;
   function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; }
 
+  // Yetenekler: tüm projelerdeki dil dağılımından otomatik hesaplanır
+  var LANG_KEY = 'langs:' + USER, langCache = {}, lastSkillSig = '', skillBusy = false, pendingRepos = null;
+  try { langCache = JSON.parse(localStorage.getItem(LANG_KEY) || '{}') || {}; } catch (e) { langCache = {}; }
+  var skillList = document.getElementById('skill-list'), skillStatus = document.getElementById('skill-status');
+
+  function renderSkills(totals) {
+    var arr = Object.keys(totals).map(function (k) { return { n: k, b: totals[k] }; }).sort(function (a, b) { return b.b - a.b; });
+    var sum = arr.reduce(function (a, x) { return a + x.b; }, 0);
+    if (!sum) return false;
+    skillList.innerHTML = '';
+    var max = arr[0].b;
+    arr.forEach(function (x) {
+      var share = x.b / sum * 100;
+      var label = share < 1 ? '<1%' : (share < 10 ? share.toFixed(1).replace('.', ',') : Math.round(share)) + '%';
+      var row = el('div', 'skill'), lbl = el('div', 'lbl'), tr = el('div', 'track'), bar = document.createElement('i');
+      lbl.appendChild(el('span', '', x.n)); lbl.appendChild(el('span', '', label));
+      bar.dataset.v = Math.max(3, x.b / max * 100).toFixed(1);
+      tr.appendChild(bar); row.appendChild(lbl); row.appendChild(tr);
+      skillList.appendChild(row);
+      if (typeof so !== 'undefined' && so) so.observe(bar); else bar.style.width = bar.dataset.v + '%';
+    });
+    return true;
+  }
+
+  function updateSkills(repos) {
+    if (skillBusy) { pendingRepos = repos; return; }
+    skillBusy = true;
+    var own = repos.filter(function (r) { return !r.fork && !r.archived && r.name.toLowerCase() !== USER.toLowerCase() + '.github.io'; });
+    var need = own.filter(function (r) { var c = langCache[r.name]; return !c || c.p !== (r.pushed_at || r.updated_at); });
+
+    function finish() {
+      var totals = {};
+      own.forEach(function (r) {
+        var c = langCache[r.name];
+        if (c && c.l) Object.keys(c.l).forEach(function (k) { totals[k] = (totals[k] || 0) + c.l[k]; });
+      });
+      if (!Object.keys(totals).length) { // diller okunamadıysa depo başına ana dil sayılır
+        own.forEach(function (r) { if (r.language) totals[r.language] = (totals[r.language] || 0) + 1; });
+      }
+      var sig = JSON.stringify(totals);
+      if (sig !== lastSkillSig) {
+        if (renderSkills(totals)) lastSkillSig = sig;
+        else if (!lastSkillSig) skillStatus.textContent = 'Henüz listelenecek bir dil bulunamadı.';
+      }
+      skillBusy = false;
+      if (pendingRepos) { var nx = pendingRepos; pendingRepos = null; updateSkills(nx); }
+    }
+
+    if (!need.length) { finish(); return; }
+    Promise.all(need.map(function (r) {
+      return fetch('https://api.github.com/repos/' + USER + '/' + encodeURIComponent(r.name) + '/languages')
+        .then(function (x) { if (!x.ok) throw new Error(x.status); return x.json(); })
+        .then(function (l) { langCache[r.name] = { p: r.pushed_at || r.updated_at, l: l }; })
+        .catch(function () {});
+    })).then(function () {
+      try { localStorage.setItem(LANG_KEY, JSON.stringify(langCache)); } catch (e) {}
+      finish();
+    });
+  }
+
   // Depo listesini panele, sayaca ve alttaki listeye uygular
   function applyRepos(repos) {
     hasData = true;
     stat.textContent = repos.length;
+    updateSkills(repos);
 
     // Panel: tüm projeler (fork ve arşivlenmişler hariç), en son güncellenen en üstte
     var own = repos.filter(function (r) { return !r.fork && !r.archived && r.name.toLowerCase() !== USER.toLowerCase() + '.github.io'; });
@@ -813,6 +876,7 @@
       .catch(function () {
         if (!hasData) {
           stat.textContent = '4+';
+          if (skillStatus) skillStatus.textContent = 'Yetenekler şu an yüklenemedi.';
           status.hidden = false;
           status.textContent = 'Depolar şu an yüklenemedi. Tüm projeler için github.com/' + USER + ' adresine bakabilirsin.';
         }
