@@ -89,35 +89,22 @@
   .social svg { width: 20px; height: 20px; fill: currentColor; }
 
   /* Canlı panel (WizMeter tarzı) */
-  .meter {
-    background: rgba(13,14,20,.92); border: 1px solid var(--line); border-radius: 14px;
-    box-shadow: 0 30px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(255,90,54,.08), 0 0 60px rgba(255,90,54,.12);
-    overflow: hidden; width: 100%; max-width: 440px; justify-self: end;
-    animation: float 6s ease-in-out infinite;
-  }
-  @keyframes float { 50% { transform: translateY(-10px); } }
-  .m-top { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--line); }
-  .m-badge { width: 34px; height: 34px; border-radius: 8px; background: linear-gradient(135deg, var(--ember), var(--ember2)); display: grid; place-items: center; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; color: #1a0a05; }
-  .m-name { font-weight: 500; line-height: 1.2; }
-  .m-sub { color: var(--mute); font-size: 13px; }
-  .m-gear { margin-left: auto; color: var(--mute); }
-  .m-boss { padding: 14px 16px 6px; }
+  .meter { width: 100%; max-width: 380px; justify-self: end; background: transparent; text-shadow: 0 1px 8px rgba(0,0,0,.9); }
+  .m-boss { padding: 0 0 4px; font-size: 15px; }
   .m-boss-row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
   .m-boss-name { font-weight: 500; }
   .m-state { font-size: 13px; color: var(--ember2); margin-left: 8px; }
   .m-state.done { color: var(--ok); }
   .m-time { font-variant-numeric: tabular-nums; font-weight: 500; }
-  .hp { margin-top: 8px; height: 14px; background: #1b1e2a; border-radius: 7px; overflow: hidden; position: relative; }
-  .hp > i { position: absolute; inset: 0 auto 0 0; width: 100%; background: linear-gradient(90deg, #b8230a, var(--ember)); border-radius: 7px; transition: width .35s linear; }
-  .hp-meta { display: flex; justify-content: space-between; font-size: 13px; color: var(--mute); margin-top: 6px; font-variant-numeric: tabular-nums; }
-  .m-rows { position: relative; margin: 12px 16px 16px; max-height: 264px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+  .hp { margin-top: 6px; height: 4px; background: rgba(255,255,255,.08); border-radius: 2px; overflow: hidden; position: relative; }
+  .hp > i { position: absolute; inset: 0 auto 0 0; width: 100%; background: linear-gradient(90deg, #b8230a, var(--ember)); border-radius: 2px; transition: width .35s linear; }
+  .m-rows { position: relative; margin: 10px 0 0; max-height: 210px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
   .m-rows-in { position: relative; }
-  .row { position: absolute; left: 0; right: 0; height: 40px; transition: transform .5s cubic-bezier(.3,.7,.2,1); }
-  .row .fill { position: absolute; inset: 0 auto 0 0; background: linear-gradient(90deg, rgba(255,90,54,.55), rgba(255,154,60,.22)); border-radius: 8px; transition: width .45s ease; width: 0; }
-  .row .txt { position: relative; display: flex; justify-content: space-between; align-items: center; height: 100%; padding: 0 12px; font-size: 14.5px; }
-  .row .rk { color: var(--mute); margin-right: 8px; font-variant-numeric: tabular-nums; }
+  .row { position: absolute; left: 0; right: 0; height: 26px; }
+  .row .fill { position: absolute; inset: 0 auto 0 0; background: linear-gradient(90deg, rgba(255,90,54,.30), rgba(255,154,60,.05)); border-radius: 6px; transition: width .45s ease; width: 0; }
+  .row .txt { position: relative; display: flex; justify-content: space-between; align-items: center; height: 100%; padding: 0 10px; font-size: 13px; }
+  .row .rk { color: var(--mute); margin-right: 6px; font-variant-numeric: tabular-nums; }
   .row .v { font-variant-numeric: tabular-nums; color: var(--text); }
-  .m-foot { padding: 10px 16px; border-top: 1px solid var(--line); color: var(--mute); font-size: 12.5px; }
 
   /* Hakkımda */
   .about { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; align-items: start; }
@@ -141,6 +128,9 @@
   .skill { margin-bottom: 18px; }
   .skill .lbl { display: flex; justify-content: space-between; font-size: 15px; margin-bottom: 6px; }
   .skill .lbl span:last-child { color: var(--mute); }
+  .skill-zero { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--line); }
+  .zrow .lbl { display: flex; justify-content: space-between; font-size: 14px; color: var(--mute); margin-bottom: 4px; }
+  .zrow .track { height: 4px; }
   .track { height: 8px; background: #1b1e2a; border-radius: 4px; overflow: hidden; }
   .track i { display: block; height: 100%; width: 0; border-radius: 4px; background: linear-gradient(90deg, var(--ember), var(--ember2)); transition: width 1.2s cubic-bezier(.2,.7,.2,1); }
   .interests { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -175,7 +165,7 @@
   .work.hide { display: none; }
   .thumb { aspect-ratio: 16/9; position: relative; display: grid; place-items: center; overflow: hidden; }
   .thumb::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 28px 28px; }
-  .thumb span { position: relative; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 34px; letter-spacing: -.03em; text-align: center; padding: 0 12px; }
+  .thumb span { position: relative; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: clamp(20px, 2.2vw, 28px); letter-spacing: -.03em; text-align: center; padding: 0 12px; overflow-wrap: anywhere; }
   .t1 { background: linear-gradient(135deg, #3a1208, #12141c); }
   .t2 { background: linear-gradient(135deg, #3a2608, #12141c); }
   .t3 { background: linear-gradient(135deg, #2a0f2e, #12141c); }
@@ -184,8 +174,15 @@
   .work h4 { font-size: 21px; }
   .work .kind { color: var(--ember2); font-size: 14px; }
   .work p { color: var(--mute); font-size: 15.5px; flex: 1; }
-  .work a { color: var(--ember); font-weight: 500; text-decoration: none; }
-  .work a:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .work .thumb a { position: absolute; inset: 0; z-index: 1; display: grid; place-items: center; color: inherit; text-decoration: none; }
+  .work h4 a { color: inherit; text-decoration: none; transition: color .15s; }
+  .work h4 a:hover { color: var(--ember); }
+  .work .date { font-size: 13px; color: var(--mute); }
+  .work .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+  .lbtn { display: inline-block; padding: 7px 14px; border-radius: 8px; border: 1px solid var(--line); font-size: 14px; font-weight: 500; color: var(--text); text-decoration: none; transition: border-color .15s, background .15s; }
+  .lbtn:hover { border-color: var(--ember); }
+  .lbtn.site { background: rgba(255,90,54,.14); border-color: rgba(255,90,54,.5); color: var(--ember2); }
+  .lbtn.site:hover { background: rgba(255,90,54,.28); }
   .more-title { font-size: 24px; margin: 56px 0 6px; }
   .more-note { color: var(--mute); font-size: 15px; margin-bottom: 16px; }
   .repo-list { list-style: none; border-top: 1px solid var(--line); }
@@ -241,6 +238,18 @@
     .grid3, .stats, .details, .interests, form .two-in { grid-template-columns: 1fr; }
     #home { padding-top: 100px; }
   }
+
+  /* Çalışma kartları: şeffaf, kapaksız, kompakt */
+  #works { grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 14px; }
+  .work { background: transparent; border: 1px solid rgba(255,255,255,.10); border-radius: 12px; text-shadow: 0 1px 8px rgba(0,0,0,.9); }
+  .work:hover { transform: translateY(-2px); }
+  .work .info { padding: 14px 16px 16px; gap: 4px; }
+  .work h4 { font-size: 18px; }
+  .work .kind { font-size: 13px; }
+  .work p { font-size: 14px; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .work .date { font-size: 12px; }
+  .work .links { gap: 6px; margin-top: 4px; }
+  .lbtn { padding: 5px 11px; font-size: 13px; }
 </style>
 </head>
 <body>
@@ -286,25 +295,15 @@
       </div>
 
       <!-- Canlı panel -->
-      <div class="meter" id="meter" aria-label="Canlı panel örneği">
-        <div class="m-top">
-          <div class="m-badge">MU</div>
-          <div>
-            <div class="m-name">Mustafa UYGUR</div>
-            <div class="m-sub">Geliştirici</div>
-          </div>
-          <div class="m-gear" aria-hidden="true">⚙</div>
-        </div>
+      <div class="meter" id="meter" aria-label="Son güncellenen projeler">
         <div class="m-boss">
           <div class="m-boss-row">
             <div><span class="m-boss-name" id="bossName">Race Condition</span><span class="m-state" id="state">Savaşta</span></div>
             <div class="m-time" id="time">00:00</div>
           </div>
           <div class="hp"><i id="hp"></i></div>
-          <div class="hp-meta"><span id="hpText">31.000.000 / 50.000.000</span><span id="hpPct">62,0%</span></div>
         </div>
         <div class="m-rows" id="rows"></div>
-        <div class="m-foot" id="meterFoot">Projelerim savaşta sıralanır.</div>
       </div>
     </div>
   </section>
@@ -337,7 +336,7 @@
       <div class="two">
         <div>
           <h3>Yetenekler</h3>
-          <p class="more-note">Oranlar, GitHub'daki tüm projelerimde yazdığım kod miktarına göre otomatik hesaplanır. Yeni bir dilde proje açtığımda kendiliğinden eklenir.</p>
+          <p class="more-note">Oranlar, GitHub'daki tüm projelerimde yazdığım kod miktarına göre otomatik hesaplanır. Hiç yazmadığım diller 0% görünür; kullandıkça payı artar ve sıralamada yukarı çıkar.</p>
           <div id="skill-list"><p class="repo-status" id="skill-status">Yetenekler yükleniyor…</p></div>
         </div>
         <div>
@@ -403,29 +402,8 @@
         <button type="button" data-f="app" aria-pressed="false">Uygulama</button>
         <button type="button" data-f="web" aria-pressed="false">Web</button>
       </div>
-      <div class="grid3" id="works">
-        <article class="work" data-t="app">
-          <div class="thumb t1"><span>Albion Market Client</span></div>
-          <div class="info"><h4>Albion Market Client</h4><div class="kind">İstemci, API, veritabanı</div><p>Albion Online için topluluk kaynaklı pazar verisi: paket yakalama istemcisi, ingest API'si ve PostgreSQL. Barındırma ücretsiz kaynaklarla.</p><a href="https://github.com/CehennemGibiyim" rel="noopener">GitHub profilinde ara</a></div>
-        </article>
-        <article class="work" data-t="web">
-          <div class="thumb t2"><span>AoT-PNASF</span></div>
-          <div class="info"><h4>AoT-PNASF</h4><div class="kind">Albion Online aracı, web</div><p>GitHub Pages üzerinde yayında; kod tabanı JavaScript'ten TypeScript'e taşınıyor.</p><a href="https://github.com/CehennemGibiyim/AoT-PNASF" rel="noopener">Depoyu aç</a></div>
-        </article>
-        <article class="work" data-t="app">
-          <div class="thumb t3"><span>Personel26</span></div>
-          <div class="info"><h4>Personel26</h4><div class="kind">Masaüstü ve web paneli</div><p>Puantaj ve nöbet sistemi. Windows kurulum paketiyle kurulur, panel GitHub Pages'ten açılır.</p><a href="https://github.com/CehennemGibiyim/Personel26" rel="noopener">Depoyu aç</a></div>
-        </article>
-        <article class="work" data-t="web">
-          <div class="thumb t4"><span>08Analiz</span></div>
-          <div class="info"><h4>08Analiz</h4><div class="kind">Web, hata ayıklama</div><p>Çok dilli arayüzde asenkron çeviri yüklemesinden doğan yarış durumunun bulunup düzeltildiği proje.</p><a href="https://github.com/CehennemGibiyim/08Analiz" rel="noopener">Depoyu aç</a></div>
-        </article>
-      </div>
-
-      <h3 class="more-title">GitHub'daki diğer depolar</h3>
-      <p class="more-note">Bu liste GitHub'dan otomatik gelir; yeni açtığın herkese açık depolar kendiliğinden eklenir.</p>
-      <ul class="repo-list" id="repo-list"></ul>
-      <p class="repo-status" id="repo-status">Depolar yükleniyor…</p>
+      <div class="grid3" id="works"></div>
+      <p class="repo-status" id="repo-status">Projeler yükleniyor…</p>
     </div>
   </section>
 
@@ -515,12 +493,11 @@
   /* Canlı panel */
   var fmt = function (n) { return Math.round(n).toLocaleString('tr-TR'); };
   var projects = [];
-  var ROW_H = 44, BOSS = 50000000;
+  var ROW_H = 30, BOSS = 50000000;
   var rowsEl = document.getElementById('rows');
   var rowsIn = document.createElement('div');
   rowsIn.className = 'm-rows-in';
   rowsEl.appendChild(rowsIn);
-  var meterFoot = document.getElementById('meterFoot');
 
   // "3 gün önce" gibi göreli zaman
   function ago(d) {
@@ -533,6 +510,8 @@
     if (days < 365) return Math.floor(days / 30) + ' ay önce';
     return Math.floor(days / 365) + ' yıl önce';
   }
+
+  function fmtDate(d) { return d.toLocaleDateString('tr-TR'); }
 
   // Satırları kurar. items sırası = gösterim sırası (en son güncellenen en üstte). Satırlar sabittir, oynamaz.
   function setMeterProjects(items) {
@@ -550,7 +529,7 @@
       var left = document.createElement('span');
       var rk = document.createElement('span'); rk.className = 'rk'; rk.textContent = (i + 1) + '.';
       left.appendChild(rk); left.appendChild(document.createTextNode(it.n));
-      var v = document.createElement('span'); v.className = 'v'; v.textContent = ago(it.d);
+      var v = document.createElement('span'); v.className = 'v'; v.textContent = it.d ? fmtDate(it.d) : '';
       txt.appendChild(left); txt.appendChild(v);
       r.appendChild(fill); r.appendChild(txt);
       rowsIn.appendChild(r);
@@ -558,18 +537,15 @@
       return p;
     });
     rowsIn.style.height = (n * ROW_H) + 'px';
-    meterFoot.textContent = n + ' proje, son güncellemeye göre sıralı. Yeni depolar otomatik katılır.';
     render();
   }
-  var hp = document.getElementById('hp'), hpText = document.getElementById('hpText'), hpPct = document.getElementById('hpPct'),
+  var hp = document.getElementById('hp'),
       timeEl = document.getElementById('time'), state = document.getElementById('state');
   var t = 0, boss = 31000000, startBoss = 31000000, phase = 'fight', wait = 0;
 
   function render() {
     var pct = Math.max(0, boss / BOSS * 100);
     hp.style.width = pct + '%';
-    hpText.textContent = fmt(Math.max(0, boss)) + ' / ' + fmt(BOSS);
-    hpPct.textContent = pct.toFixed(1).replace('.', ',') + '%';
     var s = Math.floor(t), mm = ('0' + Math.floor(s / 60)).slice(-2), ss = ('0' + (s % 60)).slice(-2);
     timeEl.textContent = mm + ':' + ss;
   }
@@ -755,19 +731,102 @@
     if (!reduce) loop();
   })();
 
-  /* Portfolyo filtresi */
-  var btns = document.querySelectorAll('.filters button'), works = document.querySelectorAll('.work');
-  btns.forEach(function (b) {
+  /* GitHub'daki herkese açık depolar */
+  var worksEl = document.getElementById('works'), status = document.getElementById('repo-status'), stat = document.getElementById('statRepos');
+  var currentFilter = 'all', thumbClasses = ['t1', 't2', 't3', 't4'];
+  var SITE_BASE = 'https://' + USER.toLowerCase() + '.github.io/';
+  var TYPE_LABEL = { app: 'Uygulama', web: 'Web' };
+  var APP_LANGS = ['C#', 'C++', 'C', 'Java', 'Kotlin', 'Swift', 'Go', 'Rust', 'Python', 'PowerShell', 'Batchfile', 'Inno Setup', 'Dart', 'Lua', 'Visual Basic .NET', 'Shell', 'AutoHotkey'];
+  var WEB_LANGS = ['HTML', 'CSS', 'SCSS', 'JavaScript', 'TypeScript', 'Vue', 'PHP'];
+  var ALBION_DESC = "Albion Online için topluluk kaynaklı pazar verisi: paket yakalama istemcisi, ingest API'si ve PostgreSQL. Barındırma ücretsiz kaynaklarla.";
+  // Siteleri cehennemgibiyim.github.io/<proje> adresinde yayında olduğunu bildiğim projeler
+  var KNOWN = {
+    'aot-pnasf': { types: ['web'], desc: "GitHub Pages üzerinde yayında; kod tabanı JavaScript'ten TypeScript'e taşınıyor." },
+    'personel26': { types: ['app', 'web'], desc: "Puantaj ve nöbet sistemi. Windows kurulum paketiyle kurulur, panel GitHub Pages'ten açılır." },
+    '08analiz': { types: ['web'], desc: "Çok dilli arayüzde asenkron çeviri yüklemesinden doğan yarış durumunun bulunup düzeltildiği proje." }
+  };
+  var ALBION_ITEM = { name: 'Albion Market Client', url: 'https://github.com/' + USER, site: '', desc: ALBION_DESC, types: ['app'], lang: '', d: null, profile: true };
+
+  // Web sitesi adresi: önce depoda yazılı site, sonra GitHub Pages
+  function siteOf(r) {
+    var h = (r.homepage || '').trim();
+    if (h) return /^https?:\/\//i.test(h) ? h : 'https://' + h;
+    if (r.name.toLowerCase() === USER.toLowerCase() + '.github.io') return SITE_BASE;
+    if (r.has_pages || KNOWN[r.name.toLowerCase()]) return SITE_BASE + encodeURIComponent(r.name) + '/';
+    return '';
+  }
+  function typesOf(r, site) {
+    var t = [], d = (r.description || '').toLowerCase();
+    if (site) t.push('web');
+    if (APP_LANGS.indexOf(r.language) > -1 || /uygulama|windows|masaüstü|desktop|installer|\bapp\b/.test(d)) t.push('app');
+    if (!t.length) t.push(WEB_LANGS.indexOf(r.language) > -1 ? 'web' : 'app');
+    return t;
+  }
+  function toItem(r) {
+    var key = r.name.toLowerCase(), k = KNOWN[key], site = siteOf(r);
+    return {
+      name: r.name, url: r.html_url, site: site,
+      desc: (k && k.desc) || r.description || (key.indexOf('albion') > -1 ? ALBION_DESC : ''),
+      types: k ? k.types : typesOf(r, site),
+      lang: r.language || '',
+      d: new Date(r.pushed_at || r.updated_at)
+    };
+  }
+  function knownItem(name) {
+    var k = KNOWN[name.toLowerCase()];
+    return { name: name, url: 'https://github.com/' + USER + '/' + name, site: SITE_BASE + name + '/', desc: k.desc, types: k.types, lang: '', d: null };
+  }
+  function longDate(d) { return d.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' }); }
+  function link(cls, href, text) { var a = el('a', cls, text); a.href = href; a.target = '_blank'; a.rel = 'noopener'; return a; }
+
+  function applyFilter() {
+    var vis = 0;
+    worksEl.querySelectorAll('.work').forEach(function (w) {
+      var show = currentFilter === 'all' || (' ' + w.dataset.t + ' ').indexOf(' ' + currentFilter + ' ') > -1;
+      w.classList.toggle('hide', !show);
+      if (show) vis++;
+    });
+    if (!vis) { status.textContent = 'Bu kategoride henüz proje yok.'; status.hidden = false; }
+    else if (status.textContent === 'Bu kategoride henüz proje yok.') status.hidden = true;
+  }
+
+  // Kartlar: kapağa ve başlığa tıklayınca site (yoksa depo) açılır; altta Depo ve Site düğmeleri
+  function renderWorks(items) {
+    worksEl.innerHTML = '';
+    items.forEach(function (it, i) {
+      var card = el('article', 'work'), main = it.site || it.url;
+      card.dataset.t = it.types.join(' ');
+      var info = el('div', 'info'), h = el('h4');
+      h.appendChild(link('', main, it.name));
+      info.appendChild(h);
+      info.appendChild(el('div', 'kind', it.types.map(function (t) { return TYPE_LABEL[t]; }).join(' · ') + (it.lang ? ' · ' + it.lang : '')));
+      var dp = el('p', '', it.desc || 'Açıklama henüz eklenmedi.');
+      if (it.desc) dp.title = it.desc;
+      info.appendChild(dp);
+      if (it.d) info.appendChild(el('div', 'date', 'Son güncelleme: ' + longDate(it.d) + ' (' + ago(it.d) + ')'));
+      var links = el('div', 'links');
+      links.appendChild(link('lbtn', it.url, it.profile ? 'GitHub profilinde ara' : 'Depoyu aç'));
+      if (it.site) links.appendChild(link('lbtn site', it.site, 'Siteyi aç'));
+      info.appendChild(links);
+
+      card.appendChild(info);
+      worksEl.appendChild(card);
+    });
+    applyFilter();
+  }
+
+  document.querySelectorAll('.filters button').forEach(function (b) {
     b.addEventListener('click', function () {
-      btns.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+      document.querySelectorAll('.filters button').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
       b.setAttribute('aria-pressed', 'true');
-      works.forEach(function (w) { w.classList.toggle('hide', b.dataset.f !== 'all' && w.dataset.t !== b.dataset.f); });
+      currentFilter = b.dataset.f;
+      applyFilter();
     });
   });
 
-  /* GitHub'daki herkese açık depolar */
-  var skip = ['aot-pnasf', 'personel26', '08analiz', USER.toLowerCase() + '.github.io'];
-  var list = document.getElementById('repo-list'), status = document.getElementById('repo-status'), stat = document.getElementById('statRepos');
+  // GitHub gelene kadar bilinen projeleri göster
+  renderWorks([ALBION_ITEM, knownItem('AoT-PNASF'), knownItem('Personel26'), knownItem('08Analiz')]);
+  status.hidden = true;
   var CACHE_KEY = 'repos:' + USER, hasData = false, lastLoad = 0;
   function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; }
 
@@ -776,12 +835,20 @@
   try { langCache = JSON.parse(localStorage.getItem(LANG_KEY) || '{}') || {}; } catch (e) { langCache = {}; }
   var skillList = document.getElementById('skill-list'), skillStatus = document.getElementById('skill-status');
 
+  // Listelenecek tüm diller: hiç yazılmamış olanlar 0% görünür
+  var CATALOG = ['JavaScript', 'TypeScript', 'Python', 'C#', 'C++', 'C', 'Java', 'Kotlin', 'Swift', 'Go', 'Rust', 'PHP', 'Ruby', 'Dart', 'Lua', 'HTML', 'CSS', 'SCSS', 'SQL', 'Shell', 'PowerShell', 'Batchfile', 'Visual Basic .NET', 'Assembly', 'R', 'Scala', 'Perl', 'Haskell', 'Elixir', 'Objective-C', 'Vue', 'Svelte'];
+  var CANON = { 'PLpgSQL': 'SQL', 'TSQL': 'SQL', 'PLSQL': 'SQL', 'SQLPL': 'SQL' };
+
   function renderSkills(totals) {
-    var arr = Object.keys(totals).map(function (k) { return { n: k, b: totals[k] }; }).sort(function (a, b) { return b.b - a.b; });
+    var t = {};
+    Object.keys(totals).forEach(function (k) { var n = CANON[k] || k; t[n] = (t[n] || 0) + totals[k]; });
+    var arr = Object.keys(t).filter(function (k) { return t[k] > 0; }).map(function (k) { return { n: k, b: t[k] }; }).sort(function (a, b) { return b.b - a.b; });
     var sum = arr.reduce(function (a, x) { return a + x.b; }, 0);
     if (!sum) return false;
     skillList.innerHTML = '';
     var max = arr[0].b;
+
+    // Kod yazılmış diller: en yüksek paydan en düşüğe
     arr.forEach(function (x) {
       var share = x.b / sum * 100;
       var label = share < 1 ? '<1%' : (share < 10 ? share.toFixed(1).replace('.', ',') : Math.round(share)) + '%';
@@ -792,6 +859,19 @@
       skillList.appendChild(row);
       if (typeof so !== 'undefined' && so) so.observe(bar); else bar.style.width = bar.dataset.v + '%';
     });
+
+    // Henüz hiç yazılmamış diller: 0%
+    var zeros = CATALOG.filter(function (n) { return !(n in t); });
+    if (zeros.length) {
+      var zg = el('div', 'skill-zero');
+      zeros.forEach(function (n) {
+        var z = el('div', 'zrow'), l = el('div', 'lbl');
+        l.appendChild(el('span', '', n)); l.appendChild(el('span', '', '0%'));
+        z.appendChild(l); z.appendChild(el('div', 'track'));
+        zg.appendChild(z);
+      });
+      skillList.appendChild(zg);
+    }
     return true;
   }
 
@@ -831,33 +911,20 @@
     });
   }
 
-  // Depo listesini panele, sayaca ve alttaki listeye uygular
+  // Depo listesini kartlara, panele ve sayaca uygular (en son güncellenen en üstte)
   function applyRepos(repos) {
     hasData = true;
     stat.textContent = repos.length;
     updateSkills(repos);
 
-    // Panel: tüm projeler (fork ve arşivlenmişler hariç), en son güncellenen en üstte
     var own = repos.filter(function (r) { return !r.fork && !r.archived && r.name.toLowerCase() !== USER.toLowerCase() + '.github.io'; });
-    var items = own.map(function (r) { return { n: r.name, d: new Date(r.pushed_at || r.updated_at) }; });
-    items.sort(function (a, b) { return b.d - a.d; });
-    var hasAlbion = items.some(function (it) { return it.n.toLowerCase().indexOf('albion') > -1; });
-    if (!hasAlbion) items.push({ n: 'Albion Market Client' });
-    setMeterProjects(items);
+    var items = own.map(toItem).sort(function (a, b) { return b.d - a.d; });
+    var hasAlbion = items.some(function (it) { return it.name.toLowerCase().indexOf('albion') > -1; });
+    if (!hasAlbion) items.push(ALBION_ITEM);
 
-    // Alttaki "diğer depolar" listesi
-    list.innerHTML = '';
-    var shown = repos.filter(function (r) { return !r.fork && !r.archived && skip.indexOf(r.name.toLowerCase()) === -1; });
-    shown.forEach(function (r) {
-      var li = el('li'), a = el('a');
-      a.href = r.html_url; a.rel = 'noopener';
-      a.appendChild(el('span', 'r-name', r.name));
-      a.appendChild(el('span', 'r-meta', r.language || ''));
-      if (r.description) a.appendChild(el('span', 'r-desc', r.description));
-      li.appendChild(a); list.appendChild(li);
-    });
-    status.hidden = shown.length > 0;
-    if (!shown.length) status.textContent = 'Listelenecek başka herkese açık depo yok.';
+    renderWorks(items);
+    setMeterProjects(items.map(function (it) { return { n: it.name, d: it.d }; }));
+    if (status.textContent !== 'Bu kategoride henüz proje yok.') status.hidden = true;
   }
 
   // GitHub'dan güncel listeyi çeker; başarılıysa tarayıcıya da kaydeder
@@ -868,7 +935,7 @@
       .then(function (repos) {
         try {
           localStorage.setItem(CACHE_KEY, JSON.stringify(repos.map(function (r) {
-            return { name: r.name, html_url: r.html_url, description: r.description, language: r.language, fork: r.fork, archived: r.archived, pushed_at: r.pushed_at, updated_at: r.updated_at };
+            return { name: r.name, html_url: r.html_url, description: r.description, language: r.language, fork: r.fork, archived: r.archived, pushed_at: r.pushed_at, updated_at: r.updated_at, has_pages: r.has_pages, homepage: r.homepage };
           })));
         } catch (e) {}
         applyRepos(repos);
