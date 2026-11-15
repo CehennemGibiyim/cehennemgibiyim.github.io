@@ -1,0 +1,536 @@
+{
+ "generated": "2026-11-15T09:33:32.859Z",
+ "user": "CehennemGibiyim",
+ "repos": [
+  {
+   "name": "HisseBildirimSistemi",
+   "url": "https://github.com/CehennemGibiyim/HisseBildirimSistemi",
+   "description": "Hisse Bildirim Sistemi",
+   "readme": "Nasdaq hisselerini tarar, %10–%50 arası hareket eşiğini aşanları sinyal olarak listeler ve haber manşetlerini",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 67647,
+    "CSS": 33009,
+    "JavaScript": 7185
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-11-06T04:26:08Z",
+   "pushed_at": "2026-11-15T09:33:21Z",
+   "homepage": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
+   "site": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
+   "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/HisseBildirimSistemi@main/app/icon.svg",
+   "release": null
+  },
+  {
+   "name": "AoT-PNASF",
+   "url": "https://github.com/CehennemGibiyim/AoT-PNASF",
+   "description": "Albion Online Tools · Powered Nexus & AI Smart Feed",
+   "readme": "Türkiye'nin #1 AI Destekli Albion Online Platformu",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 937624,
+    "JavaScript": 328457,
+    "CSS": 98214,
+    "HTML": 83031,
+    "Python": 13397,
+    "PowerShell": 2696,
+    "Rust": 659
+   },
+   "topics": [],
+   "stars": 5,
+   "created_at": "2026-03-21T00:10:55Z",
+   "pushed_at": "2026-11-15T07:45:10Z",
+   "homepage": "https://cehennemgibiyim.github.io/AoT-PNASF/",
+   "site": "https://cehennemgibiyim.github.io/AoT-PNASF/",
+   "icon": "https://raw.githubusercontent.com/CehennemGibiyim/AoT-PNASF/main/desktop/electron/build/icon.png",
+   "release": {
+    "tag": "v1.1.1",
+    "name": "AoT PNASF v1.1.1",
+    "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/tag/v1.1.1",
+    "pre": false,
+    "date": "2026-11-12T10:15:24Z",
+    "assets": [
+     {
+      "name": "AoT-PNASF-1.1.1-x64-portable.exe",
+      "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/download/v1.1.1/AoT-PNASF-1.1.1-x64-portable.exe",
+      "size": 82676522,
+      "downloads": 3,
+      "os": "windows"
+     },
+     {
+      "name": "AoT-PNASF-1.1.1-x64-setup.exe",
+      "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/download/v1.1.1/AoT-PNASF-1.1.1-x64-setup.exe",
+      "size": 82923984,
+      "downloads": 4,
+      "os": "windows"
+     },
+     {
+      "name": "AoT-PNASF-Windows-1.1.1.zip",
+      "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/download/v1.1.1/AoT-PNASF-Windows-1.1.1.zip",
+      "size": 171176475,
+      "downloads": 2,
+      "os": "windows"
+     },
+     {
+      "name": "AoT-PNASF_1.1.1_x64-setup.exe",
+      "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/download/v1.1.1/AoT-PNASF_1.1.1_x64-setup.exe",
+      "size": 2638177,
+      "downloads": 2,
+      "os": "windows"
+     },
+     {
+      "name": "AoT-PNASF_1.1.1_x64_en-US.msi",
+      "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/download/v1.1.1/AoT-PNASF_1.1.1_x64_en-US.msi",
+      "size": 3145728,
+      "downloads": 2,
+      "os": "windows"
+     }
+    ]
+   }
+  },
+  {
+   "name": "TikTok",
+   "url": "https://github.com/CehennemGibiyim/TikTok",
+   "description": "cehennemgibiyim.github.io/TikTok",
+   "readme": "Sunucu, Docker, API anahtarı gerekmez: her şey GitHub Pages üzerinde statik çalışır, veri tarayıcıda",
+   "language": "JavaScript",
+   "langs": {
+    "JavaScript": 623381,
+    "HTML": 104884,
+    "Python": 22621,
+    "CSS": 13200
+   },
+   "topics": [],
+   "stars": 1,
+   "created_at": "2026-02-14T20:53:52Z",
+   "pushed_at": "2026-11-15T07:06:36Z",
+   "homepage": "https://cehennemgibiyim.github.io/TikTok",
+   "site": "https://cehennemgibiyim.github.io/TikTok",
+   "icon": "",
+   "release": {
+    "tag": "v1.4.19",
+    "name": "1.4.19",
+    "url": "https://github.com/CehennemGibiyim/TikTok/releases/tag/v1.4.19",
+    "pre": false,
+    "date": "2026-11-15T03:30:31Z",
+    "assets": [
+     {
+      "name": "TikTok-Sandik-Radari-1.4.19-x64.exe",
+      "url": "https://github.com/CehennemGibiyim/TikTok/releases/download/v1.4.19/TikTok-Sandik-Radari-1.4.19-x64.exe",
+      "size": 121985933,
+      "downloads": 2,
+      "os": "windows"
+     }
+    ]
+   }
+  },
+  {
+   "name": "sms",
+   "url": "https://github.com/CehennemGibiyim/sms",
+   "description": "",
+   "readme": "",
+   "language": "Python",
+   "langs": {
+    "Python": 89922,
+    "TypeScript": 39080,
+    "CSS": 13889,
+    "PowerShell": 8652,
+    "JavaScript": 5722,
+    "HTML": 735
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-11-13T21:19:38Z",
+   "pushed_at": "2026-11-15T00:23:29Z",
+   "homepage": "",
+   "site": "https://cehennemgibiyim.github.io/sms/",
+   "icon": "https://raw.githubusercontent.com/CehennemGibiyim/sms/main/desktop/build/icon.png",
+   "release": {
+    "tag": "v1.0.4",
+    "name": "Enough V2 Panel v1.0.4",
+    "url": "https://github.com/CehennemGibiyim/sms/releases/tag/v1.0.4",
+    "pre": false,
+    "date": "2026-11-14T23:48:18Z",
+    "assets": [
+     {
+      "name": "Enough-V2-Panel-Setup-1.0.4.exe",
+      "url": "https://github.com/CehennemGibiyim/sms/releases/download/v1.0.4/Enough-V2-Panel-Setup-1.0.4.exe",
+      "size": 82228559,
+      "downloads": 3,
+      "os": "windows"
+     }
+    ]
+   }
+  },
+  {
+   "name": "test2",
+   "url": "https://github.com/CehennemGibiyim/test2",
+   "description": "",
+   "readme": "",
+   "language": "JavaScript",
+   "langs": {
+    "JavaScript": 220088,
+    "HTML": 80162,
+    "CSS": 1538,
+    "Batchfile": 1322
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-11-14T22:30:53Z",
+   "pushed_at": "2026-11-14T22:32:04Z",
+   "homepage": "",
+   "site": "",
+   "icon": "",
+   "release": null
+  },
+  {
+   "name": "Personel26",
+   "url": "https://github.com/CehennemGibiyim/Personel26",
+   "description": "",
+   "readme": "Sağlık kuruluşları için personel, nöbet (vardiya), puantaj, izin ve raporlama",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 773023,
+    "JavaScript": 163164,
+    "CSS": 88994,
+    "HTML": 67768,
+    "PowerShell": 51553,
+    "Inno Setup": 3509,
+    "PLpgSQL": 1194,
+    "Batchfile": 543
+   },
+   "topics": [],
+   "stars": 2,
+   "created_at": "2026-10-07T06:22:04Z",
+   "pushed_at": "2026-11-08T08:07:17Z",
+   "homepage": "https://cehennemgibiyim.github.io/Personel26",
+   "site": "https://cehennemgibiyim.github.io/Personel26",
+   "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/Personel26@main/src/app/icon.svg",
+   "release": {
+    "tag": "v1.6.1",
+    "name": "Personel26 1.6.1",
+    "url": "https://github.com/CehennemGibiyim/Personel26/releases/tag/v1.6.1",
+    "pre": false,
+    "date": "2026-11-08T08:07:18Z",
+    "assets": [
+     {
+      "name": "Personel26-Kurulum.exe",
+      "url": "https://github.com/CehennemGibiyim/Personel26/releases/download/v1.6.1/Personel26-Kurulum.exe",
+      "size": 169631351,
+      "downloads": 6,
+      "os": "windows"
+     },
+     {
+      "name": "Personel26-Portable.zip",
+      "url": "https://github.com/CehennemGibiyim/Personel26/releases/download/v1.6.1/Personel26-Portable.zip",
+      "size": 253643026,
+      "downloads": 3,
+      "os": "other"
+     }
+    ]
+   }
+  },
+  {
+   "name": "StockManager",
+   "url": "https://github.com/CehennemGibiyim/StockManager",
+   "description": "",
+   "readme": "Ürün, stok, hareket, alım ve rapor yönetimi için koyu temalı, Türkçe operasyon paneli. Aynı kaynak iki biçimde çalışır:",
+   "language": "JavaScript",
+   "langs": {
+    "JavaScript": 71710,
+    "CSS": 45351,
+    "TypeScript": 42948,
+    "HTML": 36661
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-11-04T22:20:13Z",
+   "pushed_at": "2026-11-06T08:27:47Z",
+   "homepage": "",
+   "site": "https://cehennemgibiyim.github.io/StockManager/",
+   "icon": "https://raw.githubusercontent.com/CehennemGibiyim/StockManager/main/assets/brand/icon.png",
+   "release": {
+    "tag": "v1.1.0",
+    "name": "v1.1.0",
+    "url": "https://github.com/CehennemGibiyim/StockManager/releases/tag/v1.1.0",
+    "pre": false,
+    "date": "2026-11-05T18:51:28Z",
+    "assets": [
+     {
+      "name": "StockManager-Setup-1.1.0.exe",
+      "url": "https://github.com/CehennemGibiyim/StockManager/releases/download/v1.1.0/StockManager-Setup-1.1.0.exe",
+      "size": 123389040,
+      "downloads": 12,
+      "os": "windows"
+     }
+    ]
+   }
+  },
+  {
+   "name": "AtikViewer",
+   "url": "https://github.com/CehennemGibiyim/AtikViewer",
+   "description": "",
+   "readme": "ATIKVIEWER; DICOM görüntüleme, kesit kesit yapay zekâ destekli inceleme ve",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 814268,
+    "Python": 122307,
+    "JavaScript": 36869,
+    "PowerShell": 25206,
+    "CSS": 3125,
+    "Dockerfile": 1885,
+    "Shell": 1526,
+    "Batchfile": 1059
+   },
+   "topics": [],
+   "stars": 2,
+   "created_at": "2026-10-11T21:34:05Z",
+   "pushed_at": "2026-10-30T10:28:43Z",
+   "homepage": "cehennemgibiyim.github.io/AtikViewer",
+   "site": "https://cehennemgibiyim.github.io/AtikViewer",
+   "icon": "",
+   "release": null
+  },
+  {
+   "name": "SecurityPoint",
+   "url": "https://github.com/CehennemGibiyim/SecurityPoint",
+   "description": "",
+   "readme": "https://github.com/CehennemGibiyim/SecurityPoint/actions/runs/40246927388/artifacts/12619385433",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 1067142,
+    "JavaScript": 144338,
+    "CSS": 80396,
+    "HTML": 67768,
+    "PowerShell": 37686,
+    "Batchfile": 3115,
+    "PLpgSQL": 1400
+   },
+   "topics": [],
+   "stars": 2,
+   "created_at": "2026-10-23T10:26:04Z",
+   "pushed_at": "2026-10-26T00:15:27Z",
+   "homepage": "https://cehennemgibiyim.github.io/SecurityPoint/",
+   "site": "https://cehennemgibiyim.github.io/SecurityPoint/",
+   "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/SecurityPoint@main/Entegrasyon/src/app/icon.svg",
+   "release": null
+  },
+  {
+   "name": "HastanePYD",
+   "url": "https://github.com/CehennemGibiyim/HastanePYD",
+   "description": "",
+   "readme": "GitHub Pages üzerinde çalışan, hash yönlendirmeli ve çevrimdışı kullanılabilen statik hastane yönetim paneli.",
+   "language": "JavaScript",
+   "langs": {
+    "JavaScript": 1908784,
+    "CSS": 73407,
+    "HTML": 9607
+   },
+   "topics": [],
+   "stars": 1,
+   "created_at": "2026-10-02T17:11:47Z",
+   "pushed_at": "2026-10-02T17:39:58Z",
+   "homepage": "",
+   "site": "https://cehennemgibiyim.github.io/HastanePYD/",
+   "icon": "",
+   "release": null
+  },
+  {
+   "name": "PersonelPuantajSistemi",
+   "url": "https://github.com/CehennemGibiyim/PersonelPuantajSistemi",
+   "description": "https://cehennemgibiyim.github.io/PersonelPuantajSistemi/",
+   "readme": "Kurulum Paketi  : https://archive.org/download/setup-1.0.0-x-64",
+   "language": "JavaScript",
+   "langs": {
+    "JavaScript": 461405,
+    "CSS": 113716,
+    "HTML": 19266
+   },
+   "topics": [],
+   "stars": 3,
+   "created_at": "2026-09-09T15:42:23Z",
+   "pushed_at": "2026-09-20T01:41:03Z",
+   "homepage": "https://cehennemgibiyim.github.io/PersonelPuantajSistemi/",
+   "site": "https://cehennemgibiyim.github.io/PersonelPuantajSistemi/",
+   "icon": "",
+   "release": null
+  },
+  {
+   "name": "08Analiz",
+   "url": "https://github.com/CehennemGibiyim/08Analiz",
+   "description": "https://cehennemgibiyim.github.io/08Analiz",
+   "readme": "Çoklu borsa ve zaman diliminde teknik analiz, sinyal ve sanal işlem takip uygulaması.",
+   "language": "JavaScript",
+   "langs": {
+    "JavaScript": 155595,
+    "HTML": 97952,
+    "CSS": 67443,
+    "PLpgSQL": 4346
+   },
+   "topics": [
+    "borsa",
+    "borsa-api",
+    "borsa-client",
+    "borsa-istanbul",
+    "borsa-italiana",
+    "borsaistanbul",
+    "borsalinux-fr",
+    "kripto",
+    "kripto-borsa",
+    "kripto-botu",
+    "kripto-para",
+    "kripto-syariah",
+    "kriptografi",
+    "kriptografi-klasik",
+    "kriptografija",
+    "kriptografik",
+    "kriptoloji"
+   ],
+   "stars": 3,
+   "created_at": "2026-07-28T00:03:23Z",
+   "pushed_at": "2026-08-19T22:03:13Z",
+   "homepage": "https://cehennemgibiyim.github.io/08Analiz",
+   "site": "https://cehennemgibiyim.github.io/08Analiz",
+   "icon": "",
+   "release": null
+  },
+  {
+   "name": "AoTPNASF",
+   "url": "https://github.com/CehennemGibiyim/AoTPNASF",
+   "description": "AoTPNASF",
+   "readme": "Türkiye'nin 1 numaralı AI destekli Albion Online platformu. Canlı piyasa fiyatları, arbitraj fırsatları, crafting kâr hesaplama, build önerileri, PvP istatistikleri, etkinlik ta…",
+   "language": "JavaScript",
+   "langs": {
+    "JavaScript": 904235,
+    "CSS": 59015,
+    "HTML": 38610
+   },
+   "topics": [],
+   "stars": 2,
+   "created_at": "2026-04-22T02:06:33Z",
+   "pushed_at": "2026-07-26T12:21:55Z",
+   "homepage": "https://cehennemgibiyim.github.io/AoTPNASF/",
+   "site": "https://cehennemgibiyim.github.io/AoTPNASF/",
+   "icon": "",
+   "release": null
+  },
+  {
+   "name": "AtikAnaliz",
+   "url": "https://github.com/CehennemGibiyim/AtikAnaliz",
+   "description": "AtikAnaliz - Kripto Sinyal ve Analiz Uygulaması",
+   "readme": "Gelişmiş kripto para sinyal ve analiz platformu - Web, Mobil, Desktop destekli",
+   "language": "HTML",
+   "langs": {
+    "HTML": 418380,
+    "JavaScript": 313440,
+    "Swift": 3762,
+    "PowerShell": 2683,
+    "Batchfile": 2618,
+    "Java": 2596,
+    "TypeScript": 617
+   },
+   "topics": [],
+   "stars": 2,
+   "created_at": "2026-03-13T01:10:19Z",
+   "pushed_at": "2026-05-17T04:29:33Z",
+   "homepage": "",
+   "site": "https://cehennemgibiyim.github.io/AtikAnaliz/",
+   "icon": "",
+   "release": null
+  },
+  {
+   "name": "test1",
+   "url": "https://github.com/CehennemGibiyim/test1",
+   "description": "",
+   "readme": "",
+   "language": "JavaScript",
+   "langs": {
+    "JavaScript": 202102,
+    "HTML": 77094,
+    "CSS": 1538,
+    "Batchfile": 1322
+   },
+   "topics": [],
+   "stars": 1,
+   "created_at": "2026-05-03T19:42:28Z",
+   "pushed_at": "2026-05-10T03:38:12Z",
+   "homepage": "",
+   "site": "",
+   "icon": "",
+   "release": null
+  },
+  {
+   "name": "TEST",
+   "url": "https://github.com/CehennemGibiyim/TEST",
+   "description": "",
+   "readme": "",
+   "language": "HTML",
+   "langs": {
+    "HTML": 49255
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-03-26T18:13:23Z",
+   "pushed_at": "2026-05-03T19:37:42Z",
+   "homepage": "",
+   "site": "https://cehennemgibiyim.github.io/TEST/",
+   "icon": "",
+   "release": null
+  },
+  {
+   "name": "PatientSelection",
+   "url": "https://github.com/CehennemGibiyim/PatientSelection",
+   "description": "Hasta Seçimi",
+   "readme": "Hastane Bilgi Yönetim Sistemi - OCR destekli otomatik veri toplama aracı",
+   "language": "HTML",
+   "langs": {
+    "HTML": 131428,
+    "JavaScript": 53372,
+    "Dockerfile": 584
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-04-16T07:00:54Z",
+   "pushed_at": "2026-04-17T18:18:32Z",
+   "homepage": "https://cehennemgibiyim.github.io/PatientSelection/",
+   "site": "https://cehennemgibiyim.github.io/PatientSelection/",
+   "icon": "https://raw.githubusercontent.com/CehennemGibiyim/PatientSelection/main/favicon.ico",
+   "release": null
+  },
+  {
+   "name": "AtikRemoteManager",
+   "url": "https://github.com/CehennemGibiyim/AtikRemoteManager",
+   "description": "Atik Remote Manager ",
+   "readme": "Atik Remote Manager",
+   "language": "",
+   "langs": {},
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-03-16T01:00:44Z",
+   "pushed_at": "2026-03-16T01:00:45Z",
+   "homepage": "",
+   "site": "",
+   "icon": "",
+   "release": null
+  },
+  {
+   "name": "taksi-bremerhaven",
+   "url": "https://github.com/CehennemGibiyim/taksi-bremerhaven",
+   "description": "",
+   "readme": "",
+   "language": "HTML",
+   "langs": {
+    "HTML": 5163
+   },
+   "topics": [],
+   "stars": 1,
+   "created_at": "2026-02-13T17:31:26Z",
+   "pushed_at": "2026-02-16T04:26:35Z",
+   "homepage": "",
+   "site": "https://cehennemgibiyim.github.io/taksi-bremerhaven/",
+   "icon": "",
+   "release": null
+  }
+ ]
+}
