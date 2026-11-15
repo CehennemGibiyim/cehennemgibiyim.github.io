@@ -7,6 +7,7 @@
 <meta name="description" content="Mustafa UYGUR: Artvin Devlet Hastanesi temizlik personeli; web, sistem araçları ve uygulama projeleri geliştiriyor.">
 <meta name="theme-color" content="#07070a">
 <link rel="canonical" href="https://cehennemgibiyim.github.io/">
+<link rel="manifest" href="manifest.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mustafa UYGUR">
 <meta property="og:title" content="Mustafa UYGUR | Geliştirici portfolyosu">
@@ -346,6 +347,27 @@
   .pv-shot.sm { width: 200px; margin-bottom: 6px; border: 1px solid rgba(255,255,255,.14); transition: border-color .15s; }
   .pv-pg:hover .pv-shot { border-color: var(--ember); }
   .pv-pg .cap { display: block; max-width: 200px; font-size: 13px; color: var(--mute); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #8c93a8; margin-left: 8px; vertical-align: middle; }
+  .dot.on { background: #3ddc97; box-shadow: 0 0 6px #3ddc97; } .dot.off { background: #ff5a36; }
+  .pv-tg { display: flex; gap: 6px; margin-bottom: 8px; }
+  .pv-tg button { background: transparent; border: 1px solid rgba(255,255,255,.18); color: var(--mute); border-radius: 999px; padding: 2px 12px; font: inherit; font-size: 12px; cursor: pointer; }
+  .pv-tg button.on { color: #1a0a05; background: var(--ember2); border-color: transparent; }
+  .pv-act { display: flex; align-items: flex-end; gap: 3px; height: 34px; margin-top: 6px; }
+  .pv-act i { flex: 1; background: linear-gradient(0deg, var(--ember), var(--ember2)); border-radius: 2px; opacity: .85; }
+  .pv-hash { font-size: 12px; color: var(--mute); cursor: pointer; margin: -2px 0 4px; word-break: break-all; }
+  .pv-hash:hover { color: var(--ember2); }
+  .pv-help { margin-top: 10px; font-size: 13px; color: #aab0c4; }
+  .pv-help summary { cursor: pointer; color: var(--ember2); }
+  .pv-help div { margin-top: 4px; }
+  .pv-qr { display: block; margin-top: 10px; width: 160px; height: 160px; border-radius: 8px; background: #fff; }
+  .pv-qr[hidden] { display: none; }
+  .feed { list-style: none; border-top: 1px solid var(--line); }
+  .feed li { border-bottom: 1px solid var(--line); }
+  .feed a { display: flex; gap: 14px; padding: 11px 4px; text-decoration: none; color: var(--text); font-size: 15px; }
+  .feed a:hover .ft { color: var(--ember); }
+  .feed .fd { color: var(--mute); font-size: 14px; min-width: 130px; }
+  .langbtn { margin-left: auto; margin-right: 10px; background: none; border: 1px solid var(--line); color: var(--mute); border-radius: 8px; padding: 6px 10px; font: inherit; font-size: 13px; cursor: pointer; }
+  .langbtn:hover { color: var(--text); border-color: var(--ember); }
 </style>
 </head>
 <body>
@@ -354,6 +376,7 @@
 <header>
   <div class="wrap bar">
     <a class="logo" href="#home">Mustafa <b class="glow-text">UYGUR</b></a>
+    <button class="langbtn" id="langBtn" type="button" aria-label="Language">EN</button>
     <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menü</button>
     <nav id="menu" aria-label="Ana menü">
       <ul>
@@ -502,6 +525,8 @@
       </div>
       <div class="grid3" id="works"></div>
       <p class="repo-status" id="repo-status">Projeler yükleniyor…</p>
+      <h3 class="more-title">Son güncellemeler</h3>
+      <ul class="feed" id="feed"></ul>
     </div>
   </section>
 
@@ -558,6 +583,8 @@
 <script>
 (function () {
   var USER = 'CehennemGibiyim';
+  var LANG = 'tr';
+  try { LANG = localStorage.getItem('lang') === 'en' ? 'en' : 'tr'; } catch (e) {}
   var EMAIL = 'CehennemGibiyim@gmail.com';
   // Ziyaret sayacı (isteğe bağlı): goatcounter.com'da ücretsiz hesap açıp kodunu yaz, örn. 'mustafa'. Boşsa hiçbir şey yüklenmez.
   var GOATCOUNTER = '';
@@ -566,6 +593,7 @@
     gs.async = true; gs.dataset.goatcounter = 'https://' + GOATCOUNTER + '.goatcounter.com/count'; gs.src = 'https://gc.zgo.at/count.js';
     document.head.appendChild(gs);
   }
+  if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) navigator.serviceWorker.register('sw.js').catch(function () {});
   function track(path, title) {
     try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: path, title: title || path, event: true }); } catch (e) {}
   }
@@ -603,7 +631,7 @@
 
   /* Yazan başlık */
   var typed = document.getElementById('typed');
-  var words = ['Temizlik Personeli', 'Bağımsız Geliştirici', 'Web ve Uygulama Geliştirici'];
+  var words = LANG === 'en' ? ['Cleaning Staff', 'Independent Developer', 'Web & App Developer'] : ['Temizlik Personeli', 'Bağımsız Geliştirici', 'Web ve Uygulama Geliştirici'];
   if (reduce) { typed.textContent = words[0]; }
   else {
     var wi = 0, ci = 0, del = false;
@@ -639,7 +667,7 @@
     return Math.floor(days / 365) + ' yıl önce';
   }
 
-  function fmtDate(d) { return d.toLocaleDateString('tr-TR'); }
+  function fmtDate(d) { return d.toLocaleDateString(LANG === 'en' ? 'en-US' : 'tr-TR'); }
 
   // Satırları kurar. items sırası = gösterim sırası (en son güncellenen en üstte). Satırlar sabittir, oynamaz.
   function setMeterProjects(items) {
@@ -1095,7 +1123,7 @@
   function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; }
   function link(cls, href, text) { var a = el('a', cls, text); a.href = href; a.target = '_blank'; a.rel = 'noopener'; return a; }
   function mb(b) { return (b / 1048576).toFixed(1).replace('.', ',') + ' MB'; }
-  function longDate(d) { return d.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' }); }
+  function longDate(d) { return d.toLocaleDateString(LANG === 'en' ? 'en-US' : 'tr-TR', { day: 'numeric', month: 'long', year: 'numeric' }); }
 
   /* ---------- Sürümler (Releases) ---------- */
   var REL_KEY = 'rel2:' + USER, REL_TTL = 60 * 60 * 1000, relCache = {}, relBusy = false, relPending = null, relBlocked = false;
@@ -1128,7 +1156,7 @@
   function pickRelease(list) {
     var L = (list || []).filter(function (x) { return !x.draft; }), r = L[0];
     if (!r) return null;
-    var assets = (r.assets || []).map(function (a) { return { name: a.name, url: a.browser_download_url, size: a.size, downloads: a.download_count, os: osOf(a.name) }; })
+    var assets = (r.assets || []).map(function (a) { return { name: a.name, url: a.browser_download_url, size: a.size, downloads: a.download_count, os: osOf(a.name), sha256: (a.digest || '').replace(/^sha256:/, '') }; })
       .filter(function (a) { return a.os; });
     var total = L.reduce(function (s, x) { return s + (x.assets || []).reduce(function (t, y) { return t + (y.download_count || 0); }, 0); }, 0);
     return { tag: r.tag_name || r.name || '', name: r.name || '', url: r.html_url, pre: !!r.prerelease, date: r.published_at || '', notes: cleanNotes(r.body), downloadsTotal: total, assets: assets };
@@ -1207,7 +1235,7 @@
       types: k ? k.types : typesOf(r, site),
       lang: r.language || '',
       d: new Date(r.pushed_at || r.updated_at),
-      rel: relOf(r.name), icon: x.icon || '', files: x.files || [], shots: x.shots || [], stars: r.stargazers_count || 0,
+      rel: relOf(r.name), icon: x.icon || '', files: x.files || [], shots: x.shots || [], activity: x.activity || [], stars: r.stargazers_count || 0,
       topics: r.topics || [], langs: (langCache[r.name] || {}).l || null
     };
   }
@@ -1396,6 +1424,17 @@
   function row(p, a, b) { var r = T(p, 'div', 'pr'); T(r, 'span', '', a); if (b) T(r, 'span', 'muted', b); return r; }
 
   var pageCache = {}, pvTok = 0;
+  var HELP = {
+    windows: "Windows 'bilinmeyen yayıncı' uyarısı verirse: Ek bilgi → Yine de çalıştır.",
+    macos: 'Mac açmazsa: dosyaya sağ tıkla → Aç.',
+    linux: 'AppImage için önce şunu çalıştır: chmod +x dosyaadi.AppImage',
+    android: 'Android, bilinmeyen kaynaklardan kuruluma izin ister; ayarlardan açman gerekir.',
+    other: 'Arşivi (.rar/.zip) bir klasöre çıkarıp içindeki programı çalıştır.'
+  };
+  function copyText(t) {
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).catch(function () { prompt('Kopyala:', t); });
+    else prompt('Kopyala:', t);
+  }
   // Sitenin ana sayfasındaki iç bağlantılardan (en çok 4) önizlenecek sayfaları bulur
   function discoverPages(site) {
     if (pageCache[site]) return Promise.resolve(pageCache[site]);
@@ -1455,12 +1494,26 @@
 
     p = panel('pvSite', 'Site');
     if (it.site) {
-      var shot = T(p, 'div', 'pv-shot'), fr = document.createElement('iframe');
+      var lbEl = p.firstChild, dot = el('span', 'dot'), shot = T(p, 'div', 'pv-shot'), fr = document.createElement('iframe'), tg = el('div', 'pv-tg');
+      lbEl.appendChild(dot);
+      fetch(it.site, { mode: 'no-cors', cache: 'no-store' }).then(
+        function () { dot.className = 'dot on'; dot.title = 'Site erişilebilir'; },
+        function () { dot.className = 'dot off'; dot.title = 'Siteye ulaşılamıyor'; });
+      var bPc = T(tg, 'button', 'on', 'Bilgisayar'), bPh = T(tg, 'button', '', 'Telefon');
+      bPc.type = 'button'; bPh.type = 'button';
+      p.insertBefore(tg, shot);
       fr.title = it.name + ' site önizlemesi'; fr.tabIndex = -1;
       fr.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms');
       fr.setAttribute('referrerpolicy', 'no-referrer');
+      var fit = function (phone) {
+        var w = shot.clientWidth, h = shot.clientHeight, fw = phone ? 390 : 1280, fh = phone ? 844 : 800, sc = phone ? h / fh : w / fw;
+        fr.style.width = fw + 'px'; fr.style.height = fh + 'px';
+        fr.style.transform = 'scale(' + sc + ')'; fr.style.left = phone ? ((w - fw * sc) / 2) + 'px' : '0';
+        bPc.className = phone ? '' : 'on'; bPh.className = phone ? 'on' : '';
+      };
+      bPc.onclick = function () { fit(false); }; bPh.onclick = function () { fit(true); };
       fr.src = it.site; shot.appendChild(fr);
-      requestAnimationFrame(function () { fr.style.transform = 'scale(' + (shot.clientWidth / 1280) + ')'; });
+      requestAnimationFrame(function () { fit(false); });
       var sb = link('lbtn site', it.site, 'Siteyi aç'); p.appendChild(sb);
     } else T(p, 'div', 'muted', 'Bu proje için yayınlanmış bir site yok.');
 
@@ -1471,17 +1524,36 @@
       if (rel.notes) T(p, 'div', 'pv-notes', rel.notes);
     }
     if (list.length) {
-      var n = 0;
+      var n = 0, seenOs = {};
       OS_ORDER.forEach(function (os) {
         list.forEach(function (a) {
           if (a.os !== os || n >= 6) return;
-          n++;
+          n++; seenOs[os] = 1;
           var r = T(p, 'div', 'pr'), l = T(r, 'span', '', OS_LABEL[os] + (a.repo ? ' (depoda)' : ''));
           l.title = a.name;
           T(r, 'span', 'muted', a.size ? mb(a.size) : '');
           var d = link('lbtn dl', a.url, 'İndir'); d.title = a.name; r.appendChild(d);
+          if (a.sha256) {
+            var hs = T(p, 'div', 'pv-hash', 'SHA256 ' + a.sha256.slice(0, 16) + '… (kopyala)');
+            hs.title = a.sha256;
+            hs.onclick = function () { copyText(a.sha256); hs.textContent = 'SHA256 kopyalandı ✓'; };
+          }
         });
       });
+      var helps = Object.keys(seenOs).map(function (k) { return HELP[k]; }).filter(Boolean);
+      if (helps.length) {
+        var dt = T(p, 'details', 'pv-help');
+        T(dt, 'summary', '', 'Kurulum notu');
+        helps.forEach(function (h) { T(dt, 'div', '', h); });
+      }
+      var apk = list.filter(function (a) { return a.os === 'android'; })[0];
+      var qrUrl = apk ? apk.url : location.href.split('#')[0] + '#' + encodeURIComponent(it.name);
+      var qb = T(p, 'button', 'lbtn', 'Telefona QR'), qi = T(p, 'img', 'pv-qr');
+      qb.type = 'button'; qb.style.marginTop = '10px'; qi.hidden = true; qi.alt = 'QR kod';
+      qb.onclick = function () {
+        if (qi.hidden) { qi.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&margin=6&data=' + encodeURIComponent(qrUrl); qi.hidden = false; }
+        else qi.hidden = true;
+      };
     } else if (rel) {
       T(p, 'div', 'muted', 'Sürüm yayınlanmış ama indirilebilir dosya eklenmemiş.');
       var sv = link('lbtn', rel.url, 'Sürümler'); sv.style.marginTop = '10px'; p.appendChild(sv);
@@ -1498,6 +1570,13 @@
         li.appendChild(document.createTextNode(k + ' ' + (pc < 1 ? '<1' : Math.round(pc)) + '%'));
       });
     } else T(p, 'div', 'muted', it.lang || 'Dil bilgisi yok.');
+
+    var act = it.activity || [], mx = Math.max.apply(null, act.concat([0]));
+    if (mx > 0) {
+      T(p, 'div', 'muted', 'Son 12 hafta').style.marginTop = '12px';
+      var ac = T(p, 'div', 'pv-act');
+      act.forEach(function (v) { var b = T(ac, 'i'); b.style.height = Math.max(6, v / mx * 100) + '%'; b.title = v + ' commit'; });
+    }
 
     var sh = document.getElementById('pvShots');
     sh.innerHTML = '';
@@ -1642,6 +1721,22 @@
   /* ---------- Veri: data.json (GitHub Actions) + GitHub'dan canlı depo listesi ---------- */
   var CACHE_KEY = 'repos:' + USER, hasData = false, lastLoad = 0;
 
+  function renderFeed(items) {
+    var ul = document.getElementById('feed'), ev = [];
+    items.forEach(function (it) {
+      if (!it.d) return;
+      if (it.rel && it.rel.date) ev.push({ d: new Date(it.rel.date), n: it.name, t: it.name + ' ' + it.rel.tag + ' sürümü yayınlandı' });
+      ev.push({ d: it.d, n: it.name, t: it.name + ' güncellendi' });
+    });
+    ev.sort(function (a, b) { return b.d - a.d; });
+    ul.innerHTML = '';
+    ev.slice(0, 8).forEach(function (e) {
+      var li = T(ul, 'li'), a = T(li, 'a');
+      a.href = '#' + encodeURIComponent(e.n);
+      T(a, 'span', 'fd', longDate(e.d)); T(a, 'span', 'ft', e.t);
+    });
+  }
+
   // Kartları ve paneli çizer (en son güncellenen en üstte)
   function showProjects(repos) {
     var own = repos.filter(function (r) { return !r.fork && !r.archived && r.name.toLowerCase() !== USER.toLowerCase() + '.github.io'; });
@@ -1649,6 +1744,7 @@
     var hasAlbion = items.some(function (it) { return it.name.toLowerCase().indexOf('albion') > -1; });
     if (!hasAlbion) items.push(ALBION_ITEM);
     renderWorks(items);
+    renderFeed(items);
     setMeterProjects(items.map(function (it) { return { n: it.name, d: it.d }; }));
     if (status.textContent !== 'Bu filtreye uyan proje yok.') status.hidden = true;
     if (!hashHandled && openFromHash()) hashHandled = true;
@@ -1670,7 +1766,7 @@
   // data.json'daki bilgiler (README özeti, simge, diller, sürümler) önbelleklere yazılır
   function seedFromBase(d) {
     (d.repos || []).forEach(function (b) {
-      extras[b.name] = { readme: b.readme || '', icon: b.icon || '', files: b.files || [], shots: b.shots || [] };
+      extras[b.name] = { readme: b.readme || '', icon: b.icon || '', files: b.files || [], shots: b.shots || [], activity: b.activity || [] };
       var lc = langCache[b.name], rc = relCache[b.name];
       if (!lc || older(lc.p, b.pushed_at)) langCache[b.name] = { p: b.pushed_at, l: b.langs || {} };
       if (!rc || older(rc.p, b.pushed_at)) relCache[b.name] = { p: b.pushed_at, t: Date.now(), r: b.release || null };
@@ -1750,6 +1846,69 @@
       location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(f.s.value || 'Site mesajı') + '&body=' + encodeURIComponent(body);
       msg.textContent = 'Form servisine ulaşılamadı; e-posta uygulaman açılıyor.';
     }).then(function () { btn.disabled = false; });
+  });
+  /* ---------- Dil: Türkçe / İngilizce (sayfa yeniden yüklenerek değişir) ---------- */
+  var EN = {"Menü": "Menu", "Ana menü": "Main menu", "Ana sayfa": "Home", "Hakkımda": "About", "Özgeçmiş": "Resume", "Hizmetler": "Services", "Portfolyo": "Portfolio", "İletişim": "Contact", "Merhaba!": "Hello!", "Ben": "I'm", "Projeleri gör": "View projects", "İletişime geç": "Get in touch", "WhatsApp'tan yaz": "Message on WhatsApp", "E-posta": "Email", "Son güncellenen projeler": "Recently updated projects", "Savaşta": "In battle", "Çözüldü": "Solved", "Beni biraz daha yakından tanı": "Get to know me a little better", "Mustafa UYGUR profil fotoğrafı": "Mustafa UYGUR profile photo", "Fareni üzerine getir": "Hover over me", "Artvin Devlet Hastanesi Temizlik Personeliyim": "I'm Cleaning Staff at Artvin State Hospital", "Artvin Devlet Hastanesi'nde temizlik personeli olarak çalışıyorum.": "I work as cleaning staff at Artvin State Hospital.", "Mesai dışında kendi teknik projelerimi geliştiriyorum: web siteleri, sistem araçları ve uygulamalar. Bir fikri kullanılabilir bir araca dönüştürmeyi seviyorum.": "Outside work hours I build my own technical projects: websites, system tools and applications. I enjoy turning an idea into a tool people can actually use.", "Çalışma:": "Work:", "Artvin Devlet Hastanesi": "Artvin State Hospital", "Alanlar:": "Areas:", "Web, sistem, uygulama": "Web, systems, apps", "Telefon:": "Phone:", "Bana ulaş": "Reach me", "Herkese açık depo": "Public repositories", "Öne çıkan proje": "Featured projects", "Çalışma alanı": "Fields of work", "Yetenekler": "Skills", "Oranlar, GitHub'daki tüm projelerimde yazdığım kod miktarına göre otomatik hesaplanır. Hiç yazmadığım diller 0% görünür; kullandıkça payı artar ve sıralamada yukarı çıkar.": "Percentages are calculated automatically from the amount of code I have written across all my GitHub projects. Languages I have never written show 0%; as I use them their share grows and they move up the list.", "Yetenekler yükleniyor…": "Loading skills…", "İlgi alanları": "Interests", "Yazılım geliştirme": "Software development", "Oyun araçları": "Game tools", "Sistem ve ağ": "Systems and networks", "Problem çözme": "Problem solving", "Çalışmalarım ve yaklaşımım": "My work and approach", "Deneyim": "Experience", "Temizlik Personeli": "Cleaning Staff", "Artvin Devlet Hastanesi'nde temizlik personeli olarak görev yapıyorum.": "I serve as cleaning staff at Artvin State Hospital.", "Bağımsız Geliştirici": "Independent Developer", "Kendi projeleri": "Own projects", "Fikirden yayına kadar tüm süreci tek başıma yürütüyorum: tasarım, geliştirme, test ve GitHub üzerinden yayın.": "I run the whole process on my own, from idea to release: design, development, testing and publishing on GitHub.", "Geliştirici": "Developer", "Paket yakalama istemcisi, ingest API'si ve PostgreSQL ile topluluk kaynaklı pazar verisi.": "Packet-capture client, ingest API and PostgreSQL for community-sourced market data.", "Puantaj ve nöbet sistemi; Windows kurulum paketi ve GitHub Pages paneli.": "Timesheet and duty roster system; Windows installer and GitHub Pages panel.", "Çalışma biçimi": "How I work", "Önce çalışan hâli": "Working version first", "Yaklaşım": "Approach", "Küçük ve çalışan bir sürümü önce yayına alır, sonra geliştiririm.": "I release a small working version first, then improve it.", "Ücretsiz altyapı": "Free infrastructure", "Barındırmayı mümkün olduğunca ücretsiz kaynaklarla, GitHub üzerinde çözerim.": "I host as much as possible on free resources, on GitHub.", "Hata avcılığı": "Bug hunting", "08Analiz'de çeviri dosyalarının asenkron yüklenmesinden doğan bir yarış durumunu bulup düzelttim.": "In 08Analiz I found and fixed a race condition caused by the asynchronous loading of translation files.", "Yapabildiklerim": "What I can do", "Web geliştirme": "Web development", "HTML, CSS ve JavaScript ile hızlı, duyarlı siteler ve yönetim panelleri. GitHub Pages'te yayına alırım.": "Fast, responsive sites and admin panels with HTML, CSS and JavaScript. I publish them on GitHub Pages.", "Sistem araçları": "System tools", "Paket yakalama gibi düşük seviyeli işleri yapan istemciler ve yardımcı araçlar.": "Clients and helper tools that do low-level work such as packet capture.", "Masaüstü uygulamaları": "Desktop applications", "Windows kurulum paketiyle dağıtılan, günlük işi kolaylaştıran uygulamalar.": "Applications distributed as Windows installers that make everyday work easier.", "API ve veritabanı": "APIs and databases", "Veri alan API'ler ve PostgreSQL ile güvenilir depolama.": "APIs that ingest data, with reliable storage in PostgreSQL.", "Hata ayıklama": "Debugging", "Zamanlama, asenkron yükleme ve yarış durumu gibi inatçı hataları kök nedenine kadar izlerim.": "I trace stubborn bugs such as timing, asynchronous loading and race conditions down to the root cause.", "JavaScript'ten TypeScript'e": "From JavaScript to TypeScript", "Mevcut JavaScript projelerini adım adım TypeScript'e taşırım.": "I migrate existing JavaScript projects to TypeScript step by step.", "Çalışmalarım": "My work", "Proje filtresi": "Project filter", "Tümü": "All", "Uygulama": "App", "İndirilebilir": "Downloadable", "Proje ara…": "Search projects…", "Proje ara": "Search projects", "Projeler yükleniyor…": "Loading projects…", "Son güncellemeler": "Latest updates", "Bana ulaşın": "Contact me", "Telefon": "Phone", "Doğrudan mesaj gönderebilirsin.": "You can message me directly.", "Adınız": "Your name", "Konu": "Subject", "Mesajınız": "Your message", "Mesaj gönder": "Send message", "Başa dön": "Back to top", "Proje önizlemesi": "Project preview", "Kapat": "Close", "Bağlantıyı kopyala": "Copy link", "Depoyu aç": "Open repo", "Siteyi aç": "Open site", "Yükle": "Install", "Sürümler": "Releases", "İndir": "Download", "Depo": "Repository", "Yükleyiciler": "Installers", "Diller": "Languages", "Yeni": "New", "GitHub profilinde ara": "Find on GitHub profile", "GitHub profilini aç": "Open GitHub profile", "GitHub profili": "GitHub profile", "Açıklama henüz eklenmedi.": "No description yet.", "Bu filtreye uyan proje yok.": "No project matches this filter.", "Bu proje için yayınlanmış bir site yok.": "No site has been published for this project.", "Bilgisayar": "Desktop", "Henüz yayınlanmış bir sürüm yok.": "No release has been published yet.", "Sürüm yayınlanmış ama indirilebilir dosya eklenmemiş.": "A release exists but no downloadable file was attached.", "Kurulum notu": "Installation note", "Telefona QR": "QR for phone", "Sitenin diğer sayfaları": "Other pages of the site", "Son 12 hafta": "Last 12 weeks", "Dil bilgisi yok.": "No language data.", "Kopyalandı ✓": "Copied ✓", "Gönderiliyor…": "Sending…", "Mesajın gönderildi, teşekkürler!": "Your message has been sent, thank you!", "Yetenekler şu an yüklenemedi.": "Skills could not be loaded right now.", "Henüz listelenecek bir dil bulunamadı.": "No languages found yet.", "Ad, e-posta ve mesaj alanlarını doldur.": "Please fill in name, email and message.", "Paket": "Package", "Windows 'bilinmeyen yayıncı' uyarısı verirse: Ek bilgi → Yine de çalıştır.": "If Windows shows an 'unknown publisher' warning: More info → Run anyway.", "Mac açmazsa: dosyaya sağ tıkla → Aç.": "If your Mac won't open it: right-click the file → Open.", "AppImage için önce şunu çalıştır: chmod +x dosyaadi.AppImage": "For an AppImage, first run: chmod +x filename.AppImage", "Android, bilinmeyen kaynaklardan kuruluma izin ister; ayarlardan açman gerekir.": "Android asks for permission to install from unknown sources; enable it in settings.", "Arşivi (.rar/.zip) bir klasöre çıkarıp içindeki programı çalıştır.": "Extract the archive (.rar/.zip) to a folder and run the program inside.", "Site erişilebilir": "Site is reachable", "Siteye ulaşılamıyor": "Site is unreachable", "Form servisine ulaşılamadı; e-posta uygulaman açılıyor.": "Could not reach the form service; opening your email app."};
+  var EN_RX = [
+    [/(\d+) saat önce/g, '$1 h ago'],
+    [/(\d+) gün önce/g, '$1 d ago'],
+    [/(\d+) ay önce/g, '$1 mo ago'],
+    [/(\d+) yıl önce/g, '$1 y ago'],
+    [/\baz önce\b/g, 'just now'],
+    [/^Son güncelleme: /, 'Last updated: '],
+    [/ · (\d+) indirme/g, ' · $1 downloads'],
+    [/\(ön sürüm\)/g, '(pre-release)'],
+    [/\(depoda\)/g, '(in repo)'],
+    [/ sürümü yayınlandı$/, ' release published'],
+    [/ güncellendi$/, ' updated'],
+    [/^Yükle · (.+)$/, 'Install · $1'],
+    [/^SHA256 (.+)… \(kopyala\)$/, 'SHA256 $1… (copy)'],
+    [/^SHA256 kopyalandı ✓$/, 'SHA256 copied ✓'],
+    [/^Projeler şu an yüklenemedi\. Tüm projeler için (.+) adresine bakabilirsin\.$/, 'Projects could not be loaded right now. See $1 for all projects.'],
+    [/^Bağlantı:/, 'Link:']
+  ];
+  function tx(k) {
+    if (EN[k] !== undefined) return EN[k];
+    var o = k;
+    EN_RX.forEach(function (r) { o = o.replace(r[0], r[1]); });
+    if (/^(Uygulama|Web)( · |$)/.test(o)) o = o.replace(/\bUygulama\b/g, 'App');
+    return o;
+  }
+  function trNode(n) {
+    var m = /^(\s*)([\s\S]*?)(\s*)$/.exec(n.nodeValue);
+    if (!m || !m[2]) return;
+    var k = m[2].replace(/\s+/g, ' '), v = tx(k);
+    if (v !== k) n.nodeValue = m[1] + v + m[3];
+  }
+  function trTree(root) {
+    if (root.nodeType === 3) { trNode(root); return; }
+    if (root.nodeType !== 1 || /^(SCRIPT|STYLE)$/.test(root.nodeName)) return;
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), n, list = [];
+    while ((n = w.nextNode())) { if (!/^(SCRIPT|STYLE)$/.test(n.parentNode.nodeName)) list.push(n); }
+    list.forEach(trNode);
+    root.querySelectorAll('[placeholder],[aria-label],[title]').forEach(function (e) {
+      ['placeholder', 'aria-label', 'title'].forEach(function (a) {
+        var v = e.getAttribute(a);
+        if (v) { var t = tx(v.replace(/\s+/g, ' ').trim()); if (t !== v) e.setAttribute(a, t); }
+      });
+    });
+  }
+  if (LANG === 'en') {
+    document.documentElement.lang = 'en';
+    document.title = 'Mustafa UYGUR | Artvin State Hospital';
+    trTree(document.body);
+    new MutationObserver(function (ms) {
+      ms.forEach(function (m) {
+        if (m.type === 'characterData') trNode(m.target);
+        else m.addedNodes.forEach(trTree);
+      });
+    }).observe(document.body, { childList: true, subtree: true, characterData: true });
+  }
+  var langBtn = document.getElementById('langBtn');
+  langBtn.textContent = LANG === 'en' ? 'TR' : 'EN';
+  langBtn.addEventListener('click', function () {
+    try { localStorage.setItem('lang', LANG === 'en' ? 'tr' : 'en'); } catch (e) {}
+    location.reload();
   });
 })();
 </script>

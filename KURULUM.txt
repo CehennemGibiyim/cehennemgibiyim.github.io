@@ -19,3 +19,25 @@ SİTE KURULUMU (bir kez yapılır)
   (.exe/.msi Windows, .dmg macOS, .AppImage/.deb Linux, .apk Android).
 - Projeye özel simge: depoya icon.png, logo.png veya favicon.png koy.
 - Tek proje bağlantısı: siteadresi/#ProjeAdi (önizlemede "Bağlantıyı kopyala" düğmesi var).
+
+YENİ DOSYALAR (hepsi ana klasöre, index.html ile aynı yere)
+- manifest.webmanifest, sw.js, icon-192.png, icon-512.png
+  Bunlar sitenin telefonda "Ana ekrana ekle" ile uygulama gibi açılmasını sağlar.
+
+YENİ SÜRÜM BİLDİRİMİ (Telegram, isteğe bağlı)
+1) Telegram'da @BotFather'a yaz, /newbot ile bir bot oluştur, verdiği token'ı kopyala.
+2) Botuna bir mesaj gönder, sonra tarayıcıda https://api.telegram.org/bot<TOKEN>/getUpdates adresini aç;
+   çıkan "chat":{"id": ...} sayısı senin chat kimliğin.
+3) Sitenin deposunda Settings > Secrets and variables > Actions > New repository secret:
+   TELEGRAM_BOT_TOKEN ve TELEGRAM_CHAT_ID adlarıyla ikisini de ekle.
+   Bir projeye yeni sürüm yayınladığında en geç 30 dakika içinde mesaj gelir.
+
+ÖZEL ALAN ADI (isteğe bağlı)
+1) Bir alan adı satın al (örn. mustafauygur.dev).
+2) Depoda Settings > Pages > Custom domain kutusuna alan adını yaz.
+3) Alan adı sağlayıcında GitHub'ın yönergesindeki DNS kayıtlarını ekle (A kayıtları ya da www için CNAME).
+4) İşin bitince index.html içinde "cehennemgibiyim.github.io" geçen yerleri (canonical, og:url, og:image)
+   yeni alan adınla değiştir ve manifest.webmanifest dosyasını aynı kalacak şekilde bırak.
+
+DİL
+- Sağ üstteki EN/TR düğmesi sayfayı İngilizce/Türkçe yapar. Seçim tarayıcıda hatırlanır.

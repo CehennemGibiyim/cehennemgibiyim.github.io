@@ -112,18 +112,19 @@ async function releaseOf(name) {
   const r = list[0];
   if (!r) return null;
   const assets = (r.assets || [])
-    .map((a) => ({ name: a.name, url: a.browser_download_url, size: a.size, downloads: a.download_count, os: osOf(a.name) }))
+    .map((a) => ({ name: a.name, url: a.browser_download_url, size: a.size, downloads: a.download_count, os: osOf(a.name), sha256: (a.digest || '').replace(/^sha256:/, '') }))
     .filter((a) => a.os);
   const downloadsTotal = list.reduce((s, x) => s + (x.assets || []).reduce((t, y) => t + (y.download_count || 0), 0), 0);
   return { tag: r.tag_name || r.name || '', name: r.name || '', url: r.html_url, pre: !!r.prerelease, date: r.published_at || '', notes: cleanNotes(r.body), downloadsTotal, assets };
 }
 
 async function build(r) {
-  const [langs, release, readme, tree] = await Promise.all([
+  const [langs, release, readme, tree, weeks] = await Promise.all([
     get(`/repos/${USER}/${r.name}/languages`),
     releaseOf(r.name),
     get(`/repos/${USER}/${r.name}/readme`, 'application/vnd.github.raw+json'),
     get(`/repos/${USER}/${r.name}/git/trees/${encodeURIComponent(r.default_branch)}?recursive=1`),
+    get(`/repos/${USER}/${r.name}/stats/commit_activity`),
   ]);
   let site = (r.homepage || '').trim();
   if (site && !/^https?:\/\//i.test(site)) site = 'https://' + site;
@@ -144,6 +145,7 @@ async function build(r) {
     language: r.language || '', langs: langs || {}, topics: r.topics || [], stars: r.stargazers_count || 0,
     created_at: r.created_at, pushed_at: r.pushed_at, homepage: r.homepage || '', site, icon, release,
     files: filesOf(tree && tree.tree, r), shots: shotsOf(readme, r),
+    activity: Array.isArray(weeks) ? weeks.slice(-12).map((w) => w.total) : [],
   };
 }
 
@@ -163,6 +165,14 @@ repos.sort((a, b) => b.pushed_at.localeCompare(a.pushed_at));
 
 // Hiçbir şey değişmediyse dosyayı yeniden yazma (gereksiz commit olmasın)
 const old = existsSync('data.json') ? JSON.parse(readFileSync('data.json', 'utf8')) : null;
+
+// Yeni sürüm yayınlandıysa bildirim metni hazırla (Actions Telegram'a gönderir)
+if (old) {
+  const prev = Object.fromEntries((old.repos || []).map((x) => [x.name, x.release && x.release.tag]));
+  const notes = repos.filter((x) => x.release && x.release.tag && prev[x.name] !== x.release.tag)
+    .map((x) => `🚀 ${x.name} ${x.release.tag} yayınlandı\n${x.release.url}`);
+  if (notes.length) writeFileSync('new-releases.txt', notes.join('\n\n'));
+}
 if (old && JSON.stringify(old.repos) === JSON.stringify(repos)) { console.log('Değişiklik yok.'); process.exit(0); }
 writeFileSync('data.json', JSON.stringify({ generated: new Date().toISOString(), user: USER, repos }, null, 1));
 console.log(`${repos.length} proje yazıldı.`);
