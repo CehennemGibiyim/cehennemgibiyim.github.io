@@ -1,0 +1,21 @@
+SİTE KURULUMU (bir kez yapılır)
+
+1) GitHub'da CehennemGibiyim.github.io deposunu aç.
+2) Bu zipteki dosyaları deponun ana klasörüne yükle:
+   - index.html
+   - og-image.jpg
+   (Add file > Upload files)
+3) Şu iki dosyayı aynı yollarla oluştur (Add file > Create new file, dosya adı kutusuna yolu yaz, içeriği yapıştır):
+   - scripts/build-data.mjs
+   - .github/workflows/update-data.yml
+4) Settings > Actions > General > Workflow permissions bölümünde "Read and write permissions" seçili olsun.
+5) Actions sekmesi > "Proje verilerini güncelle" > Run workflow. Birkaç dakika sonra depoda data.json oluşur.
+   Bundan sonra her 30 dakikada bir kendiliğinden güncellenir.
+
+İSTEĞE BAĞLI
+- Ziyaret sayacı: goatcounter.com'da ücretsiz hesap aç, kodunu index.html içindeki
+  var GOATCOUNTER = ''; satırına yaz (örn. 'mustafa').
+- Yükleyici düğmesi için dosyaları projenin GitHub "Releases" bölümüne yükle
+  (.exe/.msi Windows, .dmg macOS, .AppImage/.deb Linux, .apk Android).
+- Projeye özel simge: depoya icon.png, logo.png veya favicon.png koy.
+- Tek proje bağlantısı: siteadresi/#ProjeAdi (önizlemede "Bağlantıyı kopyala" düğmesi var).

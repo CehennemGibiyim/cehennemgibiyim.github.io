@@ -8,11 +8,11 @@ const API = process.env.GH_API || 'https://api.github.com';
 const H = { 'User-Agent': 'portfolio-data', Accept: 'application/vnd.github+json', ...(TOKEN ? { Authorization: `Bearer ${TOKEN}` } : {}) };
 
 async function get(path, accept) {
-  try {
-    const r = await fetch(API + path, { headers: accept ? { ...H, Accept: accept } : H });
-    if (!r.ok) return null;
-    return accept ? await r.text() : await r.json();
-  } catch { return null; }
+  let r;
+  try { r = await fetch(API + path, { headers: accept ? { ...H, Accept: accept } : H }); } catch { return null; }
+  if (r.status === 403 || r.status === 429) { console.error('GitHub istek sınırına takıldı; data.json değiştirilmedi.'); process.exit(1); }
+  if (!r.ok) return null;
+  try { return accept ? await r.text() : await r.json(); } catch { return null; }
 }
 
 // Dosya adından işletim sistemi (index.html içindekiyle aynı kural)
@@ -70,14 +70,52 @@ async function siteIcon(site) {
   } catch { return ''; }
 }
 
+// Sürüm notu: markdown işaretlerinden arındırılmış kısa metin
+function cleanNotes(md) {
+  if (!md) return '';
+  const t = md.replace(/<!--[\s\S]*?-->/g, '').replace(/!\[[^\]]*\]\([^)]*\)/g, '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(/^#{1,6}\s*/gm, '').replace(/[`*_~>]/g, '').replace(/<[^>]+>/g, '').replace(/\r/g, '').replace(/\n{2,}/g, '\n').trim();
+  return t.length > 400 ? t.slice(0, 397).trimEnd() + '…' : t;
+}
+
+// README'deki ekran görüntüleri (rozetler ve SVG'ler hariç, en çok 4)
+const IMG_RE = /!\[[^\]]*\]\(\s*<?([^)\s>]+)>?[^)]*\)|<img[^>]+src=["']([^"']+)["']/gi;
+function shotsOf(md, r) {
+  if (!md) return [];
+  const out = [];
+  for (const m of md.matchAll(IMG_RE)) {
+    let u = (m[1] || m[2] || '').trim();
+    if (!u || /^data:/i.test(u) || /shields\.io|badge|badgen|travis-ci|codecov|\/(actions|workflows)\/|\.svg(\?|$)/i.test(u)) continue;
+    if (!/^https?:/i.test(u)) u = `https://raw.githubusercontent.com/${USER}/${r.name}/${r.default_branch}/${u.replace(/^\.?\//, '')}`;
+    u = u.replace(/^https:\/\/github\.com\/([^/]+)\/([^/]+)\/blob\//i, 'https://github.com/$1/$2/raw/');
+    if (!out.includes(u)) out.push(u);
+    if (out.length >= 4) break;
+  }
+  return out;
+}
+
+// Releases kullanmayan projeler için: depoya doğrudan konmuş yükleyici dosyaları
+const PKG_RE = /\.(exe|msi|msix|appx|dmg|pkg|appimage|deb|rpm|apk|rar|7z|zip)$/i;
+function filesOf(tree, r) {
+  const list = (tree || []).filter((f) => f.type === 'blob' && PKG_RE.test(f.path)
+    && !/node_modules|(^|\/)(tests?|examples?|samples?)\//i.test(f.path)
+    && f.size >= (/\.(zip|rar|7z)$/i.test(f.path) ? 200000 : 50000)
+    && !(/\.zip$/i.test(f.path) && /source|src|backup/i.test(f.path)));
+  return list.slice(0, 8).map((f) => {
+    const name = f.path.split('/').pop();
+    return { name, size: f.size, os: osOf(name), url: `https://github.com/${USER}/${r.name}/raw/${encodeURIComponent(r.default_branch)}/${f.path.split('/').map(encodeURIComponent).join('/')}` };
+  }).filter((f) => f.os);
+}
+
 async function releaseOf(name) {
-  const list = await get(`/repos/${USER}/${name}/releases?per_page=5`);
-  const r = (list || []).find((x) => !x.draft);
+  const list = ((await get(`/repos/${USER}/${name}/releases?per_page=20`)) || []).filter((x) => !x.draft);
+  const r = list[0];
   if (!r) return null;
   const assets = (r.assets || [])
     .map((a) => ({ name: a.name, url: a.browser_download_url, size: a.size, downloads: a.download_count, os: osOf(a.name) }))
     .filter((a) => a.os);
-  return { tag: r.tag_name || r.name || '', name: r.name || '', url: r.html_url, pre: !!r.prerelease, date: r.published_at || '', assets };
+  const downloadsTotal = list.reduce((s, x) => s + (x.assets || []).reduce((t, y) => t + (y.download_count || 0), 0), 0);
+  return { tag: r.tag_name || r.name || '', name: r.name || '', url: r.html_url, pre: !!r.prerelease, date: r.published_at || '', notes: cleanNotes(r.body), downloadsTotal, assets };
 }
 
 async function build(r) {
@@ -105,6 +143,7 @@ async function build(r) {
     name: r.name, url: r.html_url, description: r.description || '', readme: readmeSummary(readme),
     language: r.language || '', langs: langs || {}, topics: r.topics || [], stars: r.stargazers_count || 0,
     created_at: r.created_at, pushed_at: r.pushed_at, homepage: r.homepage || '', site, icon, release,
+    files: filesOf(tree && tree.tree, r), shots: shotsOf(readme, r),
   };
 }
 

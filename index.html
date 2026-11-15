@@ -324,6 +324,13 @@
   .pv-bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--ember), var(--ember2)); }
   @media (max-width: 760px) { .pv-grid { grid-template-columns: 1fr; grid-template-areas: "chip" "a" "b" "c" "d"; gap: 18px; } }
   @media (prefers-reduced-motion: reduce) { .pv-chip, .pv-wires .f { animation: none; } }
+  .qbox { margin-left: auto; min-width: 180px; background: transparent; border: 1px solid var(--line); color: var(--text); border-radius: 999px; padding: 8px 16px; font: inherit; font-size: 15px; }
+  .qbox:focus { outline: none; border-color: var(--ember); }
+  .pv-head .lbtn { margin-top: 10px; background: transparent; cursor: pointer; font-family: inherit; }
+  .pv-shots { position: relative; z-index: 1; display: flex; gap: 10px; overflow-x: auto; margin-top: 18px; padding-bottom: 4px; }
+  .pv-shots[hidden] { display: none; }
+  .pv-shots img { height: 96px; width: auto; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); display: block; }
+  .pv-notes { font-size: 13px; line-height: 1.45; color: #aab0c4; margin: 6px 0 8px; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; white-space: pre-line; }
 </style>
 </head>
 <body>
@@ -475,6 +482,8 @@
         <button type="button" data-f="all" aria-pressed="true">Tümü</button>
         <button type="button" data-f="app" aria-pressed="false">Uygulama</button>
         <button type="button" data-f="web" aria-pressed="false">Web</button>
+        <button type="button" data-f="dl" aria-pressed="false">İndirilebilir</button>
+        <input type="search" id="q" class="qbox" placeholder="Proje ara…" aria-label="Proje ara">
       </div>
       <div class="grid3" id="works"></div>
       <p class="repo-status" id="repo-status">Projeler yükleniyor…</p>
@@ -518,7 +527,7 @@
     <button class="pv-x" id="pvClose" type="button" aria-label="Kapat">&times;</button>
     <div class="pv-inner" id="pvInner">
       <svg class="pv-wires" id="pvWires" aria-hidden="true"></svg>
-      <div class="pv-head"><h3 id="pvTitle"></h3><p id="pvDesc"></p></div>
+      <div class="pv-head"><h3 id="pvTitle"></h3><p id="pvDesc"></p><button type="button" class="lbtn" id="pvCopy">Bağlantıyı kopyala</button></div>
       <div class="pv-grid">
         <section class="pv-p" id="pvRepo"></section>
         <div class="pv-chip" id="pvChip"></div>
@@ -526,6 +535,7 @@
         <section class="pv-p" id="pvDl"></section>
         <section class="pv-p" id="pvInfo"></section>
       </div>
+      <div class="pv-shots" id="pvShots" hidden></div>
     </div>
   </div>
 </div>
@@ -533,6 +543,16 @@
 (function () {
   var USER = 'CehennemGibiyim';
   var EMAIL = 'CehennemGibiyim@gmail.com';
+  // Ziyaret sayacı (isteğe bağlı): goatcounter.com'da ücretsiz hesap açıp kodunu yaz, örn. 'mustafa'. Boşsa hiçbir şey yüklenmez.
+  var GOATCOUNTER = '';
+  if (GOATCOUNTER) {
+    var gs = document.createElement('script');
+    gs.async = true; gs.dataset.goatcounter = 'https://' + GOATCOUNTER + '.goatcounter.com/count'; gs.src = 'https://gc.zgo.at/count.js';
+    document.head.appendChild(gs);
+  }
+  function track(path, title) {
+    try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: path, title: title || path, event: true }); } catch (e) {}
+  }
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   document.getElementById('year').textContent = new Date().getFullYear();
@@ -1083,12 +1103,19 @@
     }
     return null;
   }
+  function cleanNotes(md) {
+    if (!md) return '';
+    var t = md.replace(/<!--[\s\S]*?-->/g, '').replace(/!\[[^\]]*\]\([^)]*\)/g, '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+      .replace(/^#{1,6}\s*/gm, '').replace(/[`*_~>]/g, '').replace(/<[^>]+>/g, '').replace(/\r/g, '').replace(/\n{2,}/g, '\n').trim();
+    return t.length > 400 ? t.slice(0, 397).replace(/\s+$/, '') + '…' : t;
+  }
   function pickRelease(list) {
-    var r = (list || []).filter(function (x) { return !x.draft; })[0];
+    var L = (list || []).filter(function (x) { return !x.draft; }), r = L[0];
     if (!r) return null;
     var assets = (r.assets || []).map(function (a) { return { name: a.name, url: a.browser_download_url, size: a.size, downloads: a.download_count, os: osOf(a.name) }; })
       .filter(function (a) { return a.os; });
-    return { tag: r.tag_name || r.name || '', name: r.name || '', url: r.html_url, pre: !!r.prerelease, date: r.published_at || '', assets: assets };
+    var total = L.reduce(function (s, x) { return s + (x.assets || []).reduce(function (t, y) { return t + (y.download_count || 0); }, 0); }, 0);
+    return { tag: r.tag_name || r.name || '', name: r.name || '', url: r.html_url, pre: !!r.prerelease, date: r.published_at || '', notes: cleanNotes(r.body), downloadsTotal: total, assets: assets };
   }
   function visitorOS() {
     var u = navigator.userAgent || '';
@@ -1099,10 +1126,17 @@
     return 'windows';
   }
   // Karttaki "Yükle" düğmesi: önce ziyaretçinin işletim sistemi, sonra Windows, macOS...
-  function mainAsset(rel) {
-    if (!rel || !rel.assets) return null;
+  // Sürüm dosyaları + depoya doğrudan konmuş dosyalar
+  function assetsOf(it) {
+    var out = [], seen = {};
+    ((it.rel && it.rel.assets) || []).forEach(function (a) { if (!seen[a.name]) { seen[a.name] = 1; out.push(a); } });
+    (it.files || []).forEach(function (a) { if (!seen[a.name]) { seen[a.name] = 1; out.push({ name: a.name, url: a.url, size: a.size, os: a.os, repo: true }); } });
+    return out;
+  }
+  function mainAsset(list) {
+    if (!list || !list.length) return null;
     var order = [visitorOS()].concat(OS_ORDER), i, j;
-    for (i = 0; i < order.length; i++) for (j = 0; j < rel.assets.length; j++) if (rel.assets[j].os === order[i]) return rel.assets[j];
+    for (i = 0; i < order.length; i++) for (j = 0; j < list.length; j++) if (list[j].os === order[i]) return list[j];
     return null;
   }
   function updateReleases(repos, done) {
@@ -1157,7 +1191,7 @@
       types: k ? k.types : typesOf(r, site),
       lang: r.language || '',
       d: new Date(r.pushed_at || r.updated_at),
-      rel: relOf(r.name), icon: x.icon || '', stars: r.stargazers_count || 0,
+      rel: relOf(r.name), icon: x.icon || '', files: x.files || [], shots: x.shots || [], stars: r.stargazers_count || 0,
       topics: r.topics || [], langs: (langCache[r.name] || {}).l || null
     };
   }
@@ -1178,16 +1212,19 @@
     return b;
   }
 
+  var searchEl = document.getElementById('q');
   function applyFilter() {
-    var vis = 0;
+    var vis = 0, q = ((searchEl && searchEl.value) || '').trim().toLowerCase();
     worksEl.querySelectorAll('.work').forEach(function (w) {
-      var show = currentFilter === 'all' || (' ' + w.dataset.t + ' ').indexOf(' ' + currentFilter + ' ') > -1;
+      var ok = currentFilter === 'all' || (currentFilter === 'dl' ? w.dataset.dl === '1' : (' ' + w.dataset.t + ' ').indexOf(' ' + currentFilter + ' ') > -1);
+      var show = ok && (!q || (w.dataset.q || '').indexOf(q) > -1);
       w.classList.toggle('hide', !show);
       if (show) vis++;
     });
-    if (!vis) { status.textContent = 'Bu kategoride henüz proje yok.'; status.hidden = false; }
-    else if (status.textContent === 'Bu kategoride henüz proje yok.') status.hidden = true;
+    if (!vis) { status.textContent = 'Bu filtreye uyan proje yok.'; status.hidden = false; }
+    else if (status.textContent === 'Bu filtreye uyan proje yok.') status.hidden = true;
   }
+  if (searchEl) searchEl.addEventListener('input', applyFilter);
 
   function renderWorks(items) {
     currentItems = items;
@@ -1195,6 +1232,9 @@
     items.forEach(function (it, i) {
       var card = el('article', 'work'), info = el('div', 'info'), head = el('div', 'head');
       card.dataset.t = it.types.join(' ');
+      var assets = assetsOf(it);
+      card.dataset.dl = assets.length ? '1' : '';
+      card.dataset.q = (it.name + ' ' + (it.desc || '') + ' ' + (it.lang || '')).toLowerCase();
 
       // Simgenin üstüne gelince başlık ve açıklama görünür
       var pw = el('span', 'picowrap'), tip = el('span', 'tip');
@@ -1216,14 +1256,14 @@
       var dp = el('p', '', it.desc || 'Açıklama henüz eklenmedi.');
       if (it.desc) dp.title = it.desc;
       info.appendChild(dp);
-      if (it.d) info.appendChild(el('div', 'date', 'Son güncelleme: ' + longDate(it.d) + ' (' + ago(it.d) + ')'));
+      if (it.d) info.appendChild(el('div', 'date', 'Son güncelleme: ' + longDate(it.d) + ' (' + ago(it.d) + ')' + (it.rel && it.rel.downloadsTotal ? ' · ' + it.rel.downloadsTotal + ' indirme' : '')));
 
       var links = el('div', 'links');
       links.appendChild(link('lbtn', it.url, it.profile ? 'GitHub profilinde ara' : 'Depoyu aç'));
       if (it.site) links.appendChild(link('lbtn site', it.site, 'Siteyi aç'));
-      var ma = mainAsset(it.rel);
+      var ma = mainAsset(assets);
       if (ma) {
-        var dl = link('lbtn dl', ma.url, 'Yükle' + (it.rel.tag ? ' · ' + it.rel.tag : ''));
+        var dl = link('lbtn dl', ma.url, 'Yükle' + (!ma.repo && it.rel && it.rel.tag ? ' · ' + it.rel.tag : ''));
         dl.title = OS_LABEL[ma.os] + ' · ' + ma.name + (ma.size ? ' (' + mb(ma.size) + ')' : '');
         links.appendChild(dl);
       } else if (it.rel) links.appendChild(link('lbtn', it.rel.url, 'Sürümler'));
@@ -1332,7 +1372,7 @@
   /* ---------- Önizleme: devre hatlarıyla bağlanan cam paneller ---------- */
   var pv = document.getElementById('pv'), pvCard = document.getElementById('pvCard'), pvInner = document.getElementById('pvInner'),
       pvWires = document.getElementById('pvWires'), pvChip = document.getElementById('pvChip');
-  var pvTimer = null, pvCloseT = null, pvPinned = false, pvIdx = -1;
+  var pvTimer = null, pvCloseT = null, pvPinned = false, pvIdx = -1, pvHash = false;
   var hoverCap = !!(window.matchMedia && window.matchMedia('(hover: hover)').matches);
 
   function T(parent, tag, cls, text) { var n = el(tag, cls, text); parent.appendChild(n); return n; }
@@ -1363,15 +1403,18 @@
     } else T(p, 'div', 'muted', 'Bu proje için yayınlanmış bir site yok.');
 
     p = panel('pvDl', 'Yükleyiciler');
-    var rel = it.rel;
-    if (rel && rel.assets && rel.assets.length) {
-      T(p, 'div', 'muted', rel.tag + (rel.pre ? ' (ön sürüm)' : '') + (rel.date ? ' · ' + longDate(new Date(rel.date)) : ''));
+    var rel = it.rel, list = assetsOf(it);
+    if (rel) {
+      T(p, 'div', 'muted', rel.tag + (rel.pre ? ' (ön sürüm)' : '') + (rel.date ? ' · ' + longDate(new Date(rel.date)) : '') + (rel.downloadsTotal ? ' · ' + rel.downloadsTotal + ' indirme' : ''));
+      if (rel.notes) T(p, 'div', 'pv-notes', rel.notes);
+    }
+    if (list.length) {
       var n = 0;
       OS_ORDER.forEach(function (os) {
-        rel.assets.forEach(function (a) {
+        list.forEach(function (a) {
           if (a.os !== os || n >= 6) return;
           n++;
-          var r = T(p, 'div', 'row'), l = T(r, 'span', '', OS_LABEL[os]);
+          var r = T(p, 'div', 'row'), l = T(r, 'span', '', OS_LABEL[os] + (a.repo ? ' (depoda)' : ''));
           l.title = a.name;
           T(r, 'span', 'muted', a.size ? mb(a.size) : '');
           var d = link('lbtn dl', a.url, 'İndir'); d.title = a.name; r.appendChild(d);
@@ -1391,6 +1434,16 @@
         var bar = T(p, 'div', 'pv-bar'), fill = T(bar, 'i'); fill.style.width = Math.max(3, pc) + '%';
       });
     } else T(p, 'div', 'muted', it.lang || 'Dil bilgisi yok.');
+
+    var sh = document.getElementById('pvShots');
+    sh.innerHTML = '';
+    (it.shots || []).forEach(function (u) {
+      var a = link('', u, ''), im = new Image();
+      im.alt = it.name + ' ekran görüntüsü'; im.loading = 'lazy';
+      im.onerror = function () { a.remove(); };
+      im.src = u; a.appendChild(im); sh.appendChild(a);
+    });
+    sh.hidden = !(it.shots && it.shots.length);
   }
 
   // Köşeleri yuvarlatılmış dik açılı yol
@@ -1445,10 +1498,13 @@
     pv.hidden = false;
     fillPreview(it);
     requestAnimationFrame(drawWires);
+    if (pin) { try { history.replaceState(null, '', '#' + encodeURIComponent(it.name)); pvHash = true; } catch (e) {} }
+    track('onizleme/' + it.name, 'Önizleme: ' + it.name);
   }
   function closePreview() {
     clearTimeout(pvTimer); clearTimeout(pvCloseT);
     pv.hidden = true; pvPinned = false; pvIdx = -1;
+    if (pvHash) { try { history.replaceState(null, '', '#portfolio'); } catch (e) {} pvHash = false; }
     document.getElementById('pvSite').innerHTML = '';   // site önizlemesini durdur
   }
   function scheduleClose() { if (pvPinned) return; clearTimeout(pvCloseT); pvCloseT = setTimeout(closePreview, 350); }
@@ -1478,6 +1534,43 @@
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !pv.hidden) closePreview(); });
   window.addEventListener('resize', function () { if (!pv.hidden) drawWires(); });
 
+  document.getElementById('pvCopy').addEventListener('click', function () {
+    var it = currentItems[pvIdx], b = this;
+    if (!it) return;
+    var u = location.href.split('#')[0] + '#' + encodeURIComponent(it.name);
+    function ok() { var t = b.textContent; b.textContent = 'Kopyalandı ✓'; setTimeout(function () { b.textContent = t; }, 1600); }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(u).then(ok, function () { prompt('Bağlantı:', u); });
+    else prompt('Bağlantı:', u);
+  });
+
+  // Düğme tıklamalarını say (sayaç tanımlıysa)
+  function trackLink(e, name) {
+    var b = e.target.closest && e.target.closest('.lbtn');
+    if (b) track('tikla/' + name + '/' + b.textContent.split(' · ')[0].toLowerCase(), name + ': ' + b.textContent);
+  }
+  worksEl.addEventListener('click', function (e) {
+    var w = e.target.closest && e.target.closest('.work');
+    if (w) trackLink(e, w.querySelector('.ptitle').textContent);
+  });
+  pvCard.addEventListener('click', function (e) { trackLink(e, document.getElementById('pvTitle').textContent); });
+
+  // siteadresi/#ProjeAdı bağlantısı önizlemeyi doğrudan açar
+  var SECTIONS = ['home', 'about', 'resume', 'services', 'portfolio', 'contact'], hashHandled = false;
+  function openFromHash() {
+    var h = '';
+    try { h = decodeURIComponent((location.hash || '').slice(1)); } catch (e) { return false; }
+    if (!h || SECTIONS.indexOf(h) > -1) return false;
+    for (var i = 0; i < currentItems.length; i++) {
+      if (currentItems[i].name.toLowerCase() === h.toLowerCase()) {
+        document.getElementById('portfolio').scrollIntoView();
+        openPreview(i, true);
+        return true;
+      }
+    }
+    return false;
+  }
+  window.addEventListener('hashchange', function () { hashHandled = openFromHash(); });
+
   /* ---------- Veri: data.json (GitHub Actions) + GitHub'dan canlı depo listesi ---------- */
   var CACHE_KEY = 'repos:' + USER, hasData = false, lastLoad = 0;
 
@@ -1489,7 +1582,8 @@
     if (!hasAlbion) items.push(ALBION_ITEM);
     renderWorks(items);
     setMeterProjects(items.map(function (it) { return { n: it.name, d: it.d }; }));
-    if (status.textContent !== 'Bu kategoride henüz proje yok.') status.hidden = true;
+    if (status.textContent !== 'Bu filtreye uyan proje yok.') status.hidden = true;
+    if (!hashHandled && openFromHash()) hashHandled = true;
   }
   function applyRepos(repos) {
     hasData = true;
@@ -1508,7 +1602,7 @@
   // data.json'daki bilgiler (README özeti, simge, diller, sürümler) önbelleklere yazılır
   function seedFromBase(d) {
     (d.repos || []).forEach(function (b) {
-      extras[b.name] = { readme: b.readme || '', icon: b.icon || '' };
+      extras[b.name] = { readme: b.readme || '', icon: b.icon || '', files: b.files || [], shots: b.shots || [] };
       var lc = langCache[b.name], rc = relCache[b.name];
       if (!lc || older(lc.p, b.pushed_at)) langCache[b.name] = { p: b.pushed_at, l: b.langs || {} };
       if (!rc || older(rc.p, b.pushed_at)) relCache[b.name] = { p: b.pushed_at, t: Date.now(), r: b.release || null };
