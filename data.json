@@ -1,29 +1,7 @@
 {
- "generated": "2026-11-15T16:50:15.730Z",
+ "generated": "2026-11-15T21:11:42.400Z",
  "user": "CehennemGibiyim",
  "repos": [
-  {
-   "name": "HisseBildirimSistemi",
-   "url": "https://github.com/CehennemGibiyim/HisseBildirimSistemi",
-   "description": "Hisse Bildirim Sistemi",
-   "readme": "Nasdaq hisselerini tarar, %10–%50 arası hareket eşiğini aşanları sinyal olarak listeler ve haber manşetlerini",
-   "language": "TypeScript",
-   "langs": {
-    "TypeScript": 67647,
-    "CSS": 33009,
-    "JavaScript": 7185
-   },
-   "topics": [],
-   "stars": 0,
-   "created_at": "2026-11-06T04:26:08Z",
-   "pushed_at": "2026-11-15T16:49:32Z",
-   "homepage": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
-   "site": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
-   "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/HisseBildirimSistemi@main/app/icon.svg",
-   "release": null,
-   "files": [],
-   "shots": []
-  },
   {
    "name": "TikTok",
    "url": "https://github.com/CehennemGibiyim/TikTok",
@@ -39,7 +17,7 @@
    "topics": [],
    "stars": 1,
    "created_at": "2026-02-14T20:53:52Z",
-   "pushed_at": "2026-11-15T15:22:30Z",
+   "pushed_at": "2026-11-15T21:07:32Z",
    "homepage": "https://cehennemgibiyim.github.io/TikTok",
    "site": "https://cehennemgibiyim.github.io/TikTok",
    "icon": "",
@@ -57,12 +35,14 @@
       "url": "https://github.com/CehennemGibiyim/TikTok/releases/download/v1.4.19/TikTok-Sandik-Radari-1.4.19-x64.exe",
       "size": 121985933,
       "downloads": 3,
-      "os": "windows"
+      "os": "windows",
+      "sha256": "4857c81d855dae2382368b0a9f7df424037dd2864ee2c614864c7f21c2f18db6"
      }
     ]
    },
    "files": [],
-   "shots": []
+   "shots": [],
+   "activity": []
   },
   {
    "name": "AoT-PNASF",
@@ -82,7 +62,7 @@
    "topics": [],
    "stars": 5,
    "created_at": "2026-03-21T00:10:55Z",
-   "pushed_at": "2026-11-15T15:00:22Z",
+   "pushed_at": "2026-11-15T20:20:37Z",
    "homepage": "https://cehennemgibiyim.github.io/AoT-PNASF/",
    "site": "https://cehennemgibiyim.github.io/AoT-PNASF/",
    "icon": "https://raw.githubusercontent.com/CehennemGibiyim/AoT-PNASF/main/desktop/electron/build/icon.png",
@@ -100,42 +80,71 @@
       "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/download/v1.1.1/AoT-PNASF-1.1.1-x64-portable.exe",
       "size": 82676522,
       "downloads": 3,
-      "os": "windows"
+      "os": "windows",
+      "sha256": "5d5b12323c8bf455244ad97d2ac887ef4a15d617b793d6f7b05a6248f83b4437"
      },
      {
       "name": "AoT-PNASF-1.1.1-x64-setup.exe",
       "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/download/v1.1.1/AoT-PNASF-1.1.1-x64-setup.exe",
       "size": 82923984,
       "downloads": 4,
-      "os": "windows"
+      "os": "windows",
+      "sha256": "2f4fb02a1aa69939876d598e994d44dfb9d9cb0813bea1b4e60466cb6816b670"
      },
      {
       "name": "AoT-PNASF-Windows-1.1.1.zip",
       "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/download/v1.1.1/AoT-PNASF-Windows-1.1.1.zip",
       "size": 171176475,
       "downloads": 2,
-      "os": "windows"
+      "os": "windows",
+      "sha256": "e9705e6cd1f5368dc8c6064743585ff9f51a6fb4e99ddf8bee86face5a1f7f9d"
      },
      {
       "name": "AoT-PNASF_1.1.1_x64-setup.exe",
       "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/download/v1.1.1/AoT-PNASF_1.1.1_x64-setup.exe",
       "size": 2638177,
       "downloads": 2,
-      "os": "windows"
+      "os": "windows",
+      "sha256": "3c83a8a0d2523a6e04369707940b36433410f2e2e7924c04189157d1992c51a3"
      },
      {
       "name": "AoT-PNASF_1.1.1_x64_en-US.msi",
       "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/download/v1.1.1/AoT-PNASF_1.1.1_x64_en-US.msi",
       "size": 3145728,
       "downloads": 2,
-      "os": "windows"
+      "os": "windows",
+      "sha256": "96a125dd835b457dde72f7cc7532181a718ef856032d603a2ca5c2033e108b1c"
      }
     ]
    },
    "files": [],
    "shots": [
     "https://render.albiononline.com/v1/item/T8_2H_CLAYMORE.png"
-   ]
+   ],
+   "activity": []
+  },
+  {
+   "name": "HisseBildirimSistemi",
+   "url": "https://github.com/CehennemGibiyim/HisseBildirimSistemi",
+   "description": "Hisse Bildirim Sistemi",
+   "readme": "Nasdaq hisselerini tarar, %10–%50 arası hareket eşiğini aşanları sinyal olarak listeler ve haber manşetlerini",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 80207,
+    "CSS": 43097,
+    "JavaScript": 13121
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-11-06T04:26:08Z",
+   "pushed_at": "2026-11-15T19:34:49Z",
+   "homepage": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
+   "site": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
+   "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/HisseBildirimSistemi@main/app/icon.svg",
+   "release": null,
+   "files": [],
+   "shots": [],
+   "activity": []
   },
   {
    "name": "sms",
@@ -172,12 +181,14 @@
       "url": "https://github.com/CehennemGibiyim/sms/releases/download/v1.0.4/Enough-V2-Panel-Setup-1.0.4.exe",
       "size": 82228559,
       "downloads": 3,
-      "os": "windows"
+      "os": "windows",
+      "sha256": "230a7aa989ca3f8ba6765cb6d11ceed88d3c9e1d05fa6de939bbf6a90999fe7c"
      }
     ]
    },
    "files": [],
-   "shots": []
+   "shots": [],
+   "activity": []
   },
   {
    "name": "test2",
@@ -200,7 +211,8 @@
    "icon": "",
    "release": null,
    "files": [],
-   "shots": []
+   "shots": [],
+   "activity": []
   },
   {
    "name": "Personel26",
@@ -239,19 +251,22 @@
       "url": "https://github.com/CehennemGibiyim/Personel26/releases/download/v1.6.1/Personel26-Kurulum.exe",
       "size": 169631351,
       "downloads": 6,
-      "os": "windows"
+      "os": "windows",
+      "sha256": "84b94de2f7463f9d673ee0f9103f96f5809a810bc16989eff7503fe805b1fb55"
      },
      {
       "name": "Personel26-Portable.zip",
       "url": "https://github.com/CehennemGibiyim/Personel26/releases/download/v1.6.1/Personel26-Portable.zip",
       "size": 253643026,
       "downloads": 3,
-      "os": "other"
+      "os": "other",
+      "sha256": "231403a95ba4898c64bd63ab6fb3240692073caed23b9d9d7a8eecc4ae72fa8e"
      }
     ]
    },
    "files": [],
-   "shots": []
+   "shots": [],
+   "activity": []
   },
   {
    "name": "StockManager",
@@ -286,14 +301,16 @@
       "url": "https://github.com/CehennemGibiyim/StockManager/releases/download/v1.1.0/StockManager-Setup-1.1.0.exe",
       "size": 123389040,
       "downloads": 12,
-      "os": "windows"
+      "os": "windows",
+      "sha256": "4872a94061c3d034e0059dd914681d24b588a5f715b342ae2f66c9b68ef14226"
      }
     ]
    },
    "files": [],
    "shots": [
     "https://raw.githubusercontent.com/CehennemGibiyim/StockManager/main/assets/help/dashboard.png"
-   ]
+   ],
+   "activity": []
   },
   {
    "name": "AtikViewer",
@@ -320,7 +337,8 @@
    "icon": "",
    "release": null,
    "files": [],
-   "shots": []
+   "shots": [],
+   "activity": []
   },
   {
    "name": "SecurityPoint",
@@ -346,7 +364,8 @@
    "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/SecurityPoint@main/Entegrasyon/src/app/icon.svg",
    "release": null,
    "files": [],
-   "shots": []
+   "shots": [],
+   "activity": []
   },
   {
    "name": "HastanePYD",
@@ -368,7 +387,8 @@
    "icon": "",
    "release": null,
    "files": [],
-   "shots": []
+   "shots": [],
+   "activity": []
   },
   {
    "name": "PersonelPuantajSistemi",
@@ -390,7 +410,8 @@
    "icon": "",
    "release": null,
    "files": [],
-   "shots": []
+   "shots": [],
+   "activity": []
   },
   {
    "name": "08Analiz",
@@ -431,7 +452,8 @@
    "icon": "",
    "release": null,
    "files": [],
-   "shots": []
+   "shots": [],
+   "activity": []
   },
   {
    "name": "AoTPNASF",
@@ -453,7 +475,8 @@
    "icon": "",
    "release": null,
    "files": [],
-   "shots": []
+   "shots": [],
+   "activity": []
   },
   {
    "name": "AtikAnaliz",
@@ -484,7 +507,8 @@
     "https://via.placeholder.com/800x600/1a1a2e/ffffff?text=AtikAnaliz+Ana+Panel",
     "https://via.placeholder.com/375x667/1a1a2e/ffffff?text=AtikAnaliz+Mobil",
     "https://via.placeholder.com/800x600/1a1a2e/ffffff?text=Ayarlar+ve+Yapılandırma"
-   ]
+   ],
+   "activity": []
   },
   {
    "name": "test1",
@@ -507,7 +531,8 @@
    "icon": "",
    "release": null,
    "files": [],
-   "shots": []
+   "shots": [],
+   "activity": []
   },
   {
    "name": "TEST",
@@ -527,7 +552,8 @@
    "icon": "",
    "release": null,
    "files": [],
-   "shots": []
+   "shots": [],
+   "activity": []
   },
   {
    "name": "PatientSelection",
@@ -549,7 +575,8 @@
    "icon": "https://raw.githubusercontent.com/CehennemGibiyim/PatientSelection/main/favicon.ico",
    "release": null,
    "files": [],
-   "shots": []
+   "shots": [],
+   "activity": []
   },
   {
    "name": "AtikRemoteManager",
@@ -567,7 +594,8 @@
    "icon": "",
    "release": null,
    "files": [],
-   "shots": []
+   "shots": [],
+   "activity": []
   },
   {
    "name": "taksi-bremerhaven",
@@ -587,7 +615,8 @@
    "icon": "",
    "release": null,
    "files": [],
-   "shots": []
+   "shots": [],
+   "activity": []
   }
  ]
 }
