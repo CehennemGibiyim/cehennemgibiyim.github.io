@@ -314,10 +314,10 @@
   .pv-p { background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.15); border-radius: 14px; padding: 14px 16px; backdrop-filter: blur(8px); min-width: 0; text-shadow: none; }
   .pv-p#pvRepo { grid-area: a; } .pv-p#pvSite { grid-area: b; } .pv-p#pvDl { grid-area: c; } .pv-p#pvInfo { grid-area: d; }
   .pv-p .lb { font-size: 13px; font-weight: 500; color: var(--ember2); margin-bottom: 8px; }
-  .pv-p .row { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 14px; padding: 5px 0; border-top: 1px solid rgba(255,255,255,.08); }
+  .pv-p .pr { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 14px; padding: 5px 0; border-top: 1px solid rgba(255,255,255,.08); }
   .pv-p .muted { color: var(--mute); font-size: 14px; }
   .pv-p .lbtn { margin-top: 2px; }
-  .pv-p .row .lbtn { margin: 0; padding: 3px 10px; }
+  .pv-p .pr .lbtn { margin: 0; padding: 3px 10px; }
   .pv-shot { position: relative; aspect-ratio: 16 / 10; border-radius: 8px; overflow: hidden; background: #0b0c12; margin-bottom: 10px; }
   .pv-shot iframe { position: absolute; left: 0; top: 0; width: 1280px; height: 800px; border: 0; transform-origin: 0 0; pointer-events: none; background: #fff; }
   .pv-bar { height: 5px; background: rgba(255,255,255,.1); border-radius: 3px; overflow: hidden; margin: 0 0 6px; }
@@ -331,6 +331,21 @@
   .pv-shots[hidden] { display: none; }
   .pv-shots img { height: 96px; width: auto; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); display: block; }
   .pv-notes { font-size: 13px; line-height: 1.45; color: #aab0c4; margin: 6px 0 8px; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; white-space: pre-line; }
+  .pv-p .pr span { min-width: 0; overflow-wrap: anywhere; }
+  .pv-stack { display: flex; gap: 2px; height: 8px; border-radius: 4px; overflow: hidden; background: rgba(255,255,255,.1); }
+  .pv-stack i { display: block; height: 100%; }
+  .pv-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; font-size: 13px; color: var(--mute); }
+  .pv-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .pv-legend b { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+  .c0 { background: #ff5a36; } .c1 { background: #ff9a3c; } .c2 { background: #ffd27a; } .c3 { background: #8c93a8; }
+  .pv-pages { position: relative; z-index: 1; margin-top: 20px; }
+  .pv-pages[hidden] { display: none; }
+  .pv-pages .lb { font-size: 13px; font-weight: 500; color: var(--ember2); margin-bottom: 8px; }
+  .pv-pgs { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 6px; }
+  .pv-pg { flex: none; text-decoration: none; color: inherit; }
+  .pv-shot.sm { width: 200px; margin-bottom: 6px; border: 1px solid rgba(255,255,255,.14); transition: border-color .15s; }
+  .pv-pg:hover .pv-shot { border-color: var(--ember); }
+  .pv-pg .cap { display: block; max-width: 200px; font-size: 13px; color: var(--mute); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 </style>
 </head>
 <body>
@@ -535,6 +550,7 @@
         <section class="pv-p" id="pvDl"></section>
         <section class="pv-p" id="pvInfo"></section>
       </div>
+      <div class="pv-pages" id="pvPages" hidden></div>
       <div class="pv-shots" id="pvShots" hidden></div>
     </div>
   </div>
@@ -1377,7 +1393,56 @@
 
   function T(parent, tag, cls, text) { var n = el(tag, cls, text); parent.appendChild(n); return n; }
   function panel(id, label) { var p = document.getElementById(id); p.innerHTML = ''; T(p, 'div', 'lb', label); return p; }
-  function row(p, a, b) { var r = T(p, 'div', 'row'); T(r, 'span', '', a); if (b) T(r, 'span', 'muted', b); return r; }
+  function row(p, a, b) { var r = T(p, 'div', 'pr'); T(r, 'span', '', a); if (b) T(r, 'span', 'muted', b); return r; }
+
+  var pageCache = {}, pvTok = 0;
+  // Sitenin ana sayfasındaki iç bağlantılardan (en çok 4) önizlenecek sayfaları bulur
+  function discoverPages(site) {
+    if (pageCache[site]) return Promise.resolve(pageCache[site]);
+    return fetch(site).then(function (r) { return r.ok ? r.text() : ''; }).then(function (html) {
+      var out = [], seen = {}, base;
+      try { base = new URL(site); } catch (e) { return out; }
+      seen[base.href] = 1; seen[base.href + '#'] = 1;
+      new DOMParser().parseFromString(html, 'text/html').querySelectorAll('a[href]').forEach(function (a) {
+        if (out.length >= 4) return;
+        var h = a.getAttribute('href');
+        if (!h || /^(mailto:|tel:|javascript:)/i.test(h)) return;
+        var u; try { u = new URL(h, base); } catch (e) { return; }
+        if (u.origin !== base.origin || u.pathname.indexOf(base.pathname) !== 0) return;
+        if (/\.(png|jpe?g|gif|svg|webp|ico|css|js|json|pdf|zip|exe|msi|rar|7z|txt|xml)$/i.test(u.pathname)) return;
+        if (!u.hash && u.pathname.replace(/index\.html$/, '') === base.pathname) return;
+        if (seen[u.href]) return;
+        seen[u.href] = 1;
+        var t = (a.textContent || '').replace(/\s+/g, ' ').trim();
+        if (!t) { try { t = decodeURIComponent((u.hash || u.pathname).replace(/^[#\/]+|\/+$/g, '').split('/').pop()); } catch (e) { t = ''; } }
+        out.push({ title: (t || 'Sayfa').slice(0, 28), url: u.href });
+      });
+      pageCache[site] = out;
+      return out;
+    }).catch(function () { return []; });
+  }
+  function loadPages(it) {
+    var box = document.getElementById('pvPages'), tok = ++pvTok;
+    box.innerHTML = ''; box.hidden = true;
+    if (!it.site) return;
+    discoverPages(it.site).then(function (pages) {
+      if (tok !== pvTok || pv.hidden || !pages.length) return;
+      T(box, 'div', 'lb', 'Sitenin diğer sayfaları');
+      var wrap = T(box, 'div', 'pv-pgs');
+      pages.forEach(function (pg) {
+        var a = link('pv-pg', pg.url, ''), shot = T(a, 'div', 'pv-shot sm'), fr = document.createElement('iframe');
+        fr.tabIndex = -1; fr.title = pg.title;
+        fr.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms');
+        fr.setAttribute('referrerpolicy', 'no-referrer');
+        fr.style.transform = 'scale(' + (200 / 1280) + ')';
+        fr.src = pg.url; shot.appendChild(fr);
+        T(a, 'span', 'cap', pg.title);
+        wrap.appendChild(a);
+      });
+      box.hidden = false;
+      requestAnimationFrame(drawWires);
+    });
+  }
 
   function fillPreview(it) {
     document.getElementById('pvTitle').textContent = it.name;
@@ -1385,10 +1450,7 @@
     pvChip.innerHTML = ''; pvChip.appendChild(badge(it));
 
     var p = panel('pvRepo', 'Depo');
-    row(p, it.profile ? 'GitHub profili' : USER + '/' + it.name);
-    if (it.stars) row(p, 'Yıldız', '★ ' + it.stars);
-    if (it.lang) row(p, 'Dil', it.lang);
-    if (it.d) row(p, 'Son güncelleme', longDate(it.d));
+    row(p, it.profile ? 'GitHub profili' : USER + '/' + it.name, it.stars ? '★ ' + it.stars : '');
     var rb = link('lbtn', it.url, it.profile ? 'GitHub profilini aç' : 'Depoyu aç'); rb.style.marginTop = '10px'; p.appendChild(rb);
 
     p = panel('pvSite', 'Site');
@@ -1414,7 +1476,7 @@
         list.forEach(function (a) {
           if (a.os !== os || n >= 6) return;
           n++;
-          var r = T(p, 'div', 'row'), l = T(r, 'span', '', OS_LABEL[os] + (a.repo ? ' (depoda)' : ''));
+          var r = T(p, 'div', 'pr'), l = T(r, 'span', '', OS_LABEL[os] + (a.repo ? ' (depoda)' : ''));
           l.title = a.name;
           T(r, 'span', 'muted', a.size ? mb(a.size) : '');
           var d = link('lbtn dl', a.url, 'İndir'); d.title = a.name; r.appendChild(d);
@@ -1428,10 +1490,12 @@
     p = panel('pvInfo', 'Diller');
     var ls = it.langs || {}, keys = Object.keys(ls), tot = keys.reduce(function (a, k) { return a + ls[k]; }, 0);
     if (tot) {
-      keys.sort(function (a, b) { return ls[b] - ls[a]; }).slice(0, 4).forEach(function (k) {
-        var pc = ls[k] / tot * 100;
-        row(p, k, (pc < 1 ? '<1' : Math.round(pc)) + '%');
-        var bar = T(p, 'div', 'pv-bar'), fill = T(bar, 'i'); fill.style.width = Math.max(3, pc) + '%';
+      var tops = keys.sort(function (a, b) { return ls[b] - ls[a]; }).slice(0, 4), st = T(p, 'div', 'pv-stack'), lg = T(p, 'div', 'pv-legend');
+      tops.forEach(function (k, i) {
+        var pc = ls[k] / tot * 100, seg = T(st, 'i', 'c' + i), li = T(lg, 'span');
+        seg.style.width = Math.max(3, pc) + '%';
+        T(li, 'b', 'c' + i);
+        li.appendChild(document.createTextNode(k + ' ' + (pc < 1 ? '<1' : Math.round(pc)) + '%'));
       });
     } else T(p, 'div', 'muted', it.lang || 'Dil bilgisi yok.');
 
@@ -1444,6 +1508,7 @@
       im.src = u; a.appendChild(im); sh.appendChild(a);
     });
     sh.hidden = !(it.shots && it.shots.length);
+    loadPages(it);
   }
 
   // Köşeleri yuvarlatılmış dik açılı yol
@@ -1505,7 +1570,9 @@
     clearTimeout(pvTimer); clearTimeout(pvCloseT);
     pv.hidden = true; pvPinned = false; pvIdx = -1;
     if (pvHash) { try { history.replaceState(null, '', '#portfolio'); } catch (e) {} pvHash = false; }
-    document.getElementById('pvSite').innerHTML = '';   // site önizlemesini durdur
+    pvTok++;
+    document.getElementById('pvSite').innerHTML = '';   // site önizlemelerini durdur
+    document.getElementById('pvPages').innerHTML = '';
   }
   function scheduleClose() { if (pvPinned) return; clearTimeout(pvCloseT); pvCloseT = setTimeout(closePreview, 350); }
 
@@ -1533,6 +1600,7 @@
   document.getElementById('pvClose').addEventListener('click', closePreview);
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !pv.hidden) closePreview(); });
   window.addEventListener('resize', function () { if (!pv.hidden) drawWires(); });
+  if ('ResizeObserver' in window) new ResizeObserver(function () { if (!pv.hidden) drawWires(); }).observe(pvInner);
 
   document.getElementById('pvCopy').addEventListener('click', function () {
     var it = currentItems[pvIdx], b = this;
