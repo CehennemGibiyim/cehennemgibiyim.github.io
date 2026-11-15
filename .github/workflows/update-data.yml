@@ -34,3 +34,13 @@ jobs:
             git commit -m "data.json güncellendi"
             git push
           fi
+      - name: Yeni sürüm bildirimi (Telegram, isteğe bağlı)
+        env:
+          TG_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ -f new-releases.txt ] && [ -n "$TG_TOKEN" ] && [ -n "$TG_CHAT" ]; then
+            curl -s "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
+              --data-urlencode "chat_id=${TG_CHAT}" \
+              --data-urlencode "text=$(cat new-releases.txt)" > /dev/null
+          fi
