@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-15T21:11:42.400Z",
+ "generated": "2026-11-15T21:12:18.333Z",
  "user": "CehennemGibiyim",
  "repos": [
   {
@@ -42,7 +42,20 @@
    },
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1072,
+    183
+   ]
   },
   {
    "name": "AoT-PNASF",
@@ -121,7 +134,20 @@
    "shots": [
     "https://render.albiononline.com/v1/item/T8_2H_CLAYMORE.png"
    ],
-   "activity": []
+   "activity": [
+    28,
+    28,
+    28,
+    29,
+    41,
+    51,
+    62,
+    60,
+    61,
+    94,
+    75,
+    10
+   ]
   },
   {
    "name": "HisseBildirimSistemi",
@@ -144,7 +170,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    19,
+    4,
+    11
+   ]
   },
   {
    "name": "sms",
@@ -188,7 +227,20 @@
    },
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    15,
+    3
+   ]
   },
   {
    "name": "test2",
@@ -212,7 +264,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2
+   ]
   },
   {
    "name": "Personel26",
@@ -266,7 +331,20 @@
    },
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    14,
+    0,
+    0,
+    0,
+    7,
+    5,
+    0
+   ]
   },
   {
    "name": "StockManager",
@@ -310,7 +388,20 @@
    "shots": [
     "https://raw.githubusercontent.com/CehennemGibiyim/StockManager/main/assets/help/dashboard.png"
    ],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    14,
+    0,
+    0
+   ]
   },
   {
    "name": "AtikViewer",
@@ -338,7 +429,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    19,
+    0,
+    16,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "SecurityPoint",
@@ -365,7 +469,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    10,
+    4,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "HastanePYD",
@@ -388,7 +505,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    24,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "PersonelPuantajSistemi",
@@ -411,7 +541,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    8,
+    0,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "08Analiz",
@@ -453,7 +596,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "AoTPNASF",
@@ -476,7 +632,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "AtikAnaliz",
@@ -508,7 +677,20 @@
     "https://via.placeholder.com/375x667/1a1a2e/ffffff?text=AtikAnaliz+Mobil",
     "https://via.placeholder.com/800x600/1a1a2e/ffffff?text=Ayarlar+ve+Yapılandırma"
    ],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "test1",
@@ -532,7 +714,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "TEST",
@@ -553,7 +748,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "PatientSelection",
@@ -576,7 +784,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "AtikRemoteManager",
@@ -595,7 +816,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "taksi-bremerhaven",
@@ -616,7 +850,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   }
  ]
 }
