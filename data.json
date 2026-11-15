@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-15T09:33:32.859Z",
+ "generated": "2026-11-15T14:40:02.953Z",
  "user": "CehennemGibiyim",
  "repos": [
   {
@@ -16,11 +16,53 @@
    "topics": [],
    "stars": 0,
    "created_at": "2026-11-06T04:26:08Z",
-   "pushed_at": "2026-11-15T09:33:21Z",
+   "pushed_at": "2026-11-15T14:39:31Z",
    "homepage": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
    "site": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
    "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/HisseBildirimSistemi@main/app/icon.svg",
-   "release": null
+   "release": null,
+   "files": [],
+   "shots": []
+  },
+  {
+   "name": "TikTok",
+   "url": "https://github.com/CehennemGibiyim/TikTok",
+   "description": "cehennemgibiyim.github.io/TikTok",
+   "readme": "Sunucu, Docker, API anahtarı gerekmez: her şey GitHub Pages üzerinde statik çalışır, veri tarayıcıda",
+   "language": "JavaScript",
+   "langs": {
+    "JavaScript": 623381,
+    "HTML": 104884,
+    "Python": 22621,
+    "CSS": 13200
+   },
+   "topics": [],
+   "stars": 1,
+   "created_at": "2026-02-14T20:53:52Z",
+   "pushed_at": "2026-11-15T14:37:13Z",
+   "homepage": "https://cehennemgibiyim.github.io/TikTok",
+   "site": "https://cehennemgibiyim.github.io/TikTok",
+   "icon": "",
+   "release": {
+    "tag": "v1.4.19",
+    "name": "1.4.19",
+    "url": "https://github.com/CehennemGibiyim/TikTok/releases/tag/v1.4.19",
+    "pre": false,
+    "date": "2026-11-15T03:30:31Z",
+    "notes": "Panel v1.4.19\nDeğişiklikler\n- Windows uygulaması tam paneli açar; Fırsatlar aynı pencerede açılır.\n- Windows tarayıcısı GitHub ile aynı ayarlara geçti: 12 kalıcı oda, 2 saatlik oturum, dakikada 4 bağlantı ve 25/saat bütçe.\n- Canlı dinleme kalıcı bağlantıya geçti; sandık, zarf ve portal eski treasureBoxData alanları ve 0 jetonla da kaydediliyor.\n- Kimliksiz manuel hedefler ve kapalı odalar canlı…",
+    "downloadsTotal": 17,
+    "assets": [
+     {
+      "name": "TikTok-Sandik-Radari-1.4.19-x64.exe",
+      "url": "https://github.com/CehennemGibiyim/TikTok/releases/download/v1.4.19/TikTok-Sandik-Radari-1.4.19-x64.exe",
+      "size": 121985933,
+      "downloads": 2,
+      "os": "windows"
+     }
+    ]
+   },
+   "files": [],
+   "shots": []
   },
   {
    "name": "AoT-PNASF",
@@ -40,7 +82,7 @@
    "topics": [],
    "stars": 5,
    "created_at": "2026-03-21T00:10:55Z",
-   "pushed_at": "2026-11-15T07:45:10Z",
+   "pushed_at": "2026-11-15T13:08:32Z",
    "homepage": "https://cehennemgibiyim.github.io/AoT-PNASF/",
    "site": "https://cehennemgibiyim.github.io/AoT-PNASF/",
    "icon": "https://raw.githubusercontent.com/CehennemGibiyim/AoT-PNASF/main/desktop/electron/build/icon.png",
@@ -50,6 +92,8 @@
     "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/tag/v1.1.1",
     "pre": false,
     "date": "2026-11-12T10:15:24Z",
+    "notes": "AoT PNASF v1.1.1\nMasaüstü paket adları güncelleyiciyle uyumlu hale getirildi.\nDüzeltmeler\n- Tauri paketlerindeki boşluklar dosya adlarında tireye çevriliyor; SHA256SUMS.txt ve zip içeriği yayımdaki adlarla birebir eşleşiyor.\n- Güncelleyici, indiricinin kabul etmeyeceği dosya adlarını artık seçmiyor.\n- Paket toplama sırasında aynı ada sahip iki dosya varsa sessizce üzerine yazmak yerine hata ver…",
+    "downloadsTotal": 44,
     "assets": [
      {
       "name": "AoT-PNASF-1.1.1-x64-portable.exe",
@@ -87,43 +131,11 @@
       "os": "windows"
      }
     ]
-   }
-  },
-  {
-   "name": "TikTok",
-   "url": "https://github.com/CehennemGibiyim/TikTok",
-   "description": "cehennemgibiyim.github.io/TikTok",
-   "readme": "Sunucu, Docker, API anahtarı gerekmez: her şey GitHub Pages üzerinde statik çalışır, veri tarayıcıda",
-   "language": "JavaScript",
-   "langs": {
-    "JavaScript": 623381,
-    "HTML": 104884,
-    "Python": 22621,
-    "CSS": 13200
    },
-   "topics": [],
-   "stars": 1,
-   "created_at": "2026-02-14T20:53:52Z",
-   "pushed_at": "2026-11-15T07:06:36Z",
-   "homepage": "https://cehennemgibiyim.github.io/TikTok",
-   "site": "https://cehennemgibiyim.github.io/TikTok",
-   "icon": "",
-   "release": {
-    "tag": "v1.4.19",
-    "name": "1.4.19",
-    "url": "https://github.com/CehennemGibiyim/TikTok/releases/tag/v1.4.19",
-    "pre": false,
-    "date": "2026-11-15T03:30:31Z",
-    "assets": [
-     {
-      "name": "TikTok-Sandik-Radari-1.4.19-x64.exe",
-      "url": "https://github.com/CehennemGibiyim/TikTok/releases/download/v1.4.19/TikTok-Sandik-Radari-1.4.19-x64.exe",
-      "size": 121985933,
-      "downloads": 2,
-      "os": "windows"
-     }
-    ]
-   }
+   "files": [],
+   "shots": [
+    "https://render.albiononline.com/v1/item/T8_2H_CLAYMORE.png"
+   ]
   },
   {
    "name": "sms",
@@ -152,6 +164,8 @@
     "url": "https://github.com/CehennemGibiyim/sms/releases/tag/v1.0.4",
     "pre": false,
     "date": "2026-11-14T23:48:18Z",
+    "notes": "Enough V2 Panel v1.0.4 - Windows Release\nWindows Installer (.exe)\nDownload the .exe file below to install Enough V2 Panel on Windows.\nFeatures\n- Cyber Neon themed UI\n- 83 SMS service definitions\n- Proxy backend for CORS bypass\n- ServiceDefinition registry for custom providers\n- Server-side API key management ({{env:VAR}} substitution)\n- Silent auto-update from GitHub Releases\nInstallation\n1. Do…",
+    "downloadsTotal": 18,
     "assets": [
      {
       "name": "Enough-V2-Panel-Setup-1.0.4.exe",
@@ -161,7 +175,9 @@
       "os": "windows"
      }
     ]
-   }
+   },
+   "files": [],
+   "shots": []
   },
   {
    "name": "test2",
@@ -182,7 +198,9 @@
    "homepage": "",
    "site": "",
    "icon": "",
-   "release": null
+   "release": null,
+   "files": [],
+   "shots": []
   },
   {
    "name": "Personel26",
@@ -213,6 +231,8 @@
     "url": "https://github.com/CehennemGibiyim/Personel26/releases/tag/v1.6.1",
     "pre": false,
     "date": "2026-11-08T08:07:18Z",
+    "notes": "Personel26 1.6.1 — Antivirüs engeline takılmayan yedekleme: doğrudan pgdump, PowerShell yok\nTür: fix\n- Otomatik ve elle SQL yedekleri artık PowerShell betiği yerine doğrudan pgdump ile alınır; antivirüslerin engellediği powershell.exe -ExecutionPolicy Bypass zinciri kaldırıldı.\n- Kapanış yedeği ve Personel26.exe --backup komutu da aynı doğrudan yedeği kullanır; paneldeki geri yükleme öncesi güv…",
+    "downloadsTotal": 42,
     "assets": [
      {
       "name": "Personel26-Kurulum.exe",
@@ -229,7 +249,9 @@
       "os": "other"
      }
     ]
-   }
+   },
+   "files": [],
+   "shots": []
   },
   {
    "name": "StockManager",
@@ -256,6 +278,8 @@
     "url": "https://github.com/CehennemGibiyim/StockManager/releases/tag/v1.1.0",
     "pre": false,
     "date": "2026-11-05T18:51:28Z",
+    "notes": "StockManager v1.1.0\n- Veriler artık her açılışta aynı yerel adresten yükleniyor; kapatıp açınca kaybolma sorunu giderildi.\n- Otomatik yedekleme: açılışta, kapanışta, 5 dakikada bir ve her manuel yedekte kurulum klasöründeki backups dizinine yazılır.\n- Yedekler bugün dahil son 7 takvim günü saklanır; 8. güne giren dosyalar açılışta ve her yedekte otomatik silinir.\n- Yedekler boşsa son yedek kend…",
+    "downloadsTotal": 21,
     "assets": [
      {
       "name": "StockManager-Setup-1.1.0.exe",
@@ -265,7 +289,11 @@
       "os": "windows"
      }
     ]
-   }
+   },
+   "files": [],
+   "shots": [
+    "https://raw.githubusercontent.com/CehennemGibiyim/StockManager/main/assets/help/dashboard.png"
+   ]
   },
   {
    "name": "AtikViewer",
@@ -290,7 +318,9 @@
    "homepage": "cehennemgibiyim.github.io/AtikViewer",
    "site": "https://cehennemgibiyim.github.io/AtikViewer",
    "icon": "",
-   "release": null
+   "release": null,
+   "files": [],
+   "shots": []
   },
   {
    "name": "SecurityPoint",
@@ -314,7 +344,9 @@
    "homepage": "https://cehennemgibiyim.github.io/SecurityPoint/",
    "site": "https://cehennemgibiyim.github.io/SecurityPoint/",
    "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/SecurityPoint@main/Entegrasyon/src/app/icon.svg",
-   "release": null
+   "release": null,
+   "files": [],
+   "shots": []
   },
   {
    "name": "HastanePYD",
@@ -334,7 +366,9 @@
    "homepage": "",
    "site": "https://cehennemgibiyim.github.io/HastanePYD/",
    "icon": "",
-   "release": null
+   "release": null,
+   "files": [],
+   "shots": []
   },
   {
    "name": "PersonelPuantajSistemi",
@@ -354,7 +388,9 @@
    "homepage": "https://cehennemgibiyim.github.io/PersonelPuantajSistemi/",
    "site": "https://cehennemgibiyim.github.io/PersonelPuantajSistemi/",
    "icon": "",
-   "release": null
+   "release": null,
+   "files": [],
+   "shots": []
   },
   {
    "name": "08Analiz",
@@ -393,7 +429,9 @@
    "homepage": "https://cehennemgibiyim.github.io/08Analiz",
    "site": "https://cehennemgibiyim.github.io/08Analiz",
    "icon": "",
-   "release": null
+   "release": null,
+   "files": [],
+   "shots": []
   },
   {
    "name": "AoTPNASF",
@@ -413,7 +451,9 @@
    "homepage": "https://cehennemgibiyim.github.io/AoTPNASF/",
    "site": "https://cehennemgibiyim.github.io/AoTPNASF/",
    "icon": "",
-   "release": null
+   "release": null,
+   "files": [],
+   "shots": []
   },
   {
    "name": "AtikAnaliz",
@@ -437,7 +477,14 @@
    "homepage": "",
    "site": "https://cehennemgibiyim.github.io/AtikAnaliz/",
    "icon": "",
-   "release": null
+   "release": null,
+   "files": [],
+   "shots": [
+    "https://via.placeholder.com/800x200/1a1a2e/16213e?text=AtikAnaliz+v2.0+-+Kripto+Analiz+Platformu",
+    "https://via.placeholder.com/800x600/1a1a2e/ffffff?text=AtikAnaliz+Ana+Panel",
+    "https://via.placeholder.com/375x667/1a1a2e/ffffff?text=AtikAnaliz+Mobil",
+    "https://via.placeholder.com/800x600/1a1a2e/ffffff?text=Ayarlar+ve+Yapılandırma"
+   ]
   },
   {
    "name": "test1",
@@ -458,7 +505,9 @@
    "homepage": "",
    "site": "",
    "icon": "",
-   "release": null
+   "release": null,
+   "files": [],
+   "shots": []
   },
   {
    "name": "TEST",
@@ -476,7 +525,9 @@
    "homepage": "",
    "site": "https://cehennemgibiyim.github.io/TEST/",
    "icon": "",
-   "release": null
+   "release": null,
+   "files": [],
+   "shots": []
   },
   {
    "name": "PatientSelection",
@@ -496,7 +547,9 @@
    "homepage": "https://cehennemgibiyim.github.io/PatientSelection/",
    "site": "https://cehennemgibiyim.github.io/PatientSelection/",
    "icon": "https://raw.githubusercontent.com/CehennemGibiyim/PatientSelection/main/favicon.ico",
-   "release": null
+   "release": null,
+   "files": [],
+   "shots": []
   },
   {
    "name": "AtikRemoteManager",
@@ -512,7 +565,9 @@
    "homepage": "",
    "site": "",
    "icon": "",
-   "release": null
+   "release": null,
+   "files": [],
+   "shots": []
   },
   {
    "name": "taksi-bremerhaven",
@@ -530,7 +585,9 @@
    "homepage": "",
    "site": "https://cehennemgibiyim.github.io/taksi-bremerhaven/",
    "icon": "",
-   "release": null
+   "release": null,
+   "files": [],
+   "shots": []
   }
  ]
 }
