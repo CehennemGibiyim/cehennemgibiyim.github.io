@@ -1,7 +1,43 @@
 {
- "generated": "2026-11-15T21:30:00.994Z",
+ "generated": "2026-11-16T01:21:11.348Z",
  "user": "CehennemGibiyim",
  "repos": [
+  {
+   "name": "HisseBildirimSistemi",
+   "url": "https://github.com/CehennemGibiyim/HisseBildirimSistemi",
+   "description": "Hisse Bildirim Sistemi",
+   "readme": "Nasdaq hisselerini tarar, %10–%50 arası hareket eşiğini aşanları sinyal olarak listeler ve haber manşetlerini",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 80207,
+    "CSS": 43097,
+    "JavaScript": 13121
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-11-06T04:26:08Z",
+   "pushed_at": "2026-11-16T01:19:28Z",
+   "homepage": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
+   "site": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
+   "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/HisseBildirimSistemi@main/app/icon.svg",
+   "release": null,
+   "files": [],
+   "shots": [],
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    19,
+    4,
+    11
+   ]
+  },
   {
    "name": "TikTok",
    "url": "https://github.com/CehennemGibiyim/TikTok",
@@ -17,7 +53,7 @@
    "topics": [],
    "stars": 1,
    "created_at": "2026-02-14T20:53:52Z",
-   "pushed_at": "2026-11-15T21:27:41Z",
+   "pushed_at": "2026-11-16T01:18:44Z",
    "homepage": "https://cehennemgibiyim.github.io/TikTok",
    "site": "https://cehennemgibiyim.github.io/TikTok",
    "icon": "",
@@ -45,6 +81,70 @@
    "activity": []
   },
   {
+   "name": "SecurityPoint",
+   "url": "https://github.com/CehennemGibiyim/SecurityPoint",
+   "description": "",
+   "readme": "https://github.com/CehennemGibiyim/SecurityPoint/actions/runs/40246927388/artifacts/12619385433",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 1072284,
+    "JavaScript": 149652,
+    "CSS": 80396,
+    "HTML": 69217,
+    "PowerShell": 54939,
+    "Shell": 24654,
+    "Python": 7481,
+    "Batchfile": 3145,
+    "PLpgSQL": 1403,
+    "VBScript": 467
+   },
+   "topics": [],
+   "stars": 2,
+   "created_at": "2026-10-23T10:26:04Z",
+   "pushed_at": "2026-11-16T00:40:00Z",
+   "homepage": "https://cehennemgibiyim.github.io/SecurityPoint/",
+   "site": "https://cehennemgibiyim.github.io/SecurityPoint/",
+   "icon": "https://raw.githubusercontent.com/CehennemGibiyim/SecurityPoint/main/Entegrasyon/src/app/favicon.ico",
+   "release": {
+    "tag": "v1.3.0",
+    "name": "SecurityPoint v1.3.0",
+    "url": "https://github.com/CehennemGibiyim/SecurityPoint/releases/tag/v1.3.0",
+    "pre": false,
+    "date": "2026-11-16T00:44:14Z",
+    "notes": "[1.3.0] — 2026-11-15\nEklenen\n- PWA (iOS + Android + masaüstü): manifest.webmanifest (yeni src/app/manifest.ts), basePath'e\nduyarlı service worker (public/sw.js), çevrimdışı sayfası ve üretimde otomatik kayıt\n(PwaRegister). Panel \"Ana Ekrana Ekle / Yükle\" ile kurulabilir; API yanıtları önbelleğe alınmaz,\nservice worker yalnızca üretim derlemesinde kaydolur → mevcut davranış bozulmaz.\n- Linux taş…",
+    "downloadsTotal": 10,
+    "assets": [
+     {
+      "name": "SecurityPoint-Kurulum.exe",
+      "url": "https://github.com/CehennemGibiyim/SecurityPoint/releases/download/v1.3.0/SecurityPoint-Kurulum.exe",
+      "size": 81561929,
+      "downloads": 2,
+      "os": "windows",
+      "sha256": "115c24c45a877d87ab4ded25f7062b15a8fad2711be187cf7dc041a13eb096b4"
+     },
+     {
+      "name": "SecurityPoint-Portable-linux-x64.tar.gz",
+      "url": "https://github.com/CehennemGibiyim/SecurityPoint/releases/download/v1.3.0/SecurityPoint-Portable-linux-x64.tar.gz",
+      "size": 86208062,
+      "downloads": 1,
+      "os": "linux",
+      "sha256": "6193480f95a7fcfe22e5807bd1315f792a6b347542f8b5c5e2e8cdd0edd72791"
+     },
+     {
+      "name": "SecurityPoint-Portable.zip",
+      "url": "https://github.com/CehennemGibiyim/SecurityPoint/releases/download/v1.3.0/SecurityPoint-Portable.zip",
+      "size": 118857830,
+      "downloads": 1,
+      "os": "other",
+      "sha256": "41945b45ac83210fa5ea6e12ca2802ef46ede2d9c86c3012ce4a2e18e14884c4"
+     }
+    ]
+   },
+   "files": [],
+   "shots": [],
+   "activity": []
+  },
+  {
    "name": "AoT-PNASF",
    "url": "https://github.com/CehennemGibiyim/AoT-PNASF",
    "description": "Albion Online Tools · Powered Nexus & AI Smart Feed",
@@ -62,7 +162,7 @@
    "topics": [],
    "stars": 5,
    "created_at": "2026-03-21T00:10:55Z",
-   "pushed_at": "2026-11-15T20:20:37Z",
+   "pushed_at": "2026-11-16T00:07:02Z",
    "homepage": "https://cehennemgibiyim.github.io/AoT-PNASF/",
    "site": "https://cehennemgibiyim.github.io/AoT-PNASF/",
    "icon": "https://raw.githubusercontent.com/CehennemGibiyim/AoT-PNASF/main/desktop/electron/build/icon.png",
@@ -121,56 +221,7 @@
    "shots": [
     "https://render.albiononline.com/v1/item/T8_2H_CLAYMORE.png"
    ],
-   "activity": [
-    28,
-    28,
-    28,
-    29,
-    41,
-    51,
-    62,
-    60,
-    61,
-    94,
-    75,
-    10
-   ]
-  },
-  {
-   "name": "HisseBildirimSistemi",
-   "url": "https://github.com/CehennemGibiyim/HisseBildirimSistemi",
-   "description": "Hisse Bildirim Sistemi",
-   "readme": "Nasdaq hisselerini tarar, %10–%50 arası hareket eşiğini aşanları sinyal olarak listeler ve haber manşetlerini",
-   "language": "TypeScript",
-   "langs": {
-    "TypeScript": 80207,
-    "CSS": 43097,
-    "JavaScript": 13121
-   },
-   "topics": [],
-   "stars": 0,
-   "created_at": "2026-11-06T04:26:08Z",
-   "pushed_at": "2026-11-15T19:34:49Z",
-   "homepage": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
-   "site": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
-   "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/HisseBildirimSistemi@main/app/icon.svg",
-   "release": null,
-   "files": [],
-   "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    19,
-    4,
-    11
-   ]
+   "activity": []
   },
   {
    "name": "sms",
@@ -426,46 +477,6 @@
     19,
     0,
     16,
-    0,
-    0,
-    0
-   ]
-  },
-  {
-   "name": "SecurityPoint",
-   "url": "https://github.com/CehennemGibiyim/SecurityPoint",
-   "description": "",
-   "readme": "https://github.com/CehennemGibiyim/SecurityPoint/actions/runs/40246927388/artifacts/12619385433",
-   "language": "TypeScript",
-   "langs": {
-    "TypeScript": 1067142,
-    "JavaScript": 144338,
-    "CSS": 80396,
-    "HTML": 67768,
-    "PowerShell": 37686,
-    "Batchfile": 3115,
-    "PLpgSQL": 1400
-   },
-   "topics": [],
-   "stars": 2,
-   "created_at": "2026-10-23T10:26:04Z",
-   "pushed_at": "2026-10-26T00:15:27Z",
-   "homepage": "https://cehennemgibiyim.github.io/SecurityPoint/",
-   "site": "https://cehennemgibiyim.github.io/SecurityPoint/",
-   "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/SecurityPoint@main/Entegrasyon/src/app/icon.svg",
-   "release": null,
-   "files": [],
-   "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    10,
-    4,
     0,
     0,
     0
