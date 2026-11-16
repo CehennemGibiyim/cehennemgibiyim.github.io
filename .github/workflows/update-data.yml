@@ -2,8 +2,10 @@ name: Proje verilerini güncelle
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/10 * * * *'
   workflow_dispatch:
+  repository_dispatch:
+    types: [release-published]
   push:
     paths:
       - 'scripts/build-data.mjs'
@@ -11,6 +13,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -32,6 +38,7 @@ jobs:
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add data.json
             git commit -m "data.json güncellendi"
+            git pull --rebase origin main || true
             git push
           fi
       - name: Yeni sürüm bildirimi (Telegram, isteğe bağlı)
