@@ -1,8 +1,31 @@
 {
- "generated": "2026-11-16T05:07:34.982Z",
+ "generated": "2026-11-16T13:39:16.864Z",
  "user": "CehennemGibiyim",
  "hide": [],
  "repos": [
+  {
+   "name": "HisseBildirimSistemi",
+   "url": "https://github.com/CehennemGibiyim/HisseBildirimSistemi",
+   "description": "Hisse Bildirim Sistemi",
+   "readme": "Nasdaq hisselerini tarar, %10–%50 arası hareket eşiğini aşanları sinyal olarak listeler ve haber manşetlerini duygu analizinden geçirir.",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 80207,
+    "CSS": 43097,
+    "JavaScript": 13121
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-11-06T04:26:08Z",
+   "pushed_at": "2026-11-16T13:38:45Z",
+   "homepage": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
+   "site": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
+   "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/HisseBildirimSistemi@main/app/icon.svg",
+   "release": null,
+   "files": [],
+   "shots": [],
+   "activity": []
+  },
   {
    "name": "TikTok",
    "url": "https://github.com/CehennemGibiyim/TikTok",
@@ -18,7 +41,7 @@
    "topics": [],
    "stars": 1,
    "created_at": "2026-02-14T20:53:52Z",
-   "pushed_at": "2026-11-16T05:05:20Z",
+   "pushed_at": "2026-11-16T13:35:05Z",
    "homepage": "https://cehennemgibiyim.github.io/TikTok",
    "site": "https://cehennemgibiyim.github.io/TikTok",
    "icon": "",
@@ -43,20 +66,7 @@
    },
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    1072,
-    260
-   ]
+   "activity": []
   },
   {
    "name": "AoT-PNASF",
@@ -76,7 +86,7 @@
    "topics": [],
    "stars": 5,
    "created_at": "2026-03-21T00:10:55Z",
-   "pushed_at": "2026-11-16T03:46:35Z",
+   "pushed_at": "2026-11-16T12:00:17Z",
    "homepage": "https://cehennemgibiyim.github.io/AoT-PNASF/",
    "site": "https://cehennemgibiyim.github.io/AoT-PNASF/",
    "icon": "https://raw.githubusercontent.com/CehennemGibiyim/AoT-PNASF/main/desktop/electron/build/icon.png",
@@ -135,56 +145,7 @@
    "shots": [
     "https://render.albiononline.com/v1/item/T8_2H_CLAYMORE.png"
    ],
-   "activity": [
-    28,
-    28,
-    28,
-    29,
-    41,
-    51,
-    62,
-    60,
-    61,
-    94,
-    75,
-    13
-   ]
-  },
-  {
-   "name": "HisseBildirimSistemi",
-   "url": "https://github.com/CehennemGibiyim/HisseBildirimSistemi",
-   "description": "Hisse Bildirim Sistemi",
-   "readme": "Nasdaq hisselerini tarar, %10–%50 arası hareket eşiğini aşanları sinyal olarak listeler ve haber manşetlerini duygu analizinden geçirir.",
-   "language": "TypeScript",
-   "langs": {
-    "TypeScript": 80207,
-    "CSS": 43097,
-    "JavaScript": 13121
-   },
-   "topics": [],
-   "stars": 0,
-   "created_at": "2026-11-06T04:26:08Z",
-   "pushed_at": "2026-11-16T03:37:28Z",
-   "homepage": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
-   "site": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
-   "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/HisseBildirimSistemi@main/app/icon.svg",
-   "release": null,
-   "files": [],
-   "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    19,
-    4,
-    11
-   ]
+   "activity": []
   },
   {
    "name": "SecurityPoint",
@@ -248,20 +209,7 @@
    },
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    10,
-    4,
-    0,
-    0,
-    6
-   ]
+   "activity": []
   },
   {
    "name": "sms",
@@ -305,20 +253,7 @@
    },
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    15,
-    3
-   ]
+   "activity": []
   },
   {
    "name": "test2",
@@ -342,20 +277,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    2
-   ]
+   "activity": []
   },
   {
    "name": "Personel26",
@@ -409,20 +331,7 @@
    },
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    14,
-    0,
-    0,
-    0,
-    7,
-    5,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "StockManager",
@@ -466,20 +375,7 @@
    "shots": [
     "https://raw.githubusercontent.com/CehennemGibiyim/StockManager/main/assets/help/dashboard.png"
    ],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    14,
-    0,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "AtikViewer",
@@ -507,20 +403,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    19,
-    0,
-    16,
-    0,
-    0,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "HastanePYD",
@@ -543,20 +426,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    24,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "PersonelPuantajSistemi",
@@ -579,20 +449,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    8,
-    0,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "08Analiz",
@@ -634,20 +491,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "AoTPNASF",
@@ -670,20 +514,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "AtikAnaliz",
@@ -710,20 +541,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "test1",
@@ -747,20 +565,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "TEST",
@@ -781,20 +586,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "PatientSelection",
@@ -817,20 +609,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "AtikRemoteManager",
@@ -849,20 +628,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "taksi-bremerhaven",
@@ -883,20 +649,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
+   "activity": []
   }
  ]
 }
