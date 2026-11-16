@@ -10,6 +10,8 @@
 <link rel="manifest" href="manifest.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mustafa UYGUR">
+<meta property="og:locale" content="tr_TR">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Mustafa UYGUR","url":"https://cehennemgibiyim.github.io/","image":"https://cehennemgibiyim.github.io/og-image.jpg","jobTitle":"Yazılım geliştirici","sameAs":["https://github.com/CehennemGibiyim"]}</script>
 <meta property="og:title" content="Mustafa UYGUR | Geliştirici portfolyosu">
 <meta property="og:description" content="Web, sistem araçları ve uygulama projelerim. Projeleri, sürümleri ve yeteneklerimi buradan inceleyebilirsin.">
 <meta property="og:url" content="https://cehennemgibiyim.github.io/">
@@ -368,6 +370,8 @@
   .feed .fd { color: var(--mute); font-size: 14px; min-width: 130px; }
   .langbtn { margin-left: auto; margin-right: 10px; background: none; border: 1px solid var(--line); color: var(--mute); border-radius: 8px; padding: 6px 10px; font: inherit; font-size: 13px; cursor: pointer; }
   .langbtn:hover { color: var(--text); border-color: var(--ember); }
+.repo-note { color: var(--mute); font-size: 13px; margin: 8px 0 0; }
+  .repo-note a { color: var(--ember2); }
 </style>
 </head>
 <body>
@@ -444,12 +448,13 @@
             <li><b>Telefon:</b><a href="tel:+905358317454">+90 (535) 831-74-54</a></li>
           </ul>
           <a class="btn primary" href="#contact">Bana ulaş</a>
+          <a class="btn" href="#" id="vcardBtn">Kişi kartını indir</a>
         </div>
       </div>
       <div class="stats">
         <div class="stat"><b id="statRepos">–</b><span>Herkese açık depo</span></div>
-        <div class="stat"><b>4</b><span>Öne çıkan proje</span></div>
-        <div class="stat"><b>3</b><span>Çalışma alanı</span></div>
+        <div class="stat"><b id="statRel">–</b><span>Sürümü olan proje</span></div>
+        <div class="stat"><b id="statDl">–</b><span>Toplam indirme</span></div>
       </div>
 
       <div class="two">
@@ -481,8 +486,6 @@
           <div class="tl">
             <article><h4>Temizlik Personeli</h4><div class="who">Artvin Devlet Hastanesi</div><p>Artvin Devlet Hastanesi'nde temizlik personeli olarak görev yapıyorum.</p></article>
             <article><h4>Bağımsız Geliştirici</h4><div class="who">Kendi projeleri</div><p>Fikirden yayına kadar tüm süreci tek başıma yürütüyorum: tasarım, geliştirme, test ve GitHub üzerinden yayın.</p></article>
-            <article><h4>Albion Market Client</h4><div class="who">Geliştirici</div><p>Paket yakalama istemcisi, ingest API'si ve PostgreSQL ile topluluk kaynaklı pazar verisi.</p></article>
-            <article><h4>Personel26</h4><div class="who">Geliştirici</div><p>Puantaj ve nöbet sistemi; Windows kurulum paketi ve GitHub Pages paneli.</p></article>
           </div>
         </div>
         <div>
@@ -525,6 +528,7 @@
       </div>
       <div class="grid3" id="works"></div>
       <p class="repo-status" id="repo-status">Projeler yükleniyor…</p>
+      <p class="repo-note" id="dataStamp"></p>
       <h3 class="more-title">Son güncellemeler</h3>
       <ul class="feed" id="feed"></ul>
     </div>
@@ -1154,7 +1158,7 @@
     return t.length > 400 ? t.slice(0, 397).replace(/\s+$/, '') + '…' : t;
   }
   function pickRelease(list) {
-    var L = (list || []).filter(function (x) { return !x.draft; }), r = L[0];
+    var L = (list || []).filter(function (x) { return !x.draft; }).sort(function (a, b) { return new Date(b.published_at || b.created_at) - new Date(a.published_at || a.created_at); }), r = L[0];
     if (!r) return null;
     var assets = (r.assets || []).map(function (a) { return { name: a.name, url: a.browser_download_url, size: a.size, downloads: a.download_count, os: osOf(a.name), sha256: (a.digest || '').replace(/^sha256:/, '') }; })
       .filter(function (a) { return a.os; });
@@ -1175,7 +1179,16 @@
     var out = [], seen = {};
     ((it.rel && it.rel.assets) || []).forEach(function (a) { if (!seen[a.name]) { seen[a.name] = 1; out.push(a); } });
     (it.files || []).forEach(function (a) { if (!seen[a.name]) { seen[a.name] = 1; out.push({ name: a.name, url: a.url, size: a.size, os: a.os, repo: true }); } });
+    out.sort(function (a, b) { return assetScore(b) - assetScore(a); });
     return out;
+  }
+  function assetScore(a) {
+    var n = a.name.toLowerCase(), sc = 0;
+    if (/setup|install|kurulum/.test(n)) sc += 3;
+    if (/\.(msi|dmg|deb|apk|appimage)$/.test(n)) sc += 2;
+    if (/\.exe$/.test(n)) sc += 1;
+    if (/portable|\.(zip|7z|rar|gz)$/.test(n)) sc -= 1;
+    return sc;
   }
   function mainAsset(list) {
     if (!list || !list.length) return null;
@@ -1187,7 +1200,7 @@
     if (relBusy) { relPending = [repos, done]; return; }
     if (relBlocked) return;
     var now = Date.now();
-    var own = repos.filter(function (r) { return !r.fork && !r.archived && r.name.toLowerCase() !== USER.toLowerCase() + '.github.io'; });
+    var own = repos.filter(isOwn);
     var need = own.filter(function (r) { var c = relCache[r.name]; return !c || c.p !== (r.pushed_at || r.updated_at) || now - c.t > REL_TTL; });
     if (!need.length) return;
     relBusy = true;
@@ -1201,7 +1214,8 @@
         .then(function (list) {
           var rel = pickRelease(list), old = relCache[r.name];
           if (!old || JSON.stringify(old.r) !== JSON.stringify(rel)) changed = true;
-          relCache[r.name] = { p: r.pushed_at || r.updated_at, t: Date.now(), r: rel };
+          var pending = rel && !rel.assets.length && rel.date && Date.now() - new Date(rel.date) < 3 * 3600000;
+          relCache[r.name] = { p: r.pushed_at || r.updated_at, t: pending ? Date.now() - REL_TTL + 180000 : Date.now(), r: rel };
         })
         .catch(function () {});
     })).then(function () {
@@ -1380,7 +1394,7 @@
   function updateSkills(repos) {
     if (skillBusy) { pendingRepos = repos; return; }
     skillBusy = true;
-    var own = repos.filter(function (r) { return !r.fork && !r.archived && r.name.toLowerCase() !== USER.toLowerCase() + '.github.io'; });
+    var own = repos.filter(isOwn);
     var need = own.filter(function (r) { var c = langCache[r.name]; return !c || c.p !== (r.pushed_at || r.updated_at); });
 
     function finish() {
@@ -1721,6 +1735,18 @@
   /* ---------- Veri: data.json (GitHub Actions) + GitHub'dan canlı depo listesi ---------- */
   var CACHE_KEY = 'repos:' + USER, hasData = false, lastLoad = 0;
 
+  // Özgeçmişteki "Deneyim": en son güncellenen 4 proje otomatik gelir
+  function renderExp(items) {
+    var tl = document.querySelector('#resume .tl');
+    if (!tl) return;
+    tl.querySelectorAll('.auto').forEach(function (n) { n.remove(); });
+    items.filter(function (it) { return it.d; }).slice(0, 4).forEach(function (it) {
+      var a = T(tl, 'article', 'auto');
+      T(a, 'h4', '', it.name);
+      T(a, 'div', 'who', 'Geliştirici · ' + longDate(it.d));
+      T(a, 'p', '', it.desc || 'Açıklama henüz eklenmedi.');
+    });
+  }
   function renderFeed(items) {
     var ul = document.getElementById('feed'), ev = [];
     items.forEach(function (it) {
@@ -1739,12 +1765,16 @@
 
   // Kartları ve paneli çizer (en son güncellenen en üstte)
   function showProjects(repos) {
-    var own = repos.filter(function (r) { return !r.fork && !r.archived && r.name.toLowerCase() !== USER.toLowerCase() + '.github.io'; });
+    var own = repos.filter(isOwn);
     var items = own.map(toItem).sort(function (a, b) { return b.d - a.d; });
     var hasAlbion = items.some(function (it) { return it.name.toLowerCase().indexOf('albion') > -1; });
     if (!hasAlbion) items.push(ALBION_ITEM);
     renderWorks(items);
     renderFeed(items);
+    renderExp(items);
+    var rels = items.filter(function (it) { return it.rel; });
+    document.getElementById('statRel').textContent = rels.length;
+    document.getElementById('statDl').textContent = rels.reduce(function (n, it) { return n + (it.rel.downloadsTotal || 0); }, 0);
     setMeterProjects(items.map(function (it) { return { n: it.name, d: it.d }; }));
     if (status.textContent !== 'Bu filtreye uyan proje yok.') status.hidden = true;
     if (!hashHandled && openFromHash()) hashHandled = true;
@@ -1764,13 +1794,19 @@
   }
   function older(a, b) { return !a || new Date(a) < new Date(b); }
   // data.json'daki bilgiler (README özeti, simge, diller, sürümler) önbelleklere yazılır
+  var dataTime = 0, hideSet = {};
+  function isOwn(r) { return !r.fork && !r.archived && r.name.toLowerCase() !== USER.toLowerCase() + '.github.io' && !hideSet[r.name.toLowerCase()]; }
+  // data.json'daki bilgiler (README özeti, simge, diller, sürümler) önbelleklere yazılır.
+  // Önbellekteki kayıt data.json'dan eskiyse (ya da aynı depo için daha eski çekilmişse) data.json kazanır.
   function seedFromBase(d) {
+    dataTime = new Date(d.generated || 0).getTime() || 0;
+    hideSet = {};
+    (d.hide || []).forEach(function (n) { hideSet[String(n).toLowerCase()] = 1; });
     (d.repos || []).forEach(function (b) {
       extras[b.name] = { readme: b.readme || '', icon: b.icon || '', files: b.files || [], shots: b.shots || [], activity: b.activity || [] };
-      var lc = langCache[b.name], rc = relCache[b.name];
-      if (!lc || older(lc.p, b.pushed_at)) langCache[b.name] = { p: b.pushed_at, l: b.langs || {} };
-      if (!rc || older(rc.p, b.pushed_at)) relCache[b.name] = { p: b.pushed_at, t: Date.now(), r: b.release || null };
-      else if (rc.p === b.pushed_at) rc.t = Date.now();
+      var lc = langCache[b.name], rc = relCache[b.name], bp = new Date(b.pushed_at).getTime();
+      if (!lc || new Date(lc.p).getTime() <= bp) langCache[b.name] = { p: b.pushed_at, l: b.langs || {} };
+      if (!rc || new Date(rc.p).getTime() < bp || (rc.p === b.pushed_at && dataTime > rc.t)) relCache[b.name] = { p: b.pushed_at, t: dataTime || Date.now(), r: b.release || null };
     });
   }
   function loadBase() {
@@ -1794,11 +1830,35 @@
       .catch(function () { return null; });
   }
   // Sıralama için canlı liste (en yeni push), zengin bilgi için data.json kullanılır
+  // Son yayınlanan sürümler (tek istek): data.json'dan yeniyse o projenin sürümü hemen yeniden çekilir
+  function fetchReleaseEvents() {
+    return fetch('https://api.github.com/users/' + USER + '/events/public?per_page=30')
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (ev) {
+        return ev.filter(function (e) { return e.type === 'ReleaseEvent'; })
+          .map(function (e) { return { n: e.repo.name.split('/')[1], t: new Date(e.created_at).getTime() }; });
+      })
+      .catch(function () { return []; });
+  }
+  var stampEl = document.getElementById('dataStamp');
+  function setStamp(d) {
+    if (!d || !d.generated) return;
+    var t = new Date(d.generated);
+    stampEl.textContent = 'Veriler: ' + longDate(t) + ' ' + t.toLocaleTimeString(LANG === 'en' ? 'en-US' : 'tr-TR', { hour: '2-digit', minute: '2-digit' }) + ' · ';
+    var a = el('a', '', 'Verileri yenile'); a.href = '#';
+    a.onclick = function (e) {
+      e.preventDefault();
+      try { localStorage.removeItem(REL_KEY); localStorage.removeItem(LANG_KEY); localStorage.removeItem(CACHE_KEY); } catch (x) {}
+      location.reload();
+    };
+    stampEl.appendChild(a);
+  }
   function loadRepos() {
     lastLoad = Date.now();
-    Promise.all([loadBase(), fetchApiRepos()]).then(function (res) {
+    Promise.all([loadBase(), fetchApiRepos(), fetchReleaseEvents()]).then(function (res) {
       var d = res[0], repos = res[1];
-      if (d) seedFromBase(d);
+      if (d) { seedFromBase(d); setStamp(d); }
+      res[2].forEach(function (e) { var c = relCache[e.n]; if (c && c.t < e.t) c.t = 0; });
       if (!repos && d) repos = d.repos.map(toRepoLike);
       if (!repos) {
         if (!hasData) {
@@ -1847,9 +1907,26 @@
       msg.textContent = 'Form servisine ulaşılamadı; e-posta uygulaman açılıyor.';
     }).then(function () { btn.disabled = false; });
   });
+  /* ---------- Kişi kartı (.vcf): rehbere tek dokunuşla eklenir ---------- */
+  document.getElementById('vcardBtn').addEventListener('click', function (e) {
+    e.preventDefault();
+    var ic = document.querySelector('link[rel="apple-touch-icon"]'), ph = ic && /^data:image\/jpeg;base64,/.test(ic.href) ? ic.href.split(',')[1] : '';
+    var v = ['BEGIN:VCARD', 'VERSION:3.0', 'N:UYGUR;Mustafa;;;', 'FN:Mustafa UYGUR', 'TITLE:Yazılım geliştirici', 'TEL;TYPE=CELL:+905358317454',
+      'EMAIL:' + EMAIL, 'URL:' + location.href.split('#')[0], 'URL:https://github.com/' + USER, 'NOTE:Web, sistem araçları ve uygulama projeleri'];
+    if (ph) v.push('PHOTO;ENCODING=b;TYPE=JPEG:' + ph);
+    v.push('END:VCARD');
+    function fold(l) { var o = []; while (l.length > 74) { o.push(l.slice(0, 74)); l = ' ' + l.slice(74); } o.push(l); return o.join('\r\n'); }
+    var blob = new Blob([v.map(fold).join('\r\n')], { type: 'text/vcard;charset=utf-8' }), a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = 'Mustafa-UYGUR.vcf';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+  });
+
   /* ---------- Dil: Türkçe / İngilizce (sayfa yeniden yüklenerek değişir) ---------- */
-  var EN = {"Menü": "Menu", "Ana menü": "Main menu", "Ana sayfa": "Home", "Hakkımda": "About", "Özgeçmiş": "Resume", "Hizmetler": "Services", "Portfolyo": "Portfolio", "İletişim": "Contact", "Merhaba!": "Hello!", "Ben": "I'm", "Projeleri gör": "View projects", "İletişime geç": "Get in touch", "WhatsApp'tan yaz": "Message on WhatsApp", "E-posta": "Email", "Son güncellenen projeler": "Recently updated projects", "Savaşta": "In battle", "Çözüldü": "Solved", "Beni biraz daha yakından tanı": "Get to know me a little better", "Mustafa UYGUR profil fotoğrafı": "Mustafa UYGUR profile photo", "Fareni üzerine getir": "Hover over me", "Artvin Devlet Hastanesi Temizlik Personeliyim": "I'm Cleaning Staff at Artvin State Hospital", "Artvin Devlet Hastanesi'nde temizlik personeli olarak çalışıyorum.": "I work as cleaning staff at Artvin State Hospital.", "Mesai dışında kendi teknik projelerimi geliştiriyorum: web siteleri, sistem araçları ve uygulamalar. Bir fikri kullanılabilir bir araca dönüştürmeyi seviyorum.": "Outside work hours I build my own technical projects: websites, system tools and applications. I enjoy turning an idea into a tool people can actually use.", "Çalışma:": "Work:", "Artvin Devlet Hastanesi": "Artvin State Hospital", "Alanlar:": "Areas:", "Web, sistem, uygulama": "Web, systems, apps", "Telefon:": "Phone:", "Bana ulaş": "Reach me", "Herkese açık depo": "Public repositories", "Öne çıkan proje": "Featured projects", "Çalışma alanı": "Fields of work", "Yetenekler": "Skills", "Oranlar, GitHub'daki tüm projelerimde yazdığım kod miktarına göre otomatik hesaplanır. Hiç yazmadığım diller 0% görünür; kullandıkça payı artar ve sıralamada yukarı çıkar.": "Percentages are calculated automatically from the amount of code I have written across all my GitHub projects. Languages I have never written show 0%; as I use them their share grows and they move up the list.", "Yetenekler yükleniyor…": "Loading skills…", "İlgi alanları": "Interests", "Yazılım geliştirme": "Software development", "Oyun araçları": "Game tools", "Sistem ve ağ": "Systems and networks", "Problem çözme": "Problem solving", "Çalışmalarım ve yaklaşımım": "My work and approach", "Deneyim": "Experience", "Temizlik Personeli": "Cleaning Staff", "Artvin Devlet Hastanesi'nde temizlik personeli olarak görev yapıyorum.": "I serve as cleaning staff at Artvin State Hospital.", "Bağımsız Geliştirici": "Independent Developer", "Kendi projeleri": "Own projects", "Fikirden yayına kadar tüm süreci tek başıma yürütüyorum: tasarım, geliştirme, test ve GitHub üzerinden yayın.": "I run the whole process on my own, from idea to release: design, development, testing and publishing on GitHub.", "Geliştirici": "Developer", "Paket yakalama istemcisi, ingest API'si ve PostgreSQL ile topluluk kaynaklı pazar verisi.": "Packet-capture client, ingest API and PostgreSQL for community-sourced market data.", "Puantaj ve nöbet sistemi; Windows kurulum paketi ve GitHub Pages paneli.": "Timesheet and duty roster system; Windows installer and GitHub Pages panel.", "Çalışma biçimi": "How I work", "Önce çalışan hâli": "Working version first", "Yaklaşım": "Approach", "Küçük ve çalışan bir sürümü önce yayına alır, sonra geliştiririm.": "I release a small working version first, then improve it.", "Ücretsiz altyapı": "Free infrastructure", "Barındırmayı mümkün olduğunca ücretsiz kaynaklarla, GitHub üzerinde çözerim.": "I host as much as possible on free resources, on GitHub.", "Hata avcılığı": "Bug hunting", "08Analiz'de çeviri dosyalarının asenkron yüklenmesinden doğan bir yarış durumunu bulup düzelttim.": "In 08Analiz I found and fixed a race condition caused by the asynchronous loading of translation files.", "Yapabildiklerim": "What I can do", "Web geliştirme": "Web development", "HTML, CSS ve JavaScript ile hızlı, duyarlı siteler ve yönetim panelleri. GitHub Pages'te yayına alırım.": "Fast, responsive sites and admin panels with HTML, CSS and JavaScript. I publish them on GitHub Pages.", "Sistem araçları": "System tools", "Paket yakalama gibi düşük seviyeli işleri yapan istemciler ve yardımcı araçlar.": "Clients and helper tools that do low-level work such as packet capture.", "Masaüstü uygulamaları": "Desktop applications", "Windows kurulum paketiyle dağıtılan, günlük işi kolaylaştıran uygulamalar.": "Applications distributed as Windows installers that make everyday work easier.", "API ve veritabanı": "APIs and databases", "Veri alan API'ler ve PostgreSQL ile güvenilir depolama.": "APIs that ingest data, with reliable storage in PostgreSQL.", "Hata ayıklama": "Debugging", "Zamanlama, asenkron yükleme ve yarış durumu gibi inatçı hataları kök nedenine kadar izlerim.": "I trace stubborn bugs such as timing, asynchronous loading and race conditions down to the root cause.", "JavaScript'ten TypeScript'e": "From JavaScript to TypeScript", "Mevcut JavaScript projelerini adım adım TypeScript'e taşırım.": "I migrate existing JavaScript projects to TypeScript step by step.", "Çalışmalarım": "My work", "Proje filtresi": "Project filter", "Tümü": "All", "Uygulama": "App", "İndirilebilir": "Downloadable", "Proje ara…": "Search projects…", "Proje ara": "Search projects", "Projeler yükleniyor…": "Loading projects…", "Son güncellemeler": "Latest updates", "Bana ulaşın": "Contact me", "Telefon": "Phone", "Doğrudan mesaj gönderebilirsin.": "You can message me directly.", "Adınız": "Your name", "Konu": "Subject", "Mesajınız": "Your message", "Mesaj gönder": "Send message", "Başa dön": "Back to top", "Proje önizlemesi": "Project preview", "Kapat": "Close", "Bağlantıyı kopyala": "Copy link", "Depoyu aç": "Open repo", "Siteyi aç": "Open site", "Yükle": "Install", "Sürümler": "Releases", "İndir": "Download", "Depo": "Repository", "Yükleyiciler": "Installers", "Diller": "Languages", "Yeni": "New", "GitHub profilinde ara": "Find on GitHub profile", "GitHub profilini aç": "Open GitHub profile", "GitHub profili": "GitHub profile", "Açıklama henüz eklenmedi.": "No description yet.", "Bu filtreye uyan proje yok.": "No project matches this filter.", "Bu proje için yayınlanmış bir site yok.": "No site has been published for this project.", "Bilgisayar": "Desktop", "Henüz yayınlanmış bir sürüm yok.": "No release has been published yet.", "Sürüm yayınlanmış ama indirilebilir dosya eklenmemiş.": "A release exists but no downloadable file was attached.", "Kurulum notu": "Installation note", "Telefona QR": "QR for phone", "Sitenin diğer sayfaları": "Other pages of the site", "Son 12 hafta": "Last 12 weeks", "Dil bilgisi yok.": "No language data.", "Kopyalandı ✓": "Copied ✓", "Gönderiliyor…": "Sending…", "Mesajın gönderildi, teşekkürler!": "Your message has been sent, thank you!", "Yetenekler şu an yüklenemedi.": "Skills could not be loaded right now.", "Henüz listelenecek bir dil bulunamadı.": "No languages found yet.", "Ad, e-posta ve mesaj alanlarını doldur.": "Please fill in name, email and message.", "Paket": "Package", "Windows 'bilinmeyen yayıncı' uyarısı verirse: Ek bilgi → Yine de çalıştır.": "If Windows shows an 'unknown publisher' warning: More info → Run anyway.", "Mac açmazsa: dosyaya sağ tıkla → Aç.": "If your Mac won't open it: right-click the file → Open.", "AppImage için önce şunu çalıştır: chmod +x dosyaadi.AppImage": "For an AppImage, first run: chmod +x filename.AppImage", "Android, bilinmeyen kaynaklardan kuruluma izin ister; ayarlardan açman gerekir.": "Android asks for permission to install from unknown sources; enable it in settings.", "Arşivi (.rar/.zip) bir klasöre çıkarıp içindeki programı çalıştır.": "Extract the archive (.rar/.zip) to a folder and run the program inside.", "Site erişilebilir": "Site is reachable", "Siteye ulaşılamıyor": "Site is unreachable", "Form servisine ulaşılamadı; e-posta uygulaman açılıyor.": "Could not reach the form service; opening your email app."};
+  var EN = {"Verileri yenile":"Refresh data","Sürümü olan proje":"Projects with releases","Toplam indirme":"Total downloads","Kişi kartını indir":"Save contact card","Menü": "Menu", "Ana menü": "Main menu", "Ana sayfa": "Home", "Hakkımda": "About", "Özgeçmiş": "Resume", "Hizmetler": "Services", "Portfolyo": "Portfolio", "İletişim": "Contact", "Merhaba!": "Hello!", "Ben": "I'm", "Projeleri gör": "View projects", "İletişime geç": "Get in touch", "WhatsApp'tan yaz": "Message on WhatsApp", "E-posta": "Email", "Son güncellenen projeler": "Recently updated projects", "Savaşta": "In battle", "Çözüldü": "Solved", "Beni biraz daha yakından tanı": "Get to know me a little better", "Mustafa UYGUR profil fotoğrafı": "Mustafa UYGUR profile photo", "Fareni üzerine getir": "Hover over me", "Artvin Devlet Hastanesi Temizlik Personeliyim": "I'm Cleaning Staff at Artvin State Hospital", "Artvin Devlet Hastanesi'nde temizlik personeli olarak çalışıyorum.": "I work as cleaning staff at Artvin State Hospital.", "Mesai dışında kendi teknik projelerimi geliştiriyorum: web siteleri, sistem araçları ve uygulamalar. Bir fikri kullanılabilir bir araca dönüştürmeyi seviyorum.": "Outside work hours I build my own technical projects: websites, system tools and applications. I enjoy turning an idea into a tool people can actually use.", "Çalışma:": "Work:", "Artvin Devlet Hastanesi": "Artvin State Hospital", "Alanlar:": "Areas:", "Web, sistem, uygulama": "Web, systems, apps", "Telefon:": "Phone:", "Bana ulaş": "Reach me", "Herkese açık depo": "Public repositories", "Öne çıkan proje": "Featured projects", "Çalışma alanı": "Fields of work", "Yetenekler": "Skills", "Oranlar, GitHub'daki tüm projelerimde yazdığım kod miktarına göre otomatik hesaplanır. Hiç yazmadığım diller 0% görünür; kullandıkça payı artar ve sıralamada yukarı çıkar.": "Percentages are calculated automatically from the amount of code I have written across all my GitHub projects. Languages I have never written show 0%; as I use them their share grows and they move up the list.", "Yetenekler yükleniyor…": "Loading skills…", "İlgi alanları": "Interests", "Yazılım geliştirme": "Software development", "Oyun araçları": "Game tools", "Sistem ve ağ": "Systems and networks", "Problem çözme": "Problem solving", "Çalışmalarım ve yaklaşımım": "My work and approach", "Deneyim": "Experience", "Temizlik Personeli": "Cleaning Staff", "Artvin Devlet Hastanesi'nde temizlik personeli olarak görev yapıyorum.": "I serve as cleaning staff at Artvin State Hospital.", "Bağımsız Geliştirici": "Independent Developer", "Kendi projeleri": "Own projects", "Fikirden yayına kadar tüm süreci tek başıma yürütüyorum: tasarım, geliştirme, test ve GitHub üzerinden yayın.": "I run the whole process on my own, from idea to release: design, development, testing and publishing on GitHub.", "Geliştirici": "Developer", "Paket yakalama istemcisi, ingest API'si ve PostgreSQL ile topluluk kaynaklı pazar verisi.": "Packet-capture client, ingest API and PostgreSQL for community-sourced market data.", "Puantaj ve nöbet sistemi; Windows kurulum paketi ve GitHub Pages paneli.": "Timesheet and duty roster system; Windows installer and GitHub Pages panel.", "Çalışma biçimi": "How I work", "Önce çalışan hâli": "Working version first", "Yaklaşım": "Approach", "Küçük ve çalışan bir sürümü önce yayına alır, sonra geliştiririm.": "I release a small working version first, then improve it.", "Ücretsiz altyapı": "Free infrastructure", "Barındırmayı mümkün olduğunca ücretsiz kaynaklarla, GitHub üzerinde çözerim.": "I host as much as possible on free resources, on GitHub.", "Hata avcılığı": "Bug hunting", "08Analiz'de çeviri dosyalarının asenkron yüklenmesinden doğan bir yarış durumunu bulup düzelttim.": "In 08Analiz I found and fixed a race condition caused by the asynchronous loading of translation files.", "Yapabildiklerim": "What I can do", "Web geliştirme": "Web development", "HTML, CSS ve JavaScript ile hızlı, duyarlı siteler ve yönetim panelleri. GitHub Pages'te yayına alırım.": "Fast, responsive sites and admin panels with HTML, CSS and JavaScript. I publish them on GitHub Pages.", "Sistem araçları": "System tools", "Paket yakalama gibi düşük seviyeli işleri yapan istemciler ve yardımcı araçlar.": "Clients and helper tools that do low-level work such as packet capture.", "Masaüstü uygulamaları": "Desktop applications", "Windows kurulum paketiyle dağıtılan, günlük işi kolaylaştıran uygulamalar.": "Applications distributed as Windows installers that make everyday work easier.", "API ve veritabanı": "APIs and databases", "Veri alan API'ler ve PostgreSQL ile güvenilir depolama.": "APIs that ingest data, with reliable storage in PostgreSQL.", "Hata ayıklama": "Debugging", "Zamanlama, asenkron yükleme ve yarış durumu gibi inatçı hataları kök nedenine kadar izlerim.": "I trace stubborn bugs such as timing, asynchronous loading and race conditions down to the root cause.", "JavaScript'ten TypeScript'e": "From JavaScript to TypeScript", "Mevcut JavaScript projelerini adım adım TypeScript'e taşırım.": "I migrate existing JavaScript projects to TypeScript step by step.", "Çalışmalarım": "My work", "Proje filtresi": "Project filter", "Tümü": "All", "Uygulama": "App", "İndirilebilir": "Downloadable", "Proje ara…": "Search projects…", "Proje ara": "Search projects", "Projeler yükleniyor…": "Loading projects…", "Son güncellemeler": "Latest updates", "Bana ulaşın": "Contact me", "Telefon": "Phone", "Doğrudan mesaj gönderebilirsin.": "You can message me directly.", "Adınız": "Your name", "Konu": "Subject", "Mesajınız": "Your message", "Mesaj gönder": "Send message", "Başa dön": "Back to top", "Proje önizlemesi": "Project preview", "Kapat": "Close", "Bağlantıyı kopyala": "Copy link", "Depoyu aç": "Open repo", "Siteyi aç": "Open site", "Yükle": "Install", "Sürümler": "Releases", "İndir": "Download", "Depo": "Repository", "Yükleyiciler": "Installers", "Diller": "Languages", "Yeni": "New", "GitHub profilinde ara": "Find on GitHub profile", "GitHub profilini aç": "Open GitHub profile", "GitHub profili": "GitHub profile", "Açıklama henüz eklenmedi.": "No description yet.", "Bu filtreye uyan proje yok.": "No project matches this filter.", "Bu proje için yayınlanmış bir site yok.": "No site has been published for this project.", "Bilgisayar": "Desktop", "Henüz yayınlanmış bir sürüm yok.": "No release has been published yet.", "Sürüm yayınlanmış ama indirilebilir dosya eklenmemiş.": "A release exists but no downloadable file was attached.", "Kurulum notu": "Installation note", "Telefona QR": "QR for phone", "Sitenin diğer sayfaları": "Other pages of the site", "Son 12 hafta": "Last 12 weeks", "Dil bilgisi yok.": "No language data.", "Kopyalandı ✓": "Copied ✓", "Gönderiliyor…": "Sending…", "Mesajın gönderildi, teşekkürler!": "Your message has been sent, thank you!", "Yetenekler şu an yüklenemedi.": "Skills could not be loaded right now.", "Henüz listelenecek bir dil bulunamadı.": "No languages found yet.", "Ad, e-posta ve mesaj alanlarını doldur.": "Please fill in name, email and message.", "Paket": "Package", "Windows 'bilinmeyen yayıncı' uyarısı verirse: Ek bilgi → Yine de çalıştır.": "If Windows shows an 'unknown publisher' warning: More info → Run anyway.", "Mac açmazsa: dosyaya sağ tıkla → Aç.": "If your Mac won't open it: right-click the file → Open.", "AppImage için önce şunu çalıştır: chmod +x dosyaadi.AppImage": "For an AppImage, first run: chmod +x filename.AppImage", "Android, bilinmeyen kaynaklardan kuruluma izin ister; ayarlardan açman gerekir.": "Android asks for permission to install from unknown sources; enable it in settings.", "Arşivi (.rar/.zip) bir klasöre çıkarıp içindeki programı çalıştır.": "Extract the archive (.rar/.zip) to a folder and run the program inside.", "Site erişilebilir": "Site is reachable", "Siteye ulaşılamıyor": "Site is unreachable", "Form servisine ulaşılamadı; e-posta uygulaman açılıyor.": "Could not reach the form service; opening your email app."};
   var EN_RX = [
+    [/^Veriler: /, 'Data: '],
+    [/^Geliştirici · /, 'Developer · '],
     [/(\d+) saat önce/g, '$1 h ago'],
     [/(\d+) gün önce/g, '$1 d ago'],
     [/(\d+) ay önce/g, '$1 mo ago'],

@@ -41,3 +41,24 @@ YENİ SÜRÜM BİLDİRİMİ (Telegram, isteğe bağlı)
 
 DİL
 - Sağ üstteki EN/TR düğmesi sayfayı İngilizce/Türkçe yapar. Seçim tarayıcıda hatırlanır.
+
+GÜNCELLEME NOTU (sürümlerin geç görünmesi düzeltmesi)
+Depoda şu dosyaların YERİNE yenilerini yükle (üzerine yaz):
+  index.html, sw.js, scripts/build-data.mjs, .github/workflows/update-data.yml
+Şu dosyaları YENİ olarak ekle:
+  config.json, sitemap.xml, robots.txt
+Sonra Actions > "Proje verilerini güncelle" > Run workflow ile bir kez elle çalıştır.
+- Veri artık 10 dakikada bir yenileniyor (önceden 30 dk).
+- Yeni sürüm yayınladığında sayfa GitHub'dan olayı hemen öğrenip o projenin sürümünü yeniden çekiyor.
+- "Verileri yenile" bağlantısı (portfolyonun altında) tarayıcıdaki eski kayıtları silip sayfayı yeniler.
+- Test projelerini (test1, test2, TEST gibi) sitede göstermek istemezsen config.json içine yaz:
+    { "hide": ["test1", "test2", "TEST"] }
+
+İSTEĞE BAĞLI: sürüm yayınlanır yayınlanmaz veriyi güncellemek
+Bir projenin sürüm iş akışının sonuna şu adımı ekleyebilirsin (PORTFOLYO_TOKEN: bu depoya yazma izni olan
+kişisel erişim anahtarı, projenin Secrets bölümüne eklenir):
+  - run: >
+      curl -s -X POST -H "Authorization: Bearer ${{ secrets.PORTFOLYO_TOKEN }}"
+      -H "Accept: application/vnd.github+json"
+      https://api.github.com/repos/CehennemGibiyim/cehennemgibiyim.github.io/dispatches
+      -d '{"event_type":"release-published"}'

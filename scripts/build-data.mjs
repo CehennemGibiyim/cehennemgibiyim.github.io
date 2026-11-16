@@ -33,18 +33,23 @@ function osOf(name) {
   return null;
 }
 
-// README'nin ilk anlamlı cümlesi (GitHub açıklaması boşsa kullanılır)
+// README'nin ilk anlamlı paragrafı (GitHub açıklaması boşsa kullanılır)
 function readmeSummary(md) {
   if (!md) return '';
-  const lines = md.replace(/<!--[\s\S]*?-->/g, '').split(/\r?\n/);
-  for (const raw of lines) {
-    let t = raw.trim();
-    if (!t || /^(#|>|\||[-*+] |\d+\.|```|!\[|\[!\[|<)/.test(t) || /^[-=_*]{3,}$/.test(t)) continue;
-    t = t.replace(/!\[[^\]]*\]\([^)]*\)/g, '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/[`*_~]/g, '').replace(/<[^>]+>/g, '').trim();
-    if (t.length < 12) continue;
-    return t.length > 180 ? t.slice(0, 177).trimEnd() + '…' : t;
+  const clean = md.replace(/<!--[\s\S]*?-->/g, '');
+  for (const para of clean.split(/\r?\n\s*\r?\n/)) {
+    const lines = para.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
+    if (!lines.length || /^(#|>|\||[-*+] |\d+\.|```|!\[|\[!\[|<)/.test(lines[0]) || /^[-=_*]{3,}$/.test(lines[0])) continue;
+    let t = lines.join(' ').replace(/!\[[^\]]*\]\([^)]*\)/g, '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+      .replace(/[`*_~]/g, '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+    if (t.length < 12 || /^https?:\/\/\S+$/.test(t)) continue;
+    if (t.length > 170) {
+      const cut = t.slice(0, 170), i = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf(': '));
+      t = i > 60 ? cut.slice(0, i + 1) : cut.replace(/\s+\S*$/, '') + '…';
+    }
+    return t;
   }
-  const h = lines.find((l) => /^#{1,3}\s+\S/.test(l));
+  const h = clean.split(/\r?\n/).find((l) => /^#{1,3}\s+\S/.test(l));
   return h ? h.replace(/^#+\s+/, '').replace(/[`*_]/g, '').trim() : '';
 }
 
@@ -85,7 +90,7 @@ function shotsOf(md, r) {
   const out = [];
   for (const m of md.matchAll(IMG_RE)) {
     let u = (m[1] || m[2] || '').trim();
-    if (!u || /^data:/i.test(u) || /shields\.io|badge|badgen|travis-ci|codecov|\/(actions|workflows)\/|\.svg(\?|$)/i.test(u)) continue;
+    if (!u || /^data:/i.test(u) || /shields\.io|badge|badgen|travis-ci|codecov|placeholder|placehold\.co|dummyimage|\/(actions|workflows)\/|\.svg(\?|$)/i.test(u)) continue;
     if (!/^https?:/i.test(u)) u = `https://raw.githubusercontent.com/${USER}/${r.name}/${r.default_branch}/${u.replace(/^\.?\//, '')}`;
     u = u.replace(/^https:\/\/github\.com\/([^/]+)\/([^/]+)\/blob\//i, 'https://github.com/$1/$2/raw/');
     if (!out.includes(u)) out.push(u);
@@ -109,7 +114,7 @@ function filesOf(tree, r) {
 
 async function releaseOf(name) {
   const list = ((await get(`/repos/${USER}/${name}/releases?per_page=20`)) || []).filter((x) => !x.draft);
-  const r = list[0];
+  const r = list.slice().sort((x, y) => new Date(y.published_at || y.created_at) - new Date(x.published_at || x.created_at))[0];
   if (!r) return null;
   const assets = (r.assets || [])
     .map((a) => ({ name: a.name, url: a.browser_download_url, size: a.size, downloads: a.download_count, os: osOf(a.name), sha256: (a.digest || '').replace(/^sha256:/, '') }))
@@ -149,6 +154,9 @@ async function build(r) {
   };
 }
 
+const cfg = existsSync('config.json') ? JSON.parse(readFileSync('config.json', 'utf8')) : {};
+const hide = (cfg.hide || []).map((x) => String(x).toLowerCase());
+
 const all = [];
 for (let page = 1; ; page++) {
   const l = await get(`/users/${USER}/repos?per_page=100&sort=pushed&page=${page}`);
@@ -158,7 +166,7 @@ for (let page = 1; ; page++) {
 }
 if (!all.length) { console.error('Depo listesi alınamadı; data.json değiştirilmedi.'); process.exit(1); }
 
-const own = all.filter((r) => !r.fork && !r.archived && r.name.toLowerCase() !== `${USER}.github.io`.toLowerCase());
+const own = all.filter((r) => !r.fork && !r.archived && r.name.toLowerCase() !== `${USER}.github.io`.toLowerCase() && !hide.includes(r.name.toLowerCase()));
 const repos = [];
 for (let i = 0; i < own.length; i += 5) repos.push(...(await Promise.all(own.slice(i, i + 5).map(build))));
 repos.sort((a, b) => b.pushed_at.localeCompare(a.pushed_at));
@@ -173,6 +181,6 @@ if (old) {
     .map((x) => `🚀 ${x.name} ${x.release.tag} yayınlandı\n${x.release.url}`);
   if (notes.length) writeFileSync('new-releases.txt', notes.join('\n\n'));
 }
-if (old && JSON.stringify(old.repos) === JSON.stringify(repos)) { console.log('Değişiklik yok.'); process.exit(0); }
-writeFileSync('data.json', JSON.stringify({ generated: new Date().toISOString(), user: USER, repos }, null, 1));
+if (old && JSON.stringify(old.repos) === JSON.stringify(repos) && JSON.stringify(old.hide || []) === JSON.stringify(cfg.hide || [])) { console.log('Değişiklik yok.'); process.exit(0); }
+writeFileSync('data.json', JSON.stringify({ generated: new Date().toISOString(), user: USER, hide: cfg.hide || [], repos }, null, 1));
 console.log(`${repos.length} proje yazıldı.`);

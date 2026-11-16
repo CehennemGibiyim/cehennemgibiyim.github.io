@@ -1,5 +1,5 @@
 // Önce ağdan dener (her zaman güncel), çevrimdışıysa son kaydedilen kopyayı gösterir.
-const CACHE = 'portfolio-v1';
+const CACHE = 'portfolio-v2';
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(['./', 'index.html', 'icon-192.png'])).then(() => self.skipWaiting()));
 });
