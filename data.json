@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-17T14:20:30.194Z",
+ "generated": "2026-11-17T22:34:56.138Z",
  "user": "CehennemGibiyim",
  "hide": [],
  "repos": [
@@ -17,66 +17,27 @@
    "topics": [],
    "stars": 0,
    "created_at": "2026-11-06T04:26:08Z",
-   "pushed_at": "2026-11-17T14:19:48Z",
+   "pushed_at": "2026-11-17T22:33:32Z",
    "homepage": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
    "site": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
    "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/HisseBildirimSistemi@main/app/icon.svg",
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
-  },
-  {
-   "name": "Arena",
-   "url": "https://github.com/CehennemGibiyim/Arena",
-   "description": "",
-   "readme": "",
-   "language": "TypeScript",
-   "langs": {
-    "TypeScript": 224751,
-    "JavaScript": 4003,
-    "CSS": 1667,
-    "PowerShell": 1627
-   },
-   "topics": [],
-   "stars": 0,
-   "created_at": "2026-11-17T14:09:56Z",
-   "pushed_at": "2026-11-17T14:11:10Z",
-   "homepage": "",
-   "site": "",
-   "icon": "",
-   "release": null,
-   "files": [],
-   "shots": [],
-   "activity": []
-  },
-  {
-   "name": "AtikViewer",
-   "url": "https://github.com/CehennemGibiyim/AtikViewer",
-   "description": "",
-   "readme": "ATIKVIEWER; DICOM görüntüleme, kesit kesit yapay zekâ destekli inceleme ve yapısal radyoloji raporu üretimini tek ekranda toplayan, Next.js (App Router) + PostgreSQL…",
-   "language": "TypeScript",
-   "langs": {
-    "TypeScript": 814268,
-    "Python": 122307,
-    "JavaScript": 36869,
-    "PowerShell": 25206,
-    "CSS": 3125,
-    "Dockerfile": 1885,
-    "Shell": 1526,
-    "Batchfile": 1059
-   },
-   "topics": [],
-   "stars": 2,
-   "created_at": "2026-10-11T21:34:05Z",
-   "pushed_at": "2026-11-17T13:55:40Z",
-   "homepage": "cehennemgibiyim.github.io/AtikViewer",
-   "site": "https://cehennemgibiyim.github.io/AtikViewer",
-   "icon": "",
-   "release": null,
-   "files": [],
-   "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    19,
+    4,
+    11
+   ]
   },
   {
    "name": "TikTok",
@@ -85,15 +46,16 @@
    "readme": "Sunucu, Docker, API anahtarı gerekmez: her şey GitHub Pages üzerinde statik çalışır, veri tarayıcıda (IndexedDB / localStorage) durur.",
    "language": "JavaScript",
    "langs": {
-    "JavaScript": 623381,
-    "HTML": 104884,
+    "JavaScript": 770979,
+    "HTML": 112817,
+    "CSS": 31608,
     "Python": 22621,
-    "CSS": 13200
+    "Dockerfile": 659
    },
    "topics": [],
    "stars": 1,
    "created_at": "2026-02-14T20:53:52Z",
-   "pushed_at": "2026-11-17T13:43:29Z",
+   "pushed_at": "2026-11-17T22:32:43Z",
    "homepage": "https://cehennemgibiyim.github.io/TikTok",
    "site": "https://cehennemgibiyim.github.io/TikTok",
    "icon": "",
@@ -104,7 +66,7 @@
     "pre": false,
     "date": "2026-11-15T03:30:31Z",
     "notes": "Panel v1.4.19\nDeğişiklikler\n- Windows uygulaması tam paneli açar; Fırsatlar aynı pencerede açılır.\n- Windows tarayıcısı GitHub ile aynı ayarlara geçti: 12 kalıcı oda, 2 saatlik oturum, dakikada 4 bağlantı ve 25/saat bütçe.\n- Canlı dinleme kalıcı bağlantıya geçti; sandık, zarf ve portal eski treasureBoxData alanları ve 0 jetonla da kaydediliyor.\n- Kimliksiz manuel hedefler ve kapalı odalar canlı…",
-    "downloadsTotal": 19,
+    "downloadsTotal": 20,
     "assets": [
      {
       "name": "TikTok-Sandik-Radari-1.4.19-x64.exe",
@@ -135,7 +97,7 @@
    "topics": [],
    "stars": 0,
    "created_at": "2026-11-16T23:05:38Z",
-   "pushed_at": "2026-11-17T11:30:13Z",
+   "pushed_at": "2026-11-17T21:22:25Z",
    "homepage": "",
    "site": "https://cehennemgibiyim.github.io/TikTokV1/",
    "icon": "",
@@ -162,7 +124,7 @@
    "topics": [],
    "stars": 5,
    "created_at": "2026-03-21T00:10:55Z",
-   "pushed_at": "2026-11-17T11:29:10Z",
+   "pushed_at": "2026-11-17T20:51:11Z",
    "homepage": "https://cehennemgibiyim.github.io/AoT-PNASF/",
    "site": "https://cehennemgibiyim.github.io/AoT-PNASF/",
    "icon": "https://raw.githubusercontent.com/CehennemGibiyim/AoT-PNASF/main/desktop/electron/build/icon.png",
@@ -222,6 +184,84 @@
     "https://render.albiononline.com/v1/item/T8_2H_CLAYMORE.png"
    ],
    "activity": []
+  },
+  {
+   "name": "Arena",
+   "url": "https://github.com/CehennemGibiyim/Arena",
+   "description": "",
+   "readme": "",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 224751,
+    "JavaScript": 4003,
+    "CSS": 1667,
+    "PowerShell": 1627
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-11-17T14:09:56Z",
+   "pushed_at": "2026-11-17T14:11:10Z",
+   "homepage": "",
+   "site": "",
+   "icon": "",
+   "release": null,
+   "files": [],
+   "shots": [],
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "name": "AtikViewer",
+   "url": "https://github.com/CehennemGibiyim/AtikViewer",
+   "description": "",
+   "readme": "ATIKVIEWER; DICOM görüntüleme, kesit kesit yapay zekâ destekli inceleme ve yapısal radyoloji raporu üretimini tek ekranda toplayan, Next.js (App Router) + PostgreSQL…",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 814268,
+    "Python": 122307,
+    "JavaScript": 36869,
+    "PowerShell": 25206,
+    "CSS": 3125,
+    "Dockerfile": 1885,
+    "Shell": 1526,
+    "Batchfile": 1059
+   },
+   "topics": [],
+   "stars": 2,
+   "created_at": "2026-10-11T21:34:05Z",
+   "pushed_at": "2026-11-17T13:55:40Z",
+   "homepage": "cehennemgibiyim.github.io/AtikViewer",
+   "site": "https://cehennemgibiyim.github.io/AtikViewer",
+   "icon": "",
+   "release": null,
+   "files": [],
+   "shots": [],
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    19,
+    0,
+    16,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "SecurityPoint",
@@ -285,7 +325,20 @@
    },
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    10,
+    4,
+    0,
+    0,
+    6
+   ]
   },
   {
    "name": "sms",
@@ -329,7 +382,20 @@
    },
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    15,
+    3
+   ]
   },
   {
    "name": "test2",
@@ -353,7 +419,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2
+   ]
   },
   {
    "name": "Personel26",
@@ -407,7 +486,20 @@
    },
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    14,
+    0,
+    0,
+    0,
+    7,
+    5,
+    0
+   ]
   },
   {
    "name": "StockManager",
@@ -451,7 +543,20 @@
    "shots": [
     "https://raw.githubusercontent.com/CehennemGibiyim/StockManager/main/assets/help/dashboard.png"
    ],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    14,
+    0,
+    0
+   ]
   },
   {
    "name": "HastanePYD",
@@ -474,7 +579,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    24,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "PersonelPuantajSistemi",
@@ -497,7 +615,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    8,
+    0,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "08Analiz",
@@ -539,7 +670,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "AoTPNASF",
@@ -562,7 +706,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "AtikAnaliz",
@@ -589,7 +746,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "test1",
@@ -613,7 +783,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "TEST",
@@ -634,7 +817,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "PatientSelection",
@@ -657,7 +853,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "AtikRemoteManager",
@@ -676,7 +885,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "taksi-bremerhaven",
@@ -697,7 +919,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   }
  ]
 }
