@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18T21:14:04.425Z",
+ "generated": "2026-11-19T02:39:56.355Z",
  "user": "CehennemGibiyim",
  "hide": [],
  "repos": [
@@ -17,7 +17,7 @@
    "topics": [],
    "stars": 0,
    "created_at": "2026-11-06T04:26:08Z",
-   "pushed_at": "2026-11-18T21:13:59Z",
+   "pushed_at": "2026-11-19T02:39:47Z",
    "homepage": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
    "site": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
    "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/HisseBildirimSistemi@main/app/icon.svg",
@@ -40,6 +40,99 @@
    ]
   },
   {
+   "name": "ArenaSol",
+   "url": "https://github.com/CehennemGibiyim/ArenaSol",
+   "description": "",
+   "readme": "TikTok LIVE ajansları için uçtan uca işletim paneli: canlı stüdyo, sandık radarı, otomatik keşif, overlay kütüphanesi ve Windows kurulum paketi.",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 578475,
+    "JavaScript": 56576,
+    "CSS": 6480,
+    "PowerShell": 4359,
+    "Batchfile": 4106,
+    "NSIS": 2893
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-11-18T19:13:49Z",
+   "pushed_at": "2026-11-19T02:39:04Z",
+   "homepage": "",
+   "site": "https://cehennemgibiyim.github.io/ArenaSol/",
+   "icon": "data:image/svg+xml,<svg xmlns=",
+   "release": null,
+   "files": [],
+   "shots": [],
+   "activity": []
+  },
+  {
+   "name": "TikTokV1",
+   "url": "https://github.com/CehennemGibiyim/TikTokV1",
+   "description": "",
+   "readme": "TikTok LIVE'da düşen sandık / zarf / portal kutularını yakalar, filtreler ve geri sayımla listeler. Üç parça:",
+   "language": "JavaScript",
+   "langs": {
+    "JavaScript": 22324,
+    "CSS": 1796,
+    "HTML": 1237,
+    "Batchfile": 278
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-11-16T23:05:38Z",
+   "pushed_at": "2026-11-19T02:35:44Z",
+   "homepage": "",
+   "site": "https://cehennemgibiyim.github.io/TikTokV1/",
+   "icon": "",
+   "release": null,
+   "files": [],
+   "shots": [],
+   "activity": []
+  },
+  {
+   "name": "TikTok",
+   "url": "https://github.com/CehennemGibiyim/TikTok",
+   "description": "cehennemgibiyim.github.io/TikTok",
+   "readme": "Sunucu, Docker, API anahtarı gerekmez: her şey GitHub Pages üzerinde statik çalışır, veri tarayıcıda (IndexedDB / localStorage) durur.",
+   "language": "JavaScript",
+   "langs": {
+    "JavaScript": 890706,
+    "HTML": 116764,
+    "CSS": 35744,
+    "Python": 22621,
+    "Dockerfile": 659
+   },
+   "topics": [],
+   "stars": 1,
+   "created_at": "2026-02-14T20:53:52Z",
+   "pushed_at": "2026-11-19T02:30:17Z",
+   "homepage": "https://cehennemgibiyim.github.io/TikTok",
+   "site": "https://cehennemgibiyim.github.io/TikTok",
+   "icon": "",
+   "release": {
+    "tag": "v1.4.19",
+    "name": "1.4.19",
+    "url": "https://github.com/CehennemGibiyim/TikTok/releases/tag/v1.4.19",
+    "pre": false,
+    "date": "2026-11-15T03:30:31Z",
+    "notes": "Panel v1.4.19\nDeğişiklikler\n- Windows uygulaması tam paneli açar; Fırsatlar aynı pencerede açılır.\n- Windows tarayıcısı GitHub ile aynı ayarlara geçti: 12 kalıcı oda, 2 saatlik oturum, dakikada 4 bağlantı ve 25/saat bütçe.\n- Canlı dinleme kalıcı bağlantıya geçti; sandık, zarf ve portal eski treasureBoxData alanları ve 0 jetonla da kaydediliyor.\n- Kimliksiz manuel hedefler ve kapalı odalar canlı…",
+    "downloadsTotal": 20,
+    "assets": [
+     {
+      "name": "TikTok-Sandik-Radari-1.4.19-x64.exe",
+      "url": "https://github.com/CehennemGibiyim/TikTok/releases/download/v1.4.19/TikTok-Sandik-Radari-1.4.19-x64.exe",
+      "size": 121985933,
+      "downloads": 3,
+      "os": "windows",
+      "sha256": "4857c81d855dae2382368b0a9f7df424037dd2864ee2c614864c7f21c2f18db6"
+     }
+    ]
+   },
+   "files": [],
+   "shots": [],
+   "activity": []
+  },
+  {
    "name": "AoT-PNASF",
    "url": "https://github.com/CehennemGibiyim/AoT-PNASF",
    "description": "Albion Online Tools · Powered Nexus & AI Smart Feed",
@@ -57,7 +150,7 @@
    "topics": [],
    "stars": 5,
    "created_at": "2026-03-21T00:10:55Z",
-   "pushed_at": "2026-11-18T20:26:51Z",
+   "pushed_at": "2026-11-18T23:41:32Z",
    "homepage": "https://cehennemgibiyim.github.io/AoT-PNASF/",
    "site": "https://cehennemgibiyim.github.io/AoT-PNASF/",
    "icon": "https://raw.githubusercontent.com/CehennemGibiyim/AoT-PNASF/main/desktop/electron/build/icon.png",
@@ -122,118 +215,73 @@
    "name": "ArenaSag",
    "url": "https://github.com/CehennemGibiyim/ArenaSag",
    "description": "",
-   "readme": "TikTok LIVE ajansları için uçtan uca işletim paneli. Next.js (App Router) + PostgreSQL + Drizzle ORM üzerine kurulu; tiktok-live-connector ile erişilebilen gerçek LIVE…",
+   "readme": "TikTok LIVE ajansları için sürekli çalışan radar, canlı yayın ağı ve Windows bildirim uygulaması.",
    "language": "TypeScript",
    "langs": {
-    "TypeScript": 623664,
-    "JavaScript": 37293,
-    "HTML": 13317,
-    "CSS": 6480,
-    "PowerShell": 6413,
-    "Batchfile": 1069,
-    "NSIS": 1036
+    "TypeScript": 625026,
+    "JavaScript": 112813,
+    "HTML": 96646,
+    "CSS": 31680,
+    "PowerShell": 7885,
+    "NSIS": 4027,
+    "Batchfile": 1668
    },
    "topics": [],
    "stars": 0,
    "created_at": "2026-11-18T18:48:43Z",
-   "pushed_at": "2026-11-18T19:40:34Z",
+   "pushed_at": "2026-11-18T22:31:38Z",
    "homepage": "",
    "site": "https://cehennemgibiyim.github.io/ArenaSag/",
    "icon": "",
-   "release": null,
-   "files": [],
-   "shots": [],
-   "activity": []
-  },
-  {
-   "name": "ArenaSol",
-   "url": "https://github.com/CehennemGibiyim/ArenaSol",
-   "description": "",
-   "readme": "TikTok LIVE ajansları için uçtan uca işletim paneli. Next.js (App Router) + PostgreSQL + Drizzle ORM üzerine kurulu; tiktok-live-connector ile erişilebilen gerçek LIVE…",
-   "language": "TypeScript",
-   "langs": {
-    "TypeScript": 560754,
-    "JavaScript": 36230,
-    "CSS": 6480,
-    "Batchfile": 667
-   },
-   "topics": [],
-   "stars": 0,
-   "created_at": "2026-11-18T19:13:49Z",
-   "pushed_at": "2026-11-18T19:21:45Z",
-   "homepage": "",
-   "site": "https://cehennemgibiyim.github.io/ArenaSol/",
-   "icon": "data:image/svg+xml,<svg xmlns=",
-   "release": null,
-   "files": [],
-   "shots": [],
-   "activity": []
-  },
-  {
-   "name": "TikTokV1",
-   "url": "https://github.com/CehennemGibiyim/TikTokV1",
-   "description": "",
-   "readme": "TikTok LIVE'da düşen sandık / zarf / portal kutularını yakalar, filtreler ve geri sayımla listeler. Üç parça:",
-   "language": "JavaScript",
-   "langs": {
-    "JavaScript": 22324,
-    "CSS": 1796,
-    "HTML": 1237,
-    "Batchfile": 278
-   },
-   "topics": [],
-   "stars": 0,
-   "created_at": "2026-11-16T23:05:38Z",
-   "pushed_at": "2026-11-18T16:44:27Z",
-   "homepage": "",
-   "site": "https://cehennemgibiyim.github.io/TikTokV1/",
-   "icon": "",
-   "release": null,
-   "files": [],
-   "shots": [],
-   "activity": []
-  },
-  {
-   "name": "TikTok",
-   "url": "https://github.com/CehennemGibiyim/TikTok",
-   "description": "cehennemgibiyim.github.io/TikTok",
-   "readme": "Sunucu, Docker, API anahtarı gerekmez: her şey GitHub Pages üzerinde statik çalışır, veri tarayıcıda (IndexedDB / localStorage) durur.",
-   "language": "JavaScript",
-   "langs": {
-    "JavaScript": 890706,
-    "HTML": 116764,
-    "CSS": 35744,
-    "Python": 22621,
-    "Dockerfile": 659
-   },
-   "topics": [],
-   "stars": 1,
-   "created_at": "2026-02-14T20:53:52Z",
-   "pushed_at": "2026-11-18T15:00:06Z",
-   "homepage": "https://cehennemgibiyim.github.io/TikTok",
-   "site": "https://cehennemgibiyim.github.io/TikTok",
-   "icon": "",
    "release": {
-    "tag": "v1.4.19",
-    "name": "1.4.19",
-    "url": "https://github.com/CehennemGibiyim/TikTok/releases/tag/v1.4.19",
+    "tag": "v1.4.0",
+    "name": "Arena Radar v1.4.0",
+    "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/tag/v1.4.0",
     "pre": false,
-    "date": "2026-11-15T03:30:31Z",
-    "notes": "Panel v1.4.19\nDeğişiklikler\n- Windows uygulaması tam paneli açar; Fırsatlar aynı pencerede açılır.\n- Windows tarayıcısı GitHub ile aynı ayarlara geçti: 12 kalıcı oda, 2 saatlik oturum, dakikada 4 bağlantı ve 25/saat bütçe.\n- Canlı dinleme kalıcı bağlantıya geçti; sandık, zarf ve portal eski treasureBoxData alanları ve 0 jetonla da kaydediliyor.\n- Kimliksiz manuel hedefler ve kapalı odalar canlı…",
-    "downloadsTotal": 20,
+    "date": "2026-11-18T22:31:38Z",
+    "notes": "Full Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0",
+    "downloadsTotal": 13,
     "assets": [
      {
-      "name": "TikTok-Sandik-Radari-1.4.19-x64.exe",
-      "url": "https://github.com/CehennemGibiyim/TikTok/releases/download/v1.4.19/TikTok-Sandik-Radari-1.4.19-x64.exe",
-      "size": 121985933,
+      "name": "Arena-Live-OS-windows.zip",
+      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/download/v1.4.0/Arena-Live-OS-windows.zip",
+      "size": 4030183,
+      "downloads": 1,
+      "os": "windows",
+      "sha256": "9d1effce43ea6f6f0de4ee87111f2347d09862e34a38241158e170dd33bb9394"
+     },
+     {
+      "name": "ArenaRadar-Setup-1.4.0.exe",
+      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/download/v1.4.0/ArenaRadar-Setup-1.4.0.exe",
+      "size": 22492368,
       "downloads": 3,
       "os": "windows",
-      "sha256": "4857c81d855dae2382368b0a9f7df424037dd2864ee2c614864c7f21c2f18db6"
+      "sha256": "5b44fb0740609831ebe00b156955d85464f624207bbc7bc0f374d1e7262bcc57"
+     },
+     {
+      "name": "ArenaRadar-Setup.exe",
+      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/download/v1.4.0/ArenaRadar-Setup.exe",
+      "size": 22492368,
+      "downloads": 1,
+      "os": "windows",
+      "sha256": "5b44fb0740609831ebe00b156955d85464f624207bbc7bc0f374d1e7262bcc57"
+     },
+     {
+      "name": "ArenaRadar-windows.zip",
+      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/download/v1.4.0/ArenaRadar-windows.zip",
+      "size": 34425292,
+      "downloads": 2,
+      "os": "windows",
+      "sha256": "89dea75094c63f70507625342807233742cbc029759f8d48648bde5b3729f8bd"
      }
     ]
    },
    "files": [],
-   "shots": [],
+   "shots": [
+    "https://raw.githubusercontent.com/CehennemGibiyim/ArenaSag/main/docs/images/panel.png",
+    "https://raw.githubusercontent.com/CehennemGibiyim/ArenaSag/main/docs/images/yayinlar.png",
+    "https://raw.githubusercontent.com/CehennemGibiyim/ArenaSag/main/docs/images/sandik.png"
+   ],
    "activity": []
   },
   {
