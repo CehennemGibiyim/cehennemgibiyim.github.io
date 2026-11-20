@@ -1,81 +1,8 @@
 {
- "generated": "2026-11-19T19:12:39.452Z",
+ "generated": "2026-11-20T01:20:59.248Z",
  "user": "CehennemGibiyim",
  "hide": [],
  "repos": [
-  {
-   "name": "ArenaSag",
-   "url": "https://github.com/CehennemGibiyim/ArenaSag",
-   "description": "",
-   "readme": "TikTok LIVE ajansları için sürekli çalışan radar, canlı yayın ağı ve Windows bildirim uygulaması.",
-   "language": "TypeScript",
-   "langs": {
-    "TypeScript": 625026,
-    "JavaScript": 112813,
-    "HTML": 96646,
-    "CSS": 31680,
-    "PowerShell": 7885,
-    "NSIS": 4027,
-    "Batchfile": 1668
-   },
-   "topics": [],
-   "stars": 0,
-   "created_at": "2026-11-18T18:48:43Z",
-   "pushed_at": "2026-11-19T19:11:31Z",
-   "homepage": "",
-   "site": "https://cehennemgibiyim.github.io/ArenaSag/",
-   "icon": "",
-   "release": {
-    "tag": "v1.4.0",
-    "name": "Arena Radar v1.4.0",
-    "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/tag/v1.4.0",
-    "pre": false,
-    "date": "2026-11-18T22:31:38Z",
-    "notes": "Full Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0",
-    "downloadsTotal": 13,
-    "assets": [
-     {
-      "name": "Arena-Live-OS-windows.zip",
-      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/download/v1.4.0/Arena-Live-OS-windows.zip",
-      "size": 4030183,
-      "downloads": 1,
-      "os": "windows",
-      "sha256": "9d1effce43ea6f6f0de4ee87111f2347d09862e34a38241158e170dd33bb9394"
-     },
-     {
-      "name": "ArenaRadar-Setup-1.4.0.exe",
-      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/download/v1.4.0/ArenaRadar-Setup-1.4.0.exe",
-      "size": 22492368,
-      "downloads": 3,
-      "os": "windows",
-      "sha256": "5b44fb0740609831ebe00b156955d85464f624207bbc7bc0f374d1e7262bcc57"
-     },
-     {
-      "name": "ArenaRadar-Setup.exe",
-      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/download/v1.4.0/ArenaRadar-Setup.exe",
-      "size": 22492368,
-      "downloads": 1,
-      "os": "windows",
-      "sha256": "5b44fb0740609831ebe00b156955d85464f624207bbc7bc0f374d1e7262bcc57"
-     },
-     {
-      "name": "ArenaRadar-windows.zip",
-      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/download/v1.4.0/ArenaRadar-windows.zip",
-      "size": 34425292,
-      "downloads": 2,
-      "os": "windows",
-      "sha256": "89dea75094c63f70507625342807233742cbc029759f8d48648bde5b3729f8bd"
-     }
-    ]
-   },
-   "files": [],
-   "shots": [
-    "https://raw.githubusercontent.com/CehennemGibiyim/ArenaSag/main/docs/images/panel.png",
-    "https://raw.githubusercontent.com/CehennemGibiyim/ArenaSag/main/docs/images/yayinlar.png",
-    "https://raw.githubusercontent.com/CehennemGibiyim/ArenaSag/main/docs/images/sandik.png"
-   ],
-   "activity": []
-  },
   {
    "name": "HisseBildirimSistemi",
    "url": "https://github.com/CehennemGibiyim/HisseBildirimSistemi",
@@ -90,7 +17,7 @@
    "topics": [],
    "stars": 0,
    "created_at": "2026-11-06T04:26:08Z",
-   "pushed_at": "2026-11-19T19:10:57Z",
+   "pushed_at": "2026-11-20T01:20:40Z",
    "homepage": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
    "site": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
    "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/HisseBildirimSistemi@main/app/icon.svg",
@@ -113,25 +40,126 @@
    ]
   },
   {
-   "name": "TikTokV1",
-   "url": "https://github.com/CehennemGibiyim/TikTokV1",
+   "name": "ArenaSag",
+   "url": "https://github.com/CehennemGibiyim/ArenaSag",
    "description": "",
-   "readme": "TikTok LIVE'da düşen sandık / zarf / portal kutularını yakalar, filtreler ve geri sayımla listeler. Üç parça:",
-   "language": "JavaScript",
+   "readme": "TikTok LIVE ajansları için sürekli çalışan radar, canlı yayın ağı ve Windows bildirim uygulaması.",
+   "language": "TypeScript",
    "langs": {
-    "JavaScript": 22324,
-    "CSS": 1796,
-    "HTML": 1237,
-    "Batchfile": 278
+    "TypeScript": 625026,
+    "JavaScript": 112813,
+    "HTML": 96646,
+    "CSS": 31680,
+    "PowerShell": 7885,
+    "NSIS": 4027,
+    "Batchfile": 1668
    },
    "topics": [],
    "stars": 0,
-   "created_at": "2026-11-16T23:05:38Z",
-   "pushed_at": "2026-11-19T19:10:52Z",
+   "created_at": "2026-11-18T18:48:43Z",
+   "pushed_at": "2026-11-20T01:15:57Z",
    "homepage": "",
-   "site": "https://cehennemgibiyim.github.io/TikTokV1/",
+   "site": "https://cehennemgibiyim.github.io/ArenaSag/",
    "icon": "",
-   "release": null,
+   "release": {
+    "tag": "v1.4.0",
+    "name": "Arena Radar v1.4.0",
+    "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/tag/v1.4.0",
+    "pre": false,
+    "date": "2026-11-18T22:31:38Z",
+    "notes": "Full Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0\nFull Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0",
+    "downloadsTotal": 5,
+    "assets": [
+     {
+      "name": "Arena-Live-OS-windows.zip",
+      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/download/v1.4.0/Arena-Live-OS-windows.zip",
+      "size": 4037662,
+      "downloads": 0,
+      "os": "windows",
+      "sha256": "e9fd06b4b452b9077ae19fbc8497b95e362eac9133fc40eccdb51a408f159919"
+     },
+     {
+      "name": "ArenaRadar-Setup-1.4.0.exe",
+      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/download/v1.4.0/ArenaRadar-Setup-1.4.0.exe",
+      "size": 24361346,
+      "downloads": 0,
+      "os": "windows",
+      "sha256": "df8928993e5c609d219ee3f3917c95898b6c3de969760cdf3c6a68c6d3eae7dc"
+     },
+     {
+      "name": "ArenaRadar-Setup.exe",
+      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/download/v1.4.0/ArenaRadar-Setup.exe",
+      "size": 24361346,
+      "downloads": 0,
+      "os": "windows",
+      "sha256": "df8928993e5c609d219ee3f3917c95898b6c3de969760cdf3c6a68c6d3eae7dc"
+     },
+     {
+      "name": "ArenaRadar-windows.zip",
+      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/download/v1.4.0/ArenaRadar-windows.zip",
+      "size": 36324927,
+      "downloads": 0,
+      "os": "windows",
+      "sha256": "db795f48d60c6dd3a8129253f84bc6b33483a0f1de41499349e6f73a3d15b81c"
+     }
+    ]
+   },
+   "files": [],
+   "shots": [
+    "https://raw.githubusercontent.com/CehennemGibiyim/ArenaSag/main/docs/images/panel.png",
+    "https://raw.githubusercontent.com/CehennemGibiyim/ArenaSag/main/docs/images/yayinlar.png",
+    "https://raw.githubusercontent.com/CehennemGibiyim/ArenaSag/main/docs/images/sandik.png"
+   ],
+   "activity": []
+  },
+  {
+   "name": "ArenaSol",
+   "url": "https://github.com/CehennemGibiyim/ArenaSol",
+   "description": "",
+   "readme": "TikTok LIVE ajansları için uçtan uca işletim paneli: canlı stüdyo, sandık radarı, otomatik keşif, overlay kütüphanesi ve Windows kurulum paketi.",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 578669,
+    "JavaScript": 57119,
+    "CSS": 6480,
+    "PowerShell": 4359,
+    "Batchfile": 4106,
+    "NSIS": 3303
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-11-18T19:13:49Z",
+   "pushed_at": "2026-11-20T00:41:54Z",
+   "homepage": "",
+   "site": "https://cehennemgibiyim.github.io/ArenaSol/",
+   "icon": "data:image/svg+xml,<svg xmlns=",
+   "release": {
+    "tag": "windows-v8",
+    "name": "Arena Live OS — Windows v8",
+    "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/tag/windows-v8",
+    "pre": false,
+    "date": "2026-11-19T23:01:18Z",
+    "notes": "Windows kurulum paketi otomatik olarak derlendi.\nKurulum: ArenaLiveOS-Setup-.exe indir → çalıştır → masaüstündeki \"Arena Live OS\" kısayolu.\nTaşınabilir: Arena-Live-OS--windows.zip arşivini aç → KURULUM.bat.\n- Gereksinim: Node.js 22 LTS + PostgreSQL 14+\n- Panel açılışında GitHub'daki güncellemeler otomatik algılanır (agent/update.mjs)\n- Tarama GitHub Actions üzerinde 7/24 çalışır; panel kapalı o…",
+    "downloadsTotal": 15,
+    "assets": [
+     {
+      "name": "Arena-Live-OS-1.2.0-windows.zip",
+      "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/download/windows-v8/Arena-Live-OS-1.2.0-windows.zip",
+      "size": 171861690,
+      "downloads": 2,
+      "os": "windows",
+      "sha256": "8a611e0a3f6b03c10750b234ece928fd36f9a4d91daaa591966e0c2e2cb9480e"
+     },
+     {
+      "name": "ArenaLiveOS-Setup-1.2.0.exe",
+      "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/download/windows-v8/ArenaLiveOS-Setup-1.2.0.exe",
+      "size": 104464964,
+      "downloads": 4,
+      "os": "windows",
+      "sha256": "0249779eb295bc73cb2c180095d967b8f7eb1b59e34554ef3ea1090441c884ae"
+     }
+    ]
+   },
    "files": [],
    "shots": [],
    "activity": []
@@ -152,7 +180,7 @@
    "topics": [],
    "stars": 1,
    "created_at": "2026-02-14T20:53:52Z",
-   "pushed_at": "2026-11-19T19:08:34Z",
+   "pushed_at": "2026-11-19T22:22:06Z",
    "homepage": "https://cehennemgibiyim.github.io/TikTok",
    "site": "https://cehennemgibiyim.github.io/TikTok",
    "icon": "",
@@ -180,58 +208,6 @@
    "activity": []
   },
   {
-   "name": "ArenaSol",
-   "url": "https://github.com/CehennemGibiyim/ArenaSol",
-   "description": "",
-   "readme": "TikTok LIVE ajansları için uçtan uca işletim paneli: canlı stüdyo, sandık radarı, otomatik keşif, overlay kütüphanesi ve Windows kurulum paketi.",
-   "language": "TypeScript",
-   "langs": {
-    "TypeScript": 578475,
-    "JavaScript": 56576,
-    "CSS": 6480,
-    "PowerShell": 4359,
-    "Batchfile": 4106,
-    "NSIS": 3303
-   },
-   "topics": [],
-   "stars": 0,
-   "created_at": "2026-11-18T19:13:49Z",
-   "pushed_at": "2026-11-19T18:11:54Z",
-   "homepage": "",
-   "site": "https://cehennemgibiyim.github.io/ArenaSol/",
-   "icon": "data:image/svg+xml,<svg xmlns=",
-   "release": {
-    "tag": "windows-v6",
-    "name": "Arena Live OS — Windows v6",
-    "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/tag/windows-v6",
-    "pre": false,
-    "date": "2026-11-19T03:44:10Z",
-    "notes": "Windows kurulum paketi otomatik olarak derlendi.\nKurulum: ArenaLiveOS-Setup-.exe indir → çalıştır → masaüstündeki \"Arena Live OS\" kısayolu.\nTaşınabilir: Arena-Live-OS--windows.zip arşivini aç → KURULUM.bat.\n- Gereksinim: Node.js 22 LTS + PostgreSQL 14+\n- Panel açılışında GitHub'daki güncellemeler otomatik algılanır (agent/update.mjs)\n- Tarama GitHub Actions üzerinde 7/24 çalışır; panel kapalı o…",
-    "downloadsTotal": 6,
-    "assets": [
-     {
-      "name": "Arena-Live-OS-1.2.0-windows.zip",
-      "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/download/windows-v6/Arena-Live-OS-1.2.0-windows.zip",
-      "size": 171882351,
-      "downloads": 1,
-      "os": "windows",
-      "sha256": "d39ff63e3b130e62a708363cf86eaab352d43b784f8559db66bf1ef4b74594ab"
-     },
-     {
-      "name": "ArenaLiveOS-Setup-1.2.0.exe",
-      "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/download/windows-v6/ArenaLiveOS-Setup-1.2.0.exe",
-      "size": 104493861,
-      "downloads": 1,
-      "os": "windows",
-      "sha256": "b76b2a62a1c13a1d28c7e5a3156efb3f11b0c0ad93d5c3115333068311ed3c3c"
-     }
-    ]
-   },
-   "files": [],
-   "shots": [],
-   "activity": []
-  },
-  {
    "name": "AoT-PNASF",
    "url": "https://github.com/CehennemGibiyim/AoT-PNASF",
    "description": "Albion Online Tools · Powered Nexus & AI Smart Feed",
@@ -249,7 +225,7 @@
    "topics": [],
    "stars": 5,
    "created_at": "2026-03-21T00:10:55Z",
-   "pushed_at": "2026-11-19T14:53:33Z",
+   "pushed_at": "2026-11-19T21:37:53Z",
    "homepage": "https://cehennemgibiyim.github.io/AoT-PNASF/",
    "site": "https://cehennemgibiyim.github.io/AoT-PNASF/",
    "icon": "https://raw.githubusercontent.com/CehennemGibiyim/AoT-PNASF/main/desktop/electron/build/icon.png",
@@ -308,6 +284,30 @@
    "shots": [
     "https://render.albiononline.com/v1/item/T8_2H_CLAYMORE.png"
    ],
+   "activity": []
+  },
+  {
+   "name": "TikTokV1",
+   "url": "https://github.com/CehennemGibiyim/TikTokV1",
+   "description": "",
+   "readme": "TikTok LIVE'da düşen sandık / zarf / portal kutularını yakalar, filtreler ve geri sayımla listeler. Üç parça:",
+   "language": "JavaScript",
+   "langs": {
+    "JavaScript": 22324,
+    "CSS": 1796,
+    "HTML": 1237,
+    "Batchfile": 278
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-11-16T23:05:38Z",
+   "pushed_at": "2026-11-19T21:05:15Z",
+   "homepage": "",
+   "site": "https://cehennemgibiyim.github.io/TikTokV1/",
+   "icon": "",
+   "release": null,
+   "files": [],
+   "shots": [],
    "activity": []
   },
   {
