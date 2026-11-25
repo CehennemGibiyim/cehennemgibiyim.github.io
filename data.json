@@ -1,27 +1,33 @@
 {
- "generated": "2026-11-25T10:23:47.246Z",
+ "generated": "2026-11-25T20:04:41.764Z",
  "user": "CehennemGibiyim",
  "hide": [],
  "repos": [
   {
-   "name": "TikTokV1",
-   "url": "https://github.com/CehennemGibiyim/TikTokV1",
+   "name": "ArenaViewer",
+   "url": "https://github.com/CehennemGibiyim/ArenaViewer",
    "description": "",
-   "readme": "TikTok LIVE'da düşen sandık / zarf / portal kutularını yakalar, filtreler ve geri sayımla listeler. Üç parça:",
-   "language": "JavaScript",
+   "readme": "ATIKVIEWER; DICOM görüntüleme, kesit kesit yapay zekâ destekli inceleme ve yapısal radyoloji raporu üretimini tek ekranda toplayan, Next.js (App Router) + PostgreSQL…",
+   "language": "TypeScript",
    "langs": {
-    "JavaScript": 22324,
-    "CSS": 1796,
-    "HTML": 1237,
-    "Batchfile": 278
+    "TypeScript": 1819375,
+    "Python": 151324,
+    "JavaScript": 59824,
+    "PowerShell": 44235,
+    "Shell": 37457,
+    "CSS": 3125,
+    "Dockerfile": 2970,
+    "Inno Setup": 2774,
+    "Batchfile": 1059,
+    "HTML": 1050
    },
    "topics": [],
    "stars": 0,
-   "created_at": "2026-11-16T23:05:38Z",
-   "pushed_at": "2026-11-25T10:19:24Z",
+   "created_at": "2026-11-23T00:22:22Z",
+   "pushed_at": "2026-11-25T19:49:37Z",
    "homepage": "",
-   "site": "https://cehennemgibiyim.github.io/TikTokV1/",
-   "icon": "",
+   "site": "https://cehennemgibiyim.github.io/ArenaViewer/",
+   "icon": "https://raw.githubusercontent.com/CehennemGibiyim/ArenaViewer/main/public/icons/icon-192.png",
    "release": null,
    "files": [],
    "shots": [],
@@ -43,7 +49,7 @@
    "topics": [],
    "stars": 1,
    "created_at": "2026-02-14T20:53:52Z",
-   "pushed_at": "2026-11-25T08:59:05Z",
+   "pushed_at": "2026-11-25T19:31:28Z",
    "homepage": "https://cehennemgibiyim.github.io/TikTok",
    "site": "https://cehennemgibiyim.github.io/TikTok",
    "icon": "",
@@ -71,6 +77,94 @@
    "activity": []
   },
   {
+   "name": "ArenaSol",
+   "url": "https://github.com/CehennemGibiyim/ArenaSol",
+   "description": "",
+   "readme": "TikTok LIVE ajansları için uçtan uca işletim paneli: canlı stüdyo, sandık radarı, otomatik keşif, overlay kütüphanesi ve Windows kurulum paketi.",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 594210,
+    "JavaScript": 58082,
+    "PowerShell": 6688,
+    "CSS": 6480,
+    "Batchfile": 5708,
+    "NSIS": 3985
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-11-18T19:13:49Z",
+   "pushed_at": "2026-11-25T18:43:52Z",
+   "homepage": "",
+   "site": "https://cehennemgibiyim.github.io/ArenaSol/",
+   "icon": "data:image/svg+xml,<svg xmlns=",
+   "release": {
+    "tag": "windows-v9",
+    "name": "Arena Live OS — Windows v9",
+    "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/tag/windows-v9",
+    "pre": false,
+    "date": "2026-11-22T23:20:59Z",
+    "notes": "Windows kurulum paketi otomatik olarak derlendi.\nKurulum: ArenaLiveOS-Setup-.exe indir → çalıştır → masaüstündeki \"Arena Live OS\" kısayolu.\nTaşınabilir: Arena-Live-OS--windows.zip arşivini aç → KURULUM.bat.\n- Gereksinim: Node.js 22 LTS + PostgreSQL 14+\n- Panel açılışında GitHub'daki güncellemeler otomatik algılanır (agent/update.mjs)\n- Tarama GitHub Actions üzerinde 7/24 çalışır; panel kapalı o…",
+    "downloadsTotal": 19,
+    "assets": [
+     {
+      "name": "Arena-Live-OS-1.2.0-windows.zip",
+      "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/download/windows-v9/Arena-Live-OS-1.2.0-windows.zip",
+      "size": 172266789,
+      "downloads": 1,
+      "os": "windows",
+      "sha256": "3543111aaf5d5138d2bd4f672c1ba8eb1f4174b167a251677c44e02df68a0513"
+     },
+     {
+      "name": "ArenaLiveOS-Setup-1.2.0.exe",
+      "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/download/windows-v9/ArenaLiveOS-Setup-1.2.0.exe",
+      "size": 104751279,
+      "downloads": 1,
+      "os": "windows",
+      "sha256": "1356ad5c88ae4e9999d025562cda98c193dbf8563ab1e250dd428fe32010457c"
+     }
+    ]
+   },
+   "files": [],
+   "shots": [],
+   "activity": []
+  },
+  {
+   "name": "HisseBildirimSistemi",
+   "url": "https://github.com/CehennemGibiyim/HisseBildirimSistemi",
+   "description": "Hisse Bildirim Sistemi",
+   "readme": "Nasdaq hisselerini tarar, %10–%50 arası hareket eşiğini aşanları sinyal olarak listeler ve haber manşetlerini duygu analizinden geçirir.",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 80207,
+    "CSS": 43097,
+    "JavaScript": 13121
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-11-06T04:26:08Z",
+   "pushed_at": "2026-11-25T17:05:11Z",
+   "homepage": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
+   "site": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
+   "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/HisseBildirimSistemi@main/app/icon.svg",
+   "release": null,
+   "files": [],
+   "shots": [],
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    19,
+    4,
+    11,
+    0
+   ]
+  },
+  {
    "name": "AoT-PNASF",
    "url": "https://github.com/CehennemGibiyim/AoT-PNASF",
    "description": "Albion Online Tools · Powered Nexus & AI Smart Feed",
@@ -88,7 +182,7 @@
    "topics": [],
    "stars": 5,
    "created_at": "2026-03-21T00:10:55Z",
-   "pushed_at": "2026-11-25T08:23:06Z",
+   "pushed_at": "2026-11-25T16:25:59Z",
    "homepage": "https://cehennemgibiyim.github.io/AoT-PNASF/",
    "site": "https://cehennemgibiyim.github.io/AoT-PNASF/",
    "icon": "https://raw.githubusercontent.com/CehennemGibiyim/AoT-PNASF/main/desktop/electron/build/icon.png",
@@ -150,105 +244,24 @@
    "activity": []
   },
   {
-   "name": "ArenaSol",
-   "url": "https://github.com/CehennemGibiyim/ArenaSol",
+   "name": "TikTokV1",
+   "url": "https://github.com/CehennemGibiyim/TikTokV1",
    "description": "",
-   "readme": "TikTok LIVE ajansları için uçtan uca işletim paneli: canlı stüdyo, sandık radarı, otomatik keşif, overlay kütüphanesi ve Windows kurulum paketi.",
-   "language": "TypeScript",
+   "readme": "TikTok LIVE'da düşen sandık / zarf / portal kutularını yakalar, filtreler ve geri sayımla listeler. Üç parça:",
+   "language": "JavaScript",
    "langs": {
-    "TypeScript": 594210,
-    "JavaScript": 58082,
-    "PowerShell": 6688,
-    "CSS": 6480,
-    "Batchfile": 5708,
-    "NSIS": 3985
+    "JavaScript": 22324,
+    "CSS": 1796,
+    "HTML": 1237,
+    "Batchfile": 278
    },
    "topics": [],
    "stars": 0,
-   "created_at": "2026-11-18T19:13:49Z",
-   "pushed_at": "2026-11-25T08:18:30Z",
+   "created_at": "2026-11-16T23:05:38Z",
+   "pushed_at": "2026-11-25T11:58:47Z",
    "homepage": "",
-   "site": "https://cehennemgibiyim.github.io/ArenaSol/",
-   "icon": "data:image/svg+xml,<svg xmlns=",
-   "release": {
-    "tag": "windows-v9",
-    "name": "Arena Live OS — Windows v9",
-    "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/tag/windows-v9",
-    "pre": false,
-    "date": "2026-11-22T23:20:59Z",
-    "notes": "Windows kurulum paketi otomatik olarak derlendi.\nKurulum: ArenaLiveOS-Setup-.exe indir → çalıştır → masaüstündeki \"Arena Live OS\" kısayolu.\nTaşınabilir: Arena-Live-OS--windows.zip arşivini aç → KURULUM.bat.\n- Gereksinim: Node.js 22 LTS + PostgreSQL 14+\n- Panel açılışında GitHub'daki güncellemeler otomatik algılanır (agent/update.mjs)\n- Tarama GitHub Actions üzerinde 7/24 çalışır; panel kapalı o…",
-    "downloadsTotal": 19,
-    "assets": [
-     {
-      "name": "Arena-Live-OS-1.2.0-windows.zip",
-      "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/download/windows-v9/Arena-Live-OS-1.2.0-windows.zip",
-      "size": 172266789,
-      "downloads": 1,
-      "os": "windows",
-      "sha256": "3543111aaf5d5138d2bd4f672c1ba8eb1f4174b167a251677c44e02df68a0513"
-     },
-     {
-      "name": "ArenaLiveOS-Setup-1.2.0.exe",
-      "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/download/windows-v9/ArenaLiveOS-Setup-1.2.0.exe",
-      "size": 104751279,
-      "downloads": 1,
-      "os": "windows",
-      "sha256": "1356ad5c88ae4e9999d025562cda98c193dbf8563ab1e250dd428fe32010457c"
-     }
-    ]
-   },
-   "files": [],
-   "shots": [],
-   "activity": []
-  },
-  {
-   "name": "ArenaViewer",
-   "url": "https://github.com/CehennemGibiyim/ArenaViewer",
-   "description": "",
-   "readme": "ATIKVIEWER; DICOM görüntüleme, kesit kesit yapay zekâ destekli inceleme ve yapısal radyoloji raporu üretimini tek ekranda toplayan, Next.js (App Router) + PostgreSQL…",
-   "language": "TypeScript",
-   "langs": {
-    "TypeScript": 1805714,
-    "Python": 151324,
-    "JavaScript": 59824,
-    "PowerShell": 44235,
-    "Shell": 37066,
-    "CSS": 3125,
-    "Dockerfile": 2970,
-    "Inno Setup": 2774,
-    "Batchfile": 1059,
-    "HTML": 1050
-   },
-   "topics": [],
-   "stars": 0,
-   "created_at": "2026-11-23T00:22:22Z",
-   "pushed_at": "2026-11-25T07:14:23Z",
-   "homepage": "",
-   "site": "https://cehennemgibiyim.github.io/ArenaViewer/",
-   "icon": "https://raw.githubusercontent.com/CehennemGibiyim/ArenaViewer/main/public/icons/icon-192.png",
-   "release": null,
-   "files": [],
-   "shots": [],
-   "activity": []
-  },
-  {
-   "name": "HisseBildirimSistemi",
-   "url": "https://github.com/CehennemGibiyim/HisseBildirimSistemi",
-   "description": "Hisse Bildirim Sistemi",
-   "readme": "Nasdaq hisselerini tarar, %10–%50 arası hareket eşiğini aşanları sinyal olarak listeler ve haber manşetlerini duygu analizinden geçirir.",
-   "language": "TypeScript",
-   "langs": {
-    "TypeScript": 80207,
-    "CSS": 43097,
-    "JavaScript": 13121
-   },
-   "topics": [],
-   "stars": 0,
-   "created_at": "2026-11-06T04:26:08Z",
-   "pushed_at": "2026-11-25T04:45:25Z",
-   "homepage": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
-   "site": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
-   "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/HisseBildirimSistemi@main/app/icon.svg",
+   "site": "https://cehennemgibiyim.github.io/TikTokV1/",
+   "icon": "",
    "release": null,
    "files": [],
    "shots": [],
@@ -272,7 +285,7 @@
    "topics": [],
    "stars": 0,
    "created_at": "2026-11-18T18:48:43Z",
-   "pushed_at": "2026-11-25T01:48:44Z",
+   "pushed_at": "2026-11-25T10:36:32Z",
    "homepage": "",
    "site": "https://cehennemgibiyim.github.io/ArenaSag/",
    "icon": "",
@@ -325,7 +338,20 @@
     "https://raw.githubusercontent.com/CehennemGibiyim/ArenaSag/main/docs/images/yayinlar.png",
     "https://raw.githubusercontent.com/CehennemGibiyim/ArenaSag/main/docs/images/sandik.png"
    ],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    40,
+    4
+   ]
   },
   {
    "name": "AtikViewer",
@@ -380,7 +406,20 @@
    },
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    5
+   ]
   },
   {
    "name": "StockManager",
@@ -424,7 +463,20 @@
    "shots": [
     "https://raw.githubusercontent.com/CehennemGibiyim/StockManager/main/assets/help/dashboard.png"
    ],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    14,
+    0,
+    0,
+    10
+   ]
   },
   {
    "name": "AtikViewer0",
@@ -452,7 +504,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    19,
+    0,
+    16,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "SecurityPoint",
@@ -516,7 +581,20 @@
    },
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    10,
+    4,
+    0,
+    0,
+    6,
+    0
+   ]
   },
   {
    "name": "sms",
@@ -560,7 +638,20 @@
    },
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    15,
+    3,
+    0
+   ]
   },
   {
    "name": "test2",
@@ -584,7 +675,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    0
+   ]
   },
   {
    "name": "Personel26",
@@ -638,7 +742,20 @@
    },
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    14,
+    0,
+    0,
+    0,
+    7,
+    5,
+    0,
+    0
+   ]
   },
   {
    "name": "HastanePYD",
@@ -661,7 +778,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    24,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "PersonelPuantajSistemi",
@@ -684,7 +814,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    8,
+    0,
+    2,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "08Analiz",
@@ -726,7 +869,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "AoTPNASF",
@@ -749,7 +905,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "AtikAnaliz",
@@ -776,7 +945,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "test1",
@@ -800,7 +982,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "TEST",
@@ -821,7 +1016,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "PatientSelection",
@@ -844,7 +1052,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "AtikRemoteManager",
@@ -863,7 +1084,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   },
   {
    "name": "taksi-bremerhaven",
@@ -884,7 +1118,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
   }
  ]
 }
