@@ -33,10 +33,10 @@ jobs:
           GH_USER: ${{ github.repository_owner }}
       - name: Değişiklik varsa kaydet
         run: |
-          if [ -n "$(git status --porcelain data.json)" ]; then
+          if [ -n "$(git status --porcelain data.json profile-readme.md)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data.json
+            git add data.json profile-readme.md
             git commit -m "data.json güncellendi"
             git pull --rebase origin main || true
             git push
@@ -50,4 +50,21 @@ jobs:
             curl -s "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
               --data-urlencode "chat_id=${TG_CHAT}" \
               --data-urlencode "text=$(cat new-releases.txt)" > /dev/null
+          fi
+      - name: Profil README'sini güncelle (isteğe bağlı)
+        env:
+          PROFILE_TOKEN: ${{ secrets.PROFILE_REPO_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+        run: |
+          if [ -n "$PROFILE_TOKEN" ] && [ -f profile-readme.md ]; then
+            git clone "https://x-access-token:${PROFILE_TOKEN}@github.com/${OWNER}/${OWNER}.git" /tmp/profile
+            cp profile-readme.md /tmp/profile/README.md
+            cd /tmp/profile
+            if [ -n "$(git status --porcelain)" ]; then
+              git config user.name "github-actions[bot]"
+              git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+              git add README.md
+              git commit -m "README güncellendi"
+              git push
+            fi
           fi

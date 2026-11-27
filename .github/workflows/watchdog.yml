@@ -1,0 +1,36 @@
+name: Veri güncelleme nöbetçisi
+
+# Saatte bir bakar: "Proje verilerini güncelle" son 2 saattir başarıyla çalışmadıysa
+# bu iş akışı hata verir (GitHub sana e-posta gönderir) ve Telegram ayarlıysa mesaj atar.
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  actions: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Son başarılı güncellemeyi kontrol et
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TG_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          last=$(gh api "repos/${{ github.repository }}/actions/workflows/update-data.yml/runs?status=success&per_page=1" --jq '.workflow_runs[0].updated_at // empty')
+          now=$(date +%s)
+          then=0
+          if [ -n "$last" ]; then then=$(date -d "$last" +%s); fi
+          age=$(( (now - then) / 60 ))
+          echo "Son başarılı güncelleme: ${age} dakika önce"
+          if [ "$age" -gt 120 ]; then
+            msg="⚠️ Portfolyo verisi ${age} dakikadır güncellenmedi. Actions sekmesine bak."
+            echo "$msg"
+            if [ -n "$TG_TOKEN" ] && [ -n "$TG_CHAT" ]; then
+              curl -s "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" --data-urlencode "chat_id=${TG_CHAT}" --data-urlencode "text=${msg}" > /dev/null
+            fi
+            exit 1
+          fi
