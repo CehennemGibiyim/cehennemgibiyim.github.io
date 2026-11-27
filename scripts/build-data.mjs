@@ -114,13 +114,15 @@ function filesOf(tree, r) {
 
 async function releaseOf(name) {
   const list = ((await get(`/repos/${USER}/${name}/releases?per_page=20`)) || []).filter((x) => !x.draft);
-  const r = list.slice().sort((x, y) => new Date(y.published_at || y.created_at) - new Date(x.published_at || x.created_at))[0];
+  const sorted = list.slice().sort((x, y) => new Date(y.published_at || y.created_at) - new Date(x.published_at || x.created_at));
+  const r = sorted[0];
   if (!r) return null;
   const assets = (r.assets || [])
     .map((a) => ({ name: a.name, url: a.browser_download_url, size: a.size, downloads: a.download_count, os: osOf(a.name), sha256: (a.digest || '').replace(/^sha256:/, '') }))
     .filter((a) => a.os);
   const downloadsTotal = list.reduce((s, x) => s + (x.assets || []).reduce((t, y) => t + (y.download_count || 0), 0), 0);
-  return { tag: r.tag_name || r.name || '', name: r.name || '', url: r.html_url, pre: !!r.prerelease, date: r.published_at || '', notes: cleanNotes(r.body), downloadsTotal, assets };
+  return { tag: r.tag_name || r.name || '', name: r.name || '', url: r.html_url, pre: !!r.prerelease, date: r.published_at || '', notes: cleanNotes(r.body), downloadsTotal, assets,
+    history: sorted.slice(0, 5).map((x) => ({ tag: x.tag_name || x.name || '', date: x.published_at || '', url: x.html_url, pre: !!x.prerelease, notes: cleanNotes(x.body) })) };
 }
 
 async function build(r) {
@@ -157,6 +159,19 @@ async function build(r) {
 const cfg = existsSync('config.json') ? JSON.parse(readFileSync('config.json', 'utf8')) : {};
 const hide = (cfg.hide || []).map((x) => String(x).toLowerCase());
 
+// GitHub profil sayfası için README metni (son güncellenen 8 proje)
+function profileReadme(list) {
+  const site = `https://${USER.toLowerCase()}.github.io/`;
+  const esc = (t) => String(t || '').replace(/\|/g, '\\|').replace(/\s+/g, ' ').trim();
+  const rows = list.slice(0, 8).map((r) => {
+    const d = new Date(r.pushed_at).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
+    const rel = r.release ? `[${r.release.tag}](${r.release.url})` : '—';
+    const web = r.site ? ` · [Site](${r.site})` : '';
+    return `| [${r.name}](${r.url})${web} | ${esc(r.description || r.readme).slice(0, 90)} | ${rel} | ${d} |`;
+  });
+  return `# Merhaba, ben Mustafa 👋\n\nWeb, sistem araçları ve uygulama projeleri geliştiriyorum.\n\n🌐 **Portfolyo:** ${site}\n\n## Projelerim (son güncellemeye göre)\n\n| Proje | Açıklama | Son sürüm | Güncelleme |\n| --- | --- | --- | --- |\n${rows.join('\n')}\n\n_Bu sayfa ${site} deposundaki bir betikle otomatik güncellenir._\n`;
+}
+
 const all = [];
 for (let page = 1; ; page++) {
   const l = await get(`/users/${USER}/repos?per_page=100&sort=pushed&page=${page}`);
@@ -183,4 +198,5 @@ if (old) {
 }
 if (old && JSON.stringify(old.repos) === JSON.stringify(repos) && JSON.stringify(old.hide || []) === JSON.stringify(cfg.hide || [])) { console.log('Değişiklik yok.'); process.exit(0); }
 writeFileSync('data.json', JSON.stringify({ generated: new Date().toISOString(), user: USER, hide: cfg.hide || [], repos }, null, 1));
+writeFileSync('profile-readme.md', profileReadme(repos));
 console.log(`${repos.length} proje yazıldı.`);

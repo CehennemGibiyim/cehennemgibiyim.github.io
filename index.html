@@ -372,6 +372,19 @@
   .langbtn:hover { color: var(--text); border-color: var(--ember); }
 .repo-note { color: var(--mute); font-size: 13px; margin: 8px 0 0; }
   .repo-note a { color: var(--ember2); }
+  .reveal { background: transparent; border: 1px solid var(--line); color: var(--ember2); border-radius: 8px; padding: 3px 12px; font: inherit; font-size: 14px; cursor: pointer; }
+  .reveal:hover { border-color: var(--ember); }
+  footer .reveal { margin-left: auto; margin-right: 16px; }
+  .latest { display: inline-flex; margin-top: 18px; padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; color: var(--ember2); font-size: 14px; text-decoration: none; background: rgba(255,255,255,.03); }
+  .latest:hover { border-color: var(--ember); }
+  .latest[hidden] { display: none; }
+  .new.pop { background: linear-gradient(135deg, #3ddc97, #8bf0c4); }
+  .pv-hist { margin-top: 8px; }
+  .pv-hist a { color: var(--ember2); text-decoration: none; font-size: 13px; }
+  dialog.priv { background: #0d0e14; color: var(--text); border: 1px solid var(--line); border-radius: 14px; padding: 22px; max-width: 560px; width: calc(100% - 32px); }
+  dialog.priv::backdrop { background: rgba(0,0,0,.7); }
+  dialog.priv h3 { font-size: 22px; margin-bottom: 10px; }
+  dialog.priv p { color: #c4c9d8; font-size: 15px; margin-bottom: 10px; }
 </style>
 </head>
 <body>
@@ -406,15 +419,16 @@
         <div class="cta">
           <a class="btn primary" href="#portfolio">Projeleri gör</a>
           <a class="btn" href="#contact">İletişime geç</a>
-          <a class="btn wa" href="https://wa.me/905358317454?text=Merhaba%2C%20web%20sitenizden%20ula%C5%9F%C4%B1yorum." rel="noopener">WhatsApp'tan yaz</a>
+          <a class="btn wa" href="#" data-wa rel="noopener">WhatsApp'tan yaz</a>
         </div>
         <div class="social">
           <a href="https://github.com/CehennemGibiyim" rel="noopener" aria-label="GitHub">
             <svg viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
           </a>
-          <a href="https://wa.me/905358317454?text=Merhaba%2C%20web%20sitenizden%20ula%C5%9F%C4%B1yorum." rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"><path d="M3 21l1.65-4.9A9 9 0 1 1 8.1 19.4L3 21z"/><g transform="translate(6.6 6.6) scale(.45)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></g></svg></a>
-          <a href="mailto:CehennemGibiyim@gmail.com" aria-label="E-posta"><svg viewBox="0 0 24 24"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13zm2.2.5L12 11.6 19.8 6H4.2z"/></svg></a>
+          <a href="#" data-wa rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"><path d="M3 21l1.65-4.9A9 9 0 1 1 8.1 19.4L3 21z"/><g transform="translate(6.6 6.6) scale(.45)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></g></svg></a>
+          <a href="#" data-mail aria-label="E-posta"><svg viewBox="0 0 24 24"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13zm2.2.5L12 11.6 19.8 6H4.2z"/></svg></a>
         </div>
+        <a href="#" class="latest" id="latestRel" hidden></a>
       </div>
 
       <!-- Canlı panel -->
@@ -445,7 +459,7 @@
             <li><b>GitHub:</b><a href="https://github.com/CehennemGibiyim" rel="noopener">CehennemGibiyim</a></li>
             <li><b>Çalışma:</b>Artvin Devlet Hastanesi</li>
             <li><b>Alanlar:</b>Web, sistem, uygulama</li>
-            <li><b>Telefon:</b><a href="tel:+905358317454">+90 (535) 831-74-54</a></li>
+            <li><b>Telefon:</b><button type="button" class="reveal" data-reveal="phone">Numarayı göster</button></li>
           </ul>
           <a class="btn primary" href="#contact">Bana ulaş</a>
           <a class="btn" href="#" id="vcardBtn">Kişi kartını indir</a>
@@ -541,9 +555,9 @@
       <div class="contact">
         <div>
           <div class="c-item"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></div><div><h4>GitHub</h4><a href="https://github.com/CehennemGibiyim" rel="noopener">github.com/CehennemGibiyim</a></div></div>
-          <div class="c-item"><div class="ico"><svg viewBox="0 0 24 24"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13zm2.2.5L12 11.6 19.8 6H4.2z"/></svg></div><div><h4>E-posta</h4><p id="mailShow">CehennemGibiyim@gmail.com</p></div></div>
-          <div class="c-item"><div class="ico"><svg viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><h4>Telefon</h4><a href="tel:+905358317454">+90 (535) 831-74-54</a></div></div>
-          <div class="c-item"><div class="ico"><svg viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"><path d="M3 21l1.65-4.9A9 9 0 1 1 8.1 19.4L3 21z"/><g transform="translate(6.6 6.6) scale(.45)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></g></svg></div><div><h4>WhatsApp</h4><p>Doğrudan mesaj gönderebilirsin.</p><p style="margin-top:10px"><a class="btn primary" href="https://wa.me/905358317454?text=Merhaba%2C%20web%20sitenizden%20ula%C5%9F%C4%B1yorum." rel="noopener" style="color:#1a0a05">WhatsApp'tan yaz</a></p></div></div>
+          <div class="c-item"><div class="ico"><svg viewBox="0 0 24 24"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13zm2.2.5L12 11.6 19.8 6H4.2z"/></svg></div><div><h4>E-posta</h4><button type="button" class="reveal" data-reveal="mail" id="mailShow">E-postayı göster</button></div></div>
+          <div class="c-item"><div class="ico"><svg viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><h4>Telefon</h4><button type="button" class="reveal" data-reveal="phone">Numarayı göster</button></div></div>
+          <div class="c-item"><div class="ico"><svg viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"><path d="M3 21l1.65-4.9A9 9 0 1 1 8.1 19.4L3 21z"/><g transform="translate(6.6 6.6) scale(.45)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></g></svg></div><div><h4>WhatsApp</h4><p>Doğrudan mesaj gönderebilirsin.</p><p style="margin-top:10px"><a class="btn primary" href="#" data-wa rel="noopener" style="color:#1a0a05">WhatsApp'tan yaz</a></p></div></div>
         </div>
         <form id="form" novalidate>
           <div class="two-in">
@@ -562,7 +576,7 @@
 </main>
 
 <footer>
-  <div class="wrap"><span>© <span id="year"></span> Mustafa UYGUR</span><a href="#home">Başa dön</a></div>
+  <div class="wrap"><span>© <span id="year"></span> Mustafa UYGUR</span><button type="button" class="reveal" id="privBtn">Gizlilik</button><a href="#home">Başa dön</a></div>
 </footer>
 
 <div class="pv" id="pv" hidden>
@@ -584,6 +598,15 @@
     </div>
   </div>
 </div>
+<dialog id="privacy" class="priv">
+  <h3>Gizlilik ve veri kullanımı</h3>
+  <p>Bu site çerez kullanmaz ve ziyaretçiyi izlemez. Tarayıcında yalnızca dil tercihin ve proje bilgilerinin geçici bir kopyası saklanır.</p>
+  <p>İletişim formunu doldurursan adın, e-postan ve mesajın FormSubmit servisi üzerinden bana e-posta olarak iletilir; yalnızca sana yanıt vermek için kullanılır.</p>
+  <p>Proje bilgileri GitHub'dan alınır; bu sırada IP adresin GitHub tarafından görülür. "Telefona QR" düğmesine basarsan bağlantı, QR görseli üretmesi için api.qrserver.com'a gönderilir. Proje önizlemeleri ilgili proje sitelerini yükler.</p>
+  <p>Ziyaret sayacı etkinleştirilirse GoatCounter kullanılır; bu servis çerez kullanmaz ve kişisel veri toplamaz.</p>
+  <p>Verilerinin silinmesini istersen iletişim bölümünden bana yaz.</p>
+  <button type="button" class="lbtn" id="privClose">Kapat</button>
+</dialog>
 <script>
 (function () {
   var USER = 'CehennemGibiyim';
@@ -1163,7 +1186,7 @@
     var assets = (r.assets || []).map(function (a) { return { name: a.name, url: a.browser_download_url, size: a.size, downloads: a.download_count, os: osOf(a.name), sha256: (a.digest || '').replace(/^sha256:/, '') }; })
       .filter(function (a) { return a.os; });
     var total = L.reduce(function (s, x) { return s + (x.assets || []).reduce(function (t, y) { return t + (y.download_count || 0); }, 0); }, 0);
-    return { tag: r.tag_name || r.name || '', name: r.name || '', url: r.html_url, pre: !!r.prerelease, date: r.published_at || '', notes: cleanNotes(r.body), downloadsTotal: total, assets: assets };
+    return { tag: r.tag_name || r.name || '', name: r.name || '', url: r.html_url, pre: !!r.prerelease, date: r.published_at || '', notes: cleanNotes(r.body), downloadsTotal: total, assets: assets, history: L.slice(0, 5).map(function (x) { return { tag: x.tag_name || x.name || '', date: x.published_at || '', url: x.html_url, pre: !!x.prerelease, notes: cleanNotes(x.body) }; }) };
   }
   function visitorOS() {
     var u = navigator.userAgent || '';
@@ -1306,6 +1329,7 @@
       a.href = it.site || it.url; a.dataset.i = i;
       h4.appendChild(a);
       if (it.d && Date.now() - it.d < 7 * 86400000) h4.appendChild(el('span', 'new', 'Yeni'));
+      if (it.name === topDlName) h4.appendChild(el('span', 'new pop', 'En çok indirilen'));
       ht.appendChild(h4);
       ht.appendChild(el('div', 'kind', it.types.map(function (t) { return TYPE_LABEL[t]; }).join(' · ') + (it.lang ? ' · ' + it.lang : '')));
       head.appendChild(pw); head.appendChild(ht);
@@ -1536,6 +1560,15 @@
     if (rel) {
       T(p, 'div', 'muted', rel.tag + (rel.pre ? ' (ön sürüm)' : '') + (rel.date ? ' · ' + longDate(new Date(rel.date)) : '') + (rel.downloadsTotal ? ' · ' + rel.downloadsTotal + ' indirme' : ''));
       if (rel.notes) T(p, 'div', 'pv-notes', rel.notes);
+      if (rel.history && rel.history.length > 1) {
+        var hd = T(p, 'details', 'pv-help');
+        T(hd, 'summary', '', 'Sürüm geçmişi');
+        rel.history.slice(0, 5).forEach(function (h) {
+          var hr = T(hd, 'div', 'pv-hist');
+          hr.appendChild(link('', h.url, h.tag + (h.date ? ' · ' + longDate(new Date(h.date)) : '')));
+          if (h.notes) T(hr, 'div', 'pv-notes', h.notes);
+        });
+      }
     }
     if (list.length) {
       var n = 0, seenOs = {};
@@ -1769,12 +1802,17 @@
     var items = own.map(toItem).sort(function (a, b) { return b.d - a.d; });
     var hasAlbion = items.some(function (it) { return it.name.toLowerCase().indexOf('albion') > -1; });
     if (!hasAlbion) items.push(ALBION_ITEM);
+    topDlName = '';
+    var topN = 0;
+    items.forEach(function (it) { var n = (it.rel && it.rel.downloadsTotal) || 0; if (n > topN) { topN = n; topDlName = it.name; } });
     renderWorks(items);
     renderFeed(items);
     renderExp(items);
     var rels = items.filter(function (it) { return it.rel; });
     document.getElementById('statRel').textContent = rels.length;
     document.getElementById('statDl').textContent = rels.reduce(function (n, it) { return n + (it.rel.downloadsTotal || 0); }, 0);
+    var lr = rels.slice().sort(function (a, b) { return new Date(b.rel.date || 0) - new Date(a.rel.date || 0); })[0], le = document.getElementById('latestRel');
+    if (lr && lr.rel.date && le) { le.textContent = '🚀 ' + lr.name + ' ' + lr.rel.tag + ' yayınlandı · ' + ago(new Date(lr.rel.date)); le.href = '#' + encodeURIComponent(lr.name); le.hidden = false; }
     setMeterProjects(items.map(function (it) { return { n: it.name, d: it.d }; }));
     if (status.textContent !== 'Bu filtreye uyan proje yok.') status.hidden = true;
     if (!hashHandled && openFromHash()) hashHandled = true;
@@ -1885,7 +1923,7 @@
 
   /* İletişim formu: e-posta uygulamanı açar */
   var mailShow = document.getElementById('mailShow');
-  if (EMAIL) { mailShow.innerHTML = ''; var ma = document.createElement('a'); ma.href = 'mailto:' + EMAIL; ma.textContent = EMAIL; mailShow.appendChild(ma); }
+  /* e-posta artık "göster" düğmesiyle açılır */
   var form = document.getElementById('form'), msg = document.getElementById('formMsg');
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -1907,11 +1945,29 @@
       msg.textContent = 'Form servisine ulaşılamadı; e-posta uygulaman açılıyor.';
     }).then(function () { btn.disabled = false; });
   });
+  var topDlName = '';
+  /* ---------- İletişim bilgileri: botlara karşı tıklayınca açılır ---------- */
+  var PHONE = ['90', '535', '831', '74', '54'].join('');
+  document.querySelectorAll('[data-wa]').forEach(function (a) { a.href = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent('Merhaba, web sitenizden ulaşıyorum.'); });
+  document.querySelectorAll('[data-mail]').forEach(function (a) { a.href = 'mailto:' + EMAIL; });
+  document.querySelectorAll('.reveal[data-reveal]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var a = document.createElement('a');
+      if (btn.dataset.reveal === 'phone') { a.href = 'tel:+' + PHONE; a.textContent = '+90 (535) 831-74-54'; }
+      else { a.href = 'mailto:' + EMAIL; a.textContent = EMAIL; }
+      btn.replaceWith(a);
+    });
+  });
+  var priv = document.getElementById('privacy');
+  document.getElementById('privBtn').addEventListener('click', function () { if (priv.showModal) priv.showModal(); else priv.setAttribute('open', ''); });
+  document.getElementById('privClose').addEventListener('click', function () { if (priv.close) priv.close(); else priv.removeAttribute('open'); });
+  priv.addEventListener('click', function (e) { if (e.target === priv && priv.close) priv.close(); });
+
   /* ---------- Kişi kartı (.vcf): rehbere tek dokunuşla eklenir ---------- */
   document.getElementById('vcardBtn').addEventListener('click', function (e) {
     e.preventDefault();
     var ic = document.querySelector('link[rel="apple-touch-icon"]'), ph = ic && /^data:image\/jpeg;base64,/.test(ic.href) ? ic.href.split(',')[1] : '';
-    var v = ['BEGIN:VCARD', 'VERSION:3.0', 'N:UYGUR;Mustafa;;;', 'FN:Mustafa UYGUR', 'TITLE:Yazılım geliştirici', 'TEL;TYPE=CELL:+905358317454',
+    var v = ['BEGIN:VCARD', 'VERSION:3.0', 'N:UYGUR;Mustafa;;;', 'FN:Mustafa UYGUR', 'TITLE:Yazılım geliştirici', 'TEL;TYPE=CELL:+' + PHONE,
       'EMAIL:' + EMAIL, 'URL:' + location.href.split('#')[0], 'URL:https://github.com/' + USER, 'NOTE:Web, sistem araçları ve uygulama projeleri'];
     if (ph) v.push('PHOTO;ENCODING=b;TYPE=JPEG:' + ph);
     v.push('END:VCARD');
@@ -1923,8 +1979,9 @@
   });
 
   /* ---------- Dil: Türkçe / İngilizce (sayfa yeniden yüklenerek değişir) ---------- */
-  var EN = {"Verileri yenile":"Refresh data","Sürümü olan proje":"Projects with releases","Toplam indirme":"Total downloads","Kişi kartını indir":"Save contact card","Menü": "Menu", "Ana menü": "Main menu", "Ana sayfa": "Home", "Hakkımda": "About", "Özgeçmiş": "Resume", "Hizmetler": "Services", "Portfolyo": "Portfolio", "İletişim": "Contact", "Merhaba!": "Hello!", "Ben": "I'm", "Projeleri gör": "View projects", "İletişime geç": "Get in touch", "WhatsApp'tan yaz": "Message on WhatsApp", "E-posta": "Email", "Son güncellenen projeler": "Recently updated projects", "Savaşta": "In battle", "Çözüldü": "Solved", "Beni biraz daha yakından tanı": "Get to know me a little better", "Mustafa UYGUR profil fotoğrafı": "Mustafa UYGUR profile photo", "Fareni üzerine getir": "Hover over me", "Artvin Devlet Hastanesi Temizlik Personeliyim": "I'm Cleaning Staff at Artvin State Hospital", "Artvin Devlet Hastanesi'nde temizlik personeli olarak çalışıyorum.": "I work as cleaning staff at Artvin State Hospital.", "Mesai dışında kendi teknik projelerimi geliştiriyorum: web siteleri, sistem araçları ve uygulamalar. Bir fikri kullanılabilir bir araca dönüştürmeyi seviyorum.": "Outside work hours I build my own technical projects: websites, system tools and applications. I enjoy turning an idea into a tool people can actually use.", "Çalışma:": "Work:", "Artvin Devlet Hastanesi": "Artvin State Hospital", "Alanlar:": "Areas:", "Web, sistem, uygulama": "Web, systems, apps", "Telefon:": "Phone:", "Bana ulaş": "Reach me", "Herkese açık depo": "Public repositories", "Öne çıkan proje": "Featured projects", "Çalışma alanı": "Fields of work", "Yetenekler": "Skills", "Oranlar, GitHub'daki tüm projelerimde yazdığım kod miktarına göre otomatik hesaplanır. Hiç yazmadığım diller 0% görünür; kullandıkça payı artar ve sıralamada yukarı çıkar.": "Percentages are calculated automatically from the amount of code I have written across all my GitHub projects. Languages I have never written show 0%; as I use them their share grows and they move up the list.", "Yetenekler yükleniyor…": "Loading skills…", "İlgi alanları": "Interests", "Yazılım geliştirme": "Software development", "Oyun araçları": "Game tools", "Sistem ve ağ": "Systems and networks", "Problem çözme": "Problem solving", "Çalışmalarım ve yaklaşımım": "My work and approach", "Deneyim": "Experience", "Temizlik Personeli": "Cleaning Staff", "Artvin Devlet Hastanesi'nde temizlik personeli olarak görev yapıyorum.": "I serve as cleaning staff at Artvin State Hospital.", "Bağımsız Geliştirici": "Independent Developer", "Kendi projeleri": "Own projects", "Fikirden yayına kadar tüm süreci tek başıma yürütüyorum: tasarım, geliştirme, test ve GitHub üzerinden yayın.": "I run the whole process on my own, from idea to release: design, development, testing and publishing on GitHub.", "Geliştirici": "Developer", "Paket yakalama istemcisi, ingest API'si ve PostgreSQL ile topluluk kaynaklı pazar verisi.": "Packet-capture client, ingest API and PostgreSQL for community-sourced market data.", "Puantaj ve nöbet sistemi; Windows kurulum paketi ve GitHub Pages paneli.": "Timesheet and duty roster system; Windows installer and GitHub Pages panel.", "Çalışma biçimi": "How I work", "Önce çalışan hâli": "Working version first", "Yaklaşım": "Approach", "Küçük ve çalışan bir sürümü önce yayına alır, sonra geliştiririm.": "I release a small working version first, then improve it.", "Ücretsiz altyapı": "Free infrastructure", "Barındırmayı mümkün olduğunca ücretsiz kaynaklarla, GitHub üzerinde çözerim.": "I host as much as possible on free resources, on GitHub.", "Hata avcılığı": "Bug hunting", "08Analiz'de çeviri dosyalarının asenkron yüklenmesinden doğan bir yarış durumunu bulup düzelttim.": "In 08Analiz I found and fixed a race condition caused by the asynchronous loading of translation files.", "Yapabildiklerim": "What I can do", "Web geliştirme": "Web development", "HTML, CSS ve JavaScript ile hızlı, duyarlı siteler ve yönetim panelleri. GitHub Pages'te yayına alırım.": "Fast, responsive sites and admin panels with HTML, CSS and JavaScript. I publish them on GitHub Pages.", "Sistem araçları": "System tools", "Paket yakalama gibi düşük seviyeli işleri yapan istemciler ve yardımcı araçlar.": "Clients and helper tools that do low-level work such as packet capture.", "Masaüstü uygulamaları": "Desktop applications", "Windows kurulum paketiyle dağıtılan, günlük işi kolaylaştıran uygulamalar.": "Applications distributed as Windows installers that make everyday work easier.", "API ve veritabanı": "APIs and databases", "Veri alan API'ler ve PostgreSQL ile güvenilir depolama.": "APIs that ingest data, with reliable storage in PostgreSQL.", "Hata ayıklama": "Debugging", "Zamanlama, asenkron yükleme ve yarış durumu gibi inatçı hataları kök nedenine kadar izlerim.": "I trace stubborn bugs such as timing, asynchronous loading and race conditions down to the root cause.", "JavaScript'ten TypeScript'e": "From JavaScript to TypeScript", "Mevcut JavaScript projelerini adım adım TypeScript'e taşırım.": "I migrate existing JavaScript projects to TypeScript step by step.", "Çalışmalarım": "My work", "Proje filtresi": "Project filter", "Tümü": "All", "Uygulama": "App", "İndirilebilir": "Downloadable", "Proje ara…": "Search projects…", "Proje ara": "Search projects", "Projeler yükleniyor…": "Loading projects…", "Son güncellemeler": "Latest updates", "Bana ulaşın": "Contact me", "Telefon": "Phone", "Doğrudan mesaj gönderebilirsin.": "You can message me directly.", "Adınız": "Your name", "Konu": "Subject", "Mesajınız": "Your message", "Mesaj gönder": "Send message", "Başa dön": "Back to top", "Proje önizlemesi": "Project preview", "Kapat": "Close", "Bağlantıyı kopyala": "Copy link", "Depoyu aç": "Open repo", "Siteyi aç": "Open site", "Yükle": "Install", "Sürümler": "Releases", "İndir": "Download", "Depo": "Repository", "Yükleyiciler": "Installers", "Diller": "Languages", "Yeni": "New", "GitHub profilinde ara": "Find on GitHub profile", "GitHub profilini aç": "Open GitHub profile", "GitHub profili": "GitHub profile", "Açıklama henüz eklenmedi.": "No description yet.", "Bu filtreye uyan proje yok.": "No project matches this filter.", "Bu proje için yayınlanmış bir site yok.": "No site has been published for this project.", "Bilgisayar": "Desktop", "Henüz yayınlanmış bir sürüm yok.": "No release has been published yet.", "Sürüm yayınlanmış ama indirilebilir dosya eklenmemiş.": "A release exists but no downloadable file was attached.", "Kurulum notu": "Installation note", "Telefona QR": "QR for phone", "Sitenin diğer sayfaları": "Other pages of the site", "Son 12 hafta": "Last 12 weeks", "Dil bilgisi yok.": "No language data.", "Kopyalandı ✓": "Copied ✓", "Gönderiliyor…": "Sending…", "Mesajın gönderildi, teşekkürler!": "Your message has been sent, thank you!", "Yetenekler şu an yüklenemedi.": "Skills could not be loaded right now.", "Henüz listelenecek bir dil bulunamadı.": "No languages found yet.", "Ad, e-posta ve mesaj alanlarını doldur.": "Please fill in name, email and message.", "Paket": "Package", "Windows 'bilinmeyen yayıncı' uyarısı verirse: Ek bilgi → Yine de çalıştır.": "If Windows shows an 'unknown publisher' warning: More info → Run anyway.", "Mac açmazsa: dosyaya sağ tıkla → Aç.": "If your Mac won't open it: right-click the file → Open.", "AppImage için önce şunu çalıştır: chmod +x dosyaadi.AppImage": "For an AppImage, first run: chmod +x filename.AppImage", "Android, bilinmeyen kaynaklardan kuruluma izin ister; ayarlardan açman gerekir.": "Android asks for permission to install from unknown sources; enable it in settings.", "Arşivi (.rar/.zip) bir klasöre çıkarıp içindeki programı çalıştır.": "Extract the archive (.rar/.zip) to a folder and run the program inside.", "Site erişilebilir": "Site is reachable", "Siteye ulaşılamıyor": "Site is unreachable", "Form servisine ulaşılamadı; e-posta uygulaman açılıyor.": "Could not reach the form service; opening your email app."};
+  var EN = {"Numarayı göster": "Show number", "E-postayı göster": "Show email", "Gizlilik": "Privacy", "Sürüm geçmişi": "Release history", "En çok indirilen": "Most downloaded", "Gizlilik ve veri kullanımı": "Privacy and data use", "Bu site çerez kullanmaz ve ziyaretçiyi izlemez. Tarayıcında yalnızca dil tercihin ve proje bilgilerinin geçici bir kopyası saklanır.": "This site uses no cookies and does not track visitors. Your browser only stores your language choice and a temporary copy of project information.", "İletişim formunu doldurursan adın, e-postan ve mesajın FormSubmit servisi üzerinden bana e-posta olarak iletilir; yalnızca sana yanıt vermek için kullanılır.": "If you fill in the contact form, your name, email and message are sent to me by email through the FormSubmit service and are used only to reply to you.", "Proje bilgileri GitHub'dan alınır; bu sırada IP adresin GitHub tarafından görülür. \"Telefona QR\" düğmesine basarsan bağlantı, QR görseli üretmesi için api.qrserver.com'a gönderilir. Proje önizlemeleri ilgili proje sitelerini yükler.": "Project information is fetched from GitHub, so GitHub can see your IP address. If you press \"QR for phone\", the link is sent to api.qrserver.com to generate the QR image. Project previews load the respective project sites.", "Ziyaret sayacı etkinleştirilirse GoatCounter kullanılır; bu servis çerez kullanmaz ve kişisel veri toplamaz.": "If the visit counter is enabled, GoatCounter is used; it uses no cookies and collects no personal data.", "Verilerinin silinmesini istersen iletişim bölümünden bana yaz.": "If you want your data deleted, write to me from the contact section.","Verileri yenile":"Refresh data","Sürümü olan proje":"Projects with releases","Toplam indirme":"Total downloads","Kişi kartını indir":"Save contact card","Menü": "Menu", "Ana menü": "Main menu", "Ana sayfa": "Home", "Hakkımda": "About", "Özgeçmiş": "Resume", "Hizmetler": "Services", "Portfolyo": "Portfolio", "İletişim": "Contact", "Merhaba!": "Hello!", "Ben": "I'm", "Projeleri gör": "View projects", "İletişime geç": "Get in touch", "WhatsApp'tan yaz": "Message on WhatsApp", "E-posta": "Email", "Son güncellenen projeler": "Recently updated projects", "Savaşta": "In battle", "Çözüldü": "Solved", "Beni biraz daha yakından tanı": "Get to know me a little better", "Mustafa UYGUR profil fotoğrafı": "Mustafa UYGUR profile photo", "Fareni üzerine getir": "Hover over me", "Artvin Devlet Hastanesi Temizlik Personeliyim": "I'm Cleaning Staff at Artvin State Hospital", "Artvin Devlet Hastanesi'nde temizlik personeli olarak çalışıyorum.": "I work as cleaning staff at Artvin State Hospital.", "Mesai dışında kendi teknik projelerimi geliştiriyorum: web siteleri, sistem araçları ve uygulamalar. Bir fikri kullanılabilir bir araca dönüştürmeyi seviyorum.": "Outside work hours I build my own technical projects: websites, system tools and applications. I enjoy turning an idea into a tool people can actually use.", "Çalışma:": "Work:", "Artvin Devlet Hastanesi": "Artvin State Hospital", "Alanlar:": "Areas:", "Web, sistem, uygulama": "Web, systems, apps", "Telefon:": "Phone:", "Bana ulaş": "Reach me", "Herkese açık depo": "Public repositories", "Öne çıkan proje": "Featured projects", "Çalışma alanı": "Fields of work", "Yetenekler": "Skills", "Oranlar, GitHub'daki tüm projelerimde yazdığım kod miktarına göre otomatik hesaplanır. Hiç yazmadığım diller 0% görünür; kullandıkça payı artar ve sıralamada yukarı çıkar.": "Percentages are calculated automatically from the amount of code I have written across all my GitHub projects. Languages I have never written show 0%; as I use them their share grows and they move up the list.", "Yetenekler yükleniyor…": "Loading skills…", "İlgi alanları": "Interests", "Yazılım geliştirme": "Software development", "Oyun araçları": "Game tools", "Sistem ve ağ": "Systems and networks", "Problem çözme": "Problem solving", "Çalışmalarım ve yaklaşımım": "My work and approach", "Deneyim": "Experience", "Temizlik Personeli": "Cleaning Staff", "Artvin Devlet Hastanesi'nde temizlik personeli olarak görev yapıyorum.": "I serve as cleaning staff at Artvin State Hospital.", "Bağımsız Geliştirici": "Independent Developer", "Kendi projeleri": "Own projects", "Fikirden yayına kadar tüm süreci tek başıma yürütüyorum: tasarım, geliştirme, test ve GitHub üzerinden yayın.": "I run the whole process on my own, from idea to release: design, development, testing and publishing on GitHub.", "Geliştirici": "Developer", "Paket yakalama istemcisi, ingest API'si ve PostgreSQL ile topluluk kaynaklı pazar verisi.": "Packet-capture client, ingest API and PostgreSQL for community-sourced market data.", "Puantaj ve nöbet sistemi; Windows kurulum paketi ve GitHub Pages paneli.": "Timesheet and duty roster system; Windows installer and GitHub Pages panel.", "Çalışma biçimi": "How I work", "Önce çalışan hâli": "Working version first", "Yaklaşım": "Approach", "Küçük ve çalışan bir sürümü önce yayına alır, sonra geliştiririm.": "I release a small working version first, then improve it.", "Ücretsiz altyapı": "Free infrastructure", "Barındırmayı mümkün olduğunca ücretsiz kaynaklarla, GitHub üzerinde çözerim.": "I host as much as possible on free resources, on GitHub.", "Hata avcılığı": "Bug hunting", "08Analiz'de çeviri dosyalarının asenkron yüklenmesinden doğan bir yarış durumunu bulup düzelttim.": "In 08Analiz I found and fixed a race condition caused by the asynchronous loading of translation files.", "Yapabildiklerim": "What I can do", "Web geliştirme": "Web development", "HTML, CSS ve JavaScript ile hızlı, duyarlı siteler ve yönetim panelleri. GitHub Pages'te yayına alırım.": "Fast, responsive sites and admin panels with HTML, CSS and JavaScript. I publish them on GitHub Pages.", "Sistem araçları": "System tools", "Paket yakalama gibi düşük seviyeli işleri yapan istemciler ve yardımcı araçlar.": "Clients and helper tools that do low-level work such as packet capture.", "Masaüstü uygulamaları": "Desktop applications", "Windows kurulum paketiyle dağıtılan, günlük işi kolaylaştıran uygulamalar.": "Applications distributed as Windows installers that make everyday work easier.", "API ve veritabanı": "APIs and databases", "Veri alan API'ler ve PostgreSQL ile güvenilir depolama.": "APIs that ingest data, with reliable storage in PostgreSQL.", "Hata ayıklama": "Debugging", "Zamanlama, asenkron yükleme ve yarış durumu gibi inatçı hataları kök nedenine kadar izlerim.": "I trace stubborn bugs such as timing, asynchronous loading and race conditions down to the root cause.", "JavaScript'ten TypeScript'e": "From JavaScript to TypeScript", "Mevcut JavaScript projelerini adım adım TypeScript'e taşırım.": "I migrate existing JavaScript projects to TypeScript step by step.", "Çalışmalarım": "My work", "Proje filtresi": "Project filter", "Tümü": "All", "Uygulama": "App", "İndirilebilir": "Downloadable", "Proje ara…": "Search projects…", "Proje ara": "Search projects", "Projeler yükleniyor…": "Loading projects…", "Son güncellemeler": "Latest updates", "Bana ulaşın": "Contact me", "Telefon": "Phone", "Doğrudan mesaj gönderebilirsin.": "You can message me directly.", "Adınız": "Your name", "Konu": "Subject", "Mesajınız": "Your message", "Mesaj gönder": "Send message", "Başa dön": "Back to top", "Proje önizlemesi": "Project preview", "Kapat": "Close", "Bağlantıyı kopyala": "Copy link", "Depoyu aç": "Open repo", "Siteyi aç": "Open site", "Yükle": "Install", "Sürümler": "Releases", "İndir": "Download", "Depo": "Repository", "Yükleyiciler": "Installers", "Diller": "Languages", "Yeni": "New", "GitHub profilinde ara": "Find on GitHub profile", "GitHub profilini aç": "Open GitHub profile", "GitHub profili": "GitHub profile", "Açıklama henüz eklenmedi.": "No description yet.", "Bu filtreye uyan proje yok.": "No project matches this filter.", "Bu proje için yayınlanmış bir site yok.": "No site has been published for this project.", "Bilgisayar": "Desktop", "Henüz yayınlanmış bir sürüm yok.": "No release has been published yet.", "Sürüm yayınlanmış ama indirilebilir dosya eklenmemiş.": "A release exists but no downloadable file was attached.", "Kurulum notu": "Installation note", "Telefona QR": "QR for phone", "Sitenin diğer sayfaları": "Other pages of the site", "Son 12 hafta": "Last 12 weeks", "Dil bilgisi yok.": "No language data.", "Kopyalandı ✓": "Copied ✓", "Gönderiliyor…": "Sending…", "Mesajın gönderildi, teşekkürler!": "Your message has been sent, thank you!", "Yetenekler şu an yüklenemedi.": "Skills could not be loaded right now.", "Henüz listelenecek bir dil bulunamadı.": "No languages found yet.", "Ad, e-posta ve mesaj alanlarını doldur.": "Please fill in name, email and message.", "Paket": "Package", "Windows 'bilinmeyen yayıncı' uyarısı verirse: Ek bilgi → Yine de çalıştır.": "If Windows shows an 'unknown publisher' warning: More info → Run anyway.", "Mac açmazsa: dosyaya sağ tıkla → Aç.": "If your Mac won't open it: right-click the file → Open.", "AppImage için önce şunu çalıştır: chmod +x dosyaadi.AppImage": "For an AppImage, first run: chmod +x filename.AppImage", "Android, bilinmeyen kaynaklardan kuruluma izin ister; ayarlardan açman gerekir.": "Android asks for permission to install from unknown sources; enable it in settings.", "Arşivi (.rar/.zip) bir klasöre çıkarıp içindeki programı çalıştır.": "Extract the archive (.rar/.zip) to a folder and run the program inside.", "Site erişilebilir": "Site is reachable", "Siteye ulaşılamıyor": "Site is unreachable", "Form servisine ulaşılamadı; e-posta uygulaman açılıyor.": "Could not reach the form service; opening your email app."};
   var EN_RX = [
+    [/ yayınlandı · /, ' released · '],
     [/^Veriler: /, 'Data: '],
     [/^Geliştirici · /, 'Developer · '],
     [/(\d+) saat önce/g, '$1 h ago'],

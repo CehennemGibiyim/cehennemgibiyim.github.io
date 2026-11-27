@@ -62,3 +62,27 @@ kişisel erişim anahtarı, projenin Secrets bölümüne eklenir):
       -H "Accept: application/vnd.github+json"
       https://api.github.com/repos/CehennemGibiyim/cehennemgibiyim.github.io/dispatches
       -d '{"event_type":"release-published"}'
+
+BU SÜRÜMDEKİ YENİLİKLER (zipin içindeki HER dosyayı depoya yükle; yolları korunmuştur)
+- index.html, sw.js              : üzerine yaz
+- scripts/build-data.mjs         : üzerine yaz
+- .github/workflows/update-data.yml : üzerine yaz
+- .github/workflows/watchdog.yml : YENİ (veri güncellemesi 2 saat durursa hata verir, e-posta/Telegram ile haber verir)
+- config.json, sitemap.xml, robots.txt : YENİ (daha önce yüklemediysen)
+- og-image.jpg, manifest.webmanifest, icon-192.png, icon-512.png : zaten yüklüyse tekrar yüklemene gerek yok
+- data.json'a DOKUNMA: Actions kendisi üretir. Zipte yok.
+Yükledikten sonra Actions > "Proje verilerini güncelle" > Run workflow ile bir kez çalıştır.
+
+TELEFON/E-POSTA: Sitede artık "Numarayı göster" / "E-postayı göster" düğmesinin arkasında. Numarayı değiştirmek
+istersen index.html içinde ['90', '535', '831', '74', '54'] satırını düzenle.
+
+GİZLİLİK NOTU: Footer'daki "Gizlilik" düğmesi kısa bir bilgilendirme penceresi açar. Hukuki metin değildir;
+kurumun ya da avukatının istediği bir şey varsa index.html içindeki <dialog id="privacy"> metnini düzenle.
+
+GITHUB PROFİL README'Sİ (isteğe bağlı)
+Actions her güncellemede bu depoda profile-readme.md üretir. Profil sayfanda (github.com/CehennemGibiyim)
+otomatik görünmesi için:
+1) github.com/new ile adı tam olarak CehennemGibiyim olan bir depo aç (Public, README ile).
+2) Kişisel erişim anahtarı (Settings > Developer settings > Personal access tokens) oluştur, "repo" izni ver.
+3) Bu sitenin deposunda Settings > Secrets > Actions: PROFILE_REPO_TOKEN adıyla ekle.
+Eklemezsen bu adım atlanır, site etkilenmez. profile-readme.md dosyasını elle de kopyalayabilirsin.
