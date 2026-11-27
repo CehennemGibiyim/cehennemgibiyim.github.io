@@ -1,196 +1,8 @@
 {
- "generated": "2026-11-27T06:47:21.684Z",
+ "generated": "2026-11-27T12:48:14.676Z",
  "user": "CehennemGibiyim",
  "hide": [],
  "repos": [
-  {
-   "name": "HisseBildirimSistemi",
-   "url": "https://github.com/CehennemGibiyim/HisseBildirimSistemi",
-   "description": "Hisse Bildirim Sistemi",
-   "readme": "Nasdaq hisselerini tarar, %10–%50 arası hareket eşiğini aşanları sinyal olarak listeler ve haber manşetlerini duygu analizinden geçirir.",
-   "language": "TypeScript",
-   "langs": {
-    "TypeScript": 80207,
-    "CSS": 43097,
-    "JavaScript": 13121
-   },
-   "topics": [],
-   "stars": 0,
-   "created_at": "2026-11-06T04:26:08Z",
-   "pushed_at": "2026-11-27T06:47:00Z",
-   "homepage": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
-   "site": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
-   "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/HisseBildirimSistemi@main/app/icon.svg",
-   "release": null,
-   "files": [],
-   "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    19,
-    4,
-    11,
-    0
-   ]
-  },
-  {
-   "name": "ArenaViewer",
-   "url": "https://github.com/CehennemGibiyim/ArenaViewer",
-   "description": "",
-   "readme": "ATIKVIEWER; DICOM görüntüleme, kesit kesit yapay zekâ destekli inceleme ve yapısal radyoloji raporu üretimini tek ekranda toplayan, Next.js (App Router) + PostgreSQL…",
-   "language": "TypeScript",
-   "langs": {
-    "TypeScript": 3244913,
-    "Python": 166179,
-    "JavaScript": 66476,
-    "PowerShell": 45725,
-    "Shell": 41557,
-    "CSS": 12710,
-    "Dockerfile": 2970,
-    "Inno Setup": 2774,
-    "Batchfile": 1059,
-    "HTML": 1050
-   },
-   "topics": [],
-   "stars": 0,
-   "created_at": "2026-11-23T00:22:22Z",
-   "pushed_at": "2026-11-27T06:40:10Z",
-   "homepage": "",
-   "site": "https://cehennemgibiyim.github.io/ArenaViewer/",
-   "icon": "https://raw.githubusercontent.com/CehennemGibiyim/ArenaViewer/main/public/icons/icon-192.png",
-   "release": null,
-   "files": [],
-   "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    182
-   ]
-  },
-  {
-   "name": "TikTokV1",
-   "url": "https://github.com/CehennemGibiyim/TikTokV1",
-   "description": "",
-   "readme": "TikTok LIVE'da düşen sandık / zarf / portal kutularını yakalar, filtreler ve geri sayımla listeler. Üç parça:",
-   "language": "JavaScript",
-   "langs": {
-    "JavaScript": 22324,
-    "CSS": 1796,
-    "HTML": 1237,
-    "Batchfile": 278
-   },
-   "topics": [],
-   "stars": 0,
-   "created_at": "2026-11-16T23:05:38Z",
-   "pushed_at": "2026-11-27T06:35:30Z",
-   "homepage": "",
-   "site": "https://cehennemgibiyim.github.io/TikTokV1/",
-   "icon": "",
-   "release": null,
-   "files": [],
-   "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    397,
-    380
-   ]
-  },
-  {
-   "name": "TikTok",
-   "url": "https://github.com/CehennemGibiyim/TikTok",
-   "description": "cehennemgibiyim.github.io/TikTok",
-   "readme": "Sunucu, Docker, API anahtarı gerekmez: her şey GitHub Pages üzerinde statik çalışır, veri tarayıcıda (IndexedDB / localStorage) durur.",
-   "language": "JavaScript",
-   "langs": {
-    "JavaScript": 890706,
-    "HTML": 116764,
-    "CSS": 35744,
-    "Python": 22621,
-    "Dockerfile": 659
-   },
-   "topics": [],
-   "stars": 1,
-   "created_at": "2026-02-14T20:53:52Z",
-   "pushed_at": "2026-11-27T06:17:44Z",
-   "homepage": "https://cehennemgibiyim.github.io/TikTok",
-   "site": "https://cehennemgibiyim.github.io/TikTok",
-   "icon": "",
-   "release": {
-    "tag": "v1.4.19",
-    "name": "1.4.19",
-    "url": "https://github.com/CehennemGibiyim/TikTok/releases/tag/v1.4.19",
-    "pre": false,
-    "date": "2026-11-15T03:30:31Z",
-    "notes": "Panel v1.4.19\nDeğişiklikler\n- Windows uygulaması tam paneli açar; Fırsatlar aynı pencerede açılır.\n- Windows tarayıcısı GitHub ile aynı ayarlara geçti: 12 kalıcı oda, 2 saatlik oturum, dakikada 4 bağlantı ve 25/saat bütçe.\n- Canlı dinleme kalıcı bağlantıya geçti; sandık, zarf ve portal eski treasureBoxData alanları ve 0 jetonla da kaydediliyor.\n- Kimliksiz manuel hedefler ve kapalı odalar canlı…",
-    "downloadsTotal": 22,
-    "assets": [
-     {
-      "name": "TikTok-Sandik-Radari-1.4.19-x64.exe",
-      "url": "https://github.com/CehennemGibiyim/TikTok/releases/download/v1.4.19/TikTok-Sandik-Radari-1.4.19-x64.exe",
-      "size": 121985933,
-      "downloads": 3,
-      "os": "windows",
-      "sha256": "4857c81d855dae2382368b0a9f7df424037dd2864ee2c614864c7f21c2f18db6"
-     }
-    ],
-    "history": [
-     {
-      "tag": "v1.4.19",
-      "date": "2026-11-15T03:30:31Z",
-      "url": "https://github.com/CehennemGibiyim/TikTok/releases/tag/v1.4.19",
-      "pre": false,
-      "notes": "Panel v1.4.19\nDeğişiklikler\n- Windows uygulaması tam paneli açar; Fırsatlar aynı pencerede açılır.\n- Windows tarayıcısı GitHub ile aynı ayarlara geçti: 12 kalıcı oda, 2 saatlik oturum, dakikada 4 bağlantı ve 25/saat bütçe.\n- Canlı dinleme kalıcı bağlantıya geçti; sandık, zarf ve portal eski treasureBoxData alanları ve 0 jetonla da kaydediliyor.\n- Kimliksiz manuel hedefler ve kapalı odalar canlı…"
-     },
-     {
-      "tag": "v1.1.0",
-      "date": "2026-11-12T12:54:00Z",
-      "url": "https://github.com/CehennemGibiyim/TikTok/releases/tag/v1.1.0",
-      "pre": false,
-      "notes": "Panel v1.1.0\nDeğişiklikler\n- Ayarlar'da Panel sürümü kartı: sürüm, yedek biçimi ve sürüm geçmişi listesi.\n- Yedek dosyasına appVersion eklendi; içe aktarma mesajı panel sürümünü gösteriyor.\n- README'de sürüm geçmişi, yayın sonrası kontroller ve tek komutluk sürüm betiği (scripts/release.mjs).\nWindows kurulum: TikTok-Sandik-Radari-1.1.0-x64.exe dosyasını indirip çalıştır; kurulu sürüm kendini ot…"
-     }
-    ]
-   },
-   "files": [],
-   "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    1072,
-    986,
-    637
-   ]
-  },
   {
    "name": "AoT-PNASF",
    "url": "https://github.com/CehennemGibiyim/AoT-PNASF",
@@ -209,7 +21,7 @@
    "topics": [],
    "stars": 5,
    "created_at": "2026-03-21T00:10:55Z",
-   "pushed_at": "2026-11-27T04:07:47Z",
+   "pushed_at": "2026-11-27T11:46:16Z",
    "homepage": "https://cehennemgibiyim.github.io/AoT-PNASF/",
    "site": "https://cehennemgibiyim.github.io/AoT-PNASF/",
    "icon": "https://raw.githubusercontent.com/CehennemGibiyim/AoT-PNASF/main/desktop/electron/build/icon.png",
@@ -284,20 +96,323 @@
    "shots": [
     "https://render.albiononline.com/v1/item/T8_2H_CLAYMORE.png"
    ],
-   "activity": [
-    28,
-    28,
-    29,
-    41,
-    51,
-    62,
-    60,
-    61,
-    94,
-    75,
-    65,
-    47
-   ]
+   "activity": []
+  },
+  {
+   "name": "ArenaSol",
+   "url": "https://github.com/CehennemGibiyim/ArenaSol",
+   "description": "",
+   "readme": "TikTok LIVE ajansları için uçtan uca işletim paneli: canlı stüdyo, sandık radarı, otomatik keşif, overlay kütüphanesi ve Windows kurulum paketi.",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 594210,
+    "JavaScript": 58082,
+    "PowerShell": 6688,
+    "CSS": 6480,
+    "Batchfile": 5708,
+    "NSIS": 3985
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-11-18T19:13:49Z",
+   "pushed_at": "2026-11-27T11:28:08Z",
+   "homepage": "",
+   "site": "https://cehennemgibiyim.github.io/ArenaSol/",
+   "icon": "data:image/svg+xml,<svg xmlns=",
+   "release": {
+    "tag": "windows-v9",
+    "name": "Arena Live OS — Windows v9",
+    "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/tag/windows-v9",
+    "pre": false,
+    "date": "2026-11-22T23:20:59Z",
+    "notes": "Windows kurulum paketi otomatik olarak derlendi.\nKurulum: ArenaLiveOS-Setup-.exe indir → çalıştır → masaüstündeki \"Arena Live OS\" kısayolu.\nTaşınabilir: Arena-Live-OS--windows.zip arşivini aç → KURULUM.bat.\n- Gereksinim: Node.js 22 LTS + PostgreSQL 14+\n- Panel açılışında GitHub'daki güncellemeler otomatik algılanır (agent/update.mjs)\n- Tarama GitHub Actions üzerinde 7/24 çalışır; panel kapalı o…",
+    "downloadsTotal": 19,
+    "assets": [
+     {
+      "name": "Arena-Live-OS-1.2.0-windows.zip",
+      "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/download/windows-v9/Arena-Live-OS-1.2.0-windows.zip",
+      "size": 172266789,
+      "downloads": 1,
+      "os": "windows",
+      "sha256": "3543111aaf5d5138d2bd4f672c1ba8eb1f4174b167a251677c44e02df68a0513"
+     },
+     {
+      "name": "ArenaLiveOS-Setup-1.2.0.exe",
+      "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/download/windows-v9/ArenaLiveOS-Setup-1.2.0.exe",
+      "size": 104751279,
+      "downloads": 1,
+      "os": "windows",
+      "sha256": "1356ad5c88ae4e9999d025562cda98c193dbf8563ab1e250dd428fe32010457c"
+     }
+    ],
+    "history": [
+     {
+      "tag": "windows-v9",
+      "date": "2026-11-22T23:20:59Z",
+      "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/tag/windows-v9",
+      "pre": false,
+      "notes": "Windows kurulum paketi otomatik olarak derlendi.\nKurulum: ArenaLiveOS-Setup-.exe indir → çalıştır → masaüstündeki \"Arena Live OS\" kısayolu.\nTaşınabilir: Arena-Live-OS--windows.zip arşivini aç → KURULUM.bat.\n- Gereksinim: Node.js 22 LTS + PostgreSQL 14+\n- Panel açılışında GitHub'daki güncellemeler otomatik algılanır (agent/update.mjs)\n- Tarama GitHub Actions üzerinde 7/24 çalışır; panel kapalı o…"
+     },
+     {
+      "tag": "windows-v8",
+      "date": "2026-11-19T23:01:18Z",
+      "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/tag/windows-v8",
+      "pre": false,
+      "notes": "Windows kurulum paketi otomatik olarak derlendi.\nKurulum: ArenaLiveOS-Setup-.exe indir → çalıştır → masaüstündeki \"Arena Live OS\" kısayolu.\nTaşınabilir: Arena-Live-OS--windows.zip arşivini aç → KURULUM.bat.\n- Gereksinim: Node.js 22 LTS + PostgreSQL 14+\n- Panel açılışında GitHub'daki güncellemeler otomatik algılanır (agent/update.mjs)\n- Tarama GitHub Actions üzerinde 7/24 çalışır; panel kapalı o…"
+     },
+     {
+      "tag": "windows-v7",
+      "date": "2026-11-19T22:40:54Z",
+      "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/tag/windows-v7",
+      "pre": false,
+      "notes": "Windows kurulum paketi otomatik olarak derlendi.\nKurulum: ArenaLiveOS-Setup-.exe indir → çalıştır → masaüstündeki \"Arena Live OS\" kısayolu.\nTaşınabilir: Arena-Live-OS--windows.zip arşivini aç → KURULUM.bat.\n- Gereksinim: Node.js 22 LTS + PostgreSQL 14+\n- Panel açılışında GitHub'daki güncellemeler otomatik algılanır (agent/update.mjs)\n- Tarama GitHub Actions üzerinde 7/24 çalışır; panel kapalı o…"
+     },
+     {
+      "tag": "windows-v6",
+      "date": "2026-11-19T03:44:10Z",
+      "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/tag/windows-v6",
+      "pre": false,
+      "notes": "Windows kurulum paketi otomatik olarak derlendi.\nKurulum: ArenaLiveOS-Setup-.exe indir → çalıştır → masaüstündeki \"Arena Live OS\" kısayolu.\nTaşınabilir: Arena-Live-OS--windows.zip arşivini aç → KURULUM.bat.\n- Gereksinim: Node.js 22 LTS + PostgreSQL 14+\n- Panel açılışında GitHub'daki güncellemeler otomatik algılanır (agent/update.mjs)\n- Tarama GitHub Actions üzerinde 7/24 çalışır; panel kapalı o…"
+     },
+     {
+      "tag": "windows-v5",
+      "date": "2026-11-19T03:25:31Z",
+      "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/tag/windows-v5",
+      "pre": false,
+      "notes": "Windows kurulum paketi otomatik olarak derlendi.\nKurulum: ArenaLiveOS-Setup-.exe indir → çalıştır → masaüstündeki \"Arena Live OS\" kısayolu.\nTaşınabilir: Arena-Live-OS--windows.zip arşivini aç → KURULUM.bat.\n- Gereksinim: Node.js 22 LTS + PostgreSQL 14+\n- Panel açılışında GitHub'daki güncellemeler otomatik algılanır (agent/update.mjs)\n- Tarama GitHub Actions üzerinde 7/24 çalışır; panel kapalı o…"
+     }
+    ]
+   },
+   "files": [],
+   "shots": [],
+   "activity": []
+  },
+  {
+   "name": "HisseBildirimSistemi",
+   "url": "https://github.com/CehennemGibiyim/HisseBildirimSistemi",
+   "description": "Hisse Bildirim Sistemi",
+   "readme": "Nasdaq hisselerini tarar, %10–%50 arası hareket eşiğini aşanları sinyal olarak listeler ve haber manşetlerini duygu analizinden geçirir.",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 80207,
+    "CSS": 43097,
+    "JavaScript": 13121
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-11-06T04:26:08Z",
+   "pushed_at": "2026-11-27T09:23:01Z",
+   "homepage": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
+   "site": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
+   "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/HisseBildirimSistemi@main/app/icon.svg",
+   "release": null,
+   "files": [],
+   "shots": [],
+   "activity": []
+  },
+  {
+   "name": "ArenaViewer",
+   "url": "https://github.com/CehennemGibiyim/ArenaViewer",
+   "description": "WebLink",
+   "readme": "ATIKVIEWER; DICOM görüntüleme, kesit kesit yapay zekâ destekli inceleme ve yapısal radyoloji raporu üretimini tek ekranda toplayan, Next.js (App Router) + PostgreSQL…",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 3403188,
+    "Python": 166179,
+    "JavaScript": 66489,
+    "PowerShell": 45725,
+    "Shell": 43274,
+    "CSS": 12710,
+    "Dockerfile": 2970,
+    "Inno Setup": 2774,
+    "Batchfile": 1059,
+    "HTML": 1050
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-11-23T00:22:22Z",
+   "pushed_at": "2026-11-27T07:12:54Z",
+   "homepage": "https://cehennemgibiyim.github.io/ArenaViewer/",
+   "site": "https://cehennemgibiyim.github.io/ArenaViewer/",
+   "icon": "https://raw.githubusercontent.com/CehennemGibiyim/ArenaViewer/main/public/icons/icon-192.png",
+   "release": null,
+   "files": [],
+   "shots": [],
+   "activity": []
+  },
+  {
+   "name": "Personel26",
+   "url": "https://github.com/CehennemGibiyim/Personel26",
+   "description": "",
+   "readme": "Sağlık kuruluşları için personel, nöbet (vardiya), puantaj, izin ve raporlama süreçlerini tek panelden yöneten web uygulaması.",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 781844,
+    "JavaScript": 165163,
+    "CSS": 90010,
+    "HTML": 67768,
+    "PowerShell": 53207,
+    "Inno Setup": 3509,
+    "PLpgSQL": 1194,
+    "Batchfile": 543
+   },
+   "topics": [],
+   "stars": 2,
+   "created_at": "2026-10-07T06:22:04Z",
+   "pushed_at": "2026-11-27T07:06:40Z",
+   "homepage": "https://cehennemgibiyim.github.io/Personel26",
+   "site": "https://cehennemgibiyim.github.io/Personel26",
+   "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/Personel26@main/src/app/icon.svg",
+   "release": {
+    "tag": "v1.6.2",
+    "name": "Personel26 1.6.2",
+    "url": "https://github.com/CehennemGibiyim/Personel26/releases/tag/v1.6.2",
+    "pre": false,
+    "date": "2026-11-27T07:06:40Z",
+    "notes": "Personel26 1.6.2 — Yedek klasörünü Ayarlar'dan seçin: farklı disk veya ağ klasörü\nTür: feature\n- Ayarlar → Yedekleme & Veritabanı bölümünden SQL yedeklerinin yazılacağı klasör değiştirilebilir; örneğin D: sürücüsünde ayrı bir yedek klasörü seçilebilir.\n- Klasör, masaüstü uygulamasındaki Gözat penceresiyle seçilebilir veya tam yolu elle yazılabilir; seçilen klasör yoksa oluşturulur ve yazma izni…",
+    "downloadsTotal": 46,
+    "assets": [
+     {
+      "name": "Personel26-Kurulum.exe",
+      "url": "https://github.com/CehennemGibiyim/Personel26/releases/download/v1.6.2/Personel26-Kurulum.exe",
+      "size": 170028834,
+      "downloads": 1,
+      "os": "windows",
+      "sha256": "4e6c1944c1b3e76ef7bac0ead6abd2bdda6268443c7ea0717617fcbeddf230ba"
+     },
+     {
+      "name": "Personel26-Portable.zip",
+      "url": "https://github.com/CehennemGibiyim/Personel26/releases/download/v1.6.2/Personel26-Portable.zip",
+      "size": 255334736,
+      "downloads": 1,
+      "os": "other",
+      "sha256": "a53a19ee8005d8064417160f783ecb13d5dcf783cbe3c8b73971afd8b51f74a6"
+     }
+    ],
+    "history": [
+     {
+      "tag": "v1.6.2",
+      "date": "2026-11-27T07:06:40Z",
+      "url": "https://github.com/CehennemGibiyim/Personel26/releases/tag/v1.6.2",
+      "pre": false,
+      "notes": "Personel26 1.6.2 — Yedek klasörünü Ayarlar'dan seçin: farklı disk veya ağ klasörü\nTür: feature\n- Ayarlar → Yedekleme & Veritabanı bölümünden SQL yedeklerinin yazılacağı klasör değiştirilebilir; örneğin D: sürücüsünde ayrı bir yedek klasörü seçilebilir.\n- Klasör, masaüstü uygulamasındaki Gözat penceresiyle seçilebilir veya tam yolu elle yazılabilir; seçilen klasör yoksa oluşturulur ve yazma izni…"
+     },
+     {
+      "tag": "v1.6.1",
+      "date": "2026-11-08T08:07:18Z",
+      "url": "https://github.com/CehennemGibiyim/Personel26/releases/tag/v1.6.1",
+      "pre": false,
+      "notes": "Personel26 1.6.1 — Antivirüs engeline takılmayan yedekleme: doğrudan pgdump, PowerShell yok\nTür: fix\n- Otomatik ve elle SQL yedekleri artık PowerShell betiği yerine doğrudan pgdump ile alınır; antivirüslerin engellediği powershell.exe -ExecutionPolicy Bypass zinciri kaldırıldı.\n- Kapanış yedeği ve Personel26.exe --backup komutu da aynı doğrudan yedeği kullanır; paneldeki geri yükleme öncesi güv…"
+     },
+     {
+      "tag": "v1.6.0",
+      "date": "2026-11-08T06:33:38Z",
+      "url": "https://github.com/CehennemGibiyim/Personel26/releases/tag/v1.6.0",
+      "pre": false,
+      "notes": "Personel26 1.6.0 — StockManager ile aynı Electron kabuğu, Alt+Enter tam ekran ve değişiklik anında yedek\nTür: feature\n- Personel26 artık StockManager ile aynı Electron masaüstü kabuğunda çalışır; tarayıcı, WebView2 veya adres çubuğu kullanılmaz.\n- Alt+Enter ve F11 tam ekranı açar/kapatır; Esc tam ekrandan çıkarır. Paneldeki tam ekran düğmesi de korunur.\n- Pencere kapatıldığında sunucu güvenli b…"
+     },
+     {
+      "tag": "v1.5.0",
+      "date": "2026-11-08T05:21:00Z",
+      "url": "https://github.com/CehennemGibiyim/Personel26/releases/tag/v1.5.0",
+      "pre": false,
+      "notes": "Personel26 1.5.0 — Kendi penceresinde Personel26.exe, sabit sol menü ve taşınabilir yedek\nTür: feature\n- Panel artık tarayıcı veya localhost penceresi yerine Personel26’nın kendi gömülü WebView2 penceresinde açılır; adres çubuğu ve sekme görünmez.\n- F11 ve paneldeki tam ekran düğmesiyle tam ekran kullanım; masaüstü ve Başlat kısayolları doğrudan Personel26.exe dosyasını açar.\n- Sol menü uzun sa…"
+     },
+     {
+      "tag": "v1.4.0",
+      "date": "2026-11-07T08:03:16Z",
+      "url": "https://github.com/CehennemGibiyim/Personel26/releases/tag/v1.4.0",
+      "pre": false,
+      "notes": "Personel26 1.4.0 — İkonlu Personel26.exe, görsel yardım merkezi ve tek tıkla geri yükleme\nTür: feature\n- Masaüstünde ve Başlat menüsünde artık .bat değil, kendi ikonu olan Personel26.exe var; çift tıklayınca panel açılır.\n- Panel Edge'in uygulama penceresinde açılır; Edge yoksa varsayılan tarayıcı kullanılır. Terminal penceresi görünmez.\n- Başlat menüsüne Personel26 — Yedek Al ve Personel26 — D…"
+     }
+    ]
+   },
+   "files": [],
+   "shots": [],
+   "activity": []
+  },
+  {
+   "name": "TikTokV1",
+   "url": "https://github.com/CehennemGibiyim/TikTokV1",
+   "description": "",
+   "readme": "TikTok LIVE'da düşen sandık / zarf / portal kutularını yakalar, filtreler ve geri sayımla listeler. Üç parça:",
+   "language": "JavaScript",
+   "langs": {
+    "JavaScript": 22324,
+    "CSS": 1796,
+    "HTML": 1237,
+    "Batchfile": 278
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-11-16T23:05:38Z",
+   "pushed_at": "2026-11-27T06:35:30Z",
+   "homepage": "",
+   "site": "https://cehennemgibiyim.github.io/TikTokV1/",
+   "icon": "",
+   "release": null,
+   "files": [],
+   "shots": [],
+   "activity": []
+  },
+  {
+   "name": "TikTok",
+   "url": "https://github.com/CehennemGibiyim/TikTok",
+   "description": "cehennemgibiyim.github.io/TikTok",
+   "readme": "Sunucu, Docker, API anahtarı gerekmez: her şey GitHub Pages üzerinde statik çalışır, veri tarayıcıda (IndexedDB / localStorage) durur.",
+   "language": "JavaScript",
+   "langs": {
+    "JavaScript": 890706,
+    "HTML": 116764,
+    "CSS": 35744,
+    "Python": 22621,
+    "Dockerfile": 659
+   },
+   "topics": [],
+   "stars": 1,
+   "created_at": "2026-02-14T20:53:52Z",
+   "pushed_at": "2026-11-27T06:17:44Z",
+   "homepage": "https://cehennemgibiyim.github.io/TikTok",
+   "site": "https://cehennemgibiyim.github.io/TikTok",
+   "icon": "",
+   "release": {
+    "tag": "v1.4.19",
+    "name": "1.4.19",
+    "url": "https://github.com/CehennemGibiyim/TikTok/releases/tag/v1.4.19",
+    "pre": false,
+    "date": "2026-11-15T03:30:31Z",
+    "notes": "Panel v1.4.19\nDeğişiklikler\n- Windows uygulaması tam paneli açar; Fırsatlar aynı pencerede açılır.\n- Windows tarayıcısı GitHub ile aynı ayarlara geçti: 12 kalıcı oda, 2 saatlik oturum, dakikada 4 bağlantı ve 25/saat bütçe.\n- Canlı dinleme kalıcı bağlantıya geçti; sandık, zarf ve portal eski treasureBoxData alanları ve 0 jetonla da kaydediliyor.\n- Kimliksiz manuel hedefler ve kapalı odalar canlı…",
+    "downloadsTotal": 22,
+    "assets": [
+     {
+      "name": "TikTok-Sandik-Radari-1.4.19-x64.exe",
+      "url": "https://github.com/CehennemGibiyim/TikTok/releases/download/v1.4.19/TikTok-Sandik-Radari-1.4.19-x64.exe",
+      "size": 121985933,
+      "downloads": 3,
+      "os": "windows",
+      "sha256": "4857c81d855dae2382368b0a9f7df424037dd2864ee2c614864c7f21c2f18db6"
+     }
+    ],
+    "history": [
+     {
+      "tag": "v1.4.19",
+      "date": "2026-11-15T03:30:31Z",
+      "url": "https://github.com/CehennemGibiyim/TikTok/releases/tag/v1.4.19",
+      "pre": false,
+      "notes": "Panel v1.4.19\nDeğişiklikler\n- Windows uygulaması tam paneli açar; Fırsatlar aynı pencerede açılır.\n- Windows tarayıcısı GitHub ile aynı ayarlara geçti: 12 kalıcı oda, 2 saatlik oturum, dakikada 4 bağlantı ve 25/saat bütçe.\n- Canlı dinleme kalıcı bağlantıya geçti; sandık, zarf ve portal eski treasureBoxData alanları ve 0 jetonla da kaydediliyor.\n- Kimliksiz manuel hedefler ve kapalı odalar canlı…"
+     },
+     {
+      "tag": "v1.1.0",
+      "date": "2026-11-12T12:54:00Z",
+      "url": "https://github.com/CehennemGibiyim/TikTok/releases/tag/v1.1.0",
+      "pre": false,
+      "notes": "Panel v1.1.0\nDeğişiklikler\n- Ayarlar'da Panel sürümü kartı: sürüm, yedek biçimi ve sürüm geçmişi listesi.\n- Yedek dosyasına appVersion eklendi; içe aktarma mesajı panel sürümünü gösteriyor.\n- README'de sürüm geçmişi, yayın sonrası kontroller ve tek komutluk sürüm betiği (scripts/release.mjs).\nWindows kurulum: TikTok-Sandik-Radari-1.1.0-x64.exe dosyasını indirip çalıştır; kurulu sürüm kendini ot…"
+     }
+    ]
+   },
+   "files": [],
+   "shots": [],
+   "activity": []
   },
   {
    "name": "ArenaSag",
@@ -386,122 +501,7 @@
     "https://raw.githubusercontent.com/CehennemGibiyim/ArenaSag/main/docs/images/yayinlar.png",
     "https://raw.githubusercontent.com/CehennemGibiyim/ArenaSag/main/docs/images/sandik.png"
    ],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    40,
-    4
-   ]
-  },
-  {
-   "name": "ArenaSol",
-   "url": "https://github.com/CehennemGibiyim/ArenaSol",
-   "description": "",
-   "readme": "TikTok LIVE ajansları için uçtan uca işletim paneli: canlı stüdyo, sandık radarı, otomatik keşif, overlay kütüphanesi ve Windows kurulum paketi.",
-   "language": "TypeScript",
-   "langs": {
-    "TypeScript": 594210,
-    "JavaScript": 58082,
-    "PowerShell": 6688,
-    "CSS": 6480,
-    "Batchfile": 5708,
-    "NSIS": 3985
-   },
-   "topics": [],
-   "stars": 0,
-   "created_at": "2026-11-18T19:13:49Z",
-   "pushed_at": "2026-11-27T02:47:24Z",
-   "homepage": "",
-   "site": "https://cehennemgibiyim.github.io/ArenaSol/",
-   "icon": "data:image/svg+xml,<svg xmlns=",
-   "release": {
-    "tag": "windows-v9",
-    "name": "Arena Live OS — Windows v9",
-    "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/tag/windows-v9",
-    "pre": false,
-    "date": "2026-11-22T23:20:59Z",
-    "notes": "Windows kurulum paketi otomatik olarak derlendi.\nKurulum: ArenaLiveOS-Setup-.exe indir → çalıştır → masaüstündeki \"Arena Live OS\" kısayolu.\nTaşınabilir: Arena-Live-OS--windows.zip arşivini aç → KURULUM.bat.\n- Gereksinim: Node.js 22 LTS + PostgreSQL 14+\n- Panel açılışında GitHub'daki güncellemeler otomatik algılanır (agent/update.mjs)\n- Tarama GitHub Actions üzerinde 7/24 çalışır; panel kapalı o…",
-    "downloadsTotal": 19,
-    "assets": [
-     {
-      "name": "Arena-Live-OS-1.2.0-windows.zip",
-      "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/download/windows-v9/Arena-Live-OS-1.2.0-windows.zip",
-      "size": 172266789,
-      "downloads": 1,
-      "os": "windows",
-      "sha256": "3543111aaf5d5138d2bd4f672c1ba8eb1f4174b167a251677c44e02df68a0513"
-     },
-     {
-      "name": "ArenaLiveOS-Setup-1.2.0.exe",
-      "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/download/windows-v9/ArenaLiveOS-Setup-1.2.0.exe",
-      "size": 104751279,
-      "downloads": 1,
-      "os": "windows",
-      "sha256": "1356ad5c88ae4e9999d025562cda98c193dbf8563ab1e250dd428fe32010457c"
-     }
-    ],
-    "history": [
-     {
-      "tag": "windows-v9",
-      "date": "2026-11-22T23:20:59Z",
-      "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/tag/windows-v9",
-      "pre": false,
-      "notes": "Windows kurulum paketi otomatik olarak derlendi.\nKurulum: ArenaLiveOS-Setup-.exe indir → çalıştır → masaüstündeki \"Arena Live OS\" kısayolu.\nTaşınabilir: Arena-Live-OS--windows.zip arşivini aç → KURULUM.bat.\n- Gereksinim: Node.js 22 LTS + PostgreSQL 14+\n- Panel açılışında GitHub'daki güncellemeler otomatik algılanır (agent/update.mjs)\n- Tarama GitHub Actions üzerinde 7/24 çalışır; panel kapalı o…"
-     },
-     {
-      "tag": "windows-v8",
-      "date": "2026-11-19T23:01:18Z",
-      "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/tag/windows-v8",
-      "pre": false,
-      "notes": "Windows kurulum paketi otomatik olarak derlendi.\nKurulum: ArenaLiveOS-Setup-.exe indir → çalıştır → masaüstündeki \"Arena Live OS\" kısayolu.\nTaşınabilir: Arena-Live-OS--windows.zip arşivini aç → KURULUM.bat.\n- Gereksinim: Node.js 22 LTS + PostgreSQL 14+\n- Panel açılışında GitHub'daki güncellemeler otomatik algılanır (agent/update.mjs)\n- Tarama GitHub Actions üzerinde 7/24 çalışır; panel kapalı o…"
-     },
-     {
-      "tag": "windows-v7",
-      "date": "2026-11-19T22:40:54Z",
-      "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/tag/windows-v7",
-      "pre": false,
-      "notes": "Windows kurulum paketi otomatik olarak derlendi.\nKurulum: ArenaLiveOS-Setup-.exe indir → çalıştır → masaüstündeki \"Arena Live OS\" kısayolu.\nTaşınabilir: Arena-Live-OS--windows.zip arşivini aç → KURULUM.bat.\n- Gereksinim: Node.js 22 LTS + PostgreSQL 14+\n- Panel açılışında GitHub'daki güncellemeler otomatik algılanır (agent/update.mjs)\n- Tarama GitHub Actions üzerinde 7/24 çalışır; panel kapalı o…"
-     },
-     {
-      "tag": "windows-v6",
-      "date": "2026-11-19T03:44:10Z",
-      "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/tag/windows-v6",
-      "pre": false,
-      "notes": "Windows kurulum paketi otomatik olarak derlendi.\nKurulum: ArenaLiveOS-Setup-.exe indir → çalıştır → masaüstündeki \"Arena Live OS\" kısayolu.\nTaşınabilir: Arena-Live-OS--windows.zip arşivini aç → KURULUM.bat.\n- Gereksinim: Node.js 22 LTS + PostgreSQL 14+\n- Panel açılışında GitHub'daki güncellemeler otomatik algılanır (agent/update.mjs)\n- Tarama GitHub Actions üzerinde 7/24 çalışır; panel kapalı o…"
-     },
-     {
-      "tag": "windows-v5",
-      "date": "2026-11-19T03:25:31Z",
-      "url": "https://github.com/CehennemGibiyim/ArenaSol/releases/tag/windows-v5",
-      "pre": false,
-      "notes": "Windows kurulum paketi otomatik olarak derlendi.\nKurulum: ArenaLiveOS-Setup-.exe indir → çalıştır → masaüstündeki \"Arena Live OS\" kısayolu.\nTaşınabilir: Arena-Live-OS--windows.zip arşivini aç → KURULUM.bat.\n- Gereksinim: Node.js 22 LTS + PostgreSQL 14+\n- Panel açılışında GitHub'daki güncellemeler otomatik algılanır (agent/update.mjs)\n- Tarama GitHub Actions üzerinde 7/24 çalışır; panel kapalı o…"
-     }
-    ]
-   },
-   "files": [],
-   "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    31,
-    18
-   ]
+   "activity": []
   },
   {
    "name": "AtikViewer",
@@ -565,20 +565,7 @@
    },
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    5
-   ]
+   "activity": []
   },
   {
    "name": "StockManager",
@@ -645,20 +632,7 @@
    "shots": [
     "https://raw.githubusercontent.com/CehennemGibiyim/StockManager/main/assets/help/dashboard.png"
    ],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    14,
-    0,
-    0,
-    10
-   ]
+   "activity": []
   },
   {
    "name": "AtikViewer0",
@@ -686,20 +660,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    19,
-    0,
-    16,
-    0,
-    0,
-    0,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "SecurityPoint",
@@ -779,20 +740,7 @@
    },
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    10,
-    4,
-    0,
-    0,
-    6,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "sms",
@@ -845,20 +793,7 @@
    },
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    15,
-    3,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "test2",
@@ -882,124 +817,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    2,
-    0
-   ]
-  },
-  {
-   "name": "Personel26",
-   "url": "https://github.com/CehennemGibiyim/Personel26",
-   "description": "",
-   "readme": "Sağlık kuruluşları için personel, nöbet (vardiya), puantaj, izin ve raporlama süreçlerini tek panelden yöneten web uygulaması.",
-   "language": "TypeScript",
-   "langs": {
-    "TypeScript": 773023,
-    "JavaScript": 163164,
-    "CSS": 88994,
-    "HTML": 67768,
-    "PowerShell": 51553,
-    "Inno Setup": 3509,
-    "PLpgSQL": 1194,
-    "Batchfile": 543
-   },
-   "topics": [],
-   "stars": 2,
-   "created_at": "2026-10-07T06:22:04Z",
-   "pushed_at": "2026-11-08T08:07:17Z",
-   "homepage": "https://cehennemgibiyim.github.io/Personel26",
-   "site": "https://cehennemgibiyim.github.io/Personel26",
-   "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/Personel26@main/src/app/icon.svg",
-   "release": {
-    "tag": "v1.6.1",
-    "name": "Personel26 1.6.1",
-    "url": "https://github.com/CehennemGibiyim/Personel26/releases/tag/v1.6.1",
-    "pre": false,
-    "date": "2026-11-08T08:07:18Z",
-    "notes": "Personel26 1.6.1 — Antivirüs engeline takılmayan yedekleme: doğrudan pgdump, PowerShell yok\nTür: fix\n- Otomatik ve elle SQL yedekleri artık PowerShell betiği yerine doğrudan pgdump ile alınır; antivirüslerin engellediği powershell.exe -ExecutionPolicy Bypass zinciri kaldırıldı.\n- Kapanış yedeği ve Personel26.exe --backup komutu da aynı doğrudan yedeği kullanır; paneldeki geri yükleme öncesi güv…",
-    "downloadsTotal": 42,
-    "assets": [
-     {
-      "name": "Personel26-Kurulum.exe",
-      "url": "https://github.com/CehennemGibiyim/Personel26/releases/download/v1.6.1/Personel26-Kurulum.exe",
-      "size": 169631351,
-      "downloads": 6,
-      "os": "windows",
-      "sha256": "84b94de2f7463f9d673ee0f9103f96f5809a810bc16989eff7503fe805b1fb55"
-     },
-     {
-      "name": "Personel26-Portable.zip",
-      "url": "https://github.com/CehennemGibiyim/Personel26/releases/download/v1.6.1/Personel26-Portable.zip",
-      "size": 253643026,
-      "downloads": 3,
-      "os": "other",
-      "sha256": "231403a95ba4898c64bd63ab6fb3240692073caed23b9d9d7a8eecc4ae72fa8e"
-     }
-    ],
-    "history": [
-     {
-      "tag": "v1.6.1",
-      "date": "2026-11-08T08:07:18Z",
-      "url": "https://github.com/CehennemGibiyim/Personel26/releases/tag/v1.6.1",
-      "pre": false,
-      "notes": "Personel26 1.6.1 — Antivirüs engeline takılmayan yedekleme: doğrudan pgdump, PowerShell yok\nTür: fix\n- Otomatik ve elle SQL yedekleri artık PowerShell betiği yerine doğrudan pgdump ile alınır; antivirüslerin engellediği powershell.exe -ExecutionPolicy Bypass zinciri kaldırıldı.\n- Kapanış yedeği ve Personel26.exe --backup komutu da aynı doğrudan yedeği kullanır; paneldeki geri yükleme öncesi güv…"
-     },
-     {
-      "tag": "v1.6.0",
-      "date": "2026-11-08T06:33:38Z",
-      "url": "https://github.com/CehennemGibiyim/Personel26/releases/tag/v1.6.0",
-      "pre": false,
-      "notes": "Personel26 1.6.0 — StockManager ile aynı Electron kabuğu, Alt+Enter tam ekran ve değişiklik anında yedek\nTür: feature\n- Personel26 artık StockManager ile aynı Electron masaüstü kabuğunda çalışır; tarayıcı, WebView2 veya adres çubuğu kullanılmaz.\n- Alt+Enter ve F11 tam ekranı açar/kapatır; Esc tam ekrandan çıkarır. Paneldeki tam ekran düğmesi de korunur.\n- Pencere kapatıldığında sunucu güvenli b…"
-     },
-     {
-      "tag": "v1.5.0",
-      "date": "2026-11-08T05:21:00Z",
-      "url": "https://github.com/CehennemGibiyim/Personel26/releases/tag/v1.5.0",
-      "pre": false,
-      "notes": "Personel26 1.5.0 — Kendi penceresinde Personel26.exe, sabit sol menü ve taşınabilir yedek\nTür: feature\n- Panel artık tarayıcı veya localhost penceresi yerine Personel26’nın kendi gömülü WebView2 penceresinde açılır; adres çubuğu ve sekme görünmez.\n- F11 ve paneldeki tam ekran düğmesiyle tam ekran kullanım; masaüstü ve Başlat kısayolları doğrudan Personel26.exe dosyasını açar.\n- Sol menü uzun sa…"
-     },
-     {
-      "tag": "v1.4.0",
-      "date": "2026-11-07T08:03:16Z",
-      "url": "https://github.com/CehennemGibiyim/Personel26/releases/tag/v1.4.0",
-      "pre": false,
-      "notes": "Personel26 1.4.0 — İkonlu Personel26.exe, görsel yardım merkezi ve tek tıkla geri yükleme\nTür: feature\n- Masaüstünde ve Başlat menüsünde artık .bat değil, kendi ikonu olan Personel26.exe var; çift tıklayınca panel açılır.\n- Panel Edge'in uygulama penceresinde açılır; Edge yoksa varsayılan tarayıcı kullanılır. Terminal penceresi görünmez.\n- Başlat menüsüne Personel26 — Yedek Al ve Personel26 — D…"
-     },
-     {
-      "tag": "v1.3.0",
-      "date": "2026-11-07T06:06:47Z",
-      "url": "https://github.com/CehennemGibiyim/Personel26/releases/tag/v1.3.0",
-      "pre": false,
-      "notes": "Personel26 1.3.0 — Sürüm notları, yedek klasörü ve kapanış yedeği\nTür: feature\n- Yardım ve Hakkında bölümüne sürüm notları kartı eklendi; Windows kurulum paketi ve web sürümü buradan açılır.\n- Windows kurulum paketi her sürümde otomatik üretilir; sürüm notu eksik olsa bile kurulum dosyası yayına eklenir.\n- Yedekler artık kurulum klasöründeki backups dizininde toplanır; yol panelde gösterilir ve…"
-     }
-    ]
-   },
-   "files": [],
-   "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    14,
-    0,
-    0,
-    0,
-    7,
-    5,
-    0,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "HastanePYD",
@@ -1022,20 +840,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    24,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "PersonelPuantajSistemi",
@@ -1058,20 +863,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    8,
-    0,
-    2,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "08Analiz",
@@ -1113,20 +905,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "AoTPNASF",
@@ -1149,20 +928,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "AtikAnaliz",
@@ -1189,20 +955,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "test1",
@@ -1226,20 +979,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "TEST",
@@ -1260,20 +1000,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "PatientSelection",
@@ -1296,20 +1023,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "AtikRemoteManager",
@@ -1328,20 +1042,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
+   "activity": []
   },
   {
    "name": "taksi-bremerhaven",
@@ -1362,20 +1063,7 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
+   "activity": []
   }
  ]
 }
