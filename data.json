@@ -1,8 +1,44 @@
 {
- "generated": "2026-11-27T06:37:30.000Z",
+ "generated": "2026-11-27T06:41:23.631Z",
  "user": "CehennemGibiyim",
  "hide": [],
  "repos": [
+  {
+   "name": "HisseBildirimSistemi",
+   "url": "https://github.com/CehennemGibiyim/HisseBildirimSistemi",
+   "description": "Hisse Bildirim Sistemi",
+   "readme": "Nasdaq hisselerini tarar, %10–%50 arası hareket eşiğini aşanları sinyal olarak listeler ve haber manşetlerini duygu analizinden geçirir.",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 80207,
+    "CSS": 43097,
+    "JavaScript": 13121
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-11-06T04:26:08Z",
+   "pushed_at": "2026-11-27T06:41:00Z",
+   "homepage": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
+   "site": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
+   "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/HisseBildirimSistemi@main/app/icon.svg",
+   "release": null,
+   "files": [],
+   "shots": [],
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    19,
+    4,
+    11,
+    0
+   ]
+  },
   {
    "name": "ArenaViewer",
    "url": "https://github.com/CehennemGibiyim/ArenaViewer",
@@ -24,33 +60,10 @@
    "topics": [],
    "stars": 0,
    "created_at": "2026-11-23T00:22:22Z",
-   "pushed_at": "2026-11-27T06:37:18Z",
+   "pushed_at": "2026-11-27T06:40:10Z",
    "homepage": "",
    "site": "https://cehennemgibiyim.github.io/ArenaViewer/",
    "icon": "https://raw.githubusercontent.com/CehennemGibiyim/ArenaViewer/main/public/icons/icon-192.png",
-   "release": null,
-   "files": [],
-   "shots": [],
-   "activity": []
-  },
-  {
-   "name": "HisseBildirimSistemi",
-   "url": "https://github.com/CehennemGibiyim/HisseBildirimSistemi",
-   "description": "Hisse Bildirim Sistemi",
-   "readme": "Nasdaq hisselerini tarar, %10–%50 arası hareket eşiğini aşanları sinyal olarak listeler ve haber manşetlerini duygu analizinden geçirir.",
-   "language": "TypeScript",
-   "langs": {
-    "TypeScript": 80207,
-    "CSS": 43097,
-    "JavaScript": 13121
-   },
-   "topics": [],
-   "stars": 0,
-   "created_at": "2026-11-06T04:26:08Z",
-   "pushed_at": "2026-11-27T06:37:00Z",
-   "homepage": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
-   "site": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
-   "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/HisseBildirimSistemi@main/app/icon.svg",
    "release": null,
    "files": [],
    "shots": [],
@@ -63,10 +76,10 @@
     0,
     0,
     0,
-    19,
-    4,
-    11,
-    0
+    0,
+    0,
+    0,
+    182
    ]
   },
   {
@@ -91,7 +104,20 @@
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    397,
+    380
+   ]
   },
   {
    "name": "TikTok",
@@ -150,7 +176,20 @@
    },
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1072,
+    986,
+    637
+   ]
   },
   {
    "name": "AoT-PNASF",
@@ -245,7 +284,20 @@
    "shots": [
     "https://render.albiononline.com/v1/item/T8_2H_CLAYMORE.png"
    ],
-   "activity": []
+   "activity": [
+    28,
+    28,
+    29,
+    41,
+    51,
+    62,
+    60,
+    61,
+    94,
+    75,
+    65,
+    47
+   ]
   },
   {
    "name": "ArenaSag",
