@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Mustafa UYGUR | Güncellemeler</title>
+  <id>https://cehennemgibiyim.github.io/</id>
+  <link href="https://cehennemgibiyim.github.io/feed.xml" rel="self"/>
+  <link href="https://cehennemgibiyim.github.io/"/>
+  <updated>2026-11-28T04:54:22.000Z</updated>
+  <author><name>Mustafa UYGUR</name></author>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/HisseBildirimSistemi#guncelleme-2026-11-28T04:54:22Z</id>
+    <title>HisseBildirimSistemi güncellendi</title>
+    <updated>2026-11-28T04:54:22.000Z</updated>
+    <link href="https://cehennemgibiyim.github.io/HisseBildirimSistemi/"/>
+    <summary>Hisse Bildirim Sistemi</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/ArenaViewer#guncelleme-2026-11-28T04:41:58Z</id>
+    <title>ArenaViewer güncellendi</title>
+    <updated>2026-11-28T04:41:58.000Z</updated>
+    <link href="https://cehennemgibiyim.github.io/ArenaViewer/"/>
+    <summary>WebLink</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/AoT-PNASF#guncelleme-2026-11-28T04:10:28Z</id>
+    <title>AoT-PNASF güncellendi</title>
+    <updated>2026-11-28T04:10:28.000Z</updated>
+    <link href="https://cehennemgibiyim.github.io/AoT-PNASF/"/>
+    <summary>Albion Online Tools · Powered Nexus &amp; AI Smart Feed</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/TikTokV1#guncelleme-2026-11-28T03:49:04Z</id>
+    <title>TikTokV1 güncellendi</title>
+    <updated>2026-11-28T03:49:04.000Z</updated>
+    <link href="https://cehennemgibiyim.github.io/TikTokV1/"/>
+    <summary>TikTok LIVE'da düşen sandık / zarf / portal kutularını yakalar, filtreler ve geri sayımla listeler. Üç parça:</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/ArenaSag#guncelleme-2026-11-28T03:45:13Z</id>
+    <title>ArenaSag güncellendi</title>
+    <updated>2026-11-28T03:45:13.000Z</updated>
+    <link href="https://cehennemgibiyim.github.io/ArenaSag/"/>
+    <summary>TikTok LIVE ajansları için sürekli çalışan radar, canlı yayın ağı ve Windows bildirim uygulaması.</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/TikTok#guncelleme-2026-11-28T03:40:01Z</id>
+    <title>TikTok güncellendi</title>
+    <updated>2026-11-28T03:40:01.000Z</updated>
+    <link href="https://cehennemgibiyim.github.io/TikTok"/>
+    <summary>cehennemgibiyim.github.io/TikTok</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/ArenaSol#guncelleme-2026-11-28T02:57:09Z</id>
+    <title>ArenaSol güncellendi</title>
+    <updated>2026-11-28T02:57:09.000Z</updated>
+    <link href="https://cehennemgibiyim.github.io/ArenaSol/"/>
+    <summary>TikTok LIVE ajansları için uçtan uca işletim paneli: canlı stüdyo, sandık radarı, otomatik keşif, overlay kütüphanesi ve Windows kurulum paketi.</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/ArenaSol/releases/tag/windows-v10</id>
+    <title>ArenaSol windows-v10 yayınlandı</title>
+    <updated>2026-11-27T19:47:45.000Z</updated>
+    <link href="https://github.com/CehennemGibiyim/ArenaSol/releases/tag/windows-v10"/>
+    <summary>Windows kurulum paketi otomatik olarak derlendi.
+Kurulum: ArenaLiveOS-Setup-.exe indir → çalıştır → masaüstündeki &quot;Arena Live OS&quot; kısayolu.
+Taşınabilir: Arena-Live-OS--windows.zip arşivini aç → KURULUM.bat.
+- Gereksinim: Node.js 22 LTS + PostgreSQL 14+
+- Panel açılışında GitHub'daki güncellemeler otomatik algılanır (agent/update.mjs)
+- Tarama GitHub Actions üzerinde 7/24 çalışır; panel kapalı o…</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/Personel26#guncelleme-2026-11-27T17:08:09Z</id>
+    <title>Personel26 güncellendi</title>
+    <updated>2026-11-27T17:08:09.000Z</updated>
+    <link href="https://cehennemgibiyim.github.io/Personel26"/>
+    <summary>Sağlık kuruluşları için personel, nöbet (vardiya), puantaj, izin ve raporlama süreçlerini tek panelden yöneten web uygulaması.</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/Personel26/releases/tag/v1.6.2</id>
+    <title>Personel26 v1.6.2 yayınlandı</title>
+    <updated>2026-11-27T07:06:40.000Z</updated>
+    <link href="https://github.com/CehennemGibiyim/Personel26/releases/tag/v1.6.2"/>
+    <summary>Personel26 1.6.2 — Yedek klasörünü Ayarlar'dan seçin: farklı disk veya ağ klasörü
+Tür: feature
+- Ayarlar → Yedekleme &amp; Veritabanı bölümünden SQL yedeklerinin yazılacağı klasör değiştirilebilir; örneğin D: sürücüsünde ayrı bir yedek klasörü seçilebilir.
+- Klasör, masaüstü uygulamasındaki Gözat penceresiyle seçilebilir veya tam yolu elle yazılabilir; seçilen klasör yoksa oluşturulur ve yazma izni…</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/AtikViewer#guncelleme-2026-11-24T19:13:23Z</id>
+    <title>AtikViewer güncellendi</title>
+    <updated>2026-11-24T19:13:23.000Z</updated>
+    <link href="https://cehennemgibiyim.github.io/AtikViewer/"/>
+    <summary>ATIKVIEWER; DICOM görüntüleme, kesit kesit yapay zekâ destekli inceleme ve yapısal radyoloji raporu üretimini tek ekranda toplayan, Next.js (App Router) + PostgreSQL…</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/AtikViewer/releases/tag/v0.1.0</id>
+    <title>AtikViewer v0.1.0 yayınlandı</title>
+    <updated>2026-11-23T06:15:11.000Z</updated>
+    <link href="https://github.com/CehennemGibiyim/AtikViewer/releases/tag/v0.1.0"/>
+    <summary>Full Changelog: https://github.com/CehennemGibiyim/AtikViewer/commits/v0.1.0</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/StockManager/releases/tag/v1.1.1</id>
+    <title>StockManager v1.1.1 yayınlandı</title>
+    <updated>2026-11-23T04:57:38.000Z</updated>
+    <link href="https://github.com/CehennemGibiyim/StockManager/releases/tag/v1.1.1"/>
+    <summary>StockManager v1.1.1
+- Web sürümü yayını otomatik doğrulanıyor: canlı sayfa, sürüm ve commit bilgisi kontrol edilip uyuşmazsa yayın başarısız sayılıyor.
+- Canlı site kontrolü günde bir kez de çalışıyor; site kapalıysa ya da eski sürümü sunuyorsa fark ediliyor.
+- Uygulama davranışında değişiklik yok; bu sürüm yayın ve doğrulama altyapısını günceller.
+Kurulum paketi: StockManager-Setup-1.1.1.exe</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/StockManager#guncelleme-2026-11-23T04:55:41Z</id>
+    <title>StockManager güncellendi</title>
+    <updated>2026-11-23T04:55:41.000Z</updated>
+    <link href="https://cehennemgibiyim.github.io/StockManager/"/>
+    <summary>Ürün, stok, hareket, alım ve rapor yönetimi için koyu temalı, Türkçe operasyon paneli. Aynı kaynak iki biçimde çalışır:</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/ArenaSag/releases/tag/v1.4.0</id>
+    <title>ArenaSag v1.4.0 yayınlandı</title>
+    <updated>2026-11-18T22:31:38.000Z</updated>
+    <link href="https://github.com/CehennemGibiyim/ArenaSag/releases/tag/v1.4.0"/>
+    <summary>Full Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0
+Full Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0
+Full Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0
+Full Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0
+Full Changelog: https://github.com/CehennemGibiyim/ArenaSag/c…</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/AtikViewer0#guncelleme-2026-11-17T13:55:40Z</id>
+    <title>AtikViewer0 güncellendi</title>
+    <updated>2026-11-17T13:55:40.000Z</updated>
+    <link href="https://cehennemgibiyim.github.io/AtikViewer0/"/>
+    <summary>ATIKVIEWER; DICOM görüntüleme, kesit kesit yapay zekâ destekli inceleme ve yapısal radyoloji raporu üretimini tek ekranda toplayan, Next.js (App Router) + PostgreSQL…</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/SecurityPoint/releases/tag/v1.3.0</id>
+    <title>SecurityPoint v1.3.0 yayınlandı</title>
+    <updated>2026-11-16T00:44:14.000Z</updated>
+    <link href="https://github.com/CehennemGibiyim/SecurityPoint/releases/tag/v1.3.0"/>
+    <summary>[1.3.0] — 2026-11-15
+Eklenen
+- PWA (iOS + Android + masaüstü): manifest.webmanifest (yeni src/app/manifest.ts), basePath'e
+duyarlı service worker (public/sw.js), çevrimdışı sayfası ve üretimde otomatik kayıt
+(PwaRegister). Panel &quot;Ana Ekrana Ekle / Yükle&quot; ile kurulabilir; API yanıtları önbelleğe alınmaz,
+service worker yalnızca üretim derlemesinde kaydolur → mevcut davranış bozulmaz.
+- Linux taş…</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/SecurityPoint#guncelleme-2026-11-16T00:40:00Z</id>
+    <title>SecurityPoint güncellendi</title>
+    <updated>2026-11-16T00:40:00.000Z</updated>
+    <link href="https://cehennemgibiyim.github.io/SecurityPoint/"/>
+    <summary>SecurityPoint — ORION FaceGate × Puantaj26</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/TikTok/releases/tag/v1.4.19</id>
+    <title>TikTok v1.4.19 yayınlandı</title>
+    <updated>2026-11-15T03:30:31.000Z</updated>
+    <link href="https://github.com/CehennemGibiyim/TikTok/releases/tag/v1.4.19"/>
+    <summary>Panel v1.4.19
+Değişiklikler
+- Windows uygulaması tam paneli açar; Fırsatlar aynı pencerede açılır.
+- Windows tarayıcısı GitHub ile aynı ayarlara geçti: 12 kalıcı oda, 2 saatlik oturum, dakikada 4 bağlantı ve 25/saat bütçe.
+- Canlı dinleme kalıcı bağlantıya geçti; sandık, zarf ve portal eski treasureBoxData alanları ve 0 jetonla da kaydediliyor.
+- Kimliksiz manuel hedefler ve kapalı odalar canlı…</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/sms#guncelleme-2026-11-15T00:23:29Z</id>
+    <title>sms güncellendi</title>
+    <updated>2026-11-15T00:23:29.000Z</updated>
+    <link href="https://cehennemgibiyim.github.io/sms/"/>
+    <summary></summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/sms/releases/tag/v1.0.4</id>
+    <title>sms v1.0.4 yayınlandı</title>
+    <updated>2026-11-14T23:48:18.000Z</updated>
+    <link href="https://github.com/CehennemGibiyim/sms/releases/tag/v1.0.4"/>
+    <summary>Enough V2 Panel v1.0.4 - Windows Release
+Windows Installer (.exe)
+Download the .exe file below to install Enough V2 Panel on Windows.
+Features
+- Cyber Neon themed UI
+- 83 SMS service definitions
+- Proxy backend for CORS bypass
+- ServiceDefinition registry for custom providers
+- Server-side API key management ({{env:VAR}} substitution)
+- Silent auto-update from GitHub Releases
+Installation
+1. Do…</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/test2#guncelleme-2026-11-14T22:32:04Z</id>
+    <title>test2 güncellendi</title>
+    <updated>2026-11-14T22:32:04.000Z</updated>
+    <link href="https://github.com/CehennemGibiyim/test2"/>
+    <summary></summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/AoT-PNASF/releases/tag/v1.1.1</id>
+    <title>AoT-PNASF v1.1.1 yayınlandı</title>
+    <updated>2026-11-12T10:15:24.000Z</updated>
+    <link href="https://github.com/CehennemGibiyim/AoT-PNASF/releases/tag/v1.1.1"/>
+    <summary>AoT PNASF v1.1.1
+Masaüstü paket adları güncelleyiciyle uyumlu hale getirildi.
+Düzeltmeler
+- Tauri paketlerindeki boşluklar dosya adlarında tireye çevriliyor; SHA256SUMS.txt ve zip içeriği yayımdaki adlarla birebir eşleşiyor.
+- Güncelleyici, indiricinin kabul etmeyeceği dosya adlarını artık seçmiyor.
+- Paket toplama sırasında aynı ada sahip iki dosya varsa sessizce üzerine yazmak yerine hata ver…</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/HastanePYD#guncelleme-2026-10-02T17:39:58Z</id>
+    <title>HastanePYD güncellendi</title>
+    <updated>2026-10-02T17:39:58.000Z</updated>
+    <link href="https://cehennemgibiyim.github.io/HastanePYD/"/>
+    <summary>GitHub Pages üzerinde çalışan, hash yönlendirmeli ve çevrimdışı kullanılabilen statik hastane yönetim paneli.</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/PersonelPuantajSistemi#guncelleme-2026-09-20T01:41:03Z</id>
+    <title>PersonelPuantajSistemi güncellendi</title>
+    <updated>2026-09-20T01:41:03.000Z</updated>
+    <link href="https://cehennemgibiyim.github.io/PersonelPuantajSistemi/"/>
+    <summary>https://cehennemgibiyim.github.io/PersonelPuantajSistemi/</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/08Analiz#guncelleme-2026-08-19T22:03:13Z</id>
+    <title>08Analiz güncellendi</title>
+    <updated>2026-08-19T22:03:13.000Z</updated>
+    <link href="https://cehennemgibiyim.github.io/08Analiz"/>
+    <summary>https://cehennemgibiyim.github.io/08Analiz</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/AtikAnaliz#guncelleme-2026-05-17T04:29:33Z</id>
+    <title>AtikAnaliz güncellendi</title>
+    <updated>2026-05-17T04:29:33.000Z</updated>
+    <link href="https://cehennemgibiyim.github.io/AtikAnaliz/"/>
+    <summary>AtikAnaliz - Kripto Sinyal ve Analiz Uygulaması</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/test1#guncelleme-2026-05-10T03:38:12Z</id>
+    <title>test1 güncellendi</title>
+    <updated>2026-05-10T03:38:12.000Z</updated>
+    <link href="https://github.com/CehennemGibiyim/test1"/>
+    <summary></summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/TEST#guncelleme-2026-05-03T19:37:42Z</id>
+    <title>TEST güncellendi</title>
+    <updated>2026-05-03T19:37:42.000Z</updated>
+    <link href="https://cehennemgibiyim.github.io/TEST/"/>
+    <summary>&quot;# TEST&quot; &quot;# TEST&quot;</summary>
+  </entry>
+  <entry>
+    <id>https://github.com/CehennemGibiyim/PatientSelection#guncelleme-2026-04-17T18:18:32Z</id>
+    <title>PatientSelection güncellendi</title>
+    <updated>2026-04-17T18:18:32.000Z</updated>
+    <link href="https://cehennemgibiyim.github.io/PatientSelection/"/>
+    <summary>Hasta Seçimi</summary>
+  </entry>
+</feed>

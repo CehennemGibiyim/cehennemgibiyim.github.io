@@ -1,8 +1,195 @@
 {
- "generated": "2026-11-28T03:35:31.396Z",
+ "generated": "2026-11-28T04:55:14.125Z",
  "user": "CehennemGibiyim",
  "hide": [],
  "repos": [
+  {
+   "name": "HisseBildirimSistemi",
+   "url": "https://github.com/CehennemGibiyim/HisseBildirimSistemi",
+   "description": "Hisse Bildirim Sistemi",
+   "readme": "Nasdaq hisselerini tarar, %10–%50 arası hareket eşiğini aşanları sinyal olarak listeler ve haber manşetlerini duygu analizinden geçirir.",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 80207,
+    "CSS": 43097,
+    "JavaScript": 13121
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-11-06T04:26:08Z",
+   "pushed_at": "2026-11-28T04:54:22Z",
+   "homepage": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
+   "site": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
+   "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/HisseBildirimSistemi@main/app/icon.svg",
+   "release": null,
+   "files": [],
+   "shots": [],
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    19,
+    4,
+    11,
+    0
+   ]
+  },
+  {
+   "name": "ArenaViewer",
+   "url": "https://github.com/CehennemGibiyim/ArenaViewer",
+   "description": "WebLink",
+   "readme": "ATIKVIEWER; DICOM görüntüleme, kesit kesit yapay zekâ destekli inceleme ve yapısal radyoloji raporu üretimini tek ekranda toplayan, Next.js (App Router) + PostgreSQL…",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 3409578,
+    "Python": 166179,
+    "JavaScript": 66489,
+    "PowerShell": 45725,
+    "Shell": 43313,
+    "CSS": 13654,
+    "Dockerfile": 2970,
+    "Inno Setup": 2774,
+    "Batchfile": 1059,
+    "HTML": 1050
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-11-23T00:22:22Z",
+   "pushed_at": "2026-11-28T04:41:58Z",
+   "homepage": "https://cehennemgibiyim.github.io/ArenaViewer/",
+   "site": "https://cehennemgibiyim.github.io/ArenaViewer/",
+   "icon": "https://raw.githubusercontent.com/CehennemGibiyim/ArenaViewer/main/public/icons/icon-192.png",
+   "release": null,
+   "files": [],
+   "shots": [],
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    192
+   ]
+  },
+  {
+   "name": "AoT-PNASF",
+   "url": "https://github.com/CehennemGibiyim/AoT-PNASF",
+   "description": "Albion Online Tools · Powered Nexus & AI Smart Feed",
+   "readme": "Türkiye'nin #1 AI Destekli Albion Online Platformu",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 937624,
+    "JavaScript": 328457,
+    "CSS": 98214,
+    "HTML": 83031,
+    "Python": 13397,
+    "PowerShell": 2696,
+    "Rust": 659
+   },
+   "topics": [],
+   "stars": 5,
+   "created_at": "2026-03-21T00:10:55Z",
+   "pushed_at": "2026-11-28T04:10:28Z",
+   "homepage": "https://cehennemgibiyim.github.io/AoT-PNASF/",
+   "site": "https://cehennemgibiyim.github.io/AoT-PNASF/",
+   "icon": "https://raw.githubusercontent.com/CehennemGibiyim/AoT-PNASF/main/desktop/electron/build/icon.png",
+   "release": {
+    "tag": "v1.1.1",
+    "name": "AoT PNASF v1.1.1",
+    "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/tag/v1.1.1",
+    "pre": false,
+    "date": "2026-11-12T10:15:24Z",
+    "notes": "AoT PNASF v1.1.1\nMasaüstü paket adları güncelleyiciyle uyumlu hale getirildi.\nDüzeltmeler\n- Tauri paketlerindeki boşluklar dosya adlarında tireye çevriliyor; SHA256SUMS.txt ve zip içeriği yayımdaki adlarla birebir eşleşiyor.\n- Güncelleyici, indiricinin kabul etmeyeceği dosya adlarını artık seçmiyor.\n- Paket toplama sırasında aynı ada sahip iki dosya varsa sessizce üzerine yazmak yerine hata ver…",
+    "downloadsTotal": 44,
+    "assets": [
+     {
+      "name": "AoT-PNASF-1.1.1-x64-portable.exe",
+      "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/download/v1.1.1/AoT-PNASF-1.1.1-x64-portable.exe",
+      "size": 82676522,
+      "downloads": 3,
+      "os": "windows",
+      "sha256": "5d5b12323c8bf455244ad97d2ac887ef4a15d617b793d6f7b05a6248f83b4437"
+     },
+     {
+      "name": "AoT-PNASF-1.1.1-x64-setup.exe",
+      "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/download/v1.1.1/AoT-PNASF-1.1.1-x64-setup.exe",
+      "size": 82923984,
+      "downloads": 4,
+      "os": "windows",
+      "sha256": "2f4fb02a1aa69939876d598e994d44dfb9d9cb0813bea1b4e60466cb6816b670"
+     },
+     {
+      "name": "AoT-PNASF-Windows-1.1.1.zip",
+      "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/download/v1.1.1/AoT-PNASF-Windows-1.1.1.zip",
+      "size": 171176475,
+      "downloads": 2,
+      "os": "windows",
+      "sha256": "e9705e6cd1f5368dc8c6064743585ff9f51a6fb4e99ddf8bee86face5a1f7f9d"
+     },
+     {
+      "name": "AoT-PNASF_1.1.1_x64-setup.exe",
+      "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/download/v1.1.1/AoT-PNASF_1.1.1_x64-setup.exe",
+      "size": 2638177,
+      "downloads": 2,
+      "os": "windows",
+      "sha256": "3c83a8a0d2523a6e04369707940b36433410f2e2e7924c04189157d1992c51a3"
+     },
+     {
+      "name": "AoT-PNASF_1.1.1_x64_en-US.msi",
+      "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/download/v1.1.1/AoT-PNASF_1.1.1_x64_en-US.msi",
+      "size": 3145728,
+      "downloads": 2,
+      "os": "windows",
+      "sha256": "96a125dd835b457dde72f7cc7532181a718ef856032d603a2ca5c2033e108b1c"
+     }
+    ],
+    "history": [
+     {
+      "tag": "v1.1.1",
+      "date": "2026-11-12T10:15:24Z",
+      "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/tag/v1.1.1",
+      "pre": false,
+      "notes": "AoT PNASF v1.1.1\nMasaüstü paket adları güncelleyiciyle uyumlu hale getirildi.\nDüzeltmeler\n- Tauri paketlerindeki boşluklar dosya adlarında tireye çevriliyor; SHA256SUMS.txt ve zip içeriği yayımdaki adlarla birebir eşleşiyor.\n- Güncelleyici, indiricinin kabul etmeyeceği dosya adlarını artık seçmiyor.\n- Paket toplama sırasında aynı ada sahip iki dosya varsa sessizce üzerine yazmak yerine hata ver…"
+     },
+     {
+      "tag": "v1.1.0",
+      "date": "2026-11-12T09:42:27Z",
+      "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/tag/v1.1.0",
+      "pre": false,
+      "notes": "AoT PNASF v1.1.0\nYardım/Hakkında bölümünden güncelleme denetimi ve sürüm takibi eklendi.\nYenilikler\n- Hakkında bölümüne \"Güncellemeleri denetle\" düğmesi, durum satırı ve sürüm notları alanı eklendi.\n- Web: yayımdaki version.json okunarak yeni sürüm algılanıyor; güncelleme önbelleği temizleyip sayfayı yeniliyor.\n- Masaüstü: GitHub sürümleri okunuyor, kurulum dosyası indirilip SHA-256 özeti doğru…"
+     }
+    ]
+   },
+   "files": [],
+   "shots": [
+    "https://render.albiononline.com/v1/item/T8_2H_CLAYMORE.png"
+   ],
+   "activity": [
+    28,
+    28,
+    29,
+    41,
+    51,
+    62,
+    60,
+    61,
+    94,
+    75,
+    65,
+    54
+   ]
+  },
   {
    "name": "TikTokV1",
    "url": "https://github.com/CehennemGibiyim/TikTokV1",
@@ -18,14 +205,129 @@
    "topics": [],
    "stars": 0,
    "created_at": "2026-11-16T23:05:38Z",
-   "pushed_at": "2026-11-28T03:34:56Z",
+   "pushed_at": "2026-11-28T03:49:04Z",
    "homepage": "",
    "site": "https://cehennemgibiyim.github.io/TikTokV1/",
    "icon": "",
    "release": null,
    "files": [],
    "shots": [],
-   "activity": []
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    397,
+    472
+   ]
+  },
+  {
+   "name": "ArenaSag",
+   "url": "https://github.com/CehennemGibiyim/ArenaSag",
+   "description": "",
+   "readme": "TikTok LIVE ajansları için sürekli çalışan radar, canlı yayın ağı ve Windows bildirim uygulaması.",
+   "language": "TypeScript",
+   "langs": {
+    "TypeScript": 708261,
+    "JavaScript": 300632,
+    "HTML": 102175,
+    "CSS": 32014,
+    "PowerShell": 7885,
+    "NSIS": 4027,
+    "Batchfile": 1668
+   },
+   "topics": [],
+   "stars": 0,
+   "created_at": "2026-11-18T18:48:43Z",
+   "pushed_at": "2026-11-28T03:45:13Z",
+   "homepage": "",
+   "site": "https://cehennemgibiyim.github.io/ArenaSag/",
+   "icon": "",
+   "release": {
+    "tag": "v1.4.0",
+    "name": "Arena Radar v1.4.0",
+    "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/tag/v1.4.0",
+    "pre": false,
+    "date": "2026-11-18T22:31:38Z",
+    "notes": "Full Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0\nFull Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0\nFull Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0\nFull Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0\nFull Changelog: https://github.com/CehennemGibiyim/ArenaSag/c…",
+    "downloadsTotal": 6,
+    "assets": [
+     {
+      "name": "Arena-Live-OS-windows.zip",
+      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/download/v1.4.0/Arena-Live-OS-windows.zip",
+      "size": 4222473,
+      "downloads": 0,
+      "os": "windows",
+      "sha256": "53d8a6c921b4ff639d0ace677dea60325a2a6c7fd680ecc456d299ce6e6d13fc"
+     },
+     {
+      "name": "ArenaRadar-Setup-1.4.0.exe",
+      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/download/v1.4.0/ArenaRadar-Setup-1.4.0.exe",
+      "size": 24415325,
+      "downloads": 1,
+      "os": "windows",
+      "sha256": "f4cb1168e05872dd206205845cb90eeb6ce8fd69a587c171119775d9c63a98e4"
+     },
+     {
+      "name": "ArenaRadar-Setup.exe",
+      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/download/v1.4.0/ArenaRadar-Setup.exe",
+      "size": 24415325,
+      "downloads": 0,
+      "os": "windows",
+      "sha256": "f4cb1168e05872dd206205845cb90eeb6ce8fd69a587c171119775d9c63a98e4"
+     },
+     {
+      "name": "ArenaRadar-windows.zip",
+      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/download/v1.4.0/ArenaRadar-windows.zip",
+      "size": 36393139,
+      "downloads": 0,
+      "os": "windows",
+      "sha256": "983e91c817a5697cbe6157ad4e9446d67e26f7c50e99712a1ef51390debab196"
+     }
+    ],
+    "history": [
+     {
+      "tag": "v1.4.0",
+      "date": "2026-11-18T22:31:38Z",
+      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/tag/v1.4.0",
+      "pre": false,
+      "notes": "Full Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0\nFull Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0\nFull Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0\nFull Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0\nFull Changelog: https://github.com/CehennemGibiyim/ArenaSag/c…"
+     },
+     {
+      "tag": "v1.3.0",
+      "date": "2026-11-18T21:45:16Z",
+      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/tag/v1.3.0",
+      "pre": false,
+      "notes": "Full Changelog: https://github.com/CehennemGibiyim/ArenaSag/commits/v1.3.0\nFull Changelog: https://github.com/CehennemGibiyim/ArenaSag/commits/v1.3.0"
+     }
+    ]
+   },
+   "files": [],
+   "shots": [
+    "https://raw.githubusercontent.com/CehennemGibiyim/ArenaSag/main/docs/images/panel.png",
+    "https://raw.githubusercontent.com/CehennemGibiyim/ArenaSag/main/docs/images/yayinlar.png",
+    "https://raw.githubusercontent.com/CehennemGibiyim/ArenaSag/main/docs/images/sandik.png"
+   ],
+   "activity": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    40,
+    4
+   ]
   },
   {
    "name": "TikTok",
@@ -43,7 +345,7 @@
    "topics": [],
    "stars": 1,
    "created_at": "2026-02-14T20:53:52Z",
-   "pushed_at": "2026-11-28T03:34:47Z",
+   "pushed_at": "2026-11-28T03:40:01Z",
    "homepage": "https://cehennemgibiyim.github.io/TikTok",
    "site": "https://cehennemgibiyim.github.io/TikTok",
    "icon": "",
@@ -84,29 +386,6 @@
    },
    "files": [],
    "shots": [],
-   "activity": []
-  },
-  {
-   "name": "HisseBildirimSistemi",
-   "url": "https://github.com/CehennemGibiyim/HisseBildirimSistemi",
-   "description": "Hisse Bildirim Sistemi",
-   "readme": "Nasdaq hisselerini tarar, %10–%50 arası hareket eşiğini aşanları sinyal olarak listeler ve haber manşetlerini duygu analizinden geçirir.",
-   "language": "TypeScript",
-   "langs": {
-    "TypeScript": 80207,
-    "CSS": 43097,
-    "JavaScript": 13121
-   },
-   "topics": [],
-   "stars": 0,
-   "created_at": "2026-11-06T04:26:08Z",
-   "pushed_at": "2026-11-28T03:34:42Z",
-   "homepage": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
-   "site": "https://cehennemgibiyim.github.io/HisseBildirimSistemi/",
-   "icon": "https://cdn.jsdelivr.net/gh/CehennemGibiyim/HisseBildirimSistemi@main/app/icon.svg",
-   "release": null,
-   "files": [],
-   "shots": [],
    "activity": [
     0,
     0,
@@ -116,10 +395,10 @@
     0,
     0,
     0,
-    19,
-    4,
-    11,
-    0
+    0,
+    1072,
+    986,
+    732
    ]
   },
   {
@@ -209,131 +488,6 @@
    },
    "files": [],
    "shots": [],
-   "activity": []
-  },
-  {
-   "name": "AoT-PNASF",
-   "url": "https://github.com/CehennemGibiyim/AoT-PNASF",
-   "description": "Albion Online Tools · Powered Nexus & AI Smart Feed",
-   "readme": "Türkiye'nin #1 AI Destekli Albion Online Platformu",
-   "language": "TypeScript",
-   "langs": {
-    "TypeScript": 937624,
-    "JavaScript": 328457,
-    "CSS": 98214,
-    "HTML": 83031,
-    "Python": 13397,
-    "PowerShell": 2696,
-    "Rust": 659
-   },
-   "topics": [],
-   "stars": 5,
-   "created_at": "2026-03-21T00:10:55Z",
-   "pushed_at": "2026-11-27T22:28:47Z",
-   "homepage": "https://cehennemgibiyim.github.io/AoT-PNASF/",
-   "site": "https://cehennemgibiyim.github.io/AoT-PNASF/",
-   "icon": "https://raw.githubusercontent.com/CehennemGibiyim/AoT-PNASF/main/desktop/electron/build/icon.png",
-   "release": {
-    "tag": "v1.1.1",
-    "name": "AoT PNASF v1.1.1",
-    "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/tag/v1.1.1",
-    "pre": false,
-    "date": "2026-11-12T10:15:24Z",
-    "notes": "AoT PNASF v1.1.1\nMasaüstü paket adları güncelleyiciyle uyumlu hale getirildi.\nDüzeltmeler\n- Tauri paketlerindeki boşluklar dosya adlarında tireye çevriliyor; SHA256SUMS.txt ve zip içeriği yayımdaki adlarla birebir eşleşiyor.\n- Güncelleyici, indiricinin kabul etmeyeceği dosya adlarını artık seçmiyor.\n- Paket toplama sırasında aynı ada sahip iki dosya varsa sessizce üzerine yazmak yerine hata ver…",
-    "downloadsTotal": 44,
-    "assets": [
-     {
-      "name": "AoT-PNASF-1.1.1-x64-portable.exe",
-      "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/download/v1.1.1/AoT-PNASF-1.1.1-x64-portable.exe",
-      "size": 82676522,
-      "downloads": 3,
-      "os": "windows",
-      "sha256": "5d5b12323c8bf455244ad97d2ac887ef4a15d617b793d6f7b05a6248f83b4437"
-     },
-     {
-      "name": "AoT-PNASF-1.1.1-x64-setup.exe",
-      "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/download/v1.1.1/AoT-PNASF-1.1.1-x64-setup.exe",
-      "size": 82923984,
-      "downloads": 4,
-      "os": "windows",
-      "sha256": "2f4fb02a1aa69939876d598e994d44dfb9d9cb0813bea1b4e60466cb6816b670"
-     },
-     {
-      "name": "AoT-PNASF-Windows-1.1.1.zip",
-      "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/download/v1.1.1/AoT-PNASF-Windows-1.1.1.zip",
-      "size": 171176475,
-      "downloads": 2,
-      "os": "windows",
-      "sha256": "e9705e6cd1f5368dc8c6064743585ff9f51a6fb4e99ddf8bee86face5a1f7f9d"
-     },
-     {
-      "name": "AoT-PNASF_1.1.1_x64-setup.exe",
-      "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/download/v1.1.1/AoT-PNASF_1.1.1_x64-setup.exe",
-      "size": 2638177,
-      "downloads": 2,
-      "os": "windows",
-      "sha256": "3c83a8a0d2523a6e04369707940b36433410f2e2e7924c04189157d1992c51a3"
-     },
-     {
-      "name": "AoT-PNASF_1.1.1_x64_en-US.msi",
-      "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/download/v1.1.1/AoT-PNASF_1.1.1_x64_en-US.msi",
-      "size": 3145728,
-      "downloads": 2,
-      "os": "windows",
-      "sha256": "96a125dd835b457dde72f7cc7532181a718ef856032d603a2ca5c2033e108b1c"
-     }
-    ],
-    "history": [
-     {
-      "tag": "v1.1.1",
-      "date": "2026-11-12T10:15:24Z",
-      "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/tag/v1.1.1",
-      "pre": false,
-      "notes": "AoT PNASF v1.1.1\nMasaüstü paket adları güncelleyiciyle uyumlu hale getirildi.\nDüzeltmeler\n- Tauri paketlerindeki boşluklar dosya adlarında tireye çevriliyor; SHA256SUMS.txt ve zip içeriği yayımdaki adlarla birebir eşleşiyor.\n- Güncelleyici, indiricinin kabul etmeyeceği dosya adlarını artık seçmiyor.\n- Paket toplama sırasında aynı ada sahip iki dosya varsa sessizce üzerine yazmak yerine hata ver…"
-     },
-     {
-      "tag": "v1.1.0",
-      "date": "2026-11-12T09:42:27Z",
-      "url": "https://github.com/CehennemGibiyim/AoT-PNASF/releases/tag/v1.1.0",
-      "pre": false,
-      "notes": "AoT PNASF v1.1.0\nYardım/Hakkında bölümünden güncelleme denetimi ve sürüm takibi eklendi.\nYenilikler\n- Hakkında bölümüne \"Güncellemeleri denetle\" düğmesi, durum satırı ve sürüm notları alanı eklendi.\n- Web: yayımdaki version.json okunarak yeni sürüm algılanıyor; güncelleme önbelleği temizleyip sayfayı yeniliyor.\n- Masaüstü: GitHub sürümleri okunuyor, kurulum dosyası indirilip SHA-256 özeti doğru…"
-     }
-    ]
-   },
-   "files": [],
-   "shots": [
-    "https://render.albiononline.com/v1/item/T8_2H_CLAYMORE.png"
-   ],
-   "activity": []
-  },
-  {
-   "name": "ArenaViewer",
-   "url": "https://github.com/CehennemGibiyim/ArenaViewer",
-   "description": "WebLink",
-   "readme": "ATIKVIEWER; DICOM görüntüleme, kesit kesit yapay zekâ destekli inceleme ve yapısal radyoloji raporu üretimini tek ekranda toplayan, Next.js (App Router) + PostgreSQL…",
-   "language": "TypeScript",
-   "langs": {
-    "TypeScript": 3409578,
-    "Python": 166179,
-    "JavaScript": 66489,
-    "PowerShell": 45725,
-    "Shell": 43313,
-    "CSS": 13654,
-    "Dockerfile": 2970,
-    "Inno Setup": 2774,
-    "Batchfile": 1059,
-    "HTML": 1050
-   },
-   "topics": [],
-   "stars": 0,
-   "created_at": "2026-11-23T00:22:22Z",
-   "pushed_at": "2026-11-27T22:00:28Z",
-   "homepage": "https://cehennemgibiyim.github.io/ArenaViewer/",
-   "site": "https://cehennemgibiyim.github.io/ArenaViewer/",
-   "icon": "https://raw.githubusercontent.com/CehennemGibiyim/ArenaViewer/main/public/icons/icon-192.png",
-   "release": null,
-   "files": [],
-   "shots": [],
    "activity": [
     0,
     0,
@@ -345,110 +499,8 @@
     0,
     0,
     0,
-    0,
-    192
-   ]
-  },
-  {
-   "name": "ArenaSag",
-   "url": "https://github.com/CehennemGibiyim/ArenaSag",
-   "description": "",
-   "readme": "TikTok LIVE ajansları için sürekli çalışan radar, canlı yayın ağı ve Windows bildirim uygulaması.",
-   "language": "TypeScript",
-   "langs": {
-    "TypeScript": 708261,
-    "JavaScript": 300632,
-    "HTML": 102175,
-    "CSS": 32014,
-    "PowerShell": 7885,
-    "NSIS": 4027,
-    "Batchfile": 1668
-   },
-   "topics": [],
-   "stars": 0,
-   "created_at": "2026-11-18T18:48:43Z",
-   "pushed_at": "2026-11-27T21:51:47Z",
-   "homepage": "",
-   "site": "https://cehennemgibiyim.github.io/ArenaSag/",
-   "icon": "",
-   "release": {
-    "tag": "v1.4.0",
-    "name": "Arena Radar v1.4.0",
-    "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/tag/v1.4.0",
-    "pre": false,
-    "date": "2026-11-18T22:31:38Z",
-    "notes": "Full Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0\nFull Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0\nFull Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0\nFull Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0\nFull Changelog: https://github.com/CehennemGibiyim/ArenaSag/c…",
-    "downloadsTotal": 6,
-    "assets": [
-     {
-      "name": "Arena-Live-OS-windows.zip",
-      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/download/v1.4.0/Arena-Live-OS-windows.zip",
-      "size": 4222473,
-      "downloads": 0,
-      "os": "windows",
-      "sha256": "53d8a6c921b4ff639d0ace677dea60325a2a6c7fd680ecc456d299ce6e6d13fc"
-     },
-     {
-      "name": "ArenaRadar-Setup-1.4.0.exe",
-      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/download/v1.4.0/ArenaRadar-Setup-1.4.0.exe",
-      "size": 24415325,
-      "downloads": 1,
-      "os": "windows",
-      "sha256": "f4cb1168e05872dd206205845cb90eeb6ce8fd69a587c171119775d9c63a98e4"
-     },
-     {
-      "name": "ArenaRadar-Setup.exe",
-      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/download/v1.4.0/ArenaRadar-Setup.exe",
-      "size": 24415325,
-      "downloads": 0,
-      "os": "windows",
-      "sha256": "f4cb1168e05872dd206205845cb90eeb6ce8fd69a587c171119775d9c63a98e4"
-     },
-     {
-      "name": "ArenaRadar-windows.zip",
-      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/download/v1.4.0/ArenaRadar-windows.zip",
-      "size": 36393139,
-      "downloads": 0,
-      "os": "windows",
-      "sha256": "983e91c817a5697cbe6157ad4e9446d67e26f7c50e99712a1ef51390debab196"
-     }
-    ],
-    "history": [
-     {
-      "tag": "v1.4.0",
-      "date": "2026-11-18T22:31:38Z",
-      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/tag/v1.4.0",
-      "pre": false,
-      "notes": "Full Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0\nFull Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0\nFull Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0\nFull Changelog: https://github.com/CehennemGibiyim/ArenaSag/compare/v1.3.0...v1.4.0\nFull Changelog: https://github.com/CehennemGibiyim/ArenaSag/c…"
-     },
-     {
-      "tag": "v1.3.0",
-      "date": "2026-11-18T21:45:16Z",
-      "url": "https://github.com/CehennemGibiyim/ArenaSag/releases/tag/v1.3.0",
-      "pre": false,
-      "notes": "Full Changelog: https://github.com/CehennemGibiyim/ArenaSag/commits/v1.3.0\nFull Changelog: https://github.com/CehennemGibiyim/ArenaSag/commits/v1.3.0"
-     }
-    ]
-   },
-   "files": [],
-   "shots": [
-    "https://raw.githubusercontent.com/CehennemGibiyim/ArenaSag/main/docs/images/panel.png",
-    "https://raw.githubusercontent.com/CehennemGibiyim/ArenaSag/main/docs/images/yayinlar.png",
-    "https://raw.githubusercontent.com/CehennemGibiyim/ArenaSag/main/docs/images/sandik.png"
-   ],
-   "activity": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    40,
-    4
+    31,
+    24
    ]
   },
   {
