@@ -86,3 +86,16 @@ otomatik görünmesi için:
 2) Kişisel erişim anahtarı (Settings > Developer settings > Personal access tokens) oluştur, "repo" izni ver.
 3) Bu sitenin deposunda Settings > Secrets > Actions: PROFILE_REPO_TOKEN adıyla ekle.
 Eklemezsen bu adım atlanır, site etkilenmez. profile-readme.md dosyasını elle de kopyalayabilirsin.
+
+AŞAMA 1 (bu sürüm): Sorun bildir, RSS akışı, Uygulamayı yükle, sistem durumu
+Üzerine yazılacak dosyalar: index.html, scripts/build-data.mjs, .github/workflows/update-data.yml
+Diğer dosyalar önceki sürümle aynıdır; zipin tamamını yüklemek zararsızdır. data.json zipte YOK, dokunma.
+Yükledikten sonra Actions > "Proje verilerini güncelle" > Run workflow ile bir kez çalıştır.
+- feed.xml ve profile-readme.md ilk çalıştırmada kendiliğinden oluşur. "RSS" bağlantısı feed.xml oluşana kadar görünmez.
+- "Sorun bildir" düğmesi projenin Issues özelliği açıksa çalışır (depo Settings > Features > Issues).
+- "Uygulamayı yükle" düğmesi yalnızca tarayıcı desteklediğinde görünür (Chrome/Edge/Android, iPhone'da Safari).
+- Sistem durumu şeridi proje sitelerinin yanıt verip vermediğine bakar.
+
+PLAN (kademe kademe)
+- Aşama 2: indirme geçmişi grafiği + Ctrl+K hızlı arama
+- Aşama 3...: çok dilli site (dalgalar hâlinde, sağdan sola yazılan diller dahil)

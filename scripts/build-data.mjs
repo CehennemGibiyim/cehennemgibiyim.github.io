@@ -172,6 +172,23 @@ function profileReadme(list) {
   return `# Merhaba, ben Mustafa 👋\n\nWeb, sistem araçları ve uygulama projeleri geliştiriyorum.\n\n🌐 **Portfolyo:** ${site}\n\n## Projelerim (son güncellemeye göre)\n\n| Proje | Açıklama | Son sürüm | Güncelleme |\n| --- | --- | --- | --- |\n${rows.join('\n')}\n\n_Bu sayfa ${site} deposundaki bir betikle otomatik güncellenir._\n`;
 }
 
+// Atom (RSS) akışı: yeni sürümler ve güncellemeler
+function atomFeed(list) {
+  const site = `https://${USER.toLowerCase()}.github.io/`;
+  const x = (t) => String(t || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const entries = [];
+  for (const r of list) {
+    if (r.release && r.release.date) {
+      entries.push({ id: r.release.url, title: `${r.name} ${r.release.tag} yayınlandı`, date: r.release.date, link: r.release.url, sum: r.release.notes || r.description || r.readme });
+    }
+    entries.push({ id: `${r.url}#guncelleme-${r.pushed_at}`, title: `${r.name} güncellendi`, date: r.pushed_at, link: r.site || r.url, sum: r.description || r.readme });
+  }
+  entries.sort((a, b) => new Date(b.date) - new Date(a.date));
+  const items = entries.slice(0, 30).map((e) => `  <entry>\n    <id>${x(e.id)}</id>\n    <title>${x(e.title)}</title>\n    <updated>${new Date(e.date).toISOString()}</updated>\n    <link href="${x(e.link)}"/>\n    <summary>${x(e.sum)}</summary>\n  </entry>`);
+  const updated = entries.length ? new Date(entries[0].date).toISOString() : new Date().toISOString();
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom">\n  <title>Mustafa UYGUR | Güncellemeler</title>\n  <id>${site}</id>\n  <link href="${site}feed.xml" rel="self"/>\n  <link href="${site}"/>\n  <updated>${updated}</updated>\n  <author><name>Mustafa UYGUR</name></author>\n${items.join('\n')}\n</feed>\n`;
+}
+
 const all = [];
 for (let page = 1; ; page++) {
   const l = await get(`/users/${USER}/repos?per_page=100&sort=pushed&page=${page}`);
@@ -196,7 +213,8 @@ if (old) {
     .map((x) => `🚀 ${x.name} ${x.release.tag} yayınlandı\n${x.release.url}`);
   if (notes.length) writeFileSync('new-releases.txt', notes.join('\n\n'));
 }
-if (old && JSON.stringify(old.repos) === JSON.stringify(repos) && JSON.stringify(old.hide || []) === JSON.stringify(cfg.hide || [])) { console.log('Değişiklik yok.'); process.exit(0); }
+if (old && JSON.stringify(old.repos) === JSON.stringify(repos) && JSON.stringify(old.hide || []) === JSON.stringify(cfg.hide || []) && existsSync('feed.xml') && existsSync('profile-readme.md')) { console.log('Değişiklik yok.'); process.exit(0); }
 writeFileSync('data.json', JSON.stringify({ generated: new Date().toISOString(), user: USER, hide: cfg.hide || [], repos }, null, 1));
 writeFileSync('profile-readme.md', profileReadme(repos));
+writeFileSync('feed.xml', atomFeed(repos));
 console.log(`${repos.length} proje yazıldı.`);
