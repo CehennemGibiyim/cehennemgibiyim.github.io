@@ -33,10 +33,10 @@ jobs:
           GH_USER: ${{ github.repository_owner }}
       - name: Değişiklik varsa kaydet
         run: |
-          if [ -n "$(git status --porcelain data.json profile-readme.md)" ]; then
+          if [ -n "$(git status --porcelain data.json profile-readme.md feed.xml)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data.json profile-readme.md
+            git add data.json profile-readme.md feed.xml
             git commit -m "data.json güncellendi"
             git pull --rebase origin main || true
             git push
